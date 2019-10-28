@@ -136,7 +136,7 @@ Jackson 2.0 이후부터 새롭게 추가된 어노테이션입니다. @JsonIden
 
 @JsonIdentityReference 어노테이션은 @JsonIdentityInfo과 같이 자주 사용되는데, 이것에 대한 설명은 다음 섹션에서 알아볼께요.
 
-```jav
+```java
 @Setter
 @Getter
 @ToString
