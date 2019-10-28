@@ -8,12 +8,12 @@ module.exports = {
     twitter: ``, // Your Twitter account
     github: `kenshin579`, // Your GitHub account
     medium: ``, // Your Medium account
-    facebook: `kenshin579`, // Your Facebook account
+    facebook: `frank.oh.39`, // Your Facebook account
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
   comment: {
-    disqusShortName: 'kenshin579', // Your disqus-short-name. check disqus.com.
+    disqusShortName: 'advenoh', // Your disqus-short-name. check disqus.com.
     utterances: 'JaeYeopHan/gatsby-starter-bee', // Your repository for archive comment
   },
   configs: {
