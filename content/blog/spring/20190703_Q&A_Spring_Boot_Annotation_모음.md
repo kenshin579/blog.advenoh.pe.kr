@@ -4,23 +4,19 @@ date: 2019-7-3 20:41:23
 category: 'spring'
 ---
 
-# Spring Boot Annotation
-
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
 ### [Q&A 전체 목록](https://advenoh.tistory.com/35)
 
-## <span style="color:orange">[미 답변 질문]</span>
+### <span style="color:orange">[미 답변 질문]</span>
 
 * @SpringBootTest와 @DataJpaTest의 차이점은 뭔가?
     * [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
 
 - - - -
 
-## <span style="color:orange">[답변완료]</span>
-
-Spring Boot
+### <span style="color:orange">[답변완료]</span>
 
 쉽게 찾기 위해서 알파벳 순으로 정리합니다.
 
