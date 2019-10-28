@@ -43,7 +43,7 @@ DB 스키마는 Quartz의 [소스코드](https://github.com/quartz-scheduler/qua
 ># cat tables_mysql_innodb.sql
 ```
 
-```mysql-sql
+```sql
 …(생략)...
 CREATE TABLE QRTZ_JOB_DETAILS(
 SCHED_NAME VARCHAR(120) NOT NULL,
@@ -63,7 +63,7 @@ ENGINE=InnoDB;
 
 DB에 quartz용 database를 생성하고 schema script를 실행합니다.
 
-```mysql-sql
+```sql
 mysql> CREATE DATABASE spring_boot_quartz_cluster
 ```
 
@@ -177,7 +177,7 @@ server.port=7070
 
 서버를 각각 실행하고 나서 QRTZ\_SCHEDULER_STATE 테이블에서 2개의 인스턴스가 등록되었는지 확인합니다.
 
-```mysql-sql
+```sql
 mysql> SELECT * FROM QRTZ_SCHEDULER_STATE;
 ```
 
