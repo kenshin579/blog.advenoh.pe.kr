@@ -3,7 +3,7 @@ module.exports = {
   description: `Blog posted about ...`,
   author: `Frank Oh`,
   introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
-  siteUrl: `https://advenoh.netlify.com`, // Your blog site url
+  siteUrl: `https://advenoh.pe.kr`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
     github: `kenshin579`, // Your GitHub account
@@ -20,10 +20,10 @@ module.exports = {
     countOfInitialPost: 10, // Config your initial count of post
   },
   sponsor: {
-    buyMeACoffeeId: 'jbee',
+    buyMeACoffeeId: '',
   },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
-  ga: '', // Add your google analytics tranking ID
+  ga: 'UA-151046870-1', // Add your google analytics tranking ID
 }
