@@ -120,7 +120,7 @@ Git Client를 사용하면 쉽게 브랜치를 생성하고 병합할 수 있지
 작업 브랜치로 전환합니다.
 
 ```bash
-git checkout GIT-6-working-branch-cmd
+$ git checkout GIT-6-working-branch-cmd
 ```
 
 ![](images/20190811/image_14.png)
@@ -130,7 +130,7 @@ git checkout GIT-6-working-branch-cmd
 아래 명령어로 현재 작업 브랜치를 master로 rebase 시킵니다. 매우 간단하죠?
 
 ```bash
-git rebase origin/master
+$ git rebase origin/master
 ```
 
 ![](images/20190811/image_1.png)

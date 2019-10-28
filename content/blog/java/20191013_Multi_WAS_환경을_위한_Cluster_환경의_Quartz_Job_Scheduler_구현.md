@@ -40,7 +40,7 @@ DB 스키마는 Quartz의 [소스코드](https://github.com/quartz-scheduler/qua
 ![](images/20191013/image_26.png)
 
 ```bash
-># cat tables_mysql_innodb.sql
+$ cat tables_mysql_innodb.sql
 ```
 
 ```sql
@@ -150,9 +150,9 @@ public SchedulerFactoryBean schedulerFactoryBean(ApplicationContext applicationC
 한번 설치해서 비교해보세요. 블로그보다 코드만 보고도 쉽게 파악할 수 있습니다.
 
 ```bash
-> # brew cask install meld
-> # cd tutorials-java
-> # meld springboot-quartz-cluster/ springboot-quartz-in-memory
+$ brew cask install meld
+$ cd tutorials-java
+$ meld springboot-quartz-cluster/ springboot-quartz-in-memory
 ```
 
 ![](images/20191013/image_9.png)
@@ -162,17 +162,17 @@ public SchedulerFactoryBean schedulerFactoryBean(ApplicationContext applicationC
 서버를 이중화로 구동했을 때도 이상이 없이 스케줄러가 잘 돌아가는지 확인해볼까요? 먼저 프로젝트를 복사할게요.
 
 ```bash
-> # cp -r springboot-quartz-cluster/ springboot-quartz-cluster2
+$ cp -r springboot-quartz-cluster/ springboot-quartz-cluster2
 ```
 
 복사하고 나서 서버 포트를 다른 번호로 변경합니다.
 
 ```bash
-> # cd springboot-quartz-cluster2
-> # code src_main_resources/application.properties
+$ cd springboot-quartz-cluster2
+$ code src_main_resources/application.properties
 server.port=7070
 
-> # mvn spring-boot:run
+$ mvn spring-boot:run
 ```
 
 서버를 각각 실행하고 나서 QRTZ\_SCHEDULER_STATE 테이블에서 2개의 인스턴스가 등록되었는지 확인합니다.
