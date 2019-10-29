@@ -12,8 +12,8 @@ tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfigurat
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
-* @SpringBootTest와 @DataJpaTest의 차이점은 뭔가?
-    * [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
+#### - @SpringBootTest와 @DataJpaTest의 차이점은 뭔가?
+* [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
 
 - - - -
 

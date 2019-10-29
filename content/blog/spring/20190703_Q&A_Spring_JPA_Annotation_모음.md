@@ -12,14 +12,14 @@ tags: ["Q&A", "faq", "spring", "jpa", "db", "database"]
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
-* @NaturalId
+#### - @NaturalId
 하이버네티으에서 Named query 대신에 사용할 수 있는 네임 쿼리란 한번 정의하면 변경할 수 없는 정적 쿼리이다.
 ![](images/20190703/image_1.png)
 
 참고
 * [https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/](https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/)
 
-* @EntityListeners, @EnableJpaAuditing
+#### - @EntityListeners, @EnableJpaAuditing
 
 참고
 * [https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html)

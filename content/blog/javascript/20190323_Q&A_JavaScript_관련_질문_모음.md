@@ -12,7 +12,7 @@ tags : ["Q&A", "faq", "javascript", "defaultProps", "es6"]
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
-- defaultProps은 언제 사용되나?
+#### - defaultProps은 언제 사용되나?
 
 ---
 
