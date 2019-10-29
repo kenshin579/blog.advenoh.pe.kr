@@ -1,7 +1,8 @@
---
+---
 title: 'Jackson에서 Infinite Recursion 이슈 해결방법'
 date: 2019-10-12 22:51:31
 category: 'java'
+tags: ["TAGCircular", "INFINITE", "Jackson", "JsonBackReference", "JsonIdentityInfo", "JsonIdentityReference", "jsonignore", "JsonManagedReference", "JsonMappingException", "stackoverflowerror"]
 ---
 
 # 1. 들어가며
@@ -124,7 +125,7 @@ public void infinite_recursion_해결책_JsonManagedReference_JsonBackReference(
 
 ![](images/20190925/image_2.png)
 
-3.2 @JsonIdentityInfo - 추천방식
+## 3.2 @JsonIdentityInfo - 추천방식
 
 Jackson 2.0 이후부터 새롭게 추가된 어노테이션입니다. @JsonIdentityInfo 어노테이션을 추가해서 직렬화에 포함 시킬 속성 값을 ‘property’ 속성에 지정합니다.
 
@@ -283,5 +284,3 @@ Unit Test을 실행해보면 customer 정보는 Order 객체에서 제외된 것
 	* [https://www.logicbig.com/tutorials/misc/jackson/json-identity-info-annotation.html](https://www.logicbig.com/tutorials/misc/jackson/json-identity-info-annotation.html)
 * @JsonIdentityReference란
 	* [https://www.baeldung.com/jackson-advanced-annotations](https://www.baeldung.com/jackson-advanced-annotations)
-
-#advenoh.pe.kr# #blog
