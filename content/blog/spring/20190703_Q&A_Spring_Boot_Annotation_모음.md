@@ -2,7 +2,7 @@
 title: 'Q&A : Spring Boot Annotation 모음'
 date: 2019-7-3 20:41:23
 category: 'spring'
-tags: ["Q&A", "spring", "springboot", "annotation", "EnableAutoConfiguration"]
+tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfiguration"]
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
