@@ -1,39 +1,45 @@
+---
+title: '자바8 Optional이란'
+date: 2018-7-29 14:54:31
+category: 'python'
+---
+
 # 자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance
-* 체인닝 메서드이란
-	* 일반 메서드 호출 vs 메서드 체이닝 호출
-	* 간단한 예제 - Simple
 
-* 1 Depth Abstract 클래스 상속
-	* 이슈사항
-		* T extends Pet의 의미는?
+- 체인닝 메서드이란
+  _ 일반 메서드 호출 vs 메서드 체이닝 호출
+  _ 간단한 예제 - Simple
 
-* 2 Depth Abstract 클래스 상속
-* 소스 예제....
+- 1 Depth Abstract 클래스 상속
+  _ 이슈사항
+  _ T extends Pet의 의미는?
 
-* 참고
-	* [https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together](https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together)
+- 2 Depth Abstract 클래스 상속
+- 소스 예제....
+
+- 참고 \* [https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together](https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together)
 
 1. 메서드 체이닝이란
-메서드 체이닝이란 여러 메서드 호출을 연결해 하나의 실행문으로 표현하는 문법 형태를 말한다. (위키피디아 참고 #4.1)
-일반 메서드 호출
-메서드 체이닝 호출
-@Test
-public void tesWithoutMethodChaining() {
-Pet pet = new Pet();
-pet.setName("BobbyPet");
-pet.setEyeColor("red");
-pet.setHungryLevel(10);
-LOG.info("{}", pet);
-}
-@Test
-public void testMethodChaining() {
-Pet pet = new Pet();
-pet.setName("BobbyPet")
-.setEyeColor("red")
-.setHungryLevel(10);
-LOG.info("{}", pet);
-}
-메서드 체이닝의 매직은 간단하다. 체이닝으로 연결하고 싶은 메서드의 반환 값으로 this를 반환하면 된다.
+   메서드 체이닝이란 여러 메서드 호출을 연결해 하나의 실행문으로 표현하는 문법 형태를 말한다. (위키피디아 참고 #4.1)
+   일반 메서드 호출
+   메서드 체이닝 호출
+   @Test
+   public void tesWithoutMethodChaining() {
+   Pet pet = new Pet();
+   pet.setName("BobbyPet");
+   pet.setEyeColor("red");
+   pet.setHungryLevel(10);
+   LOG.info("{}", pet);
+   }
+   @Test
+   public void testMethodChaining() {
+   Pet pet = new Pet();
+   pet.setName("BobbyPet")
+   .setEyeColor("red")
+   .setHungryLevel(10);
+   LOG.info("{}", pet);
+   }
+   메서드 체이닝의 매직은 간단하다. 체이닝으로 연결하고 싶은 메서드의 반환 값으로 this를 반환하면 된다.
 
 package simple.methodChain;
 
@@ -55,7 +61,7 @@ return this;
 }
 
 2. 추상 클래스와 상속 관계 있는 클래스에서의 메서드 체이닝 적용하기
-2.1 One Depth : 추상 클래스 <--> 자식 클래스
+   2.1 One Depth : 추상 클래스 <--> 자식 클래스
 
 한 클래스에서 메서드 체이닝을 적용하기는 쉽다. 하지만, 상속 관계가 있는 클래스에서는 this의 반환 값이 부모 클래스이거나 자식 클래스이기 때문에 메서드 체이닝을 할 때 캐스팅(cast)을 해줘야 하는 번거로움이 생긴다.
 
@@ -67,7 +73,7 @@ Cat c1 = new Cat();
 c1.setAwesomeLevel(10) child
 .setCutenessLevel(20) child
 .setName("BobbyCat"); parent
- .setCutenessLevel(20); child ::<— 위 부모 메서드 호출이후 자식 메서드를 호출할수 없음 (반환값이 Pet이기 때문에)::
+.setCutenessLevel(20); child ::<— 위 부모 메서드 호출이후 자식 메서드를 호출할수 없음 (반환값이 Pet이기 때문에)::
 LOG.info("c1 {}", c1);
 
 Cat c2 = new Cat();
@@ -150,32 +156,33 @@ return (T) this;
 }
 
 3. 소스 예제
-전체 소스 코드는 [github](https://github.com/kenshin579/tutorials-java-examples/tree/master/java-method-chain) 에서 찾을 수 있습니다. 
+   전체 소스 코드는 [github](https://github.com/kenshin579/tutorials-java-examples/tree/master/java-method-chain) 에서 찾을 수 있습니다.
 
 4. 참고
 
-1. [https://en.wikipedia.org/wiki/Method_chaining](https://en.wikipedia.org/wiki/Method_chaining)
-2. [https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together](https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together)
-3. [https://www.andygibson.net/blog/article/implementing-chained-methods-in-subclasses/](https://www.andygibson.net/blog/article/implementing-chained-methods-in-subclasses/)
-4. [https://stackoverflow.com/questions/15054237/oop-in-java-class-inheritance-with-method-chaining](https://stackoverflow.com/questions/15054237/oop-in-java-class-inheritance-with-method-chaining)
-5. [http://www.angelikalanger.com/GenericsFAQ/FAQSections/ProgrammingIdioms.html#FAQ206](http://www.angelikalanger.com/GenericsFAQ/FAQSections/ProgrammingIdioms.html#FAQ206)
-6. [https://www.baeldung.com/java-type-casting](https://www.baeldung.com/java-type-casting)
+5. [https://en.wikipedia.org/wiki/Method_chaining](https://en.wikipedia.org/wiki/Method_chaining)
+6. [https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together](https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together)
+7. [https://www.andygibson.net/blog/article/implementing-chained-methods-in-subclasses/](https://www.andygibson.net/blog/article/implementing-chained-methods-in-subclasses/)
+8. [https://stackoverflow.com/questions/15054237/oop-in-java-class-inheritance-with-method-chaining](https://stackoverflow.com/questions/15054237/oop-in-java-class-inheritance-with-method-chaining)
+9. [http://www.angelikalanger.com/GenericsFAQ/FAQSections/ProgrammingIdioms.html#FAQ206](http://www.angelikalanger.com/GenericsFAQ/FAQSections/ProgrammingIdioms.html#FAQ206)
+10. [https://www.baeldung.com/java-type-casting](https://www.baeldung.com/java-type-casting)
 
-- - - -
+---
 
 **코멘트**
+
 - [ ] <T extends Animal> 란?
-ㅁ. Animal 유형(ex. Cat, Dog: 하위 클래스)이면 뭐든지 T자리에 들어갈 수 있다는 의미
+      ㅁ. Animal 유형(ex. Cat, Dog: 하위 클래스)이면 뭐든지 T자리에 들어갈 수 있다는 의미
 
 - [ ] generics 형식으로 하려는 이슈는?
-ㅁ. getThis() 함수의 반환값을 Cat으로 하기 위해서임
+      ㅁ. getThis() 함수의 반환값을 Cat으로 하기 위해서임
 
 ![](%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98%20%EC%83%81%EC%86%8D%20%EA%B5%AC%EC%A1%B0%EC%97%90%EC%84%9C%20%EB%A9%94%EC%84%9C%EB%93%9C%20%EC%B2%B4%EC%9D%B4%EB%8B%9D%20%ED%95%B4%EB%B3%B4%EA%B8%B0%20-%20Method%20Chaining%20with%20Inheritance/5C513961-FA22-4BEE-93FE-B6E6ABC736F8.png)
 
 ![](%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98%20%EC%83%81%EC%86%8D%20%EA%B5%AC%EC%A1%B0%EC%97%90%EC%84%9C%20%EB%A9%94%EC%84%9C%EB%93%9C%20%EC%B2%B4%EC%9D%B4%EB%8B%9D%20%ED%95%B4%EB%B3%B4%EA%B8%B0%20-%20Method%20Chaining%20with%20Inheritance/image_3.png)
 
 - [ ] Cat extends Pet<Cat> <— 이게 왜 필요한가?
-ㅁ. parent 메서드 이후 child 메서드를 못찾음
+      ㅁ. parent 메서드 이후 child 메서드를 못찾음
 
 참고
 [https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together](https://stackoverflow.com/questions/1069528/method-chaining-inheritance-don-t-play-well-together)

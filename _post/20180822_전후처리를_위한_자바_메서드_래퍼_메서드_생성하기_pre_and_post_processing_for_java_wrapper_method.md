@@ -1,10 +1,16 @@
+---
+title: '자바8 Optional이란'
+date: 2018-7-29 14:54:31
+category: 'python'
+---
+
 # 전후처리를 위한 자바 메서드 래퍼 메서드 생성하기 - pre and post processing for java wrapper method
-* 개요
-	* pre post하는 경우가 종종 생긴다.
-* 예제
-	* file
-	* final static
-* 참고
+
+- 개요 \* pre post하는 경우가 종종 생긴다.
+- 예제
+  _ file
+  _ final static
+- 참고
 
 **1.개요**
 코딩을 하다 보면 어떤 작업을 하기 전에 전후 처리가 필요할 때가 종종 생긴다. 전처리(pre-processing)에서는 실제 작업을 수행하기 전에 필요한 세팅을 하고 후처리(post-processing)에서는 cleanup 정도의 작업을 한다. 이런 전후 처리를 여러 번 할 때에는 별도의 메서드로 구현해두면 좋다. 몇 개의 예제를 보면서 알아보자.
@@ -105,21 +111,18 @@ setFinalStaticIntField(Constants.class, "SIZE", originalSize);
 LOG.info("post 처리 - SIZE: {}", Constants.SIZE);
 }
 
-지금까지 작성된 코드는 [github](https://github.com/kenshin579/tutorials-java-examples/tree/master/java8) 에 올려줘 있다. 
+지금까지 작성된 코드는 [github](https://github.com/kenshin579/tutorials-java-examples/tree/master/java8) 에 올려줘 있다.
 
-* com.java.examples.prepost
-	* Constants
-	* PrePostTest
-	* FinalFieldChangeTest
+- com.java.examples.prepost
+  _ Constants
+  _ PrePostTest \* FinalFieldChangeTest
 
 **3. 참고**
 
-* 전후처리
-	* [https://www.javacodegeeks.com/2013/05/a-simple-application-of-lambda-expressions-in-java-8.html](https://www.javacodegeeks.com/2013/05/a-simple-application-of-lambda-expressions-in-java-8.html)
-	* [https://stackoverflow.com/questions/43599406/create-generic-java-method-wrapper-for-pre-and-post-processing](https://stackoverflow.com/questions/43599406/create-generic-java-method-wrapper-for-pre-and-post-processing)
-* static final field 변경
-	* [https://dzone.com/articles/how-to-change-private-static-final-fields](https://dzone.com/articles/how-to-change-private-static-final-fields)
-* 함수 인터페이스
-	* [http://multifrontgarden.tistory.com/125](http://multifrontgarden.tistory.com/125)
+- 전후처리
+  _ [https://www.javacodegeeks.com/2013/05/a-simple-application-of-lambda-expressions-in-java-8.html](https://www.javacodegeeks.com/2013/05/a-simple-application-of-lambda-expressions-in-java-8.html)
+  _ [https://stackoverflow.com/questions/43599406/create-generic-java-method-wrapper-for-pre-and-post-processing](https://stackoverflow.com/questions/43599406/create-generic-java-method-wrapper-for-pre-and-post-processing)
+- static final field 변경 \* [https://dzone.com/articles/how-to-change-private-static-final-fields](https://dzone.com/articles/how-to-change-private-static-final-fields)
+- 함수 인터페이스 \* [http://multifrontgarden.tistory.com/125](http://multifrontgarden.tistory.com/125)
 
 #post #blog #advenoh.pe.kr# #pre #java

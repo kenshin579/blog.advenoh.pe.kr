@@ -1,15 +1,18 @@
-# Q&A : Mybatis 관련 질문 모음
-MYBATIS
+---
+title: 'Q&A : MYBATIS 관련 질문 모음'
+date: 2018-7-29 14:54:31
+category: 'python'
+---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-[Q&A 전체 목록](https://advenoh.tistory.com/35)
+### [Q&A 전체 목록](https://advenoh.tistory.com/35)
 
-[미 답변 질문]
+### <span style="color:orange">[미 답변 질문]</span>
 
-- [ ] mybatis에서 @Transactional 어노테이션을 사용해서 unit test을 사용할 수 있나?
-ㅁ. 잘 안됨
+* mybatis에서 @Transactional 어노테이션을 사용해서 unit test을 사용할 수 있나?
+  * 잘 안됨
 
 * [http://barunmo.blogspot.com/2013/06/mybatis.html](http://barunmo.blogspot.com/2013/06/mybatis.html)
 * [https://otamot.com/64](https://otamot.com/64)
@@ -17,46 +20,48 @@ MYBATIS
 * [https://examples.javacodegeeks.com/enterprise-java/spring/write-transactional-unit-tests-spring/](https://examples.javacodegeeks.com/enterprise-java/spring/write-transactional-unit-tests-spring/)
 * [https://mycup.tistory.com/185](https://mycup.tistory.com/185)
 
-- [ ] mybatis에서 association 속성은 뭔가?
-ㅁ. resultMap에 다른 객체가 있는 경우에 사용하고 assocation은 has one 타입의 관계를 다룬다.
-ㅁ. collection인 경우에는 has many 타입의 관계를 다룰 떄 사용한다.
+* mybatis에서 association 속성은 뭔가?
+  * resultMap에 다른 객체가 있는 경우에 사용하고 assocation은 has one 타입의 관계를 다룬다.
+  * collection인 경우에는 has many 타입의 관계를 다룰 떄 사용한다.
 
 ![](Q&A%20%20Mybatis%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_1.png)
 
 참고
-* [http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html](http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html)
 
-- [ ] mybatis에서 namespace를 위한 alias에 대해 지원을 하나?
-ㅁ. 하지 않음
+- [http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html](http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html)
 
-ㅁ. 지원하는 단위
-* 클래스 단위
-* 패키지 단위
+* mybatis에서 namespace를 위한 alias에 대해 지원을 하나?
+  * 하지 않음
+
+- 클래스 단위
+- 패키지 단위
 
 참고
-* [https://github.com/mybatis/mybatis-3/issues/1160](https://github.com/mybatis/mybatis-3/issues/1160)
 
-- [ ] mybatis에서 cdata를 자주 보게 되는데, 사용하는 이유는?
-ㅁ.
+- [https://github.com/mybatis/mybatis-3/issues/1160](https://github.com/mybatis/mybatis-3/issues/1160)
+
+* mybatis에서 cdata를 자주 보게 되는데, 사용하는 이유는?
 
 ![](Q&A%20%20Mybatis%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_4.png)
 
 참고
-* [https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0](https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 
-- - - -
+- [https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0](https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 
-[답변완료]
+---
 
-1. _long 타입은 뭔가?
+### <span style="color:orange">[답변완료]</span>
+
+1. \_long 타입은 뭔가?
 
 ![](Q&A%20%20Mybatis%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_3.png)
 
-* _long : long 타입으로 매핑된다
-* long : Long 타입이 매핑된다
+- \_long : long 타입으로 매핑된다
+- long : Long 타입이 매핑된다
 
 참고
-* [http://www.mybatis.org/mybatis-3/ko/configuration.html](http://www.mybatis.org/mybatis-3/ko/configuration.html)
+
+- [http://www.mybatis.org/mybatis-3/ko/configuration.html](http://www.mybatis.org/mybatis-3/ko/configuration.html)
 
 2. IN (…)안에 list을 넘겨서 처리하는 방법은?
 
@@ -65,6 +70,7 @@ IN에 들어갈 (…) 값을 <foreach> 태그로 값을 생성할 수 있습니�
 ![](Q&A%20%20Mybatis%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_2.png)
 
 참고
-* [http://pcdate.blogspot.com/2013/05/mybatis-foreach.html](http://pcdate.blogspot.com/2013/05/mybatis-foreach.html)
+
+- [http://pcdate.blogspot.com/2013/05/mybatis-foreach.html](http://pcdate.blogspot.com/2013/05/mybatis-foreach.html)
 
 #q&a #blog #advenoh.pe.kr# #개발

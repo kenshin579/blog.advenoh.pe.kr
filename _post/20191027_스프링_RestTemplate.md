@@ -1,52 +1,20 @@
-# 스프링 RestTemplate
-* 들어가며
-* 개발 환경
-* 사용법
-* 참고
+---
+title: '스프링 RestTemplate'
+date: 2018-7-29 14:54:31
+category: 'spring'
+---
 
-**코멘트**
-- [ ] consuming restful web service라는 표현은 무슨 뜻인가?
-
-- [ ] @JsonIgnoreProperties(ignoreUnknown = true)
-ㅁ.json에서 없는 속성이 들어오면 Exception이 발생하는데, 발생하지 않고 그냥 ignore 시키는 속성임
-
-![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_4.png)
-
-[http://knight76.tistory.com/entry/111](http://knight76.tistory.com/entry/111)
-
-- [ ] delete시 header(인정정보)를 추가하려면, exchange를 사용해야 함.
-ㅁ. [http://blog.saltfactory.net/using-resttemplate-in-spring/](http://blog.saltfactory.net/using-resttemplate-in-spring/)
-[https://www.concretepage.com/questions/503](https://www.concretepage.com/questions/503)
-
-- [ ] resttemplate에서 map형식으로 받아서 map의 값을 확인하려면
-ㅁ.JsonNode로 받아서 확인 하면 됨
-
-![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_16.png)
-
-- [ ] resttemplate에서 Object을 body에 넣어서 post로 보내는 방법
-
-![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_5.png)
-
-- [ ] json을 응답을 받으려면 스프링에서 어떤 작업을 해야 하지 않나?
-ㅁ. 스프링부트에서는 @RestController 어노테이션이 JSON 응답은 Jackson2 (jackson-databind)이 classpath가 있으면 기본으로 됨
-
-![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_3.png)
-
-[http://websystique.com/spring-boot/spring-boot-rest-api-example/](http://websystique.com/spring-boot/spring-boot-rest-api-example/)
-
-1. 들어가며
+# 1. 들어가며
 
 스프링 프레임워크에서는 REST 서비스의 Endpoint를 호출할 수 있도록 크게 **2가지 방식인 동기, 비동기 REST Client을 제** 공합니다. 이번 포스팅에서는 동기방식인 RestTemplate에 대해서 알아보겠습니다.
 
-* **RestTemplate**
-	* Spring 3부터 지원 되었고 REST API 호출이후 응답을 받을 때까지 기다리는 동기방식이다
-* **AsyncRestTemplate**
-	* Spring 4에 추가된 비동기 RestTemplate이다
-	* Spring 5.0에서는 deprecated 되었다
-* **WebClient**
-	* Spring 5에 추가된 논블럭, 리엑티브 웹 클리이언트로 동기, 비동기 방식을 지원한다
+- **RestTemplate** \* Spring 3부터 지원 되었고 REST API 호출이후 응답을 받을 때까지 기다리는 동기방식이다
+- **AsyncRestTemplate**
+  _ Spring 4에 추가된 비동기 RestTemplate이다
+  _ Spring 5.0에서는 deprecated 되었다
+- **WebClient** \* Spring 5에 추가된 논블럭, 리엑티브 웹 클리이언트로 동기, 비동기 방식을 지원한다
 
-RestTemplate은 스프링에서 제공하는 다른 여러 **Template 클래스 (ex. JdbcTemplate, RedisTemplate)와 *동일한 원칙에 따라 설계되어 단순한 방식의 호출로 복잡한 작업을 쉽게 하도록 제공** 합니다. RestTemplate 클래스는 REST 서비스를 호출하도록 설계되어 HTTP 프로토콜의 메서드 (ex. GET, POST, DELETE, PUT)에 맞게 여러 메서드를 제공합니다. 
+RestTemplate은 스프링에서 제공하는 다른 여러 **Template 클래스 (ex. JdbcTemplate, RedisTemplate)와 \*동일한 원칙에 따라 설계되어 단순한 방식의 호출로 복잡한 작업을 쉽게 하도록 제공** 합니다. RestTemplate 클래스는 REST 서비스를 호출하도록 설계되어 HTTP 프로토콜의 메서드 (ex. GET, POST, DELETE, PUT)에 맞게 여러 메서드를 제공합니다.
 메서드
 HTTP
 설명
@@ -87,13 +55,13 @@ execute
 any
 Request/Response 콜백을 수정할 수 있다
 
-2. 개발 환경
+# 2. 개발 환경
 
-* OS : Mac OS
-* IDE: Intellij
-* Java : JDK 1.8
-* Source code : [github](https://github.com/kenshin579/tutorials-java/tree/master/spring-resttemplate)
-* Software management tool : Maven
+- OS : Mac OS
+- IDE: Intellij
+- Java : JDK 1.8
+- Source code : [github](https://github.com/kenshin579/tutorials-java/tree/master/spring-resttemplate)
+- Software management tool : Maven
 
 예제 프로젝트는 스프링 부트로 작성되어 기본 스프링 부트 의존성을 추가하면 RestTemplate 관련 의존성은 자동으로 추가됩니다.
 
@@ -107,19 +75,19 @@ Request/Response 콜백을 수정할 수 있다
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_12.png)
 
-3. RestTemplate의 동작원리
+# 3. RestTemplate의 동작원리
 
-RestTemplate의 동작원리에 대한 내용은 [빨간색코딩](https://sjh836.tistory.com/141) 블로그에 잘 정리가 되어 있어 별도로 정리는 하지 않았습니다. 해당 링크에 들어가서 더 자세한 설명을 참조해주세요. 
+RestTemplate의 동작원리에 대한 내용은 [빨간색코딩](https://sjh836.tistory.com/141) 블로그에 잘 정리가 되어 있어 별도로 정리는 하지 않았습니다. 해당 링크에 들어가서 더 자세한 설명을 참조해주세요.
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_2.png)
 
-4. RestTemplate 메서드 예제
+# 4. RestTemplate 메서드 예제
 
 RestTemplate에서 자주 사용하는 메서드 위주로 알아보겠습니다.
 
-4.1 GET 메서드
+## 4.1 GET 메서드
 
-4.1.1 getForObject()
+### 4.1.1 getForObject()
 
 getForObject() 메서드는 GET을 수행하고 HTTP 응답을 객체 타입으로 변환해서 반환해주는 메서드입니다. 이 예제에서는 Employee 객체로 반환해줍니다.
 
@@ -133,7 +101,7 @@ log.info("employee: {}", employee);
 
 Controller에서는 getEmployee() 호출 시 응답으로 Employee 객체를 JSON 형태로 변환합니다. 예제를 실행해 보면 추가 설정 없이 자동으로 JSON 형태로 잘 받는 것을 알 수 있습니다.
 
-스프링 부트에서는 Controller 단에 **@RestController 어노테이션을 추가하면 클래스패스에 Jackson2 (jackson-databind)가 있는 한 기본적으로 JSON 응답을 처리** 합니다. spring-boot-starter-web 의존성을 추가했다면 jackson-databind은 transitive 의존성에 의해서 같이 포함됩니다. 
+스프링 부트에서는 Controller 단에 **@RestController 어노테이션을 추가하면 클래스패스에 Jackson2 (jackson-databind)가 있는 한 기본적으로 JSON 응답을 처리** 합니다. spring-boot-starter-web 의존성을 추가했다면 jackson-databind은 transitive 의존성에 의해서 같이 포함됩니다.
 
 **Controller Code**
 
@@ -159,7 +127,7 @@ return employee;
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_19.png)
 
-4.1.2 getForEntity()
+### 4.1.2 getForEntity()
 
 getForEntity() 메서드의 경우에는 응답을 ResponseEntity 객체로 받게 됩니다. getForObject()와 달리 HTTP 응답에 대한 추가 정보를 담고 있어서 GET 요청에 대한 응답 코드, 실제 데이터를 확인할 수 있습니다. 또한 ResponseEntity<T> 제네릭 타입에 따라서 응답을 String이나 Object 객체로 받을 수 있습니다.
 
@@ -178,19 +146,19 @@ log.info("getBody: {}", responseEntity.getBody());
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_1.png)
 
-4.1.3 getForEntity()에 여러 값을 담은 params을 같이 넘겨주기
+### 4.1.3 getForEntity()에 여러 값을 담은 params을 같이 넘겨주기
 
 getForEntity() 메서드는 또한 여러 값을 담은 params를 인자로 받아서 GET 요청을 할 수 있습니다. 예제에서는 URL PATH에 필요한 name과 country 변수를 LinkedMultiValueMap 객체에 담아서 params로 넘겨주었습니다.
 
 **Client Code - Unit Test**
 
 @Test
-public void test_getForEntity_여러_path_variables을_넘겨주는_경우() {
+public void test*getForEntity*여러*path_variables을*넘겨주는\_경우() {
 MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 params.add("name", "Frank Oh");
 params.add("country", "US");
 
-ResponseEntity<Employee> responseEntity = restTemplate.getForEntity(BASE_URL + "_{name}_{country}", Employee.class, params);
+ResponseEntity<Employee> responseEntity = restTemplate.getForEntity(BASE*URL + "*{name}\_{country}", Employee.class, params);
 log.info("statusCode: {}", responseEntity.getStatusCode());
 log.info("getBody: {}", responseEntity.getBody());
 }
@@ -199,18 +167,18 @@ log.info("getBody: {}", responseEntity.getBody());
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_20.png)
 
-4.2 POST
+## 4.2 POST
 
 다음은 POST 메서드에 대한 메서드들입니다.
 
-4.2.1 postForObject() 해더 포함하지 않고 보내기
+### 4.2.1 postForObject() 해더 포함하지 않고 보내기
 
 postForObject()는 getForObject()와 같이 POST 요청에 대해서 반환 값을 해당 객체로 반환해주는 메서드입니다. Employee 객체를 POST의 body로 해서 보냅니다.
 
 **Client Code - Unit Test**
 
 @Test
-public void testPostForObject_해더_포함해서_보내지_않기() {
+public void testPostForObject*해더*포함해서*보내지*않기() {
 Employee newEmployee = Employee.builder()
 .name("Frank")
 .address(Address.builder()
@@ -239,14 +207,14 @@ return new ResponseEntity<>(employee, HttpStatus.CREATED);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_17.png)
 
-4.2.2 postForObject() 해더 포함해서 보내기
+### 4.2.2 postForObject() 해더 포함해서 보내기
 
 이번에는 헤더에 데이터를 실어서 보내 보겠습니다. Employee 객체와 custom 헤더를 인자로 넘겨 HttpEntity를 생성합니다. 생성한 HttpEntity를 postForObject에 담아서 보내면 Controller에서 @RequestHeader 어노테이션으로 값을 얻어올 수 있습니다.
 
 **Client Code - Unit Test**
 
 @Test
-public void testPostForObject_해데_포함해서_보내기() {
+public void testPostForObject*해데*포함해서\_보내기() {
 Employee newEmployee = Employee.builder()
 .name("Frank")
 .address(Address.builder()
@@ -267,14 +235,14 @@ log.info("employee: {}", employee);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_10.png)
 
-4.2.3 postForEntity()
+### 4.2.3 postForEntity()
 
 postForEntity() 메서드는 ResponseEntity<T> 객체로 데이터를 받을 수 있습니다. 예제에서는 Employee 객체로 받는 대신 String으로 받는 예제여서 응답 body가 스트링 JSON 형태로 출력됩니다.
 
 **Client Code - Unit Test**
 
 @Test
-public void testPostForEntity_스트링값으로_받기() {
+public void testPostForEntity*스트링값으로*받기() {
 Employee newEmployee = Employee.builder()
 .name("Frank")
 .address(Address.builder()
@@ -291,7 +259,7 @@ log.info("getBody: {}", responseEntity.getBody());
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_9.png)
 
-4.2.4 postFoLocation()
+### 4.2.4 postFoLocation()
 
 postForLocation() 메서드는 객체를 반환하는 대신 생성된 리소스의 URI 위치를 반환합니다.
 
@@ -308,7 +276,7 @@ Employee newEmployee = Employee.builder()
 
 HttpEntity<Employee> request = new HttpEntity<>(newEmployee);
 
-URI location = restTemplate.postForLocation(BASE_URL + "_employee_location", request);
+URI location = restTemplate.postForLocation(BASE_URL + "\_employee_location", request);
 log.info("location: {}", location);
 }
 
@@ -316,7 +284,7 @@ Controller에서는 헤더에 URI location 값을 저장하여 ResponseEntity로
 
 **Controller Code**
 
-@RequestMapping(value = "_employee_location", method = RequestMethod.POST)
+@RequestMapping(value = "\_employee_location", method = RequestMethod.POST)
 public ResponseEntity<Void> locationURI(
 @RequestBody Employee employee,
 UriComponentsBuilder builder) {
@@ -332,7 +300,7 @@ return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_14.png)
 
-4.3 DELETE
+## 4.3 DELETE
 
 delete() 메서드는 HTTP DELETE을 수행하며 회원의 이름을 넘겨주면 매핑된 Controller의 deleteEmployeeByName 메서드가 실행됩니다.
 
@@ -342,7 +310,7 @@ delete() 메서드는 HTTP DELETE을 수행하며 회원의 이름을 넘겨주�
 public void testDelete() {
 Map<String, String> params = new HashMap<>();
 params.put("name", "Frank");
-restTemplate.delete(BASE_URL + "_employee_{name}", params);
+restTemplate.delete(BASE*URL + "\_employee*{name}", params);
 }
 
 **Controller Code**
@@ -356,7 +324,7 @@ log.info("deleting employee: {}", name);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_7.png)
 
-4.4 PUT
+## 4.4 PUT
 
 put() 메서드도 다른 메서드(ex. postForObject)과 비슷합니다. PUT은 데이터를 업데이트하기 위해 요청을 보내기 때문에 body에 데이터를 실어서 보냅니다. 예제에서는 Address 객체를 실어서 보냅니다.
 
@@ -370,7 +338,7 @@ Address address = Address.builder()
 .city("Columbus")
 .country("US")
 .build();
-restTemplate.put(BASE_URL + "_employee_{name}", address, params);
+restTemplate.put(BASE*URL + "\_employee*{name}", address, params);
 }
 
 **Controller Code**
@@ -384,7 +352,7 @@ log.info("name : {} address {}", name, address);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_8.png)
 
-4.5 Exchange()
+## 4.5 Exchange()
 
 4.5.1 Exchange()로 HTTP GET 메서드 실행하기
 
@@ -402,13 +370,13 @@ headers.setContentType(MediaType.APPLICATION_JSON);
 HttpEntity<String> request = new HttpEntity<>("Hello World!", headers);
 log.info("request: {}", request);
 
-ResponseEntity<Employee> empEntity = restTemplate.exchange(BASE_URL + "_exchange_employee/{id}", HttpMethod.GET, request, Employee.class, 50);
+ResponseEntity<Employee> empEntity = restTemplate.exchange(BASE_URL + "\_exchange_employee/{id}", HttpMethod.GET, request, Employee.class, 50);
 log.info("empEntity: {}", empEntity);
 }
 
 **Controller Code**
 
-@RequestMapping(method = RequestMethod.GET, value = "_exchange_employee/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(method = RequestMethod.GET, value = "\_exchange_employee/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Employee> getEmployeeByExchangeMethod(
 @PathVariable Long id,
 @RequestHeader HttpHeaders headers) {
@@ -429,7 +397,7 @@ return new ResponseEntity<>(employee, HttpStatus.OK);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_13.png)
 
-4.5.2 exchange()로 객체 컬렉션을 받아보기
+### 4.5.2 exchange()로 객체 컬렉션을 받아보기
 
 단순히 하나의 객체(ex. 직원) 정보를 반환하는 메서드를 Controller에서 정의하지만, 전체 직원을 조회해서 List<Employee> 형태로 반환하는 EndPoint가 필요할 때가 있습니다.
 
@@ -473,7 +441,7 @@ log.info("responseEntity: {}", responseEntity);
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_18.png)
 
-4.6 optionsForAllow()
+## 4.6 optionsForAllow()
 
 optionsForAllow()는 해당 URI에서 지원하는 HTTP 메서드를 조회하는 메서드입니다.
 
@@ -488,11 +456,11 @@ log.info("optionsForAllow: {}", optionsForAllow);
 
 **실행 화면**
 
-[http://localhost:8080/employee](http://localhost:8080/employee) 에서 지원하는 HTTP 메서드는 POST와 OPTIONS을 지원합니다. 
+[http://localhost:8080/employee](http://localhost:8080/employee) 에서 지원하는 HTTP 메서드는 POST와 OPTIONS을 지원합니다.
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_6.png)
 
-4.7 Timeout 설정하기
+## 4.7 Timeout 설정하기
 
 RestTemplate 사용시 timeout과 같은 connection에 대한 설정을 추가로 할 수가 있습니다. 간단한 설정은 SimpleClientHttpRequestFactory 객체를 사용하면 되지만, 많은 기능을 제공하지 않아 실제 환경에서는 더 많은 기능(ex. retry)을 제공하는 별도의 HTTP Client 라이브러리를 사용합니다. 이 예제에서는 아파치의 httpclient를 추가하여 Read timeout을 설정하여 사용하겠습니다.
 
@@ -513,7 +481,7 @@ public void test_timeout() {
 final ClientHttpRequestFactory requestFactory = getRequestFactory();
 final RestTemplate restTemplateTimeout = new RestTemplate(requestFactory);
 
-assertThatThrownBy(() -> restTemplateTimeout.getForObject(BASE_URL + "_timeout_{id}", Employee.class, 25))
+assertThatThrownBy(() -> restTemplateTimeout.getForObject(BASE*URL + "\_timeout*{id}", Employee.class, 25))
 .isInstanceOf(ResourceAccessException.class);
 }
 
@@ -521,8 +489,8 @@ ClientHttpRequestFactory getRequestFactory() {
 final int timeoutInSecs = 5;
 
 final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-clientHttpRequestFactory.setConnectTimeout(timeoutInSecs * 1000);
-clientHttpRequestFactory.setReadTimeout(timeoutInSecs * 1000);
+clientHttpRequestFactory.setConnectTimeout(timeoutInSecs _ 1000);
+clientHttpRequestFactory.setReadTimeout(timeoutInSecs _ 1000);
 return clientHttpRequestFactory;
 }
 
@@ -530,22 +498,21 @@ return clientHttpRequestFactory;
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_15.png)
 
-4.8 patchForObject()
+## 4.8 patchForObject()
 
 patchForObject()는 주어진 URL 주소로 HTTP Patch 메서드를 실행합니다. HTTP에서 리소스를 생성하는 메서드는 3가지가 있습니다. 간단하게 리뷰를 하고 Patch 예제 코드를 보겠습니다.
 
-* POST
-	* 리소스의 위치를 지정하지 않는 방식으로 리소스를 생성하는 연산이다
-	* POST는 idempotent 하지 않다 (연산을 반복해도 같은 값이 나온다는 개념)
-	* ex. POST /employee
-		* 매번 실행할 때마다 다른 곳에 새로운 리소스가 생성됨 (ex. /employee/2, /employee/3)
-* PUT
-	* 명확한 리소스의 위치에 사용되며 리소스의 생성이나 업데이트를 위해 사용하는 연산이다
-	* PUT는 idempotent하다
-	* ex. PUT _employee_{id}
-* PATCH
-	* PUT와 같이 정해진 리소스의 위치에 사용되지만, 모든 퍼라미터를 업데이트하기보다는 부분적인 데이터만 업데이트한다
-	* ex. PATCH _employee_{id}
+- POST
+  _ 리소스의 위치를 지정하지 않는 방식으로 리소스를 생성하는 연산이다
+  _ POST는 idempotent 하지 않다 (연산을 반복해도 같은 값이 나온다는 개념)
+  _ ex. POST /employee
+  _ 매번 실행할 때마다 다른 곳에 새로운 리소스가 생성됨 (ex. /employee/2, /employee/3)
+- PUT
+  _ 명확한 리소스의 위치에 사용되며 리소스의 생성이나 업데이트를 위해 사용하는 연산이다
+  _ PUT는 idempotent하다 \* ex. PUT _employee_{id}
+- PATCH
+  _ PUT와 같이 정해진 리소스의 위치에 사용되지만, 모든 퍼라미터를 업데이트하기보다는 부분적인 데이터만 업데이트한다
+  _ ex. PATCH _employee_{id}
 
 JDK HttpURLConnection에서는 PATCH 메서드를 지원하지 않기 때문에 아래 오류가 발생합니다. 기본 HttpURLConnection 대신 Patch 메서드를 지원하는 아파치의 HttpComponents를 사용합니다.
 
@@ -562,10 +529,10 @@ Address address = Address.builder()
 .country("US")
 .build();
 
-patchRestTemplate.patchForObject(BASE_URL + "_employee_{name}", address, Address.class,"frank");
+patchRestTemplate.patchForObject(BASE*URL + "\_employee*{name}", address, Address.class,"frank");
 }
 
-4.9 Execute()
+## 4.9 Execute()
 
 마지막으로 Execute() 메서드에 대해서 알아보겠습니다. Execute()는 콜백을 통해 요청 준비와 응답 추출을 완벽하게 제어하여 요청을 수행하는 가장 일반적인 메서드를 RestTemplate에서 제공합니다. 그래서 실제 지금까지 언급했던 메서드 getForObject(), put()등은 내부적으로 execute() 메서드를 호출하게 되어 있습니다.
 
@@ -593,7 +560,7 @@ Address address = Address.builder()
 .city("Columbus")
 .country("US")
 .build();
-restTemplate.execute(BASE_URL + "_employee_{name}", HttpMethod.PUT, requestCallback(address), clientHttpResponse -> null, "frank");
+restTemplate.execute(BASE*URL + "\_employee*{name}", HttpMethod.PUT, requestCallback(address), clientHttpResponse -> null, "frank");
 }
 
 RequestCallback requestCallback(final Address address) {
@@ -612,30 +579,26 @@ HttpHeaders.AUTHORIZATION, "Basic " + "testpasswd");
 
 ![](%EC%8A%A4%ED%94%84%EB%A7%81%20RestTemplate/image_11.png)
 
-5. 참고
+# 5. 참고
 
-* RestTemplate
-	* [https://www.baeldung.com/rest-template](https://www.baeldung.com/rest-template)
-	* [https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/](https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/)
-	* [https://vnthf.github.io/blog/Java-RestTemplate%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC/](https://vnthf.github.io/blog/Java-RestTemplate%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC/)
-	* [https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access)
-	* [https://www.concretepage.com/spring/spring-mvc/spring-rest-client-resttemplate-consume-restful-web-service-example-xml-json](https://www.concretepage.com/spring/spring-mvc/spring-rest-client-resttemplate-consume-restful-web-service-example-xml-json)
-	* [https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/](https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/)
-* RestTemplate 동작 원리
-	* [https://sjh836.tistory.com/141](https://sjh836.tistory.com/141)
-* Get Lists of Objects
-	* [https://www.baeldung.com/spring-rest-template-list](https://www.baeldung.com/spring-rest-template-list)
-* WebClient
-	* [https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access)
-	* [https://www.baeldung.com/spring-5-webclient](https://www.baeldung.com/spring-5-webclient)
-* Super type tokens (ParameterizedTypeReference)
-	* [https://homoefficio.github.io/2016/11/30/%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0-%EC%88%98%ED%8D%BC-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0/](https://homoefficio.github.io/2016/11/30/%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0-%EC%88%98%ED%8D%BC-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0/)
-	* [https://www.bsidesoft.com/?p=2903](https://www.bsidesoft.com/?p=2903)
-	* [https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/ParameterizedTypeReference.html](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/ParameterizedTypeReference.html)
-* Anonymous Inner Class
-	* [https://www.geeksforgeeks.org/anonymous-inner-class-java/](https://www.geeksforgeeks.org/anonymous-inner-class-java/)
-* Patch vs Put vs Post
-	* [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
-	* [https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/](https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/)
+- RestTemplate
+  _ [https://www.baeldung.com/rest-template](https://www.baeldung.com/rest-template)
+  _ [https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/](https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/)
+  _ [https://vnthf.github.io/blog/Java-RestTemplate%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC/](https://vnthf.github.io/blog/Java-RestTemplate%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC/)
+  _ [https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access)
+  _ [https://www.concretepage.com/spring/spring-mvc/spring-rest-client-resttemplate-consume-restful-web-service-example-xml-json](https://www.concretepage.com/spring/spring-mvc/spring-rest-client-resttemplate-consume-restful-web-service-example-xml-json)
+  _ [https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/](https://howtodoinjava.com/spring-restful/spring-restful-client-resttemplate-example/)
+- RestTemplate 동작 원리 \* [https://sjh836.tistory.com/141](https://sjh836.tistory.com/141)
+- Get Lists of Objects \* [https://www.baeldung.com/spring-rest-template-list](https://www.baeldung.com/spring-rest-template-list)
+- WebClient
+  _ [https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-client-access)
+  _ [https://www.baeldung.com/spring-5-webclient](https://www.baeldung.com/spring-5-webclient)
+- Super type tokens (ParameterizedTypeReference)
+  _ [https://homoefficio.github.io/2016/11/30/%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0-%EC%88%98%ED%8D%BC-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0/](https://homoefficio.github.io/2016/11/30/%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0-%EC%88%98%ED%8D%BC-%ED%83%80%EC%9E%85-%ED%86%A0%ED%81%B0/)
+  _ [https://www.bsidesoft.com/?p=2903](https://www.bsidesoft.com/?p=2903) \* [https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/ParameterizedTypeReference.html](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/ParameterizedTypeReference.html)
+- Anonymous Inner Class \* [https://www.geeksforgeeks.org/anonymous-inner-class-java/](https://www.geeksforgeeks.org/anonymous-inner-class-java/)
+- Patch vs Put vs Post
+  _ [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
+  _ [https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/](https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/)
 
 #tistory #advenoh.pe.kr# #resttemplate #blog

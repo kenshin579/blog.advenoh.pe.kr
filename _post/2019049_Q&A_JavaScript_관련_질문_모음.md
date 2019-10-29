@@ -1,4 +1,11 @@
+---
+title: '자바8 Optional이란'
+date: 2018-7-29 14:54:31
+category: 'python'
+---
+
 # Q&A : JavaScript 관련 질문 모음
+
 JavaScript
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
@@ -9,47 +16,47 @@ JavaScript
 [미 답변 질문]
 
 -
- 
- 
-- [ ] defaultProps은 언제 사용되나?
-ㅁ. props을 위한
 
-- - - -
+- [ ] defaultProps은 언제 사용되나?
+      ㅁ. props을 위한
+
+---
 
 [답변완료]
 
-1. ` This is a ${msg} ` 이건 뭔가?
+1. `This is a ${msg}` 이건 뭔가?
 
 ES6체 추가된 새로운 문자열 표기법으로 템플릿 리터럴(Template Literal)이라고 합니다.
-템플릿 리터럴은 \ 문자 사용없이 문자열에서 줄바꿈도 허용하고 간단하게 ${…} 문자열 인터폴레이션 표현식을 통해서 변수의 값 바로 치환되어 쉽게 사용할 수 있습니다.
+템플릿 리터럴은 \ 문자 사용없이 문자열에서 줄바꿈도 허용하고 간단하게 \${…} 문자열 인터폴레이션 표현식을 통해서 변수의 값 바로 치환되어 쉽게 사용할 수 있습니다.
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_3.png)
 
 참고
-* [https://poiemaweb.com/es6-template-literals](https://poiemaweb.com/es6-template-literals)
-* [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)
+
+- [https://poiemaweb.com/es6-template-literals](https://poiemaweb.com/es6-template-literals)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)
 
 2. var와 const, let의 차이점은?
 
 const와 let의 키워드는 ES6에 도입된 키워드입니다.
 
-* var
-	* scope가 함수 단위로 동작한다
+- var \* scope가 함수 단위로 동작한다
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_5.png)
 
-* const
-	* scope가 블록 단위이다
-	* 값이 바뀌지 않는 때 사용
+- const
+  _ scope가 블록 단위이다
+  _ 값이 바뀌지 않는 때 사용
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_4.png)
 
-* let
-	* scope가 블록 단위이다
-	* 값이 변경될 때 사용
+- let
+  _ scope가 블록 단위이다
+  _ 값이 변경될 때 사용
 
 참고
-* [https://velopert.com/3626](https://velopert.com/3626)
+
+- [https://velopert.com/3626](https://velopert.com/3626)
 
 3. 람다식으로 표현된 () => ({})의 의미는 뭔가?
 
@@ -58,7 +65,8 @@ ES6에서 람다식 문법이 추가되었습니다. () => ({}) 표현식은 fun
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_7.png)
 
 참고
-* [http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/](http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/)
+
+- [http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/](http://hacks.mozilla.or.kr/2015/09/es6-in-depth-arrow-functions/)
 
 4. …은 뭔가?
 
@@ -66,24 +74,24 @@ ES6에서 람다식 문법이 추가되었습니다. () => ({}) 표현식은 fun
 
 ES6에 추가된 문법으로 Spread나 Rest Parameter로 사용할 수 있습니다.
 
-* Spread operator
-	* iterable가능한 배열, 객체, 스트링에 대해서 단일 요소들로 확장해준다
-	* ex.
+- Spread operator
+  _ iterable가능한 배열, 객체, 스트링에 대해서 단일 요소들로 확장해준다
+  _ ex.
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_6.png)
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_1.png)
 
-* Rest Parameter
-	* 모든 요소를 배열로 만들어준다
-	* Rest Parameter는 맨 마지막 인자여야 한다
+- Rest Parameter
+  _ 모든 요소를 배열로 만들어준다
+  _ Rest Parameter는 맨 마지막 인자여야 한다
 
 ![](Q&A%20%20JavaScript%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_2.png)
 
 참고
 
-* [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters)
-* [https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543](https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543)
-* [https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/](https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+- [https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543](https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543)
+- [https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/](https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/)
 
 #blog #q&a #advenoh.pe.kr# #JavaScript
