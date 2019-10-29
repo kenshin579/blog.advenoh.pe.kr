@@ -1,7 +1,8 @@
 ---
 title: 'Java Jayway JsonPath 사용법'
-date: 2018-7-29 14:54:31
-category: 'python'
+date: 2019-1-19 13:50:26
+category: 'java'
+tags: ["jayway", "java", "jsonpath"., "xpath", "json-path"]
 ---
 
 # 1. 들어가며
@@ -18,9 +19,9 @@ Jayway JsonPath는 [Stefan Goessner의 JsonPath](https://goessner.net/articles/J
         <price>29.99</price>
     </book>
     <book>
-<title lang="en">Learning XML</title>
-<price>39.95</price>
-</book>
+        <title lang="en">Learning XML</title>
+        <price>39.95</price>
+    </book>
 </bookstore>
 ```
 
@@ -43,9 +44,9 @@ Java Jayway JsonPath를 사용하기 위해서는 아래 Maven 의존성을 추�
 
 ```xml
 <dependency>
-<groupId>com.jayway.jsonpath</groupId>
-<artifactId>json-path</artifactId>
-<version>2.4.0</version>
+    <groupId>com.jayway.jsonpath</groupId>
+    <artifactId>json-path</artifactId>
+    <version>2.4.0</version>
 </dependency>
 ```
 
@@ -55,7 +56,7 @@ JSON 샘플 파일은 [Json Generator](https://next.json-generator.com/41_9W7rWU
 
 JsonPath 표현식에 아직 익숙하지 않다면, [JsonPath Online Evaluator](http://jsonpath.herokuapp.com/) 에 접속해서 표현식을 테스트해보세요.
 
-![](Java%20Jayway%20JsonPath%20%EC%82%AC%EC%9A%A9%EB%B2%95/image_1.png)
+![](images/20190119/image_1.png)
 
 # 3. Jayway JsonPath 사용법
 
@@ -65,26 +66,23 @@ JsonPath의 표기법과 대표적인 연산자를 알아보고 예제를 통해
 
 JsonPath는 2가지 표기법을 사용할 수 있습니다. Dot과 bracket 표현식이 있습니다.
 
-- dot 표현식 \* \$.store.book[0].title
-- bracket 표현식 \* \$[’store’][‘book’][0][’title’]
+- dot 표현식 
+  - \$.store.book[0].title
+- bracket 표현식
+  - \$[’store’][‘book’][0][’title’]
 
 ## 3.2 JsonPath 대표적인 연산자 (Operator)
 
 대표적으로 많이 사용하는 연산자입니다.
-**연산자**
-**설명**
-\$
-루트 노드로 모든 Path 표현식은 이 기호로 시작된다.
-@
-처리되고 있는 현재 노드를 나타내고 필터 조건자에서 사용된다. \*
-와일드카드로 모든 요소와 매칭이 된다
-.
-Dot 표현식의 자식노드
-[start:end]
-배열 slice 연산자
-[?(<expression>)]
-필터 표현식으로 필터 조건자가 참인 경우에 매칭되는 모든 요소를 만을 처리한다
-ex. book[?(@.price == 49.99)]
+
+| **연산자** | **설명** |
+| -------- | ------- | 
+| \$ | 루트 노드로 모든 Path 표현식은 이 기호로 시작된다. |
+| @ | 처리되고 있는 현재 노드를 나타내고 필터 조건자에서 사용된다.|  
+| \* | 와일드카드로 모든 요소와 매칭이 된다 |
+| . | Dot 표현식의 자식노드 |
+| [start:end] | 배열 slice 연산자 |
+| [?(\<expression\>)] | 필터 표현식으로 필터 조건자가 참인 경우에 매칭되는 모든 요소를 만을 처리한다 ex. book[?(@.price == 49.99)] |
 
 ## 3.3 JsonPath 함수 및 필터
 
@@ -93,34 +91,29 @@ JsonPath 함수는 min(), max(), avg(), length() 등을 제공하고 표현식 �
 - \$.length() : 요소의 길이를 반환한다. 배열인 경우에는 배열 크기를 반환한다
 - \$.range.avg() : 요소 range 배열의 평균 값을 계산한다
 
-JsonPath에서 필터도 제공합니다. 필터 [?(<expression>)] 표현 식을 가지며 <expression>에는 논리 연산자(ex. ==, <, >)와 기타연산자(ex. in, size, empty)로 true, false 값을 반환하는 표현 식이 들어갑니다. @는 현재 처리되는 요소를 나타냅니다.
+JsonPath에서 필터도 제공합니다. 필터 [?(\<expression\>)] 표현 식을 가지며 <expression>에는 논리 연산자(ex. ==, <, >)와 기타연산자(ex. in, size, empty)로 true, false 값을 반환하는 표현 식이 들어갑니다. @는 현재 처리되는 요소를 나타냅니다.
 
 - \$[?(@.age == 23 )] : age가 23인 데이터만 반환한다
 - \$[?(@.name == ‘Frank’)] : 이름인 Frank인 데이터만 반환한다
 
 ## 3.4 JsonPath 표현식 예제
 
-JsonPath 표현식
-결과 및 설명
-$..*
-전체 요소 (.. 딥 스캔)
-$[?('pariatur' in @['tags'])]
-tags에 pariatur가 있는 모든 사람들
-$[?(@.age == 26 )]
-age가 26인 모든 사람들
-$[0][‘balance’]
-첫번째 사람의 balance
-$[*]['age']
-모든 사람들의 나이
-$..[’name’][‘first]
-모든 사람들의 이름
+| JsonPath 표현식 | 결과 및 설명 |
+| ------------- | --------- |
+| $..* | 전체 요소 (.. 딥 스캔) |
+| $[?('pariatur' in @['tags'])] | tags에 pariatur가 있는 모든 사람들 |
+| $[?(@.age == 26 )] | age가 26인 모든 사람들 |
+| $[0][‘balance’] | 첫번째 사람의 balance |
+| $[*]['age'] | 모든 사람들의 나이 |
+| $..[’name’][‘first] | 모든 사람들의 이름 |
 
 ## 3.5 Java JsonPath 예제
 
 Jayway JsonPath로 원하는 데이터를 추출하려면 parse()와 read()를 사용하면 됩니다. 유닛 테스트로 작성된 여러 버전을 보면 사용법을 쉽게 이해할 수 있습니다.
 
 - static parse() : 여러 입력 타입(ex. String, InputStream, File)에 따라서 JSON을 읽어드리는 정적 메서드이다.
-- read() : XPath 표현식을 읽고 해당 데이터를 추출한다 \* <T> T read(String path, Predicate... filters)
+- read() : XPath 표현식을 읽고 해당 데이터를 추출한다
+  - <T> T read(String path, Predicate... filters)
 
 ### 3.5.1 Id로 검색하기
 
@@ -224,12 +217,14 @@ public void test*Person객체로*매핑하기() {
 
 첫번째 사람에서 range 속성의 평균 값을 계산하는 예제입니다.
 
+```java
 @Test
 public void test*jsonpath*함수() {
-DocumentContext documentContext = JsonPath.parse(jsonStream);
-double rangeAvg = documentContext.read("\$[0].range.avg()");
-assertEquals(4.5, rangeAvg, 0);
+    DocumentContext documentContext = JsonPath.parse(jsonStream);
+    double rangeAvg = documentContext.read("\$[0].range.avg()");
+    assertEquals(4.5, rangeAvg, 0);
 }
+```
 
 **JsonPath Output 결과**
 
@@ -282,19 +277,10 @@ public void test*제일*어린*사람을*찾기() {
 
 # 4. 참고
 
-- JSONPath \* [https://goessner.net/articles/JsonPath/](https://goessner.net/articles/JsonPath/)
+- JSONPath 
+  - [https://goessner.net/articles/JsonPath/](https://goessner.net/articles/JsonPath/)
 - Jayway JsonPath
-  _ [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
-  _ [https://www.baeldung.com/guide-to-jayway-jsonpath](https://www.baeldung.com/guide-to-jayway-jsonpath)
-  _ [https://www.baeldung.com/jsonpath-count](https://www.baeldung.com/jsonpath-count)
-  _ [https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath](https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath)
-
-#jayway #jsonpath #자바 #advenoh.pe.kr# #java #blog
-
-```
-
-```
-
-```
-
-```
+  - [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
+  - [https://www.baeldung.com/guide-to-jayway-jsonpath](https://www.baeldung.com/guide-to-jayway-jsonpath)
+  - [https://www.baeldung.com/jsonpath-count](https://www.baeldung.com/jsonpath-count)
+  - [https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath](https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath)
