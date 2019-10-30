@@ -57,7 +57,7 @@ tags:["Q&A", QA", "faq", spring", "springboot", "annotation", "스프링" "스�
 
 ---
 
-[답변완료]### <span style="color:orange">[답변완료]</span>
+### <span style="color:orange">[답변완료]</span>
 
 # Spring Core
 
