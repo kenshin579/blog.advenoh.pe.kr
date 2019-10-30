@@ -1,12 +1,10 @@
 ---
-title: '자바8 Optional이란'
+title: 'Q&A : Spring 관련 질문 모음'
 date: 2018-7-29 14:54:31
-category: 'python'
+category: 'spring'
+tags: ["Q&A", QA", "faq", spring", "java", "스프링"]
 ---
 
-# Q&A : Spring 관련 질문 모음
-
-SPRING
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
