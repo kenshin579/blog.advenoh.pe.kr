@@ -2,6 +2,7 @@
 title: '자바 Garbage Collection이란'
 date: 2018-7-29 14:54:31
 category: 'java'
+tags: ["gc", "garbage", "java", "garbage collection"]
 ---
 
 # 1. 가비지 컬랙션이란?
@@ -21,18 +22,19 @@ JVM에서 가비지 대상을 어떻게 결정하는지는 링크 #3을 참조�
 Heap 영역은 크게 2가지 영역으로 나뉩니다. Permanent Generation 영역은 Heap 영역은 아닙니다.
 
 - Young Generation - 객체 사용 시간이 짧은 객체들
-  _ 영역의 종류
-  _ Eden
-  _ Survivor 2개
-  _ 새롭게 생성한 객체는 여기에 위치한다
-  _ 매우 많은 객체가 Young 영역에 생성되었다가 사라진다
-  _ 이 영역에서 객체가 살아지면 Minor GC가 발생했다고 한다
+  - 영역의 종류
+  - Eden
+  - Survivor 2개
+  - 새롭게 생성한 객체는 여기에 위치한다
+  - 매우 많은 객체가 Young 영역에 생성되었다가 사라진다
+  - 이 영역에서 객체가 살아지면 Minor GC가 발생했다고 한다
 - Old Generation (Tenured space) - 오래 사용되는 객체들
-  _ Young 영역에서 살아남은 객체가 여기로 복사된다
-  _ Young 영역보다 크게 메모리가 크게 할당되어 Young 영역보다 GC는 적게 발생한다 \* 이 영역에서 객체가 살아지면 Major GC (Full GC)가 발생했다고 한다
+  - Young 영역에서 살아남은 객체가 여기로 복사된다
+  - Young 영역보다 크게 메모리가 크게 할당되어 Young 영역보다 GC는 적게 발생한다 
+    - 이 영역에서 객체가 살아지면 Major GC (Full GC)가 발생했다고 한다
 - (Non-heap) Permanent Generation
-  _ 이 영역에는 JVM에 의해서 사용하는 클래스와 메서드 객체 정보를 담고 있다
-  _ JDK8부터는 PermGen은 Metaspace로 교체된다
+  - 이 영역에는 JVM에 의해서 사용하는 클래스와 메서드 객체 정보를 담고 있다
+  - JDK8부터는 PermGen은 Metaspace로 교체된다
 
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_11.png)
 
@@ -58,14 +60,14 @@ Heap 영역을 왜 두 가지 영역으로 나뉘서 관리하게 되었을까�
 각 영역에 따라서 실행되는 GC는 다릅니다. Minor나 Major GC가 실패하게 되면 Full GC가 발생할 수도 있습니다.
 
 - Minor GC
-  _ 대상 : Young 영역
-  _ 트리거 되는 시점 : Eden이 full이 경우에
+  - 대상 : Young 영역
+  - 트리거 되는 시점 : Eden이 full이 경우에
 - Major GC
-  _ 대상 : Old 영역
-  _ 트리거 되는 시점 : Minor GC가 실패하는 경우
+  - 대상 : Old 영역
+  - 트리거 되는 시점 : Minor GC가 실패하는 경우
 - Full GC
-  _ 대상 : 전체 Heap + MetaSpace(Permanent 영역)
-  _ 트리거 되는 시점 : Minor나 Major GC가 실패하는 경우
+  - 대상 : 전체 Heap + MetaSpace(Permanent 영역)
+  - 트리거 되는 시점 : Minor나 Major GC가 실패하는 경우
 
 # 3. Garbage Collection 알고리즘
 
@@ -73,11 +75,12 @@ GC 알고리즘은 오랫동안 개선됐고 아래와 같이 여러 종류로 �
 
 - Serial
 - Parallel
-- Parallel Old(Parallel Compacting GC) \* JDK5u6부터 제공
+- Parallel Old(Parallel Compacting GC) 
+  - JDK5u6부터 제공
 - Concurrent Mark & Sweep (CMS)
 - G1(Garage First)
-  _ JDK7u4부터 도입
-  _ JDK9부터 기본 GC로 변경됨
+  - JDK7u4부터 도입
+  - JDK9부터 기본 GC로 변경됨
 
 GC에서 자주 사용되는 용어로 stop-the-world가 있습니다. GC를 실행하면 JVM이 애플리케이션 실행을 멈추게 되는데, 이를 stop-the-world라고 합니다. GC가 일어나면 GC를 실행하는 쓰레드를 제외한 나머지 쓰레드는 모두 멈추게 됩니다. 이런 멈추는 시간에 의해 애플리케이션 성능에 많은 영향을 주게 됩니다. 여러 GC 알고리즘에서 이 부분을 개선하려고 큰 노력을 해왔습니다.
 
@@ -85,13 +88,16 @@ GC에서 자주 사용되는 용어로 stop-the-world가 있습니다. GC를 실
 
 Serial collector는 single 쓰레드로 동작하며 Young와 Old를 serial 하게 GC을 합니다. Young과 Old 영역에서 객체가 어떻게 관리되는지는 조금 더 구체적으로 알아보겠습니다.
 
-- Young 영역 (single thread) \* mark and copy
-- Old 영역 (single thread) \* mark-sweep-compact : 안쓰는 객체를 표시한 이후 삭제하고 한 곳으로 모으는 알고리즘이다
+- Young 영역 (single thread)
+  - mark and copy
+- Old 영역 (single thread) 
+  - mark-sweep-compact : 안쓰는 객체를 표시한 이후 삭제하고 한 곳으로 모으는 알고리즘이다
 
 ### Young 영역의 Minor GC 절차 - mark and copy
 
 - 처음에 생성된 객체는 Eden에 쌓인다
-- Eden이 어느 정도 쌓이면 GC가 발생하고 살아남은 객체는 Survisor(Empty) 영역으로 이동한다 \* Survisor 영역중에 한 영역은 반드시 비어 있어야 한다
+- Eden이 어느 정도 쌓이면 GC가 발생하고 살아남은 객체는 Survisor(Empty) 영역으로 이동한다 
+  - Survisor 영역중에 한 영역은 반드시 비어 있어야 한다
 - Survisor 영역이 차게 되면 GC가 발생하고 Eden 영역에 있는 객체와 꽉 찬 Survisor 영역에 있는 객체가 비어 있는 다른 Survisor 영역으로 이동한다
 - 이 과정을 반복하다가 계속 살아남아 있는 객체들은 Old 영역으로 이동한다
   GC 전
@@ -105,8 +111,10 @@ Serial collector는 single 쓰레드로 동작하며 Young와 Old를 serial 하�
 
 Parallel collector는 serial collector의 동작과 유사합니다. 다른 점은 GC 속도를 높이기 위해 Young 영역을 multiple 쓰레드로 GC를 수행합니다. 이로 인해 stop-the-world하는 시간이 줄려 애플리이케이션 성능을 개선하였습니다.
 
-- Young 영역 (multi thread) \* mark and copy
-- Old 영역 (single thread) \* mark-sweep-compact
+- Young 영역 (multi thread) 
+  - mark and copy
+- Old 영역 (single thread) 
+  - mark-sweep-compact
 
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_13.png)
 
@@ -114,12 +122,13 @@ Parallel collector는 serial collector의 동작과 유사합니다. 다른 점�
 
 Parallel compacting collector는 JDK5u6부터 제공되었으면 JDK7u4부터는 XX:+UseParallelGC 사용 시에도 -XX:+UseParallelOldGC로 설정됩니다. Young과 Old 영역이 병렬로 처리됩니다. 쓰레드 개수는 -XX:ParallelGCThreads=n 옵션으로 조정 가능합니다.
 
-- Young 영역 (multi thread) \* mark and copy
+- Young 영역 (multi thread) 
+  - mark and copy
 - Old 영역 (multi thread)
-  _ mark-summary-compact
-  _ mark : 살아 있는 객체를 식별하여 표시한다
-  _ summary : 이전에 GC를 수행하여 컴팩션된 영역에 살아 있는 객체의 위치를 조사한다
-  _ compact : 쓰레기 객체들을 수거하고 살아있는 객체들을 한곳에 모은다
+  - mark-summary-compact
+  - mark : 살아 있는 객체를 식별하여 표시한다
+  - summary : 이전에 GC를 수행하여 컴팩션된 영역에 살아 있는 객체의 위치를 조사한다
+  - compact : 쓰레기 객체들을 수거하고 살아있는 객체들을 한곳에 모은다
 
 ## 3.4 Concurrent Mark Sweep(CMS) (-XX:+UseConcMarkSweepGC)
 
@@ -130,10 +139,11 @@ CMS collector는 heap 메모리 영역의 크기가 크고 2개 이상의 프로
       	* mark and copy
 
 - Old 영역 (multi thread)
-  _ mark-sweep-remark
-  _ initial mark (stop-the-world) : 애플리케이스 코드에서 직접/바로 접근 가능한 객체를 판단하고 initial set을 만든다
-  _ concurrent mark : initial 단계에서 만든 set의 객체에서 transitively 접근 가능한 모든 객체를 체크한다
-  _ remark (stop-the-world) : concurrent mark 단계에서 변경된 객체를 다시 체크한다 \* concurrent sweep : 표시한 객체들 삭제한다
+  - mark-sweep-remark
+  - initial mark (stop-the-world) : 애플리케이스 코드에서 직접/바로 접근 가능한 객체를 판단하고 initial set을 만든다
+  - concurrent mark : initial 단계에서 만든 set의 객체에서 transitively 접근 가능한 모든 객체를 체크한다
+  - remark (stop-the-world) : concurrent mark 단계에서 변경된 객체를 다시 체크한다 
+    - concurrent sweep : 표시한 객체들 삭제한다
 
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_16.png)
 
@@ -144,63 +154,61 @@ G1 (Garbage First) collector는 메모리가 큰 multi core 머신을 타켓으�
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_15.png)
 
 - Young 영역 (multi thread)
-  _ -XX:ParallelGCThreads로 thread 갯수를 조정할 수 있다
-  _ 살아 남은 객체들은 survivor region으로 이동(evacuation/compacting)한다
-  _ 정의된 **aging threshold 값을 넘으면, survivor region의 오래된 객체는 Old 영역 region으로 이동** 한다
-  _ 매번 Minor GC를 수행할때마다 Eden과 Survivor 영역 크기는 자동으로 계산하여 정해진다
+  - -XX:ParallelGCThreads로 thread 갯수를 조정할 수 있다
+  - 살아 남은 객체들은 survivor region으로 이동(evacuation/compacting)한다
+  - 정의된 **aging threshold 값을 넘으면, survivor region의 오래된 객체는 Old 영역 region으로 이동** 한다
+  - 매번 Minor GC를 수행할때마다 Eden과 Survivor 영역 크기는 자동으로 계산하여 정해진다
 - Old 영역 (multi thread)
-  _ -XX:ConcGCThreads로 marking 단계에 사용되는 GC 쓰레드 갯수 조정 가능하다
-  _ 전체 **heap에 대해서 GC를 하지 않고 일부 region에서만 GC** 를 수행한다
-  _ **Old region 영역의 GC 선택 기준은 liveness(살아 있는 객체/사용하는 객체)를 기준** 으로 판단한다
-  _ GC 효율을 높이기 위해 liveness가 높은 것은 재사용 될 가능성이 높다고 판단하기에 liveness가 적은 것을 GC하도록 한다. 따라서 **Garbage First, G1이라는 이름** 이 붙었다
-  _ GC하는 과정
-  _ initial mark (stop-the-world)
-  _ Old GC가 필요해지면 Young GC때 함께 실행된다
-  _ survivor region(root region)에서 Old 영역에 있는 객체를 참조하는 survivor 영역을 표시한다
-  _ root region scanning
-  _ 어플리케이션 실행중단없이 첫번째 단계에서 표시한 survivor 영역을 스캔한다
-  _ concurrent mark
-  _ 전체 heap 영역에서 사용하는 객체를 표시한다
-  _ 이 단계에서 young GC가 발생하면 멈출수도 있다
-  _ region별 live object 비율(재사용이 높은 값)을 계산해둔다
-  _ remark (stop-the-world)
-  _ 빈 region들은 삭제(객체를 이동하면서 빈 region이 생김)해서 free로 만든다
-  _ 전체 region들의 live object 비율이 계산된다
-  _ copy/cleanup (stop-the-world)
-  _ 가장 빨리 청소가 가능한 live object 비율이 낮은 region들을 선택한다
-  _ Young과 Old 영역이 모두 cleanup되고 선택된 region들은 모두 새로운 region으로 compaction되어 위치한다
-
+  - -XX:ConcGCThreads로 marking 단계에 사용되는 GC 쓰레드 갯수 조정 가능하다
+  - 전체 **heap에 대해서 GC를 하지 않고 일부 region에서만 GC** 를 수행한다
+  - **Old region 영역의 GC 선택 기준은 liveness(살아 있는 객체/사용하는 객체)를 기준** 으로 판단한다
+  - GC 효율을 높이기 위해 liveness가 높은 것은 재사용 될 가능성이 높다고 판단하기에 liveness가 적은 것을 GC하도록 한다. 따라서 **Garbage First, G1이라는 이름** 이 붙었다
+  - GC하는 과정
+  - initial mark (stop-the-world)
+  - Old GC가 필요해지면 Young GC때 함께 실행된다
+  - survivor region(root region)에서 Old 영역에 있는 객체를 참조하는 survivor 영역을 표시한다
+  - root region scanning
+  - 어플리케이션 실행중단없이 첫번째 단계에서 표시한 survivor 영역을 스캔한다
+  - concurrent mark
+  - 전체 heap 영역에서 사용하는 객체를 표시한다
+  - 이 단계에서 young GC가 발생하면 멈출수도 있다
+  - region별 live object 비율(재사용이 높은 값)을 계산해둔다
+  - remark (stop-the-world)
+  - 빈 region들은 삭제(객체를 이동하면서 빈 region이 생김)해서 free로 만든다
+  - 전체 region들의 live object 비율이 계산된다
+  - copy/cleanup (stop-the-world)
+  - 가장 빨리 청소가 가능한 live object 비율이 낮은 region들을 선택한다
+  - Young과 Old 영역이 모두 cleanup되고 선택된 region들은 모두 새로운 region으로 compaction되어 위치한다
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_2.png)
 
-    	* after copy/cleanup
+   * after copy/cleanup
 
 ![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_4.png)
 
-- Full GC \* Old GC를 통해서도 필요한 Young 영역을 확보하지 못하면, 어쩔수 없이 Full GC를 실행한다
+- Full GC 
+  - Old GC를 통해서도 필요한 Young 영역을 확보하지 못하면, 어쩔수 없이 Full GC를 실행한다
 
 # 4.참고
 
-1. Garbage Collection
-   1. [https://d2.naver.com/helloworld/1329](https://d2.naver.com/helloworld/1329)
-   2. [http://icednut.github.io/2018/03/25/20180325-about-java-garbage-collection/](http://icednut.github.io/2018/03/25/20180325-about-java-garbage-collection/)
-2. 자바 메모리
-   1. [https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java)
-   2. [https://www.slipp.net/wiki/pages/viewpage.action?pageId=26641949](https://www.slipp.net/wiki/pages/viewpage.action?pageId=26641949)
-3. Generation의 차이점
-   1. [https://stackoverflow.com/questions/2129044/java-heap-terminology-young-old-and-permanent-generations](https://stackoverflow.com/questions/2129044/java-heap-terminology-young-old-and-permanent-generations)
-4. GC의 대상
-   1. [https://weicomes.tistory.com/121](https://weicomes.tistory.com/121)
-   2. [https://d2.naver.com/helloworld/329631](https://d2.naver.com/helloworld/329631)
-5. GC 알고리즘
-   1. [https://dzone.com/articles/java-version-upgrades-gc-overview](https://dzone.com/articles/java-version-upgrades-gc-overview)
-   2. G1 GC
-      1. [https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-0394E76A-1A8F-425E-A0D0-B48A3DC82B42](https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-0394E76A-1A8F-425E-A0D0-B48A3DC82B42)
-      2. [http://kwonnam.pe.kr/wiki/java/g1gc](http://kwonnam.pe.kr/wiki/java/g1gc)
-      3. [https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html)
-      4. [https://logonjava.blogspot.com/2015/08/java-g1-gc-full-gc.html](https://logonjava.blogspot.com/2015/08/java-g1-gc-full-gc.html)
-      5. [http://initproc.tistory.com/entry/G1-Garbage-Collection](http://initproc.tistory.com/entry/G1-Garbage-Collection)
-6. ParallelGC와 ParallelOld의 차이점
-   1. [https://sarc.io/index.php/java/478-gc-useparallelgc-useparalleloldgc](https://sarc.io/index.php/java/478-gc-useparallelgc-useparalleloldgc)
-   2. [https://docs.oracle.com/javacomponents/jrockit-hotspot/migration-guide/gc-tuning.htm#JRHMG143](https://docs.oracle.com/javacomponents/jrockit-hotspot/migration-guide/gc-tuning.htm#JRHMG143)
-
-#advenoh.pe.kr# #garbage collection# #java #blog
+* Garbage Collection
+   * [https://d2.naver.com/helloworld/1329](https://d2.naver.com/helloworld/1329)
+   * [http://icednut.github.io/2018/03/25/20180325-about-java-garbage-collection/](http://icednut.github.io/2018/03/25/20180325-about-java-garbage-collection/)
+* 자바 메모리
+   * [https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java)
+   * [https://www.slipp.net/wiki/pages/viewpage.action?pageId=26641949](https://www.slipp.net/wiki/pages/viewpage.action?pageId=26641949)
+* Generation의 차이점
+   * [https://stackoverflow.com/questions/2129044/java-heap-terminology-young-old-and-permanent-generations](https://stackoverflow.com/questions/2129044/java-heap-terminology-young-old-and-permanent-generations)
+* GC의 대상
+   * [https://weicomes.tistory.com/121](https://weicomes.tistory.com/121)
+   * [https://d2.naver.com/helloworld/329631](https://d2.naver.com/helloworld/329631)
+* GC 알고리즘
+   * [https://dzone.com/articles/java-version-upgrades-gc-overview](https://dzone.com/articles/java-version-upgrades-gc-overview)
+   * G1 GC
+      * [https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-0394E76A-1A8F-425E-A0D0-B48A3DC82B42](https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-0394E76A-1A8F-425E-A0D0-B48A3DC82B42)
+      * [http://kwonnam.pe.kr/wiki/java/g1gc](http://kwonnam.pe.kr/wiki/java/g1gc)
+      * [https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html)
+      * [https://logonjava.blogspot.com/2015/08/java-g1-gc-full-gc.html](https://logonjava.blogspot.com/2015/08/java-g1-gc-full-gc.html)
+      * [http://initproc.tistory.com/entry/G1-Garbage-Collection](http://initproc.tistory.com/entry/G1-Garbage-Collection)
+* ParallelGC와 ParallelOld의 차이점
+   * [https://sarc.io/index.php/java/478-gc-useparallelgc-useparalleloldgc](https://sarc.io/index.php/java/478-gc-useparallelgc-useparalleloldgc)
+   * [https://docs.oracle.com/javacomponents/jrockit-hotspot/migration-guide/gc-tuning.htm#JRHMG143](https://docs.oracle.com/javacomponents/jrockit-hotspot/migration-guide/gc-tuning.htm#JRHMG143)
