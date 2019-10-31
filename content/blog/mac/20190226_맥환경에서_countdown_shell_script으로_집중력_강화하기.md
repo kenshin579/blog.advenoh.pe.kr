@@ -1,7 +1,8 @@
 ---
 title: '맥환경에서 countdown shell script으로 집중력 강화하기'
-date: 2018-7-29 14:54:31
+date: 2019-2-26 23:20:21
 category: 'mac'
+tags: ["countdown", "shell", "script", "mac", "timer", "pomodoro", "맥", "스트립트", "뽀모도로"]
 ---
 
 # 1. 들어가며
@@ -20,7 +21,7 @@ category: 'mac'
 
 1분 동안 키운다운후 Pop-up이 실행되는 화면입니다.
 
-![](%EB%A7%A5%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20countdown%20shell%20script%EC%9C%BC%EB%A1%9C%20%EC%A7%91%EC%A4%91%EB%A0%A5%20%EA%B0%95%ED%99%94%ED%95%98%EA%B8%B0/countdown%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC.2019-02-26%2023_14_07.gif)
+![](images/20190226/countdown%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC.2019-02-26%2023_14_07.gif)
 
 # 3. 스크립트 작성 및 시스템 알람 설정
 
@@ -58,7 +59,7 @@ $ cp Clock-chimes.mp3 ~\_Library_Sounds
 
 시스템환경 > 알림 > 스트립트 편집기 선택후 아래와 같이 알람 스타일을 변경합니다.
 
-![](%EB%A7%A5%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20countdown%20shell%20script%EC%9C%BC%EB%A1%9C%20%EC%A7%91%EC%A4%91%EB%A0%A5%20%EA%B0%95%ED%99%94%ED%95%98%EA%B8%B0/C20D14F1-A6B9-41CA-B38B-C2ACA00774E3.png)
+![](images/20190226/C20D14F1-A6B9-41CA-B38B-C2ACA00774E3.png)
 
 ## 3.4 실행하기
 
@@ -68,10 +69,8 @@ $ cp Clock-chimes.mp3 ~\_Library_Sounds
 $ countdown 1
 ```
 
-![](%EB%A7%A5%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20countdown%20shell%20script%EC%9C%BC%EB%A1%9C%20%EC%A7%91%EC%A4%91%EB%A0%A5%20%EA%B0%95%ED%99%94%ED%95%98%EA%B8%B0/image_3.png)
+![](images/20190226/image_3.png)
 
 # 4. 참고
 
 - Display Notification from Mac \* [https://code-maven.com/display-notification-from-the-mac-command-line](https://code-maven.com/display-notification-from-the-mac-command-line)
-
-#bash #countdown #script #강화 #advenoh.pe.kr# #shell #blog #집중력
