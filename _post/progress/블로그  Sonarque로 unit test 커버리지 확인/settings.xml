@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">	
+	<pluginGroups>
+		<pluginGroup>org.apache.maven.plugins</pluginGroup>
+	</pluginGroups>
+
+	<servers>
+		<server>
+			<id>tmonRepo</id>
+			<username>deployment</username>
+			<password>tmon</password>
+		</server>
+ 		<server>
+			<id>snapshots</id>
+			<username>deployment</username>
+			<password>tmon</password>
+		</server>
+	</servers>
+	<mirrors>
+		<mirror>
+			<id>snapshots</id>
+			<mirrorOf>snapshots</mirrorOf>
+			<name>Snapshots</name>
+			<url>http://pkgrepos.tmonc.net:8080/nexus/content/repositories/snapshots/</url>
+		</mirror>
+		<mirror>
+			<id>tmonRepo</id>
+			<mirrorOf>*</mirrorOf>
+			<name>TMON common library</name>
+			<url>http://pkgrepos.tmonc.net:8080/nexus/content/groups/tmonRepo</url>
+		</mirror>
+  	</mirrors> 
+
+	<profiles>
+		<profile>
+			<id>tmon</id>
+
+			<repositories>
+				<!-- repository -->
+				<repository>
+					<id>snapshots</id>
+					<name>snapshots</name>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<url>http://pkgrepos.tmonc.net:8080/nexus/content/repositories/snapshots/</url>
+				</repository>
+				<repository>
+					<id>tmonRepo</id>
+					<name>tmonRepo</name>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<url>http://pkgrepos.tmonc.net:8080/nexus/content/groups/tmonRepo</url>
+				</repository>
+			</repositories>
+			<!-- pluginRepositories -->
+			<pluginRepositories>
+				<pluginRepository>
+					<id>tmonRepo</id>
+					<url>http://pkgrepos.tmonc.net:8080/nexus/content/groups/tmonRepo</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Optional URL to server. Default value is http://localhost:9000 -->
+				<sonar.host.url>http://localhost:9000</sonar.host.url>
+			</properties>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>tmon</activeProfile>
+	</activeProfiles>
+
+</settings>
