@@ -1,5 +1,5 @@
 ---
-title: 'Q&A : MYBATIS 관련 질문 모음'
+title: 'Q&A : Mybatis 관련 질문 모음'
 date: 2018-7-29 14:54:31
 category: 'database'
 tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
