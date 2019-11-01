@@ -1,6 +1,6 @@
 ---
 title: '자바 Garbage Collection이란'
-date: 2018-7-29 14:54:31
+date: 2018-10-17 21:39:28
 category: 'java'
 tags: ["gc", "garbage", "java", "garbage collection"]
 ---
@@ -23,26 +23,26 @@ Heap 영역은 크게 2가지 영역으로 나뉩니다. Permanent Generation �
 
 - Young Generation - 객체 사용 시간이 짧은 객체들
   - 영역의 종류
-  - Eden
-  - Survivor 2개
+    - Eden
+    - Survivor 2개
   - 새롭게 생성한 객체는 여기에 위치한다
   - 매우 많은 객체가 Young 영역에 생성되었다가 사라진다
   - 이 영역에서 객체가 살아지면 Minor GC가 발생했다고 한다
 - Old Generation (Tenured space) - 오래 사용되는 객체들
   - Young 영역에서 살아남은 객체가 여기로 복사된다
   - Young 영역보다 크게 메모리가 크게 할당되어 Young 영역보다 GC는 적게 발생한다 
-    - 이 영역에서 객체가 살아지면 Major GC (Full GC)가 발생했다고 한다
+  - 이 영역에서 객체가 살아지면 Major GC (Full GC)가 발생했다고 한다
 - (Non-heap) Permanent Generation
   - 이 영역에는 JVM에 의해서 사용하는 클래스와 메서드 객체 정보를 담고 있다
   - JDK8부터는 PermGen은 Metaspace로 교체된다
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_11.png)
+![](images/20181007/image_11.png)
 
 [https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java)
 
 일반적으로 객체를 생성하면, Young 영역에 먼저 위치하게 되고 오랫동안 사용되는 객체는 GC 과정을 통해서 Old 영역으로 이동하게 됩니다.
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_1.png)
+![](images/20181007/image_1.png)
 
 [https://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf](https://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
 
@@ -53,7 +53,7 @@ Heap 영역을 왜 두 가지 영역으로 나뉘서 관리하게 되었을까�
 
 아래 그래프에서 보이는 것처럼 객체의 라이프는 짧게 사용되다가 오랫동안 남은 것들은 계속 쌓이게 되는 것을 볼 수 있습니다. 이런 특징으로 두 영역으로 나뉘어서 관리하고 GC 알고리즘도 이 기반으로 설계되었습니다.
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_10.png)
+![](images/20181007/image_10.png)
 
 # 2. Garbage Collection 타입
 
@@ -100,12 +100,12 @@ Serial collector는 single 쓰레드로 동작하며 Young와 Old를 serial 하�
   - Survisor 영역중에 한 영역은 반드시 비어 있어야 한다
 - Survisor 영역이 차게 되면 GC가 발생하고 Eden 영역에 있는 객체와 꽉 찬 Survisor 영역에 있는 객체가 비어 있는 다른 Survisor 영역으로 이동한다
 - 이 과정을 반복하다가 계속 살아남아 있는 객체들은 Old 영역으로 이동한다
-  GC 전
-  GC 이후
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_17.png)
+| GC 전 | GC 이후 |
+| ----- | ------- |
+|![](images/20181007/image_17.png) | ![](images/20181007/image_8.png)|
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_8.png)
+
 
 ## 3.2 Parallel (-XX:+UseParallelGC)
 
@@ -116,7 +116,7 @@ Parallel collector는 serial collector의 동작과 유사합니다. 다른 점�
 - Old 영역 (single thread) 
   - mark-sweep-compact
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_13.png)
+![](images/20181007/image_13.png)
 
 ## 3.3 Parallel Compacting Collector (- XX:+UseParallelOldGC)
 
@@ -143,15 +143,15 @@ CMS collector는 heap 메모리 영역의 크기가 크고 2개 이상의 프로
   - initial mark (stop-the-world) : 애플리케이스 코드에서 직접/바로 접근 가능한 객체를 판단하고 initial set을 만든다
   - concurrent mark : initial 단계에서 만든 set의 객체에서 transitively 접근 가능한 모든 객체를 체크한다
   - remark (stop-the-world) : concurrent mark 단계에서 변경된 객체를 다시 체크한다 
-    - concurrent sweep : 표시한 객체들 삭제한다
+  - concurrent sweep : 표시한 객체들 삭제한다
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_16.png)
+![](images/20181007/image_16.png)
 
 ## 3.5 G1 (-XX:+UseG1GC : JDK9부터 기본으로 설정됨)
 
 G1 (Garbage First) collector는 메모리가 큰 multi core 머신을 타켓으로 설계되었습니다. G1 GC는 JDK7u4부터 도입 되었고 안정화 기간 거쳐 현재 JDK9에서는 기본 GC로 채택 되었습니다. G1에서는 아래 그림과 같이 heap 메모리 영역을 작은 단위의 region으로 나눠서 관리합니다. 기본 region 개수 수치는 2K(2048)개 공간으로 나눕니다. 예를 들면 Heap Size가 8GB로 지정하면, 각 region의 크기는 4MB (ex. 8192MB/2048 = 4096)가 됩니다.
 
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_15.png)
+![](images/20181007/image_15.png)
 
 - Young 영역 (multi thread)
   - -XX:ParallelGCThreads로 thread 갯수를 조정할 수 있다
@@ -162,31 +162,29 @@ G1 (Garbage First) collector는 메모리가 큰 multi core 머신을 타켓으�
   - -XX:ConcGCThreads로 marking 단계에 사용되는 GC 쓰레드 갯수 조정 가능하다
   - 전체 **heap에 대해서 GC를 하지 않고 일부 region에서만 GC** 를 수행한다
   - **Old region 영역의 GC 선택 기준은 liveness(살아 있는 객체/사용하는 객체)를 기준** 으로 판단한다
-  - GC 효율을 높이기 위해 liveness가 높은 것은 재사용 될 가능성이 높다고 판단하기에 liveness가 적은 것을 GC하도록 한다. 따라서 **Garbage First, G1이라는 이름** 이 붙었다
+    - GC 효율을 높이기 위해 liveness가 높은 것은 재사용 될 가능성이 높다고 판단하기에 liveness가 적은 것을 GC하도록 한다. 따라서 **Garbage First, G1이라는 이름** 이 붙었다
   - GC하는 과정
-  - initial mark (stop-the-world)
-  - Old GC가 필요해지면 Young GC때 함께 실행된다
-  - survivor region(root region)에서 Old 영역에 있는 객체를 참조하는 survivor 영역을 표시한다
-  - root region scanning
-  - 어플리케이션 실행중단없이 첫번째 단계에서 표시한 survivor 영역을 스캔한다
-  - concurrent mark
-  - 전체 heap 영역에서 사용하는 객체를 표시한다
-  - 이 단계에서 young GC가 발생하면 멈출수도 있다
-  - region별 live object 비율(재사용이 높은 값)을 계산해둔다
-  - remark (stop-the-world)
-  - 빈 region들은 삭제(객체를 이동하면서 빈 region이 생김)해서 free로 만든다
-  - 전체 region들의 live object 비율이 계산된다
-  - copy/cleanup (stop-the-world)
-  - 가장 빨리 청소가 가능한 live object 비율이 낮은 region들을 선택한다
-  - Young과 Old 영역이 모두 cleanup되고 선택된 region들은 모두 새로운 region으로 compaction되어 위치한다
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_2.png)
+    - initial mark (stop-the-world)
+      - Old GC가 필요해지면 Young GC때 함께 실행된다
+      - survivor region(root region)에서 Old 영역에 있는 객체를 참조하는 survivor 영역을 표시한다
+    - root region scanning
+      - 어플리케이션 실행중단없이 첫번째 단계에서 표시한 survivor 영역을 스캔한다
+    - concurrent mark
+      - 전체 heap 영역에서 사용하는 객체를 표시한다
+      - 이 단계에서 young GC가 발생하면 멈출수도 있다
+      - region별 live object 비율(재사용이 높은 값)을 계산해둔다
+    - remark (stop-the-world)
+      - 빈 region들은 삭제(객체를 이동하면서 빈 region이 생김)해서 free로 만든다
+      - 전체 region들의 live object 비율이 계산된다
+    - copy/cleanup (stop-the-world)
+      - 가장 빨리 청소가 가능한 live object 비율이 낮은 region들을 선택한다
+      - Young과 Old 영역이 모두 cleanup되고 선택된 region들은 모두 새로운 region으로 compaction되어 위치한다
+    ![](images/20181007/image_2.png)
 
-   * after copy/cleanup
-
-![](%EC%9E%90%EB%B0%94%20Garbage%20Collection%EC%9D%B4%EB%9E%80/image_4.png)
-
-- Full GC 
-  - Old GC를 통해서도 필요한 Young 영역을 확보하지 못하면, 어쩔수 없이 Full GC를 실행한다
+     - after copy/cleanup![](images/20181007/image_4.png)
+  
+  - Full GC 
+    - Old GC를 통해서도 필요한 Young 영역을 확보하지 못하면, 어쩔수 없이 Full GC를 실행한다
 
 # 4.참고
 
