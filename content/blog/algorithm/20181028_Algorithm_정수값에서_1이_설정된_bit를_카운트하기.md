@@ -2,7 +2,7 @@
 title: 'Algorithm : 정수값에서 1이 설정된 bit를 카운트하기'
 date: 2018-10-28 23:24:09
 category: 'algorithm'
-tags: ["algorithm", "interview", "code", "count", "bit", "알고리즘", "인터뷰, "면접", "코드면접", "비트", "카운트"]
+tags: ["algorithm", "interview", "code", "count", "bit", "알고리즘", "인터뷰", "면접", "코드면접", "비트", "카운트"]
 ---
 
 # 1. Problem
