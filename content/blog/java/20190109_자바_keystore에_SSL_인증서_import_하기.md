@@ -1,6 +1,6 @@
 ---
 title: '자바 keystore에 SSL 인증서 import 하기'
-date: 2018-7-29 14:54:31
+date: 2019-1-9 22:52:35
 category: 'java'
 tags : ["ssl", "keystore", "import", "certificate", "인증서", "자바"]
 ---
@@ -13,7 +13,7 @@ tags : ["ssl", "keystore", "import", "certificate", "인증서", "자바"]
 
 **Exception 발생 화면**
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_13.png)
+![](images/20190109/image_13.png)
 
 # 2. 개발 환경
 
@@ -39,35 +39,36 @@ tags : ["ssl", "keystore", "import", "certificate", "인증서", "자바"]
 ```java
 @Test
 public void test_disable_certificate_from_code() {
-disableCertificateCheck(); #1
-Assertions.assertThatCode(this::connectHttps).doesNotThrowAnyException();
+   disableCertificateCheck(); //#1
+
+   Assertions.assertThatCode(this::connectHttps).doesNotThrowAnyException();
 }
 
 private void disableCertificateCheck() {
-Create a trust manager that does not validate certificate chains
-TrustManager[] trustAllCerts = new TrustManager[] {
-new X509TrustManager() {
-public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-return new X509Certificate[0];
-}
+   // Create a trust manager that does not validate certificate chains
+   TrustManager[] trustAllCerts = new TrustManager[] {
+         new X509TrustManager() {
+            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+               return new X509Certificate[0];
+            }
 
-public void checkClientTrusted(
-java.security.cert.X509Certificate[] certs, String authType) {
-}
+            public void checkClientTrusted(
+                  java.security.cert.X509Certificate[] certs, String authType) {
+            }
 
-public void checkServerTrusted(
-java.security.cert.X509Certificate[] certs, String authType) {
-}
-}
-};
+            public void checkServerTrusted(
+                  java.security.cert.X509Certificate[] certs, String authType) {
+            }
+         }
+   };
 
-Install the all-trusting trust manager
-try {
-SSLContext sc = SSLContext.getInstance("SSL");
-sc.init(null, trustAllCerts, new java.security.SecureRandom());
-HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-} catch (GeneralSecurityException e) {
-}
+   // Install the all-trusting trust manager
+   try {
+      SSLContext sc = SSLContext.getInstance("SSL");
+      sc.init(null, trustAllCerts, new java.security.SecureRandom());
+      HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+   } catch (GeneralSecurityException e) {
+   }
 }
 ```
 
@@ -82,7 +83,7 @@ HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
 ```java
 @Test
 public void test_after_import_certificate() {
-Assertions.assertThatCode(this::connectHttps).doesNotThrowAnyException();
+   Assertions.assertThatCode(this::connectHttps).doesNotThrowAnyException();
 }
 ```
 
@@ -102,21 +103,21 @@ Assertions.assertThatCode(this::connectHttps).doesNotThrowAnyException();
 $ sudo java -jar portecle.jar
 ```
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_10.png)
+![](images/20190109/image_10.png)
 
 **3. 접속 사이트에서 인증서를 다운로드합니다.**
 
 메뉴에서 **Examine > Examine SSL/TSL Connection…** 을 클릭하고 접속하려는 사이트 주소를 입력 후 **OK 버튼** 을 클릭합니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_5.png)
+![](images/20190109/image_5.png)
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_8.png)
+![](images/20190109/image_8.png)
 
 클릭 후에 인증서를 볼 수 있습니다. 이 내용을 저장하려면 **PEM Encoding 버튼** 클릭 후 **Save 버튼** 을 눌려 저장합니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_9.png)
+![](images/20190109/image_9.png)
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/B42B7B20-2C07-4BF6-8E43-65A2207B4521.png)
+![](images/20190109/B42B7B20-2C07-4BF6-8E43-65A2207B4521.png)
 
 **4. 자바 keystore에 등록하기**
 
@@ -130,21 +131,21 @@ $ /usr/libexec/java_home -V
 
 메뉴에서 열기 버튼을 클릭해서 cacerts 파일을 찾아 오픈하면 암호를 입력하게 되어 있습니다. **디폴트 암호 값은 changeit** 입니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/7258033D-D720-4B51-8FB0-AA198B5FBCB0.png)
+![](images/20190109/7258033D-D720-4B51-8FB0-AA198B5FBCB0.png)
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_2.png)
+![](images/20190109/image_2.png)
 
 현재 등록된 인증서 목록입니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_11.png)
+![](images/20190109/image_11.png)
 
 새로운 인증서를 추가하기 위해 메뉴 임포트 버튼을 클릭하고 다운로드한 인증서를 선택합니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/73801762-680A-4DC8-93D6-B67E6185E9BF.png)
+![](images/20190109/73801762-680A-4DC8-93D6-B67E6185E9BF.png)
 
 파일 선택 이후 여러 질문에 **Yes 버튼** 을 클릭하면 새로운 인증서가 추가된 것을 목록에서 확인할 수 있습니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_4.png)
+![](images/20190109/image_4.png)
 
 다시 유닛 테스트를 실행하면 Exception 없이 잘 실행되는 것을 확인할 수 있습니다. 자 그면, 명령어 창에서 등록하는 방법을알아보겠습니다.
 
@@ -168,7 +169,7 @@ $ sudo keytool -importcert -file ./appzencoder.certdata -alias [app.zencoder.com
 
 입력이후 질문이 나오면 yes 를 입력하면 등록이 완료됩니다.
 
-![](%EC%9E%90%EB%B0%94%20keystore%EC%97%90%20SSL%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20import%20%ED%95%98%EA%B8%B0/image_6.png)
+![](images/20190109/image_6.png)
 
 # 4. 참고
 
