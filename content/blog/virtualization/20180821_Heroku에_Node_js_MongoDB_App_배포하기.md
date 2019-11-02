@@ -1,8 +1,8 @@
 ---
-title: 'Heroku에 Node.js+MongoDB App 배포하기Heroku에 Node.js+MongoDB App 배포하기'
+title: 'Heroku에 Node.js+MongoDB App 배포하기'
 date: 2018-8-21 13:09:01
-category: 'virtualizatoin'
-tags: ["heroku", "node", "mongodb", "deploy", "virtualizatoin", "cloud", "PaaS", "하루쿠", "클라우드", "노드", "몽고", "배포", "가상화"]
+category: 'virtualization'
+tags: ["heroku", "node", "mongodb", "deploy", "virtualization", "cloud", "PaaS", "하루쿠", "클라우드", "노드", "몽고", "배포", "가상화"]
 ---
 
 # 1. Heroku란
