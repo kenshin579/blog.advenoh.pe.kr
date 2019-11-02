@@ -2,7 +2,7 @@
 title: 'Algorithm : 2개의 array에서 common value 찾기'
 date: 2018-7-29 14:54:31
 category: 'algorithm'
-tags: ["algorithm", "interview", "array", "common", "알고리즘", "인터뷰, "면접", "코드면접", "배열", "공통값"]
+tags: ["algorithm", "interview", "array", "common", "알고리즘", "인터뷰", "면접", "코드면접", "배열", "공통값"]
 ---
 
 # 1. Problem
