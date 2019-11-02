@@ -2,7 +2,7 @@
 title: 'Algorithm : 괄호 기호가 Valid한지 체크하기'
 date: 2018-7-29 14:54:31
 category: 'python'
-tags: ["algorithm", "interview", "parenthesis", "valid", "알고리즘", "인터뷰, "면접", "코드면접", "괄호"]
+tags: ["algorithm", "interview", "parenthesis", "valid", "알고리즘", "인터뷰", "면접", "코드면접", "괄호"]
 ---
 
 # 1. Problem
