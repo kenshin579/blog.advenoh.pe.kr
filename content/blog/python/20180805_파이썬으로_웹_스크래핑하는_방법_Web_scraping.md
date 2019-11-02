@@ -2,6 +2,7 @@
 title: '파이썬으로 웹 스크래핑하는 방법 - Web scraping'
 date: 2018-8-5 22:09:01
 category: 'python'
+tags: ["web", "scrapping", "python", "cheerio", "beautifulsoup", "beautifulsoup4", "urllib", "requests", "웹", "스크래핑", "파이썬"]
 ---
 
 # 1. 소개
@@ -132,7 +133,13 @@ tr [1] - 뉴스 내용
 
 [https://github.com/kenshin579/app-korean-catholic-bible](https://github.com/kenshin579/app-korean-catholic-bible)
 
-# 4. 참고
+
+
+# 4. 정리
+
+웹 스크래핑을 하다 보면 접속하는 사이트로부터 차단될 수 있어서, 어떻게 하면 차단 당하지 않고 웹 스크래핑할 수 있는지 다음 포스트([웹 스크래핑하면서 차단 방지하는 방법](http://advenoh.tistory.com/3))에서 알아보도록 하죠.
+
+# 5. 참고
 
 조금 더 아래 책을 추천드립니다.
 
@@ -144,6 +151,4 @@ tr [1] - 뉴스 내용
 * Nodejs로 웹 스크래핑
 	* [https://medium.com/@moralmk/web-scraping-with-node-js-9a289ad19558](https://medium.com/@moralmk/web-scraping-with-node-js-9a289ad19558)
 
-웹 스크래핑을 하다 보면 접속하는 사이트로부터 차단될 수 있어서, 어떻게 하면 차단당하지 않고 웹 스크래핑할 수 있는지 다음 포스팅에서 알아보도록 하겠습니다.
 
-#python #advenoh.pe.kr# #scraping #Beautiful Soup# #web #blog
