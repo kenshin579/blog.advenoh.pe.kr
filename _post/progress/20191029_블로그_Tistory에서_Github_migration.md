@@ -42,11 +42,11 @@ advenoh…..io
 
 3. 사용법
 
-![](%EB%B8%94%EB%A1%9C%EA%B7%B8%20%20Tistory%EC%97%90%EC%84%9C%20Github%20migration/image_3.png)
+![](블로그  Tistory에서 Github migration/image_3.png)
 
-![](%EB%B8%94%EB%A1%9C%EA%B7%B8%20%20Tistory%EC%97%90%EC%84%9C%20Github%20migration/image_1.png)
+![](블로그  Tistory에서 Github migration/image_1.png)
 
-![](%EB%B8%94%EB%A1%9C%EA%B7%B8%20%20Tistory%EC%97%90%EC%84%9C%20Github%20migration/image_2.png)
+![](블로그  Tistory에서 Github migration/image_2.png)
 
 -github pages에 upload
 >#
