@@ -1,11 +1,22 @@
-# 블로그 : Tistory에서 Github migration
+---
+title: '티스토리에서 Gatsby로 블로그 마이그레이션'
+date: 2019-10-13 10:23:33
+category: 'mac'
+tags: ["blog", "tistory", "gatsby", "티스토리", "블로그", "마이그레이션"]
+---
+
 * 들어가며
+  * 마이그레이션한 동기
+  * 요구사항
+    * Git 저장소
+    * 정적 사이트 생성기
+  * Gatsy 설치
 * 개발 환경
 * 블로그 마이그레이션
-
 * 참고
 
 **코멘트**
+
 - [ ] 기본 tistory 블로그를 어떻게 migration 할 것인가/?
 
 - [ ] github에 가장 쉽게 편하게 관리할 수 있는 프레임워크?가 좋을까?
@@ -30,17 +41,29 @@ advenoh…..io
 [https://levelup.gitconnected.com/how-to-host-domain-to-netlify-site-for-free-step-by-step-guide-45d0c2102db3](https://levelup.gitconnected.com/how-to-host-domain-to-netlify-site-for-free-step-by-step-guide-45d0c2102db3)
 [https://velog.io/@godori/netlify-branch-sub-domain](https://velog.io/@godori/netlify-branch-sub-domain)
 
-1. 들어가며
+# 1. 들어가며
 
-2. 개발 환경
+티스토리에서 Gatsby로 
+
+1.1 이전한 이유
+
+1.2 새로운 곳에서 요구사항
+
+- 
+
+
+
+
+
+# 2. 개발 환경
 
 * OS : Mac OS
-* IDE: Intellij
+* IDE: WebStorm
 * Java : JDK 1.8
 * Source code : github
 * Software management tool : Maven
 
-3. 사용법
+# 3. 사용법
 
 ![](블로그  Tistory에서 Github migration/image_3.png)
 
@@ -54,8 +77,10 @@ advenoh…..io
 "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/funnystyle/funnystyle.github.io"
 },
 
-4. 참고
+# 4. 참고
 
+* 블로그 마이그레이션
+	* https://blog.benelog.net/migration-to-static-site.html
 * Github Page
 	* [https://github.com/Integerous/Integerous.github.io](https://github.com/Integerous/Integerous.github.io)
 * Dev IT Blog 모음
