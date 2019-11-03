@@ -1,4 +1,5 @@
 # Redirect domain aliases to primary domain
+https://advenoh.pe.kr/* https://blog.advenoh.pe.kr: 200
 https://advenoh.pe.kr/* https://blog.advenoh.pe.kr:splat 301!
 https://www.advenoh.pe.kr/* https://blog.advenoh.pe.kr:splat 301!
 
