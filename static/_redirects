@@ -1,6 +1,6 @@
 # Redirect domain aliases to primary domain
-/ https://blog.advenoh.pe.kr:splat 301!
-https://www.advenoh.pe.kr/* https://blog.advenoh.pe.kr:splat 301!
+https://www.advenoh.pe.kr* https://blog.advenoh.pe.kr/:splat 301!
+https://www.advenoh.pe.kr/* https://blog.advenoh.pe.kr/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
 https://advenoh.netlify.com/* https://blog.advenoh.pe.kr:splat 301!
