@@ -9,7 +9,7 @@ tags:["Q&A", QA", "faq", spring", "springboot", "annotation", "스프링" "스�
 
 [스프링 프레임워크 구루 사이트](https://springframework.guru/spring-framework-annotations/%0A) 에서 잘 정리된 아이디어를 얻어서 제 나름대로 구분하기 쉽게 어노테이션 별로 정리를 해보았습니다.
 
-[Q&A 전체 목록](https://advenoh.tistory.com/35)
+[Q&A 전체 목록](https://blog.advenoh.pe.kr/java/20190320_Q&A_%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8_%EC%A7%88%EB%AC%B8_%EB%AA%A8%EC%9D%8C/)
 
 [Q&A : Spring Boot Annotation 모음](evernote:///view/838797/s7/5a43bbbc-52f5-43b5-860b-2d5cb70740cd/5a43bbbc-52f5-43b5-860b-2d5cb70740cd/)
 [Q&A : Spring JPA Annotation](evernote:///view/838797/s7/b0547113-7fa4-4383-8c82-25553305fd32/b0547113-7fa4-4383-8c82-25553305fd32/)

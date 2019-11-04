@@ -42,7 +42,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     private SchedulerFactoryBean schedulerFactoryBean;
 ```
 
-그리고 [첫번째 포스팅](https://advenoh.tistory.com/51) 에서 언급했던 것처럼 SchedulerFactoryBean 은 ApplicationContext에서 LifeCycle 형식으로 Scheduler을 관리하고 있습니다.
+그리고 [첫번째 포스팅](https://blog.advenoh.pe.kr/java/20190907_Quartz_Job_Scheduler%EB%9E%80/) 에서 언급했던 것처럼 SchedulerFactoryBean 은 ApplicationContext에서 LifeCycle 형식으로 Scheduler을 관리하고 있습니다.
 
 Listener와 Quartz 관련된 설정도 여기서 지정합니다.
 
