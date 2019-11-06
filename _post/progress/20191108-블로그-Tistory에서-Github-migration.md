@@ -84,7 +84,9 @@ Evernote에서 블로그를 작성하고 다시 티스토리에서 수정하는 
 # 4. 참고
 
 * 블로그 마이그레이션
-	* https://blog.benelog.net/migration-to-static-site.html
+	* [https://blog.benelog.net/migration-to-static-site.html](https://blog.benelog.net/migration-to-static-site.html)
+	* [https://suitee.me/getting-started-gatsby/](https://suitee.me/getting-started-gatsby/)
+	* [https://velog.io/@iamchanii/build-a-blog-with-gatsby-and-typescript-part-4](https://velog.io/@iamchanii/build-a-blog-with-gatsby-and-typescript-part-4)
 * Github Page
 	* [https://github.com/Integerous/Integerous.github.io](https://github.com/Integerous/Integerous.github.io)
 * Dev IT Blog 모음
