@@ -13,8 +13,8 @@ module.exports = {
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
   comment: {
-    disqusShortName: 'advenoh', // Your disqus-short-name. check disqus.com.
-    utterances: '', // Your repository for archive comment
+    disqusShortName: '', // Your disqus-short-name. check disqus.com.
+    utterances: 'kenshin579/advenoh.pe.kr', // Your repository for archive comment
   },
   configs: {
     countOfInitialPost: 10, // Config your initial count of post
