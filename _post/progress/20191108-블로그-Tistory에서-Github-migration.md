@@ -1,5 +1,5 @@
 ---
-title: '티스토리에서 Gatsby로 블로그 마이그레이션'
+title: '개인 블로그 티스토리에서 Gatsby로 갈아타기'
 date: 2019-10-13 10:23:33
 category: 'mac'
 tags: ["blog", "tistory", "gatsby", "티스토리", "블로그", "마이그레이션"]
@@ -28,9 +28,6 @@ tags: ["blog", "tistory", "gatsby", "티스토리", "블로그", "마이그레�
 * hexo
 * gatsby <— 이걸로 선택함
 
-advenoh.blog.com
-advenoh…..io
-
 [9. 도전기 IT 블로그 재시작](evernote:///view/838797/s7/332fde73-909f-438b-9046-195bcb86cab6/332fde73-909f-438b-9046-195bcb86cab6/)
 [Jekyll Blog](evernote:///view/838797/s7/c93ead75-ce73-475a-add5-2e5f8244bd2e/c93ead75-ce73-475a-add5-2e5f8244bd2e/)
 
@@ -57,15 +54,26 @@ advenoh…..io
 
 Evernote에서 블로그를 작성하고 다시 티스토리에서 수정하는 작업이 너무 시간 낭비라서 Github로 블로그를 옮기기로 결정을 했습니다. 본격적으로? 블로그를 하기 위해서 새로운 도메인으로 시작했습니다. 많이 놀러와주세요. 감사합니다. 
 
+[개발 블로그](http://advenoh.tistory.com)는 에버노트를 사용해서 작성을 했었습니다. 티스토리에 에버노트 플러그인이 있어서 에버노트에서 작성한 노트를 쉽게 티스토리 블로그로 import해서 포스팅을 할 수 있었습니다. 하지만, 티스토리에서 새로 Editor를 
 
+예전처럼 매끄럽게 import가 안되는 문제가 있어서 매번 import하고 나서 HTML 태그를 많이 수정을 했어야 했고 수정해도 잘 반영이 안되는 이슈들이 많이 발생하여 
 
-- 
+- Github page를 이용하기
+- 개인 도메인 적용하기
+- Evernote에서 작성한 블로그 마크다운 포멧으로 변환하기
+- TOC
+- Comments ()
+- 구글 GA
+- 구글 광고
+- Tags
+- RSS
 
 # 2. 개발 환경
 
 * OS : Mac OS
 * IDE: WebStorm
-* Source code : github
+* Source code : [github](https://github.com/kenshin579/advenoh.pe.kr)
+* 
 
 # 3. 사용법
 
@@ -81,7 +89,11 @@ Evernote에서 블로그를 작성하고 다시 티스토리에서 수정하는 
 "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/funnystyle/funnystyle.github.io"
 },
 
-# 4. 참고
+# 4. 마무리
+
+ㄴㅇㄹ
+
+# 5. 참고
 
 * 블로그 마이그레이션
 	* [https://blog.benelog.net/migration-to-static-site.html](https://blog.benelog.net/migration-to-static-site.html)
@@ -119,4 +131,3 @@ Evernote에서 블로그를 작성하고 다시 티스토리에서 수정하는 
 * Evernote migration
 	* [http://www.markwk.com/migrate-evernote-plaintext.html](http://www.markwk.com/migrate-evernote-plaintext.html)
 
-#blog
