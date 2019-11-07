@@ -92,7 +92,7 @@ module.exports = {
       {
         site {
           siteMetadata {
-            siteUrl: url
+            siteUrl: siteUrl
           }
         }
         allSitePage(
