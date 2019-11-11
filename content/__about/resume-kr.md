@@ -1,10 +1,10 @@
 ---
 title: 'about'
 date: 2019-1-27 16:21:13
-lang: 'en'
+lang: 'kr'
 ---
 
-# Frank Oh
+# 오용경
 
 <div align="center">
 
