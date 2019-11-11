@@ -1,10 +1,11 @@
 module.exports = {
-  title: `Advenoh IT Blog`,
-  description: `Blog posted about ...`,
+  title: `advenoh's dev blog`,
+  description: `IT 블로그`,
   author: `Frank Oh`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
-  siteUrl: `https://advenoh.pe.kr`, // Your blog site url
+  introduction: ``,
+  siteUrl: `https://blog.advenoh.pe.kr`, // Your blog site url
   social: {
+    instagram: `kenshin579`, // Your Instagram account
     twitter: ``, // Your Twitter account
     github: `kenshin579`, // Your GitHub account
     medium: ``, // Your Medium account
@@ -24,6 +25,7 @@ module.exports = {
   },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
+    twitterAppId: '',
   },
   ga: 'UA-151046870-1', // Add your google analytics tranking ID
 }
