@@ -25,5 +25,3 @@ Work In Progress란 뜻입니다. Gitkraken이 WIP를 자동으로 생성해주�
 
 참고
 * [https://stackoverflow.com/questions/15763059/github-what-is-a-wip-branch](https://stackoverflow.com/questions/15763059/github-what-is-a-wip-branch)
-
-#q&a #blog #advenoh.pe.kr# #개발

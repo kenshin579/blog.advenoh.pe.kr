@@ -274,5 +274,3 @@ Quartz에서는 기본적으로 2가지 저장소만 (Memory, DB) 제공하지�
 - Short Running Jobs
   - [https://airboxlab.github.io/performance/scalability/scheduler/quartz/2017/06/20/perf_tuning_quartz.html](https://airboxlab.github.io/performance/scalability/scheduler/quartz/2017/06/20/perf_tuning_quartz.html)
   - [https://www.ebayinc.com/stories/blogs/tech/performance-tuning-on-quartz-scheduler/](https://www.ebayinc.com/stories/blogs/tech/performance-tuning-on-quartz-scheduler/)
-
-#quartz #advenoh.pe.kr# #blog

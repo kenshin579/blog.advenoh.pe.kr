@@ -2,6 +2,7 @@
 title: '스프링 RestTemplate'
 date: 2019-5-6 21:01:31
 category: 'spring'
+tags: ["spring", "springboot", "resttemplate", "REST", "API", "get", "post", "exchange", "java", "스프링", "스프링부트"]
 ---
 
 # 1. 들어가며
@@ -634,4 +635,3 @@ RequestCallback requestCallback(final Address address) {
   - [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
   - [https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/](https://blog.fullstacktraining.com/restful-api-design-post-vs-put-vs-patch/)
 
-#tistory #advenoh.pe.kr# #resttemplate #blog

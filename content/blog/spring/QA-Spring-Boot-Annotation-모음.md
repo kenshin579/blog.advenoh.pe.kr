@@ -31,3 +31,4 @@ tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfigurat
 
 참고
 * [http://partnerjun.tistory.com/54](http://partnerjun.tistory.com/54)
+
