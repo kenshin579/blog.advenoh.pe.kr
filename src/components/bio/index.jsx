@@ -32,9 +32,6 @@ export const Bio = () => (
                   {social.github && (
                     <a href={`https://github.com/${social.github}`}>GitHub</a>
                   )}
-                  {social.instagram && (
-                    <a href={`https://www.instagram.com/${social.instagram}`}>Instagram</a>
-                  )}
                   {social.medium && (
                     <a href={`https://medium.com/${social.medium}`}>Medium</a>
                   )}
@@ -43,6 +40,9 @@ export const Bio = () => (
                   )}
                   {social.facebook && (
                     <a href={`https://www.facebook.com/${social.facebook}`}>Facebook</a>
+                  )}
+                  {social.instagram && (
+                    <a href={`https://www.instagram.com/${social.instagram}`}>Instagram</a>
                   )}
                 </p>
               </div>
@@ -55,27 +55,28 @@ export const Bio = () => (
 )
 
 const bioQuery = graphql`
-  query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile.jpg/" }) {
-      childImageSharp {
-        fixed(width: 72, height: 72) {
-          ...GatsbyImageSharpFixed
+    query BioQuery {
+        avatar: file(absolutePath: { regex: "/profile.jpg/" }) {
+            childImageSharp {
+                fixed(width: 72, height: 72) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        author
-        introduction
-        social {
-          twitter
-          github
-          medium
-          facebook
+        site {
+            siteMetadata {
+                author
+                introduction
+                social {
+                    instagram
+                    twitter
+                    github
+                    medium
+                    facebook
+                }
+            }
         }
-      }
     }
-  }
 `
 
 export default Bio
