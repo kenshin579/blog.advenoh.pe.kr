@@ -370,5 +370,3 @@ Quartz에서는 Scheduler의 여러 기능을 (scheduler, unschedule, pause, res
 	* [https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-quartz.html](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-quartz.html)
 	* [https://www.baeldung.com/spring-quartz-schedule](https://www.baeldung.com/spring-quartz-schedule)
 	* [https://gs.saro.me/dev?tn=549](https://gs.saro.me/dev?tn=549)
-
-#quartz #blog

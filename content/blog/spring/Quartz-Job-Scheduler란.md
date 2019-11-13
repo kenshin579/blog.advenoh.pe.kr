@@ -233,4 +233,3 @@ Quartz에 대한 기본 개념과 용어 그리고 Quartz 스케줄러가 스프
 	* [https://reachmnadeem.wordpress.com/2017/01/18/fixed-delay-scheduling-with-quartz/](https://reachmnadeem.wordpress.com/2017/01/18/fixed-delay-scheduling-with-quartz/)
 	* [https://gist.github.com/mnadeem/367f115cff54b704c91b4813b240b1fd](https://gist.github.com/mnadeem/367f115cff54b704c91b4813b240b1fd)
 
-#quartz #blog
