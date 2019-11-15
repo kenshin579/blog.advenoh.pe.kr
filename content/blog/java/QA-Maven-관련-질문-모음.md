@@ -24,7 +24,6 @@ $ mvn -h #See 메이븐 옵션
 $ mvn clean test -Dtest=com.tmoncorp.media.common.util.FileUtilTest#getFileNameBaseCurrentTimestamp -Dmaven.test.skip=true
 ```
 
-
 ![](images/QA-Maven/image1.png)
 
 ### <span style="color:brown">2. Maven 실행시 webxml attribute is required... ?</span>
