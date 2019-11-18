@@ -1,6 +1,6 @@
 ---
 title: '추가된 LOG를 JUnit에서 확인하는 방법'
-date: 2019-10-13 10:23:33
+date: 2019-10-18 18:53:33
 category: 'java'
 tags: ["java", "logger", "junit", "unittest", "자바", "유닛테스트", "로거"]
 ---
@@ -48,9 +48,9 @@ public class SomeService {
 }
 ```
 
-ListAppender 클래스는 발생하는 Log 이벤트를 List에 저장하여 나중에 조회 가능하도록 해주는 클래스입니다. ListAppender 클래스 생성해서 logger에 세팅해줍니다. 
+ListAppender 클래스는 발생하는 Log 이벤트를 List에 저장하여 나중에 조회 가능하도록 해주는 클래스입니다. 
 
- 
+
 ```java
 public class LoggerTestUtil {
 	public static ListAppender<ILoggingEvent> getListAppenderForClass(Class clazz) {
@@ -66,7 +66,7 @@ public class LoggerTestUtil {
 }
 ```
 
-someService.requestJobId() 메서드에서 로그를 찍게 되고 로그로 출력한 내용은 listAppender에 저장됩니다. 저장한 로그의 메시지를 확인해보는 Unit Test입니다.  
+someService.requestJobId() 메서드에서 로그를 찍게 되고 로그로 출력한 내용은 listAppender에 저장됩니다. 저장한 로그의 메시지를 확인하기 위해 listAppender.list에서 List를 가져옵니다. 
 
 ```java
  @Test
@@ -88,7 +88,7 @@ someService.requestJobId() 메서드에서 로그를 찍게 되고 로그로 출
 
 * Logger Assert
 	* [https://stackoverflow.com/questions/1827677/how-to-do-a-junit-assert-on-a-message-in-a-logger](https://stackoverflow.com/questions/1827677/how-to-do-a-junit-assert-on-a-message-in-a-logger)
-	* []https://stackoverflow.com/questions/29076981/how-to-intercept-slf4j-with-logback-logging-via-a-junit-test](https://stackoverflow.com/questions/29076981/how-to-intercept-slf4j-with-logback-logging-via-a-junit-test)
+	* [https://stackoverflow.com/questions/29076981/how-to-intercept-slf4j-with-logback-logging-via-a-junit-test](https://stackoverflow.com/questions/29076981/how-to-intercept-slf4j-with-logback-logging-via-a-junit-test)
 	* [https://www.jvt.me/posts/2019/09/22/testing-slf4j-logs/](https://www.jvt.me/posts/2019/09/22/testing-slf4j-logs/)
 * ListAppender
     * [http://people.apache.org/~carnold/log4j/docs/jdiff_report/Version%201.3/org/apache/log4j/varia/ListAppender.html](http://people.apache.org/~carnold/log4j/docs/jdiff_report/Version%201.3/org/apache/log4j/varia/ListAppender.html)
