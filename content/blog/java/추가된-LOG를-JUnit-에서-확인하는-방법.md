@@ -1,6 +1,6 @@
 ---
 title: '추가된 LOG를 JUnit에서 확인하는 방법'
-date: 2019-10-13 10:23:33
+date: 2019-10-18 18:53:33
 category: 'java'
 tags: ["java", "logger", "junit", "unittest", "자바", "유닛테스트", "로거"]
 ---
