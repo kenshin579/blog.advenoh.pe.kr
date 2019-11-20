@@ -70,7 +70,7 @@ INSERT INTO book (`title`, `author`, `price`) VALUES ('여행할 땐 책', '채�
 INSERT INTO book (`title`, `author`, `price`) VALUES ('기차 타고 부산에서 런던까지', '정은주', 12150);
 ```
 
-API로도 호출해보기 위해서 BookController과 BookRepository 파일도 같이 생성했습니다. 소스코드는 github 링크를 참고해주세요. 
+API로도 호출해보기 위해서 BookController과 BookRepository 파일도 같이 생성했습니다. 두 파일은 github에 올린 소스코드를 확인 가능합니다
 
 ## 3.2 H2 데이터베이스 설정
 
@@ -78,11 +78,11 @@ API로도 호출해보기 위해서 BookController과 BookRepository 파일도 �
 
 datasource 값은 다른 DB 설정할 때와 유사합니다.   
 
-- url : 
+- spring.datasource.url
     - MODE : H2에서는 다른 여러 DB처럼 동작 가능하도록 호환모드를 지원한다. 완벽하게 모든 기능을 지원하지는 않는다
-     ex. MODE=mysql (ex. CREATE TABLE 구문에서 INDEX()와 KEY()를 사용할 수 있게 됨)
+     - ex. MODE=mysql (ex. CREATE TABLE 구문에서 INDEX()와 KEY()를 사용할 수 있게 됨)
 
-    > 자세한 추가 옵션은 [H2 홈페이지](https://www.h2database.com/html/features.html)를 참고해주세요
+    > 옵션에 대한 자세한 사항은  [H2 홈페이지](https://www.h2database.com/html/features.html)를 참고해주세요
 
 ```yml
 # Database Settings
@@ -95,8 +95,9 @@ spring:
     driverClassName: org.h2.Driver
 ```
 
-
 ### 3.2.2 File로 설정
+
+파일로 설정하려면 파일 형식으로 Path를 지정하면 됩니다. 
 
 ```yml
 # Database Settings
@@ -109,19 +110,61 @@ spring:
     driverClassName: org.h2.Driver
 ```
 
-동시에 접속하면 안됨...
 
 
-## 3.3 스프링 부트 구동
+## 3.3 스프링 부트 구동해서 API 호출해보기
 
-# 4. H2 Console
+스프링 부트를 구동해서 각 설정에 따라 이상없이 데이터가 DB에 로드되고 가져오는지 API로 호출해보겠습니다. 
 
-spring-boot-devtools 적용
-application.properties 에 spring.h2.console.enabled=true 명시
+![image-20191121074238911](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121074238911.png)
 
-# 5. 정리
+# 4. DB Client로 접속하기
 
-# 6. 참고
+DB에 쉽게 접근하기 위해 여러 DB Client로 접속해보겠습니다. 
+
+## 4.1 H2 웹 콘솔
+
+H2에서 웹 콘솔을 제공합니다. 웹 콘솔을 사용하기 위해서는 아래 설정을 해줘야 합니다. 
+
+```xml
+ <dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-devtools</artifactId>
+ </dependency>
+```
+
+application.yml에서 spring.h2.console.enabled=true 로 설정해야 활성화가 됩니다.
+
+```yml
+# H2 Settings
+h2:
+  console:
+    enabled: true
+    path: /h2-console
+```
+
+
+
+## 4.2 Intellij Database 도구
+
+
+
+
+![connection_error](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/connection_error.png)
+
+> 메모리와 파일인 경우에는 동시에 접근이 안됩니다. 여러 곳에서 접속하려면 
+
+# 5. H2 클라이언트/서버 모드로 접속하기
+
+
+
+# 6. 정리
+
+엠비디드 모드... 한계
+
+서버 모드를 사용하자. 
+
+# 7. 참고
 
 * H2 설치 및 사용법
 	* [https://en.wikipedia.org/wiki/H2_(DBMS](https://en.wikipedia.org/wiki/H2_%28DBMS) )
