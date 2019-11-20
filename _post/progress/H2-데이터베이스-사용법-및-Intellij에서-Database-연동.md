@@ -2,7 +2,7 @@
 title: 'H2 데이터베이스 사용법 및 Intellij에서 Database 연동'
 date: 2019-11-20 10:23:33
 category: 'database'
-tags: ["h2", "database", "spring", "springboot", "intellij", "DB", "데이터베이스", "인텔리제이"]
+tags: ["h2", "database", "spring", "springboot", "intellij", "In-Memory", "인메모리", "DB", "데이터베이스", "인텔리제이"]
 
 ---
 # 1. 들어가며
@@ -39,9 +39,9 @@ H2는 자바로 구현된 오픈소스 데이터베이스입니다. 인 메모�
 </dependency>
 ```
 
-H2의 여러 환경 테스트를 위해서 간단한 JPA 샘플 코드를 작성해두겠습니다. JPA에서 제공하는 DDL 자동 생성 옵션(jpa.hiberate.ddl-auto)과 초기 데이터 로딩이 되도록 세팅하면 쉽게 테스팅이 쉬울 거예요. 
+H2의 여러 환경 테스트를 위해서 간단한 JPA 샘플 코드를 작성해두겠습니다. JPA에서 제공하는 DDL 자동 생성 옵션(jpa.hiberate.ddl-auto)과 초기 데이터 로딩이 되도록 세팅하면 세팅하기 쉬울 거예요. 
 
-JPA에서 사용할 Book 엔티티를 생성합니다. 
+간단하게 JPA에서 사용할 Book 엔티티를 생성합니다.
 
 ```java
 @Getter
@@ -62,7 +62,7 @@ public class Book {
 }
 ```
 
-src/main/resources/data.sql 파일을 생성하여 아래 초기 데이터를 추가해줍니다. 
+서버 구동시 초기 데이터가 DB에 삽입되도록 src/main/resources/data.sql 파일을 생성해 둡니다.
 
 ```sql
 INSERT INTO book (`title`, `author`, `price`) VALUES ('지금 이대로 좋다', '법류 저', 9330);
@@ -70,40 +70,49 @@ INSERT INTO book (`title`, `author`, `price`) VALUES ('여행할 땐 책', '채�
 INSERT INTO book (`title`, `author`, `price`) VALUES ('기차 타고 부산에서 런던까지', '정은주', 12150);
 ```
 
-API로 호출 하기 위해서 BookController과 BookRepository 파일도 같이 생성해줍니다. 소스코드를 github 링크를 참고해주세요. 
+API로도 호출해보기 위해서 BookController과 BookRepository 파일도 같이 생성했습니다. 소스코드는 github 링크를 참고해주세요. 
 
 ## 3.2 H2 데이터베이스 설정
 
-### 3.2.1 Memory 
+### 3.2.1 In-Memory
 
-인 메모리
+datasource 값은 다른 DB 설정할 때와 유사합니다.   
 
 - url : 
-- DB_CLOSE_DELAY=-1
-  - sdf
-- DB_CLOSE_ON_EXIT=FALSE
-  - sdf
+    - MODE : H2에서는 다른 여러 DB처럼 동작 가능하도록 호환모드를 지원한다. 완벽하게 모든 기능을 지원하지는 않는다
+     ex. MODE=mysql (ex. CREATE TABLE 구문에서 INDEX()와 KEY()를 사용할 수 있게 됨)
+
+    > 자세한 추가 옵션은 [H2 홈페이지](https://www.h2database.com/html/features.html)를 참고해주세요
 
 ```yml
 # Database Settings
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    url: jdbc:h2:mem:testdb;MODE=mysql;
     platform: h2
     username: sa
     password:
     driverClassName: org.h2.Driver
-jpa:
-  database-platform: org.hibernate.dialect.H2Dialect
-  hibernate:
-    ddl-auto: update # 테이블 스키마 자동 생성 옵션
 ```
+
 
 ### 3.2.2 File로 설정
 
+```yml
+# Database Settings
+spring:
+  datasource:
+    url: jdbc:h2:file:~/data/h2/testdb;MODE=MySQL
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+```
+
+동시에 접속하면 안됨...
 
 
-3.3 스프링 부트 구동
+## 3.3 스프링 부트 구동
 
 # 4. H2 Console
 
