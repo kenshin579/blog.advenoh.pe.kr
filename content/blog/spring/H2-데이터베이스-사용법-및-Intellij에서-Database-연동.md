@@ -1,7 +1,7 @@
 ---
 title: 'H2 데이터베이스 사용법 및 Intellij에서 Database 연동하기'
 date: 2019-11-20 10:23:33
-category: 'database'
+category: 'spring'
 tags: ["h2", "database", "spring", "springboot", "intellij", "In-Memory", "인메모리", "DB", "데이터베이스", "인텔리제이"]
 
 ---
@@ -9,7 +9,7 @@ tags: ["h2", "database", "spring", "springboot", "intellij", "In-Memory", "인�
 
 H2는 자바로 구현된 오픈소스 데이터베이스입니다. 인 메모리와 파일 기반의 데이터베이스 설정이 가능합니다. 자바 애플리케이션에 임베디드해서 사용하거나 서버 모드로 구동할 수 있습니다. 별도의 설치과정 없이 임베디드로 바로 사용할 수 있는 장점으로 많이 사용되는 DB입니다. 
 
-이 포스팅에서는 H2에서 제공하는 여러 모드 외에도 웹 콘솔과 Intelij에서 H2에 연동하는 방법도 같이 알아보겠습니다. 
+이 포스팅에서는 H2에서 제공하는 여러 모드 외에도 웹 콘솔과 Intellij에서 H2에 연동하는 방법도 같이 알아보겠습니다. 
 
 - 임베디드 모드
   - 메모리
@@ -127,7 +127,7 @@ spring:
 
 Postman을 사용해서 http://localhost:8080/api/book/list API를 호출하면 DB에 추가된 데이터를 응답 값으로 확인할 수 있습니다. 
 
-![image-20191121074238911](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121074238911.png)
+![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121074238911.png)
 
 # 4. DB Client로 접속하기
 
@@ -156,7 +156,7 @@ h2:
 
 http://localhost:8080/h2-console로 접속하면 다음 화면을 볼 수 있습니다. 
 
-![image-20191121215722154](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121215722154.png)
+![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121215722154.png)
 
 
 
