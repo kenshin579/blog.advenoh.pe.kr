@@ -127,7 +127,7 @@ spring:
 
 Postman을 사용해서 http://localhost:8080/api/book/list API를 호출하면 DB에 추가된 데이터를 응답 값으로 확인할 수 있습니다. 
 
-![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121074238911.png)
+![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_1.png)
 
 # 4. DB Client로 접속하기
 
@@ -156,23 +156,23 @@ h2:
 
 http://localhost:8080/h2-console로 접속하면 다음 화면을 볼 수 있습니다. 
 
-![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121215722154.png)
+![](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_2.png)
 
 
 
 JDBC URL 설정하고 연결 버튼을 클릭하면 DB에 접속하게 됩니다. 이 콘솔 안에서 query를 실행하여 데이터를 확인할 수 있습니다. 
 
-![image-20191121215752742](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121215752742.png)
+![image-20191121215752742](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_3.png)
 
 ## 4.2 Intellij Database 도구
 
 다음은 Intellij Database 도구로 접속해보겠습니다. Intellij IDE를 열고 오른쪽 사이드바에서 Database를 클릭합니다. Data Source를 H2로 선택하고 아래와 같이 데이터를 입력합니다. 
 
-![image-20191121220130774](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121220130774.png)
+![image-20191121220130774](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_4.png)
 
 클릭하면 데이터베이스가 이미 사용 중이라 접속이 안 된다는 경고 창이 뜹니다. 메모리와 파일인 경우에는 동시에 접근을 할 수 없습니다. 같은 DB에 여러 곳에서 연결하려면 서버 모드로 접속을 해야 합니다. 
 
-![image-20191121220213219](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121220213219.png)
+![image-20191121220213219](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_5.png)
 
 # 5. H2 DB 서버 모드로 접속하기
 
@@ -203,7 +203,7 @@ initMethod와 destroyMethod 인자로 정의된 메서드는 스프링에 의해
 
 Intellij Database 도구에서 다시 접속을 시도하면 이상없이 로드 되는 것을 확인할 수 있습니다. 
 
-![image-20191121224057921](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image-20191121224057921.png)
+![image-20191121224057921](images/H2-데이터베이스-사용법-및-Intellij에서-Database-연동/image_6.png)
 
 # 6. 정리
 

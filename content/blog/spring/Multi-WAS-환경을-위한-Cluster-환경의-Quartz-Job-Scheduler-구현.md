@@ -9,7 +9,7 @@ tags: ["spring", "springboot", "quartz", "java", "scheduler", "multi", "job", "c
 
 Quartz에서는 메모리 기반의 스케줄러뿐만이 아니라 DB 기반의 스케줄러도 지원합니다. DB 기반의 스케줄러의 경우에는 스케줄러 정보를 메모리가 아닌 DB에 저장하기 때문에 다중 서버 간의 스케줄링이 가능합니다. Quartz는 master-slave 형태로 서로 간의 통신을 하지 않고 단순히 DB 업데이트 정보를 기반으로 각각의 스케줄 인스턴스가 자기가 실행해야 하는 Job을 실행합니다.
 
-![](images/20191013/quartz.jpg)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/quartz.jpg)
 
 Cluster 환경에서 스케줄링이 가능하기 때문에 Non-Cluster 환경에 비해 여러 가지 장점이 기본적으로 제공됩니다.
 
@@ -38,7 +38,7 @@ Cluster 환경에서 스케줄링이 가능하기 때문에 Non-Cluster 환경�
 
 DB 스키마는 Quartz의 [소스코드](https://github.com/quartz-scheduler/quartz/releases) 에 포함되어 있어서 원하는 DB 스키마를 소스코드에서 찾습니다. 저는 MySql를 사용하겠습니다.
 
-![](images/20191013/image_26.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_26.png)
 
 ```bash
 $ cat tables_mysql_innodb.sql
@@ -68,7 +68,7 @@ DB에 quartz용 database를 생성하고 schema script를 실행합니다.
 mysql> CREATE DATABASE spring_boot_quartz_cluster
 ```
 
-![](images/20191013/image_44.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_44.png)
 
 ## 3.2 Maven 라이브러리 추가
 
@@ -156,7 +156,7 @@ $ cd tutorials-java
 $ meld springboot-quartz-cluster/ springboot-quartz-in-memory
 ```
 
-![](images/20191013/image_9.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_9.png)
 
 ### 3.3.3 이중화 서버 구동
 
@@ -182,19 +182,19 @@ $ mvn spring-boot:run
 mysql> SELECT * FROM QRTZ_SCHEDULER_STATE;
 ```
 
-![](images/20191013/image_42.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_42.png)
 
 Postman에서 임의로 job을 추가합니다.
 
-![](images/20191013/image_45.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_45.png)
 
 GET /scheduler/jobs API로 조회해보면 잘 등록된 것을 확인할 수 있습니다.
 
-![](images/20191013/image_6.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/image_6.png)
 
 각 WAS에서 job이 실행되는 것도 터미널에서 볼 수 있습니다. WAS1 (quartz-cluster)를 셧다운 시켜보면 WAS2 (quartz-cluster2)가 job을 픽업해서 이상 없이 실행하는 것을 확인할 수 있습니다.
 
-![](images/20191013/B7C01E92-4F84-4145-911A-DF381722A831.png)
+![](images/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현/B7C01E92-4F84-4145-911A-DF381722A831.png)
 
 ## 3.4 Quartz Cluster 설정시 주의사항
 
