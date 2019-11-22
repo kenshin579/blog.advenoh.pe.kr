@@ -1,184 +1,58 @@
-<div align="center">
+[![HitCount](http://hits.dwyl.io/cheese10yun/blog-sample.svg)](http://hits.dwyl.io/cheese10yun/blog-sample)
 
-![](./assets/gatsby-starter-bee.png)
+# Frank Oh's Blog Code
 
-</div>
+[Advenoh](https://blog.advenoh.pe.kr) ***예제 코드 지속해서 해당 프로젝트를 이어 나아갈 예정이라 깃허브 Star, Watching 버튼을 누르시면 구독 신청받으실 수 있습니다.***
 
-# gatsby-starter-bee
+## Node
+* [Loopback 게시판 만들기 (1)](https://github.com/cheese10yun/blog-sample/tree/master/loopback-boards)
+* [AWS S3 업로드시 이미지 최적화](https://github.com/cheese10yun/blog-sample/tree/master/AWS_S3_Image_Optimization_)
+* [Node.JS로 카카오봇 만들기](https://github.com/cheese10yun/KaKaoBot-Node)
+* [Node AWS S3 업로드](https://cheese10yun.github.io/Node-AWS-S3-Upload/)
+* [Node 다른 서버 API 호출](https://cheese10yun.github.io/API-CALL/)
+* [Passport를 이용한 네이버, 카카오, 페이스북 로그인](https://github.com/cheese10yun/Social_Login)
+* [Crontab을 이용한 노드 API 호출](https://cheese10yun.github.io/crontab-api/)
+* [Node Passport를 이용한 Login + Mysql](https://cheese10yun.github.io/passport-mysql/)
+* [Node.JS + Mysql 연동](https://cheese10yun.github.io/mysql-node/)
+* [Passport를 이용한 Login](https://cheese10yun.github.io/Passport-part1/)
 
-![](./assets/screenshot-pc.png)
+## Spring
+* [Spring 으로 초간단 Slack Message 보내기](https://github.com/cheese10yun/slackbot)
+* [Spring OOP 프로그래밍 예제(1) - 내가 해석한 SOLID](https://github.com/cheese10yun/blog-sample/tree/master/notification)
+* [Spring OOP 프로그래밍 예제(2) - Value 클래스로 응집력 높이기](https://github.com/cheese10yun/blog-sample/tree/master/bankapi)
+* [Spring OOP 프로그래밍 예제(3) - 추상화, 다형성](https://github.com/cheese10yun/blog-sample/tree/master/partner-api)
+* [Spring OOP 프로그래밍 예제(4) - Service, ServiceImpl 구조에 대한 고찰](https://github.com/cheese10yun/blog-sample/tree/master/service)
+* [Spring OOP 프로그래밍 예제(5) - 외부 API(PagerDuty) 호출](https://github.com/cheese10yun/blog-sample/tree/master/pagerduty)
+* [Spring 예제로 보는 SOLID](https://github.com/cheese10yun/spring-SOLID)
+* [JPA-Embedded](https://github.com/cheese10yun/blog-sample/tree/master/embedded)
+* [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
+* [Jackson 어노테이션 사용법](https://github.com/cheese10yun/blog-sample/tree/master/jackson)
+* [Assistant Properties 적용 방법](https://github.com/cheese10yun/blog-sample/tree/master/properties)
+* [Spring Boot Https 적용하기](https://github.com/cheese10yun/blog-sample/tree/master/spring-https)
+* [Spring OAuth2 Social 기초 정리](https://github.com/cheese10yun/blog-sample/tree/master/social-sample)
+* [Spring OAuth2 Social - Google, Facebook 예제](https://github.com/cheese10yun/spring-security-oauth2-social)
+* [Spring Batch - 기초 정리](https://github.com/cheese10yun/blog-sample/tree/master/batch-demo)
+* [Spring Security 학습](https://github.com/cheese10yun/security-study)
+* [Spring REST Docs - 사용법](https://github.com/cheese10yun/springboot-restdocs)
+* [Spring OAuth2 정리](https://github.com/cheese10yun/springboot-oauth2)
+* [실무에서 Lombok 사용법](https://github.com/cheese10yun/blog-sample/tree/master/lombok)
+* [Spring 예제로 보는 캡슐화](https://github.com/cheese10yun/blog-sample/tree/master/encapsulation)
+* [Spring Boot Test 정리](https://github.com/cheese10yun/blog-sample/tree/master/spring-boot-test)
+* [Spring 실전 가이드](https://github.com/cheese10yun/spring-guide)
+* [Spring Custom Valid 어노테이션 만들기(1)](https://github.com/cheese10yun/blog-sample/blob/master/custom-validation/docs/field-validation.md)
+* [Spring Custom Valid 어노테이션 만들기(2)](https://github.com/cheese10yun/blog-sample/blob/master/custom-validation/docs/class-validation.md)
+* [Builder 기반으로 객체를 안전하게 생성하는 방법](https://github.com/cheese10yun/blog-sample/tree/master/ddd)
+* [Gradle 기반 멀티 모듈 구성하기](https://github.com/cheese10yun/blog-sample/tree/master/multi-module)
+* [Spring Actuator 기초 설정](https://github.com/cheese10yun/blog-sample/tree/master/actuator)
+* [테스트 코드 작성에 대한 나름의 고찰](https://github.com/cheese10yun/blog-sample/tree/master/test-code)
+* [Transaction Rollback 정리](https://github.com/cheese10yun/blog-sample/tree/master/spring-transaction-test)
+* [Spring Batch Study](https://github.com/cheese10yun/batch-study)
+* [Paging 처리 Fetch Join 적용시 limit 동작하지 않는 이슈](https://github.com/cheese10yun/blog-sample/tree/master/jpa-fetch-join)
+* [JPA N+1 발생원인과 해결방법](https://github.com/cheese10yun/blog-sample/tree/master/jpa-n-plus-1)
+* [Junit5 with Spring boot](https://github.com/cheese10yun/blog-sample/tree/master/kotlin-junit5)
+* [Immutable Properties 설정하는 방법](https://github.com/cheese10yun/blog-sample/blob/master/kotlin-junit5/docs/data-properties.md)
 
-[![Build Status](https://travis-ci.org/JaeYeopHan/gatsby-starter-bee.svg?branch=master)](https://travis-ci.org/JaeYeopHan/gatsby-starter-bee) [![Greenkeeper badge](https://badges.greenkeeper.io/JaeYeopHan/gatsby-starter-bee.svg)](https://greenkeeper.io/)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/JaeYeopHan/gatsby-starter-bee.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/JaeYeopHan/gatsby-starter-bee/alerts/)
-[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4b1962ce-6206-4d8f-9516-63be92294198/deploy-status)](https://app.netlify.com/sites/gatsby-starter-bee/deploys)
-
-<a href="https://twitter.com/JbeeLjyhanll">
-<img alt="Twitter: JbeeLjyhanll" src="https://img.shields.io/twitter/follow/JbeeLjyhanll.svg?style=social" target="_blank" />
-</a>
-
-[한국어🇰🇷](./README.ko.md)
-
-> Blog Starter Pack based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
-
-In this template...
-
-- 💄 Code highlight with Fira Code font
-- 🧙 CLI Tool
-- 😄 Emoji (emojione)
-- 🗣 Social share feature (Twitter, Facebook)
-- 💬 Comment feature (disqus, utterances)
-- ☕ 'Buy me a coffee' service
-- 🤖 GA
-- ⭐ Enhance UX
-- ⚙ Configurable
-
-> [Gatsby Starters Docs](https://www.gatsbyjs.org/starters/JaeYeopHan/gatsby-starter-bee/)
-
-## Demo
-
-- [Default Theme](https://gatsby-starter-bee.netlify.com/)
-
-## Use case
-
-- [JBEE.io](https://jbee.io)
-- [Rinae's devlog](https://rinae.dev/)
-- [Seungdols Company](https://seungdols.dev/)
-- [Kooku's log](https://kooku.netlify.com/)
-- [SOSOLOG](https://so-so.dev/)
-- [delivan.dev](https://delivan.dev/)
-- [Jungin's blog](https://jungin.netlify.com/)
-
-> If you're using this template, Please Pull Request for `Use case`!
-
-## 😎 Quick Start
-
-### 1. Create a Gatsby site.
-
-```sh
-# create a new Gatsby site using the blog starter
-$ npx gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee
-```
-
-> If you are not using `npx`, following [Gatsby Getting Started](https://www.gatsbyjs.org/docs/quick-start)
-
-```sh
-$ npm install -g gatsby-cli
-$ gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee
-```
-
-### 2. Start developing.
-
-```sh
-$ cd my-blog-starter/
-$ npm start
-# open localhost:8000
-```
-
-### 3. Add your content
-
-You can write...
-
-- contents to blog in `content/blog` directory.
-- resume `content/__about` directory.
-
-> With markdown syntax and some meta data
-
-#### Support script for creating new post
-
-![](assets/cli-tool-example.gif)
-
-```sh
-$ npm run post
-```
-
-### 4. Fix meta data
-
-You can fix meta data of blog in `/gatsby-meta-config.js` file.
-
-### 5. Publish with [netlify](https://netlify.com)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JaeYeopHab/gatsby-starter-bee)
-
-:bulb: if you want to deploy github pages, add following script to package.json
-
-```json
-"scripts": {
-    "deploy": "gatsby build && gh-pages -d public -b master -r 'git@github.com:${your github id}/${github page name}.github.io.git'"
-}
-```
-
-## 🧐 Customize!
-
-### ⚙ Gatsby config
-
-```
-/root
-├── gatsby-browser.js // font, polyfill, onClientRender ...
-├── gatsby-config.js // Gatsby config
-├── gatsby-meta-config.js // Template meta config
-└── gatsby-node.js // Gatsby Node config
-```
-
-### ⛑ Structure
-
-```
-src
-├── components // Just component with styling
-├── layout // home, post layout
-├── pages // routing except post: /(home), /about
-├── styles
-│   ├── code.scss
-│   ├── dark-theme.scss
-│   ├── light-theme.scss
-│   └── variables.scss
-└── templates
-    ├── blog-post.js
-    └── home.js
-```
-
-### 🎨 Style
-
-You can customize color in `src/styles` directory.
-
-```
-src/styles
-├── code.scss
-├── dark-theme.scss
-├── light-theme.scss
-└── variables.scss
-```
-
-### 🍭 Tips (You can change...)
-
-- Profile image! (replace file in `/content/assets/profile.png`)
-- Favicon image! (replace file in `/content/assets/felog.png`)
-- Header gradient! (\$theme-gradient `/styles/variables.scss`)
-- Utterances repository! (replace repository address in `/gatsby-meta-config.js`)
-
-## ☕ Like it?
-
-<a href="https://www.buymeacoffee.com/jbee" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-## 🤔 If...
-
-If you are currently writing in the Medium, consider migration with [medium-to-own-blog](https://github.com/mathieudutour/medium-to-own-blog)!
-
-## :bug: Bug reporting
-
-[Issue](https://github.com/JaeYeopHan/gatsby-starter-bee/issues)
-
-## 🎁 Contributing
-
-[Contributing guide](./CONTRIBUTING.md)
-
-## LICENSE
-
-[MIT](./LICENSE)
-
-<div align="center">
-
-<sub><sup>Project by <a href="https://github.com/JaeYeopHan">@Jbee</a></sup></sub><small>✌</small>
-
-</div>
+## 기타
+* [GitHub로 프로젝트 관리하기](https://github.com/cheese10yun/github-project-management)
+* [IntelliJ 사용법](https://github.com/cheese10yun/IntelliJ)
+* [좋은 학습 자료 및 GitHub 정리](https://github.com/cheese10yun/dev-info)
