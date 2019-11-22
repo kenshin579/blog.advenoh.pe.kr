@@ -49,18 +49,18 @@ Quartz Scheduler에 익숙해지기 위해서 자주 사용하는 용어들을 �
 	* Job의 Trigger가 발생하면 스케줄러는 JobExecutionContext 객체를 넘겨주고 execute 메서드를 호출한다.
 		* JobExecutionContext는 Scheduler, Trigger, JobDetail 등을 포함하여 Job 인스턴스에 대한 정보를 제공하는 객체이다
 
-![](images/20190907/image_21.png)
+![](images/Quartz-Job-Scheduler란/image_21.png)
 
 * **JobDataMap**
 	* JobDataMap은 Job 인스턴스가 실행할 때 사용할 수 있게 원하는 정보를 담을 수 있는 객체이다.
 	* JobDetail을 생성할 때 JobDataMap도 같이 세팅해주면 된다
-![](images/20190907/image_14.png)
+![](images/Quartz-Job-Scheduler란/image_14.png)
 	* Job 실행시 스케줄러에 Job 추가시 넣었던 JobDataMap 객체를 아래와 같이 접근하여 사용할 수 있다
-![](images/20190907/image_6.png)
+![](images/Quartz-Job-Scheduler란/image_6.png)
 
 * **JobDetail**
 	* Job을 실행시키기 위한 정보를 담고 있는 객체이다. Job의 이름, 그룹, JobDataMap 속성 등을 지정할 수 있다. Trigger가 Job을 수행할 때 이 정보를 기반으로 스케줄링을 한다
-![](images/20190907/image_23.png)
+![](images/Quartz-Job-Scheduler란/image_23.png)
 
 * **Trigger**
 	* Trigger는 Job을 실행시킬 스케줄링 조건 (ex. 반복 횟수, 시작시간) 등을 담고 있고 Scheduler는 이 정보를 기반으로 Job을 수행시킨다.
@@ -72,12 +72,12 @@ Quartz Scheduler에 익숙해지기 위해서 자주 사용하는 용어들을 �
 	* Trigger는 2가지 형태로 지정할 수 있다
 		* SimpleTrigger
 			* 특정 시간에 Job을 수행할 때 사용되며 반복 횟수와 실행 간격등을 지정할 수 있다
-![](images/20190907/image_3.png)
+![](images/Quartz-Job-Scheduler란/image_3.png)
 		* CronTrigger
 			* CronTrigger는 cron 표현식으로 Trigger를 정의하는 방식이다 (ex.매일 12시 - '0 0 12 * * ?’)
 			* Cron 표현식은 SimpleTrigger와 같이 단순 반복뿐만이 아니라 더 복잡한 스케줄링(ex. 매월 마지막 금요일에 오후 3시부터 3시까지 몇분마다 실행)도 지정할 수 있다
 			* Cron 표현식은 [이곳](https://www.freeformatter.com/cron-expression-generator-quartz.html) 을 참고해주세요
-![](images/20190907/image_25.png)
+![](images/Quartz-Job-Scheduler란/image_25.png)
 
 * Misfire Instructions
 	* Misfire는 Job이 실행되어야 하는 시간, fire time을 지키지 못한 실행 불발을 의미한다
@@ -91,12 +91,12 @@ Quartz Scheduler에 익숙해지기 위해서 자주 사용하는 용어들을 �
 		* JobListener
 			* Job 실행전후로 이벤트를 받을 수 있다
 
-![](images/20190907/image_24.png)
+![](images/Quartz-Job-Scheduler란/image_24.png)
 
 		* TriggerLIstener
 			* Trigger가 발생하거나 불발이 일어날 때나 Trigger를 완료할 때 이벤트를 받을 수 있다
 
-![](images/20190907/image_16.png)
+![](images/Quartz-Job-Scheduler란/image_16.png)
 
 * JobStore
 	* Job과 Trigger의 정보를 2가지 방식으로 저장할 수 있다
@@ -115,7 +115,7 @@ Quartz Scheduler에 익숙해지기 위해서 자주 사용하는 용어들을 �
 
 [Java Articles](https://www.javarticles.com/2016/03/quartz-scheduler-model.html) 블로그에서 가져온 다이어그램입니다. Quartz의 전체 구조와 흐름을 잘 보여주는 그림입니다. Quartz의 세밀한 설정을 이해하는데 공식 문서도 도움이 되지만, 실제 [소스코드](https://github.com/quartz-scheduler) 를 보면 Quartz의 동작과 전체 아키텍처 구조를 이해하는데 많은 도움이 됩니다. 
 
-![](images/20190907/image_8.png)
+![](images/Quartz-Job-Scheduler란/image_8.png)
 
 Quartz 스케줄러가 언제 시작되고 등록된 Job들이 어떤 작업들에 의해서 실행되는지 다음 튜터리얼에서 사용할 코드를 보면서 간단하게 알아보도록 하겠습니다.
 
@@ -125,19 +125,19 @@ Quartz 스케줄러가 언제 시작되고 등록된 Job들이 어떤 작업들�
 
 스프링 부트 구동시 콘솔에 찍히는 화면입니다. Quartz Scheduler가 초기화되고 시작된 이후에 추가하는 SimpleJob이 실행되는 것을 볼 수 있습니다.
 
-![](images/20190907/image_22.png)
+![](images/Quartz-Job-Scheduler란/image_22.png)
 
 분석한 코드를 나름 정리한다고 했는데, 이해한 코드를 쉽게 글로 정리하기가 쉽지 않네요. 디버깅을 걸어서 따라가면서 정리된 내용을 보시면 좋을 듯합니다.
 
 * SchedulerFactoryBean
 	* Quartz 스케줄러는 스프링의 컨테이너의 빈 LifeCycle 관리에 의해서 scheduler관련 설정이 초기화, 시작, 종료가 된다
-![](images/20190907/image_4.png)
+![](images/Quartz-Job-Scheduler란/image_4.png)
 	* **1.1 ==> void afterPropertiesSet() : InitializingBean 인터페이스의 의해서 호출됨**
 		* **prepareSchedulerFactory() 메서드는 SchedulerFactory 인스턴스인 StdSchedulerFactory를 반환해서 prepareScheduler() 인자로 넘겨주고** Scheduler instance를 초기화한다
-![](images/20190907/image_18.png)
+![](images/Quartz-Job-Scheduler란/image_18.png)
 		* **1.2 ==> Scheduler prepareScheduler(SchedulerFactory schedulerFactory) :**
 			* **SchedulerFactory로 부터 Scheduler 인스턴스를 얻어온다**
-![](images/20190907/image_12.png)
+![](images/Quartz-Job-Scheduler란/image_12.png)
 			* **1.3 ==>** **Scheduler createScheduler(SchedulerFactory schedulerFactory, @Nullable String schedulerName)**
 				* **StdSchedulerFactory.getScheduler()에서 여러 초기화 단계를 실행한 후 Scheduler 인스턴스를 반환한다**
 					* 관련 Quartz 클래스를 로드한다 (ex. JobFactory, SimpleThreadPool, JobStore)
@@ -145,16 +145,16 @@ Quartz 스케줄러가 언제 시작되고 등록된 Job들이 어떤 작업들�
 					* JobListeners, TriggerListeners 객체 생성 및 설정
 					* QuartzSchedulerThread도 시작한다
 					* 등등 …..
-![](images/20190907/image_5.png)
+![](images/Quartz-Job-Scheduler란/image_5.png)
 	* **2.1 ==> start() : SmartLifeCycle 인터페이스의 의해서 호출된다**
 		* **초기화한 Scheduler 인스턴스와 startUpDelay을 startScheduler() 메서드 인자 값로 넘겨준다**
-![](images/20190907/image_26.png)
+![](images/Quartz-Job-Scheduler란/image_26.png)
 		* **질문2의 답변** **2.2 ==>** **void startScheduler(final Scheduler scheduler, final int startupDelay)**
 			* **StdScheduler.start() 메서드에서 실제 QuartzScheduler 관련 쓰레드를 시작해서 등록된 Job들을 실행한다**
-![](images/20190907/image_20.png)
+![](images/Quartz-Job-Scheduler란/image_20.png)
 	* **2.2 ==> stop() : SmartLifeCycle 인터페이스의 의해서 호출된다**
 		* 톰켓 shutdown할 때 stop() 메서드가 호출된다
-![](images/20190907/image_11.png)
+![](images/Quartz-Job-Scheduler란/image_11.png)
 
 * QuartzScheduler :
 	* **3.1 ==> start() : Quartz 스케줄러가 시작된다**
@@ -164,27 +164,27 @@ Quartz 스케줄러가 언제 시작되고 등록된 Job들이 어떤 작업들�
 				* ClusterManager를 별도의 쓰레드로 실행함
 				* MisfireHandler를 별도의 쓰레드로 실행함
 
-![](images/20190907/image_15.png)
+![](images/Quartz-Job-Scheduler란/image_15.png)
 
 * QuartzSchedulerThread extends Thread
 	* **4.1 ==> QuartzScheduler 생성자에서 호출되고 QuartzScheduler 생성자는 StdSchedulerFactory.getScheduler() -> instantiate()에 의해서 호출된다**
 		* StdSchedulerFactory.instantiate()
-![](images/20190907/image_17.png)
+![](images/Quartz-Job-Scheduler란/image_17.png)
 		* QuartzScheduler 생성자
-![](images/20190907/image_10.png)
+![](images/Quartz-Job-Scheduler란/image_10.png)
 	* **4.2 ==> run()**
 		* **스케줄러가 halted된 상태가 아니면 계속 loop을 돌며 Job을 실행하는 메인 로직이 들어있다**
 		* 실행할 Thread가 있는 경우에
 			* Fire할 Trigger 목록을 DB에서 얻어온 이후
-![](images/20190907/image_7.png)
+![](images/Quartz-Job-Scheduler란/image_7.png)
 			* 인자로 넘겨준 TriggerFiredBundle 정보로 새로운 JobRunShell 쓰레드 객체를 생성하고 runInThread(shell)에서 쓰레드를 실행시킨다
-![](images/20190907/image_1.png)
+![](images/Quartz-Job-Scheduler란/image_1.png)
 				* **질문2의 답변 ==> 4.2.1 job.execute(jec)**
 					* **실제 저희가 정의한 (ex. SimpleJob, CronJob) Job을 실행하게 된다**
-![](images/20190907/image_2.png)
+![](images/Quartz-Job-Scheduler란/image_2.png)
 		* 램덤한 idle waitTime을 계산 값만큼 잠시 WAITING 상태로 변경한다
 
-![](images/20190907/image_27.png)
+![](images/Quartz-Job-Scheduler란/image_27.png)
 
 * ClusterManager extends Thread
 	* 노드중에 fail 노드를 찾아서 실패된 Trigger와 Job에 대한 정보를 업데이트하여 recover를 시킨다
@@ -196,7 +196,7 @@ Quartz 스케줄러가 언제 시작되고 등록된 Job들이 어떤 작업들�
 	* ==> JobRunShell.run()에서 job을 실행하는 과정에서 Job과 Trigger에 대한 listener 메서드들을 실행한다
 		* ex. triggerFired() 메서드는 아래 메서드안에서 실행한다
 
-![](images/20190907/image_19.png)
+![](images/Quartz-Job-Scheduler란/image_19.png)
 
 # 4. 정리
 
