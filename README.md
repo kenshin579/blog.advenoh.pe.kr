@@ -1,4 +1,4 @@
-[![HitCount](http://hits.dwyl.io/cheese10yun/blog-sample.svg)](http://hits.dwyl.io/cheese10yun/blog-sample)
+[![HitCount](http://hits.dwyl.io/kenshin579/advenohpekr.svg)](http://hits.dwyl.io/kenshin579/advenohpekr)
 
 # Frank Oh's Blog Code
 
