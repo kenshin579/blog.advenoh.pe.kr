@@ -9,7 +9,6 @@ from itertools import islice
 
 ################################################################################################
 # todo :
-# README.md 파일에 블로그 목록을 추가하기
 # master 브랜치에 cherry pick을 해야 함 - 자동으로 할 수 없는 방법은 없나?
 ################################################################################################
 
@@ -71,11 +70,6 @@ def write_blog_list_to_file(result, filename):
                 ))
 
             out_file.write('\n')
-
-
-def replace_pathname(org_str, repl_str):
-    return str.replace(org_str, repl_str)
-
 
 def get_all_files_with_extension(path, extensions):
     filenames_with_extension = []
