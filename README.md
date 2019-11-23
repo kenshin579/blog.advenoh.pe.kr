@@ -1,184 +1,81 @@
-<div align="center">
+[![HitCount](http://hits.dwyl.io/kenshin579/advenohpekr.svg)](http://hits.dwyl.io/kenshin579/advenohpekr)
 
-![](./assets/gatsby-starter-bee.png)
+# Advenoh Blog Code
 
-</div>
+[Advenoh](https://blog.advenoh.pe.kr)
 
-# gatsby-starter-bee
+## database
+* [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-JPA-관련-질문-모음)
+* [관계형 데이터베이스에서 조인(join)이란?](https://blog.advenoh.pe.kr/database/관계형-데이터베이스에서-조인-join이란)
+* [관계형 데이터베이스 설계 및 구축](https://blog.advenoh.pe.kr/database/관계형-데이터베이스-설계-및-구축)
+* [Q&A : MySql 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-MySql-관련-질문-모음)
+* [Q&A : Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-Mybatis-관련-질문-모음)
+* [데이터베이스의 키 종류](https://blog.advenoh.pe.kr/database/데이터베이스의-키-종류)
 
-![](./assets/screenshot-pc.png)
+## virtualization
+* [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/virtualization/Heroku에-Node-js-MongoDB-App-배포하기)
 
-[![Build Status](https://travis-ci.org/JaeYeopHan/gatsby-starter-bee.svg?branch=master)](https://travis-ci.org/JaeYeopHan/gatsby-starter-bee) [![Greenkeeper badge](https://badges.greenkeeper.io/JaeYeopHan/gatsby-starter-bee.svg)](https://greenkeeper.io/)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/JaeYeopHan/gatsby-starter-bee.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/JaeYeopHan/gatsby-starter-bee/alerts/)
-[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4b1962ce-6206-4d8f-9516-63be92294198/deploy-status)](https://app.netlify.com/sites/gatsby-starter-bee/deploys)
+## python
+* [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/python/웹-스크래핑하면서-차단-방지하는-방법)
+* [파이썬으로 웹 스크래핑하는 방법 - Web scraping](https://blog.advenoh.pe.kr/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping)
+* [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/python/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기)
+* [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/python/Gitbook으로-전자책-만들어보기)
 
-<a href="https://twitter.com/JbeeLjyhanll">
-<img alt="Twitter: JbeeLjyhanll" src="https://img.shields.io/twitter/follow/JbeeLjyhanll.svg?style=social" target="_blank" />
-</a>
+## java
+* [Jackson에서 Infinite Recursion 이슈 해결방법](https://blog.advenoh.pe.kr/java/Jackson에서-Infinite-Recursion-이슈-해결방법)
+* [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Lombok-관련-질문-모음)
+* [자바에서 final에 대한 이해](https://blog.advenoh.pe.kr/java/자바에서-final에-대한-이해)
+* [자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance](https://blog.advenoh.pe.kr/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance)
+* [자바 Garbage Collection이란](https://blog.advenoh.pe.kr/java/자바-Garbage-Collection이란)
+* [Q&A : JsonPath 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-JsonPath-관련-질문-모음)
+* [자바 커스텀 어노테이션 만들기](https://blog.advenoh.pe.kr/java/자바-커스텀-어노테이션-만들기)
+* [전후처리를 위한 자바 메서드 래퍼 메서드 생성하기 - pre and post processing for java wrapper method](https://blog.advenoh.pe.kr/java/전후처리를-위한-자바-메서드-래퍼-메서드-생성하기-pre-and-post-processing-for-java-wrapper-method)
+* [Q&A : Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Cache-SSM-관련-질문-모음)
+* [Q&A : Maven 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Maven-관련-질문-모음)
+* [새로운 기능 및 개선 사항 목록 - 자바11에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바11에서의-변화)
+* [Q&A : 개발관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-개발관련-질문-모음)
+* [Lombok 기본 사용법 익히기](https://blog.advenoh.pe.kr/java/Lombok-기본-사용법-익히기)
+* [자바 keystore에 SSL 인증서 import 하기](https://blog.advenoh.pe.kr/java/자바-keystore에-SSL-인증서-import-하기)
+* [새로운 기능 및 개선 사항 목록 - 자바10에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바10에서의-변화)
+* [새로운 기능 및 개선 사항 목록 - 자바Beyond에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바Beyond에서의-변화)
+* [Java Jayway JsonPath 사용법](https://blog.advenoh.pe.kr/java/Java-Jayway-JsonPath-사용법)
+* [새로운 기능 및 개선 사항 목록 - 자바8에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바8에서의-변화)
+* [Q&A : Jackson 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Jackson-관련-질문-모음)
+* [자바8 Optional이란](https://blog.advenoh.pe.kr/java/자바8-Optional이란)
+* [JUnit Rules이란](https://blog.advenoh.pe.kr/java/JUnit-Rules이란)
+* [아마존 S3 Bucket API 사용법](https://blog.advenoh.pe.kr/java/아마존-S3-Bucket-API-사용법)
+* [새로운 기능 및 개선 사항 목록 - 자바9에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바9에서의-변화)
+* [Q&A : Java 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Java-관련-질문-모음)
+* [추가된 LOG를 JUnit에서 확인하는 방법](https://blog.advenoh.pe.kr/java/추가된-LOG를-JUnit-에서-확인하는-방법)
 
-[한국어🇰🇷](./README.ko.md)
+## algorithm
+* [Algorithm : 2개의 array에서 common value 찾기](https://blog.advenoh.pe.kr/algorithm/Algorithm-2개의-array에서-common-value-찾기)
+* [Algorithm : 정수값에서 1이 설정된 bit를 카운트하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-정수값에서-1이-설정된-bit를-카운트하기)
+* [Algorithm : 괄호 기호가 Valid한지 체크하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-괄호-기호가-Valid한지-체크하기)
 
-> Blog Starter Pack based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
+## mac
+* [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기)
+* [맥 환경에서 여러 JDK 버전 설치하고 변경하기](https://blog.advenoh.pe.kr/mac/맥-환경에서-여러-JDK-버전-설치하고-변경하기)
 
-In this template...
+## javascript
+* [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
 
-- 💄 Code highlight with Fira Code font
-- 🧙 CLI Tool
-- 😄 Emoji (emojione)
-- 🗣 Social share feature (Twitter, Facebook)
-- 💬 Comment feature (disqus, utterances)
-- ☕ 'Buy me a coffee' service
-- 🤖 GA
-- ⭐ Enhance UX
-- ⚙ Configurable
+## node
+* [Node.js 모듈 NPM 저장소에 배포하기](https://blog.advenoh.pe.kr/node/Node-모듈-NPM-저장소에-배포하기)
 
-> [Gatsby Starters Docs](https://www.gatsbyjs.org/starters/JaeYeopHan/gatsby-starter-bee/)
+## git
+* [Git Rebase로 병합하기](https://blog.advenoh.pe.kr/git/Git-Rebase로-병합하기)
+* [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
 
-## Demo
+## spring
+* [스프링 RestTemplate](https://blog.advenoh.pe.kr/spring/스프링-RestTemplate)
+* [Q&A : Spring Boot Annotation 모음](https://blog.advenoh.pe.kr/spring/QA-Spring-Boot-Annotation-모음)
+* [스프링 파일 업로드 처리](https://blog.advenoh.pe.kr/spring/스프링-파일-업로드-처리)
+* [Simple Spring Memcached(SSM)란](https://blog.advenoh.pe.kr/spring/Simple-Spring-MemcachedSSM란)
+* [[Quartz - 1] Quartz Job Scheduler란?](https://blog.advenoh.pe.kr/spring/Quartz-Job-Scheduler란)
+* [[Quartz - 4] Quartz에서 실행중인 Job을 Interrupt하여 Job Scheduler를 정상종료 시키는 방법](https://blog.advenoh.pe.kr/spring/Quartz에서-실행중인-Job을-Interrupt하여-Job-Scheduler를-정상종료-시키는-방법)
+* [H2 데이터베이스 사용법 및 Intellij에서 Database 연동하기](https://blog.advenoh.pe.kr/spring/H2-데이터베이스-사용법-및-Intellij에서-Database-연동)
+* [Q&A : Spring JPA Annotation 모음](https://blog.advenoh.pe.kr/spring/QA-Spring-JPA-Annotation-모음)
+* [[Quartz - 3] Multi WAS 환경을 위한 Cluster 환경의 Quartz Job Scheduler 구현](https://blog.advenoh.pe.kr/spring/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현)
+* [[Quartz - 2] Spring Boot + Quartz을 이용한 Job Scheduler 구현 (In-memory)](https://blog.advenoh.pe.kr/spring/Spring-Boot-Quartz을-이용한-Job-Scheduler-구현-In-memory)
 
-- [Default Theme](https://gatsby-starter-bee.netlify.com/)
-
-## Use case
-
-- [JBEE.io](https://jbee.io)
-- [Rinae's devlog](https://rinae.dev/)
-- [Seungdols Company](https://seungdols.dev/)
-- [Kooku's log](https://kooku.netlify.com/)
-- [SOSOLOG](https://so-so.dev/)
-- [delivan.dev](https://delivan.dev/)
-- [Jungin's blog](https://jungin.netlify.com/)
-
-> If you're using this template, Please Pull Request for `Use case`!
-
-## 😎 Quick Start
-
-### 1. Create a Gatsby site.
-
-```sh
-# create a new Gatsby site using the blog starter
-$ npx gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee
-```
-
-> If you are not using `npx`, following [Gatsby Getting Started](https://www.gatsbyjs.org/docs/quick-start)
-
-```sh
-$ npm install -g gatsby-cli
-$ gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee
-```
-
-### 2. Start developing.
-
-```sh
-$ cd my-blog-starter/
-$ npm start
-# open localhost:8000
-```
-
-### 3. Add your content
-
-You can write...
-
-- contents to blog in `content/blog` directory.
-- resume `content/__about` directory.
-
-> With markdown syntax and some meta data
-
-#### Support script for creating new post
-
-![](assets/cli-tool-example.gif)
-
-```sh
-$ npm run post
-```
-
-### 4. Fix meta data
-
-You can fix meta data of blog in `/gatsby-meta-config.js` file.
-
-### 5. Publish with [netlify](https://netlify.com)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JaeYeopHab/gatsby-starter-bee)
-
-:bulb: if you want to deploy github pages, add following script to package.json
-
-```json
-"scripts": {
-    "deploy": "gatsby build && gh-pages -d public -b master -r 'git@github.com:${your github id}/${github page name}.github.io.git'"
-}
-```
-
-## 🧐 Customize!
-
-### ⚙ Gatsby config
-
-```
-/root
-├── gatsby-browser.js // font, polyfill, onClientRender ...
-├── gatsby-config.js // Gatsby config
-├── gatsby-meta-config.js // Template meta config
-└── gatsby-node.js // Gatsby Node config
-```
-
-### ⛑ Structure
-
-```
-src
-├── components // Just component with styling
-├── layout // home, post layout
-├── pages // routing except post: /(home), /about
-├── styles
-│   ├── code.scss
-│   ├── dark-theme.scss
-│   ├── light-theme.scss
-│   └── variables.scss
-└── templates
-    ├── blog-post.js
-    └── home.js
-```
-
-### 🎨 Style
-
-You can customize color in `src/styles` directory.
-
-```
-src/styles
-├── code.scss
-├── dark-theme.scss
-├── light-theme.scss
-└── variables.scss
-```
-
-### 🍭 Tips (You can change...)
-
-- Profile image! (replace file in `/content/assets/profile.png`)
-- Favicon image! (replace file in `/content/assets/felog.png`)
-- Header gradient! (\$theme-gradient `/styles/variables.scss`)
-- Utterances repository! (replace repository address in `/gatsby-meta-config.js`)
-
-## ☕ Like it?
-
-<a href="https://www.buymeacoffee.com/jbee" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-## 🤔 If...
-
-If you are currently writing in the Medium, consider migration with [medium-to-own-blog](https://github.com/mathieudutour/medium-to-own-blog)!
-
-## :bug: Bug reporting
-
-[Issue](https://github.com/JaeYeopHan/gatsby-starter-bee/issues)
-
-## 🎁 Contributing
-
-[Contributing guide](./CONTRIBUTING.md)
-
-## LICENSE
-
-[MIT](./LICENSE)
-
-<div align="center">
-
-<sub><sup>Project by <a href="https://github.com/JaeYeopHan">@Jbee</a></sup></sub><small>✌</small>
-
-</div>
