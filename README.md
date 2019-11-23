@@ -1,58 +1,81 @@
 [![HitCount](http://hits.dwyl.io/kenshin579/advenohpekr.svg)](http://hits.dwyl.io/kenshin579/advenohpekr)
 
-# Frank Oh's Blog Code
+# Advenoh Blog Code
 
-[Advenoh](https://blog.advenoh.pe.kr) ***예제 코드 지속해서 해당 프로젝트를 이어 나아갈 예정이라 깃허브 Star, Watching 버튼을 누르시면 구독 신청받으실 수 있습니다.***
+[Advenoh](https://blog.advenoh.pe.kr)
 
-## Node
-* [Loopback 게시판 만들기 (1)](https://github.com/cheese10yun/blog-sample/tree/master/loopback-boards)
-* [AWS S3 업로드시 이미지 최적화](https://github.com/cheese10yun/blog-sample/tree/master/AWS_S3_Image_Optimization_)
-* [Node.JS로 카카오봇 만들기](https://github.com/cheese10yun/KaKaoBot-Node)
-* [Node AWS S3 업로드](https://cheese10yun.github.io/Node-AWS-S3-Upload/)
-* [Node 다른 서버 API 호출](https://cheese10yun.github.io/API-CALL/)
-* [Passport를 이용한 네이버, 카카오, 페이스북 로그인](https://github.com/cheese10yun/Social_Login)
-* [Crontab을 이용한 노드 API 호출](https://cheese10yun.github.io/crontab-api/)
-* [Node Passport를 이용한 Login + Mysql](https://cheese10yun.github.io/passport-mysql/)
-* [Node.JS + Mysql 연동](https://cheese10yun.github.io/mysql-node/)
-* [Passport를 이용한 Login](https://cheese10yun.github.io/Passport-part1/)
+## database
+* [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-JPA-관련-질문-모음)
+* [관계형 데이터베이스에서 조인(join)이란?](https://blog.advenoh.pe.kr/database/관계형-데이터베이스에서-조인-join이란)
+* [관계형 데이터베이스 설계 및 구축](https://blog.advenoh.pe.kr/database/관계형-데이터베이스-설계-및-구축)
+* [Q&A : MySql 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-MySql-관련-질문-모음)
+* [Q&A : Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-Mybatis-관련-질문-모음)
+* [데이터베이스의 키 종류](https://blog.advenoh.pe.kr/database/데이터베이스의-키-종류)
 
-## Spring
-* [Spring 으로 초간단 Slack Message 보내기](https://github.com/cheese10yun/slackbot)
-* [Spring OOP 프로그래밍 예제(1) - 내가 해석한 SOLID](https://github.com/cheese10yun/blog-sample/tree/master/notification)
-* [Spring OOP 프로그래밍 예제(2) - Value 클래스로 응집력 높이기](https://github.com/cheese10yun/blog-sample/tree/master/bankapi)
-* [Spring OOP 프로그래밍 예제(3) - 추상화, 다형성](https://github.com/cheese10yun/blog-sample/tree/master/partner-api)
-* [Spring OOP 프로그래밍 예제(4) - Service, ServiceImpl 구조에 대한 고찰](https://github.com/cheese10yun/blog-sample/tree/master/service)
-* [Spring OOP 프로그래밍 예제(5) - 외부 API(PagerDuty) 호출](https://github.com/cheese10yun/blog-sample/tree/master/pagerduty)
-* [Spring 예제로 보는 SOLID](https://github.com/cheese10yun/spring-SOLID)
-* [JPA-Embedded](https://github.com/cheese10yun/blog-sample/tree/master/embedded)
-* [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
-* [Jackson 어노테이션 사용법](https://github.com/cheese10yun/blog-sample/tree/master/jackson)
-* [Assistant Properties 적용 방법](https://github.com/cheese10yun/blog-sample/tree/master/properties)
-* [Spring Boot Https 적용하기](https://github.com/cheese10yun/blog-sample/tree/master/spring-https)
-* [Spring OAuth2 Social 기초 정리](https://github.com/cheese10yun/blog-sample/tree/master/social-sample)
-* [Spring OAuth2 Social - Google, Facebook 예제](https://github.com/cheese10yun/spring-security-oauth2-social)
-* [Spring Batch - 기초 정리](https://github.com/cheese10yun/blog-sample/tree/master/batch-demo)
-* [Spring Security 학습](https://github.com/cheese10yun/security-study)
-* [Spring REST Docs - 사용법](https://github.com/cheese10yun/springboot-restdocs)
-* [Spring OAuth2 정리](https://github.com/cheese10yun/springboot-oauth2)
-* [실무에서 Lombok 사용법](https://github.com/cheese10yun/blog-sample/tree/master/lombok)
-* [Spring 예제로 보는 캡슐화](https://github.com/cheese10yun/blog-sample/tree/master/encapsulation)
-* [Spring Boot Test 정리](https://github.com/cheese10yun/blog-sample/tree/master/spring-boot-test)
-* [Spring 실전 가이드](https://github.com/cheese10yun/spring-guide)
-* [Spring Custom Valid 어노테이션 만들기(1)](https://github.com/cheese10yun/blog-sample/blob/master/custom-validation/docs/field-validation.md)
-* [Spring Custom Valid 어노테이션 만들기(2)](https://github.com/cheese10yun/blog-sample/blob/master/custom-validation/docs/class-validation.md)
-* [Builder 기반으로 객체를 안전하게 생성하는 방법](https://github.com/cheese10yun/blog-sample/tree/master/ddd)
-* [Gradle 기반 멀티 모듈 구성하기](https://github.com/cheese10yun/blog-sample/tree/master/multi-module)
-* [Spring Actuator 기초 설정](https://github.com/cheese10yun/blog-sample/tree/master/actuator)
-* [테스트 코드 작성에 대한 나름의 고찰](https://github.com/cheese10yun/blog-sample/tree/master/test-code)
-* [Transaction Rollback 정리](https://github.com/cheese10yun/blog-sample/tree/master/spring-transaction-test)
-* [Spring Batch Study](https://github.com/cheese10yun/batch-study)
-* [Paging 처리 Fetch Join 적용시 limit 동작하지 않는 이슈](https://github.com/cheese10yun/blog-sample/tree/master/jpa-fetch-join)
-* [JPA N+1 발생원인과 해결방법](https://github.com/cheese10yun/blog-sample/tree/master/jpa-n-plus-1)
-* [Junit5 with Spring boot](https://github.com/cheese10yun/blog-sample/tree/master/kotlin-junit5)
-* [Immutable Properties 설정하는 방법](https://github.com/cheese10yun/blog-sample/blob/master/kotlin-junit5/docs/data-properties.md)
+## virtualization
+* [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/virtualization/Heroku에-Node-js-MongoDB-App-배포하기)
 
-## 기타
-* [GitHub로 프로젝트 관리하기](https://github.com/cheese10yun/github-project-management)
-* [IntelliJ 사용법](https://github.com/cheese10yun/IntelliJ)
-* [좋은 학습 자료 및 GitHub 정리](https://github.com/cheese10yun/dev-info)
+## python
+* [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/python/웹-스크래핑하면서-차단-방지하는-방법)
+* [파이썬으로 웹 스크래핑하는 방법 - Web scraping](https://blog.advenoh.pe.kr/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping)
+* [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/python/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기)
+* [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/python/Gitbook으로-전자책-만들어보기)
+
+## java
+* [Jackson에서 Infinite Recursion 이슈 해결방법](https://blog.advenoh.pe.kr/java/Jackson에서-Infinite-Recursion-이슈-해결방법)
+* [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Lombok-관련-질문-모음)
+* [자바에서 final에 대한 이해](https://blog.advenoh.pe.kr/java/자바에서-final에-대한-이해)
+* [자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance](https://blog.advenoh.pe.kr/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance)
+* [자바 Garbage Collection이란](https://blog.advenoh.pe.kr/java/자바-Garbage-Collection이란)
+* [Q&A : JsonPath 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-JsonPath-관련-질문-모음)
+* [자바 커스텀 어노테이션 만들기](https://blog.advenoh.pe.kr/java/자바-커스텀-어노테이션-만들기)
+* [전후처리를 위한 자바 메서드 래퍼 메서드 생성하기 - pre and post processing for java wrapper method](https://blog.advenoh.pe.kr/java/전후처리를-위한-자바-메서드-래퍼-메서드-생성하기-pre-and-post-processing-for-java-wrapper-method)
+* [Q&A : Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Cache-SSM-관련-질문-모음)
+* [Q&A : Maven 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Maven-관련-질문-모음)
+* [새로운 기능 및 개선 사항 목록 - 자바11에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바11에서의-변화)
+* [Q&A : 개발관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-개발관련-질문-모음)
+* [Lombok 기본 사용법 익히기](https://blog.advenoh.pe.kr/java/Lombok-기본-사용법-익히기)
+* [자바 keystore에 SSL 인증서 import 하기](https://blog.advenoh.pe.kr/java/자바-keystore에-SSL-인증서-import-하기)
+* [새로운 기능 및 개선 사항 목록 - 자바10에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바10에서의-변화)
+* [새로운 기능 및 개선 사항 목록 - 자바Beyond에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바Beyond에서의-변화)
+* [Java Jayway JsonPath 사용법](https://blog.advenoh.pe.kr/java/Java-Jayway-JsonPath-사용법)
+* [새로운 기능 및 개선 사항 목록 - 자바8에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바8에서의-변화)
+* [Q&A : Jackson 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Jackson-관련-질문-모음)
+* [자바8 Optional이란](https://blog.advenoh.pe.kr/java/자바8-Optional이란)
+* [JUnit Rules이란](https://blog.advenoh.pe.kr/java/JUnit-Rules이란)
+* [아마존 S3 Bucket API 사용법](https://blog.advenoh.pe.kr/java/아마존-S3-Bucket-API-사용법)
+* [새로운 기능 및 개선 사항 목록 - 자바9에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바9에서의-변화)
+* [Q&A : Java 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Java-관련-질문-모음)
+* [추가된 LOG를 JUnit에서 확인하는 방법](https://blog.advenoh.pe.kr/java/추가된-LOG를-JUnit-에서-확인하는-방법)
+
+## algorithm
+* [Algorithm : 2개의 array에서 common value 찾기](https://blog.advenoh.pe.kr/algorithm/Algorithm-2개의-array에서-common-value-찾기)
+* [Algorithm : 정수값에서 1이 설정된 bit를 카운트하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-정수값에서-1이-설정된-bit를-카운트하기)
+* [Algorithm : 괄호 기호가 Valid한지 체크하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-괄호-기호가-Valid한지-체크하기)
+
+## mac
+* [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기)
+* [맥 환경에서 여러 JDK 버전 설치하고 변경하기](https://blog.advenoh.pe.kr/mac/맥-환경에서-여러-JDK-버전-설치하고-변경하기)
+
+## javascript
+* [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
+
+## node
+* [Node.js 모듈 NPM 저장소에 배포하기](https://blog.advenoh.pe.kr/node/Node-모듈-NPM-저장소에-배포하기)
+
+## git
+* [Git Rebase로 병합하기](https://blog.advenoh.pe.kr/git/Git-Rebase로-병합하기)
+* [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
+
+## spring
+* [스프링 RestTemplate](https://blog.advenoh.pe.kr/spring/스프링-RestTemplate)
+* [Q&A : Spring Boot Annotation 모음](https://blog.advenoh.pe.kr/spring/QA-Spring-Boot-Annotation-모음)
+* [스프링 파일 업로드 처리](https://blog.advenoh.pe.kr/spring/스프링-파일-업로드-처리)
+* [Simple Spring Memcached(SSM)란](https://blog.advenoh.pe.kr/spring/Simple-Spring-MemcachedSSM란)
+* [[Quartz - 1] Quartz Job Scheduler란?](https://blog.advenoh.pe.kr/spring/Quartz-Job-Scheduler란)
+* [[Quartz - 4] Quartz에서 실행중인 Job을 Interrupt하여 Job Scheduler를 정상종료 시키는 방법](https://blog.advenoh.pe.kr/spring/Quartz에서-실행중인-Job을-Interrupt하여-Job-Scheduler를-정상종료-시키는-방법)
+* [H2 데이터베이스 사용법 및 Intellij에서 Database 연동하기](https://blog.advenoh.pe.kr/spring/H2-데이터베이스-사용법-및-Intellij에서-Database-연동)
+* [Q&A : Spring JPA Annotation 모음](https://blog.advenoh.pe.kr/spring/QA-Spring-JPA-Annotation-모음)
+* [[Quartz - 3] Multi WAS 환경을 위한 Cluster 환경의 Quartz Job Scheduler 구현](https://blog.advenoh.pe.kr/spring/Multi-WAS-환경을-위한-Cluster-환경의-Quartz-Job-Scheduler-구현)
+* [[Quartz - 2] Spring Boot + Quartz을 이용한 Job Scheduler 구현 (In-memory)](https://blog.advenoh.pe.kr/spring/Spring-Boot-Quartz을-이용한-Job-Scheduler-구현-In-memory)
+
