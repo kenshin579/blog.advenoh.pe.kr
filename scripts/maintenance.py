@@ -32,7 +32,7 @@ BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
 def generate_blog_list():
     result = {}
     for file in get_all_files_with_extension(BLOG_CONTENT, ['md']):
-        category = os.path.basename(os.path.dirname(file))
+        category = os.path.basename(os.path.dirname(file)).capitalize()
         if result.get(category):
             result[category].append({'title': get_blog_title(file), 'filename': file})
         else:
