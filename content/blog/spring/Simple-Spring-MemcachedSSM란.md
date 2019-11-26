@@ -1,6 +1,6 @@
 ---
 title: 'Simple Spring Memcached(SSM)란'
-date: 2010-1-1 22:21:23
+date: 2019-1-1 22:21:23
 category: 'spring'
 tags: ["ssm", "cache", "java", "spring", "memcache", "캐쉬", "스프링"]
 ---
