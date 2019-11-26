@@ -4,7 +4,7 @@
 
 [Advenoh](https://blog.advenoh.pe.kr)
 
-## database
+## Database
 * [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-JPA-관련-질문-모음)
 * [관계형 데이터베이스에서 조인(join)이란?](https://blog.advenoh.pe.kr/database/관계형-데이터베이스에서-조인-join이란)
 * [관계형 데이터베이스 설계 및 구축](https://blog.advenoh.pe.kr/database/관계형-데이터베이스-설계-및-구축)
@@ -12,16 +12,16 @@
 * [Q&A : Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-Mybatis-관련-질문-모음)
 * [데이터베이스의 키 종류](https://blog.advenoh.pe.kr/database/데이터베이스의-키-종류)
 
-## virtualization
+## Virtualization
 * [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/virtualization/Heroku에-Node-js-MongoDB-App-배포하기)
 
-## python
+## Python
 * [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/python/웹-스크래핑하면서-차단-방지하는-방법)
 * [파이썬으로 웹 스크래핑하는 방법 - Web scraping](https://blog.advenoh.pe.kr/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping)
 * [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/python/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기)
 * [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/python/Gitbook으로-전자책-만들어보기)
 
-## java
+## Java
 * [Jackson에서 Infinite Recursion 이슈 해결방법](https://blog.advenoh.pe.kr/java/Jackson에서-Infinite-Recursion-이슈-해결방법)
 * [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Lombok-관련-질문-모음)
 * [자바에서 final에 대한 이해](https://blog.advenoh.pe.kr/java/자바에서-final에-대한-이해)
@@ -48,26 +48,26 @@
 * [Q&A : Java 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Java-관련-질문-모음)
 * [추가된 LOG를 JUnit에서 확인하는 방법](https://blog.advenoh.pe.kr/java/추가된-LOG를-JUnit-에서-확인하는-방법)
 
-## algorithm
+## Algorithm
 * [Algorithm : 2개의 array에서 common value 찾기](https://blog.advenoh.pe.kr/algorithm/Algorithm-2개의-array에서-common-value-찾기)
 * [Algorithm : 정수값에서 1이 설정된 bit를 카운트하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-정수값에서-1이-설정된-bit를-카운트하기)
 * [Algorithm : 괄호 기호가 Valid한지 체크하기](https://blog.advenoh.pe.kr/algorithm/Algorithm-괄호-기호가-Valid한지-체크하기)
 
-## mac
+## Mac
 * [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기)
 * [맥 환경에서 여러 JDK 버전 설치하고 변경하기](https://blog.advenoh.pe.kr/mac/맥-환경에서-여러-JDK-버전-설치하고-변경하기)
 
-## javascript
+## Javascript
 * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
 
-## node
+## Node
 * [Node.js 모듈 NPM 저장소에 배포하기](https://blog.advenoh.pe.kr/node/Node-모듈-NPM-저장소에-배포하기)
 
-## git
+## Git
 * [Git Rebase로 병합하기](https://blog.advenoh.pe.kr/git/Git-Rebase로-병합하기)
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
 
-## spring
+## Spring
 * [스프링 RestTemplate](https://blog.advenoh.pe.kr/spring/스프링-RestTemplate)
 * [Q&A : Spring Boot Annotation 모음](https://blog.advenoh.pe.kr/spring/QA-Spring-Boot-Annotation-모음)
 * [스프링 파일 업로드 처리](https://blog.advenoh.pe.kr/spring/스프링-파일-업로드-처리)
