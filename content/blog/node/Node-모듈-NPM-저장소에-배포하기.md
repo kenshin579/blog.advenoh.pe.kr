@@ -1,7 +1,7 @@
 ---
 title: 'Node.js 모듈 NPM 저장소에 배포하기'
 date: 2019-3-24 20:41:32
-category: 'python'
+category: 'node'
 tags: ["npm", "node", "노드", "배포", "저장소"]
 ---
 
