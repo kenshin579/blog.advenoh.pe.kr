@@ -1,7 +1,7 @@
 ---
 title: 'Git Rebase로 병합하기'
 date: 2019-8-11 23:05:23
-category: 'java'
+category: 'git'
 ---
 
 # 1. 들어가며
