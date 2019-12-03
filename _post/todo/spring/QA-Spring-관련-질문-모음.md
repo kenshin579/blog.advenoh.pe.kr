@@ -48,37 +48,7 @@ tags: ["Q&A", QA", "faq", spring", "java", "스프링"]
 
 ![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_15.png)
 
----
-
-### <span style="color:orange">[답변완료]</span>
-
-### <span style="color:brown">1. @RequestMapping에서 consumes와 produces의 차이점?</span>
-
-- consumes
-  _ 요청에 매핑할 컨첸츠 타입을 설정한다 (Accept)
-  _ 받을 타입을 설정한다
-- produces
-  _ 응답으로 내려줄 컨텐츠의 타입을 설정한다 (Content-Type을 변경함)
-  _ 여러 값을
-
-ㅁ.Accept 와 content-Type 에 대한 접근 허용을 사용하기 위해 header 라는 속성을 사용했다면, 3.1부터는 consumes 와 produces 로 나눠 사용할 수 있다.
-
-- consumes : content-Typed의 접근 허용을 설정함
-- produces : accept의 접근 허용을 설정함
-
-![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_12.png)
-
-![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_9.png)
-
-![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_1.png)
-
-참고
-
-- [http://syaku.tistory.com/277](http://syaku.tistory.com/277)
-- [http://heenkim.blogspot.com/2013/12/rest_19.html](http://heenkim.blogspot.com/2013/12/rest_19.html)
-- [https://hilucky.tistory.com/12](https://hilucky.tistory.com/12)
-
-### <span style="color:brown">2. 컨트롤러 단에서 produces가 있는 것과 없는 것의 차이점은?</span>
+#### - 컨트롤러 단에서 produces가 있는 것과 없는 것의 차이점은?
 
 ![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/2F07CE9A-4FE0-4AE0-AE8B-F2BE2530B5F3.png)
 
@@ -116,7 +86,7 @@ tags: ["Q&A", QA", "faq", spring", "java", "스프링"]
 #### - @InjectMocks @Mocks의 차이점
       [https://stackoverflow.com/questions/16467685/difference-between-mock-and-injectmocks](https://stackoverflow.com/questions/16467685/difference-between-mock-and-injectmocks)
 
-#### - @ASync
+#### - @Aync
       ㅁ.설정을 필요함
 
 ![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_8.png)
@@ -217,3 +187,34 @@ tags: ["Q&A", QA", "faq", spring", "java", "스프링"]
 ![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_3.png)
 
 [https://stackoverflow.com/questions/19451814/java-lang-noclassdeffounderror-javax-el-propertynotfoundexception-when-i-send-i/22114584](https://stackoverflow.com/questions/19451814/java-lang-noclassdeffounderror-javax-el-propertynotfoundexception-when-i-send-i/22114584)
+
+
+---
+
+### <span style="color:orange">[답변완료]</span>
+
+### <span style="color:brown">1. @RequestMapping에서 consumes와 produces의 차이점?</span>
+
+- consumes
+  _ 요청에 매핑할 컨첸츠 타입을 설정한다 (Accept)
+  _ 받을 타입을 설정한다
+- produces
+  _ 응답으로 내려줄 컨텐츠의 타입을 설정한다 (Content-Type을 변경함)
+  _ 여러 값을
+
+ㅁ.Accept 와 content-Type 에 대한 접근 허용을 사용하기 위해 header 라는 속성을 사용했다면, 3.1부터는 consumes 와 produces 로 나눠 사용할 수 있다.
+
+- consumes : content-Typed의 접근 허용을 설정함
+- produces : accept의 접근 허용을 설정함
+
+![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_12.png)
+
+![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_9.png)
+
+![](Q&A%20%20Spring%20%EA%B4%80%EB%A0%A8%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C/image_1.png)
+
+참고
+
+- [http://syaku.tistory.com/277](http://syaku.tistory.com/277)
+- [http://heenkim.blogspot.com/2013/12/rest_19.html](http://heenkim.blogspot.com/2013/12/rest_19.html)
+- [https://hilucky.tistory.com/12](https://hilucky.tistory.com/12)
