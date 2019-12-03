@@ -1,31 +1,24 @@
 ---
-title: '[JPA-1] JPA 다대일(N:1) @Many-To-One 연관관계'
-date: 2019-11-1 10:23:33
+title: '[JPA-2] JPA 다대일(N:1) @Many-To-One 연관관계'
+date: 2019-11-25 10:23:33
 category: 'database'
 tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne", "mapping", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대일]
 ---
 
 # 1. 들어가며
 
-sdfsf
-
-
-
-양방향, 단방향에 대한 설명... 
-
-연관관계에 대한 설명... 가장 많이 사용되는 다대일에 대해서 알아보겠습니다. 
-
-- 다대일
-- 일대다
-- 일대일
-- 다대다
+이 포스팅에서는 JPA에서 자주 사용하는 다대일 Many-To-One 연관관계에 대해서 알아보겠습니다. 
 
 # 2. 개발 환경
+
+작성한 샘플 코드는 아래 깃허브 링크를 참고해주세요. 
 
 * OS : Mac OS
 * IDE: Intellij
 * Java : JDK 1.8
 * Source code : github
+  * [단방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-undirectional)
+  * [양방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-undirectional)
 * Software management tool : Maven
 
 # 3. 다대일 (N:1) 연관관계
@@ -46,6 +39,9 @@ sdfsf
 
 일대다관계는 엔티티를 하나 이상 참조할 수 있으므로 자바 Collection, List, Set, Map중에 하나를 사용해야 합니다. 
 
+- 실제 query가 어떻게 시작되는지도 적어두자
+- 
+
 ## 3.3 주의사항
 
 무한 루프에 빠지는 경우
@@ -64,6 +60,7 @@ sdfsf
 
 # 5. 참고
 
+* 
 * JPA - one-to-many mapping
 	* [https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/](https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/)
 	* [https://www.baeldung.com/hibernate-one-to-many](https://www.baeldung.com/hibernate-one-to-many)
