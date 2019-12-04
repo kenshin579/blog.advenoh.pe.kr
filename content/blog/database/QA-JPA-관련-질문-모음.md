@@ -12,15 +12,7 @@ tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
-
-#### -  multiple column 이슈
-  - 해결 Answerer에
-
-![](images/20191021/image_5.png)
-
-![](images/20191021/image_11.png)
-
-#### -  @Modifying
+#### -  @Modifying란
   - DML (삭제, 수정)인 경우에는 @Modifying 어노테이션을 추가해야 함. 하지않으면 Not Supported for DML operation 오류가 발생함
 
 ![](images/20191021/image_10.png)
@@ -28,13 +20,7 @@ tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
 * [https://winmargo.tistory.com/208](https://winmargo.tistory.com/208)
 * [https://www.baeldung.com/spring-data-jpa-modifying-annotation](https://www.baeldung.com/spring-data-jpa-modifying-annotation)
 
-#### -  @MappedSuperclass
-#### -  JPA에서 db 저장 시점은 언제인가?
-#### -  @NotFound(action = NotFoundAction.IGNORE)
-
-![](images/20191021/image_2.png)
-
-#### -  @Param
+#### -  @Param란?
 
 ![](images/20191021/image_1.png)
 
@@ -47,8 +33,6 @@ tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
   - 연관관계 편의 메서드…
 
 #### -  @NotFound(action = NotFoundAction.IGNORE)은 언제 사용하나?
-ㅁ.
-
 ![](images/20191021/image_9.png)
 
 * [http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/](http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/)
