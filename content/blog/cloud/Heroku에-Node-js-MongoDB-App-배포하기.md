@@ -1,7 +1,7 @@
 ---
 title: 'Heroku에 Node.js+MongoDB App 배포하기'
 date: 2018-8-21 13:09:01
-category: 'virtualization'
+category: 'cloud'
 tags: ["heroku", "node", "mongodb", "deploy", "virtualization", "cloud", "PaaS", "하루쿠", "클라우드", "노드", "몽고", "배포", "가상화"]
 ---
 
@@ -50,7 +50,7 @@ Heroku관련 작업을 하려면 먼저 로그인 명령어로 Heroku 계정에 
 $ heroku login
 ```
 
-![](images/20180821/7D19A750-9227-4555-A898-E1E87BAB3565.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/7D19A750-9227-4555-A898-E1E87BAB3565.png)
 
 ## 2.4 필수 명령어
 
@@ -85,7 +85,7 @@ $ npm install
 $ npm start
 ```
 
-![](images/20180821/image_13.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_13.png)
 
 ## 3.3 Heroku 클라우드에 배포하기
 
@@ -114,7 +114,7 @@ $ heroku apps:rename newname
 $ git push heroku master
 ```
 
-![](images/20180821/image_9.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_9.png)
 
 소스가 올라가면 빌드 과정을 거치고 공개 주소에 접속해 웹 앱에 접속할 수 있습니다. 빌드 과정이후 Heroku에서 웹 앱을 시작하는 시작점은 Procfile 파일에 정의되어 있습니다. 
 
@@ -133,13 +133,13 @@ Procfile이 없은 경우에는 package.json에 정의된 start script로 시작
 $ heroku open
 ```
 
-![](images/20180821/F8ADA800-156E-4335-BF77-EF1811E865EE.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/F8ADA800-156E-4335-BF77-EF1811E865EE.png)
 
 ## 3.4 코드 수정이후 다시 배포하기
 
 이제 코드 수정한 이후에 다시 배포하는 과정을 거쳐보죠. 메인 페이지 (views/pages/index.ejs)에서 타이틀 부분을 수정합니다. 
 
-![](images/20180821/image_7.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_7.png)
 
 로컬환경에서 수정이 잘됐는지 확인 이후 이상없으면 코드를 commit합니다. 
 
@@ -159,7 +159,7 @@ $ git push heroku master
 $ heroku open
 ```
 
-![](images/20180821/D9D5222B-0850-42E7-A92E-844DDE63B0B0.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/D9D5222B-0850-42E7-A92E-844DDE63B0B0.png)
 
 웹 앱이 Heroku에서 구동될 때 로그를 확인하고 싶으면, logs 옵션으로 확인이 가능합니다. 
 
@@ -167,7 +167,7 @@ $ heroku open
 $ heroku logs --tail
 ```
 
-![](images/20180821/A925BBD7-96F3-4F38-9F0C-DB2A6B7492F5.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/A925BBD7-96F3-4F38-9F0C-DB2A6B7492F5.png)
 
 # 4. Add-on MongoDB 설치후 Node.js와 연동하기
 
@@ -181,11 +181,11 @@ MongoDB add-on을 추가합니다.
 $ heroku addons:create mongolab
 ```
 
-![](images/20180821/image_8.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_8.png)
 
 명령어외에도 [직접 마켓장소](https://elements.heroku.com/addons)에서 접속해서 add-on을 추가할 수 있습니다. 
 
-![](images/20180821/image_5.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_5.png)
 
 ## 4.2 MongoDB와 연동
 
@@ -198,7 +198,7 @@ mongodb://heroku_vfwj5vcl:spb8kerqhucborfd974cdbiqe8@ds125862.mlab.com:25862/her
 
 명령어로 MongoDB에 접속할 수도 있지만, 개인적으로 MongoDB GUI client(Studio 3T)로 접속해보았습니다. 아래는 Studio 3T에서 새로운 연결 정보를 입력하는 화면입니다. 
 
-![](images/20180821/5926F9E1-214D-483F-AA14-2A078EB229B7.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/5926F9E1-214D-483F-AA14-2A078EB229B7.png)
 
 DB에 연결이후 앱에 필요한 데이터를 입력합니다. dummy 데이터로는 기존에 작성된 데이터를 사용하였습니다. ([데이터 링크](https://github.com/kenshin579/app-keep-countdown-timer/blob/master/data/data.json))
 
@@ -318,7 +318,7 @@ $ git push heroku master
 $ heroku open 
 ```
 
-![](images/20180821/image_14.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_14.png)
 
 # 5. Appendix
 
@@ -369,7 +369,7 @@ $ git push heroku master
 $ heroku open 
 ```
 
-![](images/20180821/image_3.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_3.png)
 
 ## 5.2 명령어 모음
 
@@ -377,19 +377,19 @@ $ heroku open
 
 * heroku run bash - 실행중인 app에 bash 실행한다
 
-![](images/20180821/image_4.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_4.png)
 
 * heroku ps - 실행중인 process를 볼수 있습니다. 현재 남아 있는 dyno 시간도 알 수 있다
 
-![](images/20180821/image_11.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_11.png)
 
 * heroku list - Heroku으로 등록된 앱을 보여준다
 
-![](images/20180821/image_16.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_16.png)
 
 * heroku ps:stop - 실행중인 app을 멈춘다
 
-![](images/20180821/image_10.png)
+![](images/Heroku에-Node-js-MongoDB-App-배포하기/image_10.png)
 
 # 6. 참고
 
