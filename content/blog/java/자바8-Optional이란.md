@@ -159,7 +159,7 @@ public void test_optional_usage_diff_orElse_orElseGet() {
 }
 ```
 
-![](images/20181014/image_1.png)
+![](images/자바8-Optional이란/image_1.png)
 
 **5. orElseThrow**
 null인 경우에 기본 값을 반환하는 대신 예외를 던질 수 있습니다.
@@ -367,9 +367,9 @@ public void test_jdk9_stream() {
 포스팅 작성된 소스 코드는 [github](https://github.com/kenshin579/tutorials-java-examples/tree/master/java-optional) 에서 확인가능합니다.
 
 - 함수형 인터페이스
-![](images/20181014/image_2.png)
+![](images/자바8-Optional이란/image_2.png)
 
-![](images/20181014/image_3.jpeg)
+![](images/자바8-Optional이란/image_3.jpeg)
 
 - Scala에서 Option 
   - [https://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html](https://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html)

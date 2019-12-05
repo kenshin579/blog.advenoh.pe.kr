@@ -22,7 +22,7 @@ tags: ["Q&A", "faq", "ssm", "cache-ssm", "cache"]
 
 SSM관련 어노테이션으로 key 값 제공 메서드이고 없는 경우에는 toString()을 호출하게 됩니다. 추가로 캐쉬내 namespace에 toString()로 해서 같은 key 있으면 충돌이 발생합니다.
 
-![](images/20190322/image_1.png)
+![](images/QA-Cache-SSM-관련-질문-모음/image_1.png)
 
 참고
 * [https://m.blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220934569378&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F](https://m.blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220934569378&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)

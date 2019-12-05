@@ -25,7 +25,7 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 #### - mybatis에서 association 속성은 뭔가?
   - resultMap에 다른 객체가 있는 경우에 사용하고 assocation은 has one 타입의 관계를 다룬다.
   - collection인 경우에는 has many 타입의 관계를 다룰 떄 사용한다.
-![](images/20190614/image_1.png)
+![](images/QA-Mybatis-관련-질문-모음/image_1.png)
 
 참고
 * [http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html](http://noveloper.github.io/blog/spring/2015/05/31/mybatis-assocation-collection.html)
@@ -38,7 +38,7 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 
 #### - mybatis에서 cdata를 자주 보게 되는데, 사용하는 이유는?
 
-![](images/20190614/image_4.png)
+![](images/QA-Mybatis-관련-질문-모음/image_4.png)
 
 참고
 * [https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0](https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
@@ -48,7 +48,7 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 ### <span style="color:orange">[답변완료]</span>
 
 ### <span style="color:brown">1. \_long 타입은 뭔가?</span>
-![](images/20190614/image_3.png)
+![](images/QA-Mybatis-관련-질문-모음/image_3.png)
 
 - \_long : long 타입으로 매핑된다
 - long : Long 타입이 매핑된다
@@ -62,7 +62,7 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 
 IN에 들어갈 (…) 값을 <foreach> 태그로 값을 생성할 수 있습니다.
 
-![](images/20190614/image_2.png)
+![](images/QA-Mybatis-관련-질문-모음/image_2.png)
 
 참고
 

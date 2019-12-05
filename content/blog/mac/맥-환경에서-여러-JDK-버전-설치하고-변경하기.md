@@ -29,7 +29,7 @@ $ brew cask install java java8 zulu8
 $ /usr/libexec/java_home -V
 ```
 
-![](images/20181111/image_1.png)
+![](images/맥-환경에서-여러-JDK-버전-설치하고-변경하기/image_1.png)
 
 원하는 버전의 JDK로 자바 프로그램을 컴파일하고 실행하려면 기본적으로 아래 2가지를 기본적으로 해줘야 합니다.
 
@@ -48,7 +48,7 @@ $ code ~/.zshrc
 
 실행 화면입니다. 도움말로 더 쉽게 이해할 수 있는 부분이라 별도의 설명은 생략하겠습니다.
 
-![](images/20181111/image_2.png)
+![](images/맥-환경에서-여러-JDK-버전-설치하고-변경하기/image_2.png)
 
 # 3. 참고
 
