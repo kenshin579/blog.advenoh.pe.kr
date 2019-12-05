@@ -22,7 +22,7 @@ Lombok는 자바에서 작성해야 하는 boilerplate code(ex. getter/setter, c
 - Software management tool : Maven
 - IDE Plugin :  Lombok Plugin
 
-![](images/20181216/image_2.png)
+![](images/Lombok-기본-사용법-익히기/image_2.png)
 
 * Java Bytecode Decompiler : Enable - class 파일을 decompile 해서 소스를 볼 수 있다
 
@@ -586,7 +586,7 @@ lombok.nonNull.flagUsage=error
 
 IDE에서는 표시되지 않지만, 컴파일시 오류가 발생합니다.
 
-![](images/20181216/AF8820D7-66DA-4A4C-97F3-67FB7C867D8A.png)
+![](images/Lombok-기본-사용법-익히기/AF8820D7-66DA-4A4C-97F3-67FB7C867D8A.png)
 
 # 4. 참고
 

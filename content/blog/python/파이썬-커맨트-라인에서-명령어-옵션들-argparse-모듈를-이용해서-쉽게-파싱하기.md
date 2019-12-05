@@ -9,7 +9,7 @@ tags: ["python", "argparse", "command", "option", "argument"]
 
 셀이나 리눅스 명령어를 실행할 때 많은 옵션이 존재합니다. 아래는 pip 명령어(파이썬 패키지 관리자)의 옵션 목록입니다. Flag 형태의 옵션(ex. --no-color)이나 입력값을 받을 수 있는 옵션(ex. --log <path>)도 있습니다.
 
-![](images/20181104/image_6.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_6.png)
 
 이런 옵션을 파이썬에서 구현하려면 어떻게 해야 할까요? 실제 구현한다면, 실행 명령어를 인자로 받아서 parse 하는 과정이 필요합니다. 직접 구현하기는 좀 부담스럽죠. 셀이나 여러 언어에서 이런 부분들을 별도의 모듈로 제공합니다. 파이썬에서는 커맨트parsing 라이브러리는 getopt, argparse, docopt가있습니다. 이 중에서 파이썬에서 많이 사용되는 **argparse** 를 알아보도록 하겠습니다.
 
@@ -32,7 +32,7 @@ parser.parse_args()
 
 -h 옵션을 주면 argparse 모듈에서 알아서 명령어에 대한 기본 설명과 옵션을 잘 정리해서 보여줍니다.
 
-![](images/20181104/image_2.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_2.png)
 
 ## 2.2 Flag 형태 옵션 추가하기
 
@@ -49,7 +49,7 @@ if args.verbosity: # True인 경우에 실행 된다.
 print("verbosity enabled")
 ```
 
-![](images/20181104/image_4.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_4.png)
 
 ## 2.3 옵션에 Value 값 입력 받기
 
@@ -74,7 +74,7 @@ print("args", args)
 - type: 입력한 값에 대한 타입도 지정할 수 있다 
   - 입력한 값이 정수가 아닌 경우에는 ‘error: argument -n invalid int value’ 오류가 출력된다
 
-![](images/20181104/image_1.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_1.png)
 
 ## 2.4 입력한 값에 대한 유효 검사하기
 
@@ -99,7 +99,7 @@ args = parser.parse_args()
 print("args", args)
 ```
 
-![](images/20181104/image_3.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_3.png)
 
 ## 2.5 선택 집합 세트에서 입력값을 선택하기
 
@@ -117,7 +117,7 @@ print("args", args)
 - choices : list에 정해진 값중에 하나면 선택할 수 있다 
   - ex. choices=[‘apple’, ‘orange’]
 
-![](images/20181104/image_5.png)
+![](images/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/image_5.png)
 
 이 외에도 다양한 옵션 설정이 있지만, 자주 사용되는 옵션으로만 정리해보았습니다.
 

@@ -45,7 +45,7 @@ _master 브랜치를 선택 > 오른쪽 클릭 > Create branch here 선택 > fea
 
 Frank 개발자는 체크아웃 이후에 코드 수정 후 3개의 커밋을 push합니다.
 
-![](images/20190811/D53A13F9-9D6E-4CCF-9338-AA7DDE127F5F.png)
+![](images/Git-Rebase로-병합하기/D53A13F9-9D6E-4CCF-9338-AA7DDE127F5F.png)
 
 #### 3.1.1.2 Joe 개발자 코드 수정후 commit하기
 
@@ -53,25 +53,25 @@ Joe 개발자도 다른 기능을 개발을 위해서 master로부터 새로운 
 
 코드 수정이후 3가지를 커밋을 했어요.
 
-![](images/20190811/D80CB027-1FCF-4EFF-95BB-97D3968460F1.png)
+![](images/Git-Rebase로-병합하기/D80CB027-1FCF-4EFF-95BB-97D3968460F1.png)
 
 변경된 코드를 master에 반영하기 위해서 pull request (pr)를 생성합니다. GitKraken에서 아래 메뉴에서 pr을 생성할 수 있습니다.
 
 _master 브랜치 선택 > 오른쪽 클릭 > Start a pull request to origin_master from origin_feature/GIT-7 클릭 > pr 내용 입력 (ex. 제목, 내용등등)_
 
-![](images/20190811/image_11.png)
+![](images/Git-Rebase로-병합하기/image_11.png)
 
 Pull request을 생성하면 Github 사이트로 바로 갈 수 있는 링크가 생성이 되어 링크버튼을 클릭하여 Github 사이트로 들어갑니다. Merge pull request 버튼을 클릭하여 병합을 진행합니다.
 
-![](images/20190811/image_8.png)
+![](images/Git-Rebase로-병합하기/image_8.png)
 
 코드상 Conflict가 없어서 merge 하면 바로 성공 메시지가 뜹니다.
 
-![](images/20190811/image_5.png)
+![](images/Git-Rebase로-병합하기/image_5.png)
 
 Joe가 커밋한 내용(feature/GIT-7)은 master에 잘 반영되었네요.
 
-![](images/20190811/image_10.png)
+![](images/Git-Rebase로-병합하기/image_10.png)
 
 ### 3.1.2 Rebase로 최신 master로 rebase로 합병하기
 
@@ -83,33 +83,33 @@ _master 브랜치 선택 후 > 오른쪽 클릭 > 아래 둘중에 하나를 선
 * Interactive Rebase feature/GIT-6-working-branch onto master 클릭
 	* 이 메뉴를 선택하면 여러 커밋을 선택적으로 Rebase 시킬 수 있다 (참고 : 3.1.3)
 
-![](images/20190811/image_4.png)
+![](images/Git-Rebase로-병합하기/image_4.png)
 
 Rebase를 하면 feature/GIT-6-working-branch 커밋 내용이 master 브랜치에 커밋 내용 다음에 오는 것을 볼 수 있습니다.
 
-![](images/20190811/image_6.png)
+![](images/Git-Rebase로-병합하기/image_6.png)
 
 master 브랜치에 가져올 내용이 3개가 있고 pull로 커밋을 가져온 이후 push를 하면 병합이 완료됩니다.
 
-![](images/20190811/image_9.png)
+![](images/Git-Rebase로-병합하기/image_9.png)
 
 remote/GIT-6-working-branch로 push한 결과입니다. GIT-6-working-branch에서 작업한 내용 (ex. annotation 제거, 어노테이션 제거, 코멘트 수정)이 master 브랜치 커밋 내용 다음으로 커밋되었네요.
 
-![](images/20190811/image_18.png)
+![](images/Git-Rebase로-병합하기/image_18.png)
 
 ### 3.1.3 Interactive 하게 Rebase 하기
 
 같은 상황에서 여러 방식으로 rebase를 테스트해보기 위해 같은 지점에서 여러 브랜치(ex. GIT-6-working-branch-*)를 미리 생성해 두었어요.
 
-![](images/20190811/image_17.png)
+![](images/Git-Rebase로-병합하기/image_17.png)
 
 Rebase를 interactive하게 진행하면 아래와 같이 커밋한 내용을 선택적으로 포함시킬지 시키지 않을 지 rebase 시점에 결정할 수 있습니다. 이 예제에서는 Start Rebase 버튼을 클릭해서 전체 커밋을 포함해서 rebase 시킵니다.
 
-![](images/20190811/image_2.png)
+![](images/Git-Rebase로-병합하기/image_2.png)
 
 일반적인 방식으로 rebase한 결과와 같습니다.
 
-![](images/20190811/image_7.png)
+![](images/Git-Rebase로-병합하기/image_7.png)
 
 ## 3.2 Git Command로 직접 rebase해보기
 
@@ -123,7 +123,7 @@ Git Client를 사용하면 쉽게 브랜치를 생성하고 병합할 수 있지
 $ git checkout GIT-6-working-branch-cmd
 ```
 
-![](images/20190811/image_14.png)
+![](images/Git-Rebase로-병합하기/image_14.png)
 
 ### 3.2.2 Rebase 하기
 
@@ -133,11 +133,11 @@ $ git checkout GIT-6-working-branch-cmd
 $ git rebase origin/master
 ```
 
-![](images/20190811/image_1.png)
+![](images/Git-Rebase로-병합하기/image_1.png)
 
 Git Kraken에서 rebase한 내용을 보면 결과가 같은 것을 확인할 수 있습니다.
 
-![](images/20190811/image_15.png)
+![](images/Git-Rebase로-병합하기/image_15.png)
 
 ## 3.3 Merge로 병합하기
 
@@ -145,11 +145,11 @@ Rebase를 하면 지금까지 커밋한 여러 내용이 유지가 되어 histor
 
 _master 선택후 > 오른쪽 클릭 > Merge master into feature/GIT-6-working-branch-merge-test_
 
-![](images/20190811/image_12.png)
+![](images/Git-Rebase로-병합하기/image_12.png)
 
 master 브랜치에 커밋된 내용이 통째로 GIT-6-working-branch-merge-test로 merge가 되었습니다.
 
-![](images/20190811/image_16.png)
+![](images/Git-Rebase로-병합하기/image_16.png)
 
 # 4. 결론
 

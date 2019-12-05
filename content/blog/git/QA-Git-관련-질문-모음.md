@@ -21,7 +21,7 @@ tags: ["Q&A", "faq", "git", "github", "gitraken", "wip", "push", "commit", "push
 ### <span style="color:brown">1. WIP란?</span>
 Work In Progress란 뜻입니다. Gitkraken이 WIP를 자동으로 생성해주었는데요. revert할 때 현재 브랜치에서 작업하는 파일이 있어서 자동으로 stash을 하면서 WIP를 생성한 상황입니다.
 
-![](images/20190620/A87EE900-891F-4EEE-B1C5-BCD80F2B1BB0.png)
+![](images/QA-Git-관련-질문-모음/A87EE900-891F-4EEE-B1C5-BCD80F2B1BB0.png)
 
 참고
 * [https://stackoverflow.com/questions/15763059/github-what-is-a-wip-branch](https://stackoverflow.com/questions/15763059/github-what-is-a-wip-branch)

@@ -40,7 +40,7 @@ public static int countBits1(int n) {
 
 ## 2.2 Approach 2 - Brian Kernighan’s Algorithm
 
-![](images/20181028/image_1.jpeg)
+![](images/Algorithm-정수값에서-1이-설정된-bit를-카운트하기/image_1.jpeg)
 
 처음 들어보신 분도 계실 수 있지만, 브라이언 커니핸 ( [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan) )이란 분은 초창기 UNIX를 개발하셨고 유닉스에서 자주 사용하는 AWK 명령어도 개발하신 분이십니다. 2000년 이후부터 쭉 프린스턴 대학교에서 교수직으로 일하고 계십니다. 구현은 쉽지만, 이걸 생각해냈다는 게 정말로 대단한 것 같습니다. 기본 알고리즘을 알아보죠.
 
