@@ -65,6 +65,8 @@ Run 'docker volume COMMAND --help' for more information on a command.
 
 ## 2.2 도커 이미지 다루기
 
+도커 컨테이너를 실행하기 전에 원하는 이미지를 검색하거나 새로운 이미지를 생성할 필요가 있습니다. 도커 이미지를 어떻게 다룰 수 있는지 알아보겠습니다. 
+
 ### 2.2.1 도커 이미지 검색하기
 
 Docker Hub 레지스트리에서 도커 이미지를 검색합니다. 
@@ -249,34 +251,118 @@ helloworld   latest   4427b4290f55   3 seconds ago        123MB
 
 ### 2.2.6 이미지 공유하기
 
-pg 58
+docker image push 명령어로 도커 허브 등의 레지스트리에 등록할 수 있습니다. 
+
+```bash
+$ docker image push [옵션] 이미지명:[:태그]
+```
+
+helloworld 이미지를 도커 허브에 올려보겠습니다. helloworld:latest 이미지는 도커 허브에 이미 등록되어 있어서 이미지의 네임스페이스를 먼저 바꾸고 push를 하면 됩니다. 
+
+```bash
+$ docker image tag helloworld:latest kenshin579/helloworld:latest
+$ docker image ls
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+kenshin579/helloworld    latest               4427b4290f55        5 days ago          123MB
+helloworld               latest              4427b4290f55        5 days ago          123MB
+```
+
+도커에 로그인이 안되어 있으면 로그인을 먼저하고 이미지를 push 하면 도커 허브에 공유가 됩니다. 
+
+```bash
+$ docker login
+$ docker image push kenshin579/helloworld:latest
+The push refers to repository [docker.io/kenshin579/helloworld]
+cde5c9054b7e: Pushed 
+bc72fb2e7b74: Pushed 
+903669ee7207: Pushed 
+a5a5f8c62487: Pushed 
+788b17b748c2: Pushed 
+latest: digest: sha256:7906b00f23cc5eb44dcedcc2d0fe39e2a7253c3f2373b88f661cb7aa2bda4470 size: 1564
+
+```
+
+![image-20191206084635232](images/Docker-도커-명령어-모음/image-20191206084635232.png)
 
 ## 2.3 도커 컨테이너 다루기
 
 ### 2.3.1 컨테이너 실행하기
 
-브라브라32
+docker container run 명령어는 컨테이너를 생성하고 실행하는 명령어입니다. 
 
 ```bash
-$ docker container 
+$ docker container run [옵션] 이미지명[:태그] [명령] [명령인자...]
 ```
 
-**옵션**
+redis
 
-| 옵션 | 설명                                                         |
-| ---- | ------------------------------------------------------------ |
-| -d   | 백그라운드로 실행한다                                        |
-| -p   | EXTERNAL_PORT:CONTAINER_PORT (ex. 9000:8080)<br />CONTAINER_PORT - EXTERNAL_PORT를 지정하지 않는 경우 임의의 포트가 자동으로 할당된다 |
-| -t   | ??<br />-i 옵션과 같이 많이 사용되어 -it 옵션으로 합쳐서 실행한다 |
-| -i   | ??                                                           |
+```bash
+$ docker container run --name redis_test -d -p 7000:6379 redis
+```
+
+옵션**
+
+| 옵션   | 설명                                                         |
+| ------ | ------------------------------------------------------------ |
+| -d     | 백그라운드로 실행한다                                        |
+| -p     | EXTERNAL_PORT:CONTAINER_PORT (ex. 9000:8080)<br />CONTAINER_PORT - EXTERNAL_PORT를 지정하지 않는 경우 임의의 포트가 자동으로 할당된다 |
+| -t     | ??<br />-i 옵션과 같이 많이 사용되어 -it 옵션으로 합쳐서 실행한다 |
+| -i     | ??                                                           |
+| -rm    |                                                              |
+| --name |                                                              |
+
+#### 2.3.1.1 명령 인자로 실행하기
+
+docker container run 명령어에 명령 인자를 추가해서 실행하면 Dockerfile에 정의된 CMD 인스트럭션은 무시되고 명령 인자로 넘어온 값으로 실행됩니다. 
+
+```bash
+$ docker container run -it redis # redis 디몬이 실행되는 반면에...
+
+$ docker container run -it redis uname -a 
+Linux 36e0253d1a29 4.9.184-linuxkit #1 SMP Tue Jul 2 22:58:16 UTC 2019 x86_64 GNU/Linux
+```
 
 
 
-### 2.3.2 실행중인 컨테이너 조회
+### 2.3.2 실행중인 컨테이너 조회하기
 
-### 2.3.3 실행중인 컨테이너 정지
 
-### 2.3.4 실행중인 컨테이너 삭제하기
+
+```bash
+$ docker container ls
+```
+
+
+
+컨테이너 목록 필터링해서 보기
+
+종료된 컨테이너 목록 보기
+
+```bash
+$ docker 
+```
+
+
+
+### 2.3.3 실행중인 컨테이너 정지하기
+
+```bash
+$ docker container stop 컨테이너ID_OR_컨테이너명
+```
+
+### 2.3.4 실행중인 컨테이너 재시작하기
+
+### 2.3.5 실행중인 컨테이너 삭제하기
+
+```bash
+$ docker container rm 컨테이너ID_OR_컨테이너명
+```
+
+### 2.3.6 화면 출력 연결하기
+
+### 2.3.7 실행중인 컨테이너에서 명령 실행하기
+
+### 2.3.8 실행중인 컨테이너에 bash prompt 띄우기
 
 
 

@@ -9,6 +9,8 @@ tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne
 
 이 포스팅에서는 JPA에서 자주 사용하는 다대일 Many-To-One 연관관계에 대해서 알아보겠습니다. 
 
+
+
 # 2. 개발 환경
 
 작성한 샘플 코드는 아래 깃허브 링크를 참고해주세요. 
@@ -52,7 +54,7 @@ tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne
 
 # 4. FAQ
 
-## 4.1 언제 양반향, 단방향을 사용하나요? 
+## 4.1 언제 양반향, 단방향을 사용해야 하나?
 
 ㄴㅇㄴㅇㄹ
 
@@ -60,7 +62,9 @@ tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne
 
 # 5. 참고
 
-* 
-* JPA - one-to-many mapping
-	* [https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/](https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/)
-	* [https://www.baeldung.com/hibernate-one-to-many](https://www.baeldung.com/hibernate-one-to-many)
+- JPA - one-to-many mapping
+- - [https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/](https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/)
+  - [https://www.baeldung.com/hibernate-one-to-many](https://www.baeldung.com/hibernate-one-to-many)
+  - [https://jdm.kr/blog/141](https://jdm.kr/blog/141)
+- H2 옵션
+- - [https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html](https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html)
