@@ -83,3 +83,24 @@ tags : ["Q&A", "QA", "faq", "jackson", "java", "자바"]
 
 참고
 * [https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype#allowGetters](https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype#allowGetters)
+
+### <span style="color:brown">5. Jackson에서 직렬화, 역직렬화의 의미는?</span>
+
+- Jackson
+  - 직렬화 (Serialization)
+    - 자바 Object -> Jackson JSON 변화해주는 것이다.
+  - 역직렬화 (Deserialization)
+    - Jackson JSON -> 자바 Object로 변환해주는 것이다
+- Java (참고용)
+  - 직렬화
+    - 자바 Object -> byte 형태
+  - 역직렬화
+    - byte 형태 -> 자바 Object
+
+참고
+
+- Jackson
+	- [https://homoefficio.github.io/2016/11/19/%EC%A1%B0%EA%B8%88%EC%9D%80-%EC%8B%A0%EA%B2%BD%EC%8D%A8%EC%A4%98%EC%95%BC-%ED%95%98%EB%8A%94-Jackson-Custom-Deserialization/](https://homoefficio.github.io/2016/11/19/조금은-신경써줘야-하는-Jackson-Custom-Deserialization/)
+	- [https://thepracticaldeveloper.com/2018/07/31/java-and-json-jackson-serialization-with-objectmapper/](https://thepracticaldeveloper.com/2018/07/31/java-and-json-jackson-serialization-with-objectmapper/)
+- Java
+  - https://nesoy.github.io/articles/2018-04/Java-Serialize
