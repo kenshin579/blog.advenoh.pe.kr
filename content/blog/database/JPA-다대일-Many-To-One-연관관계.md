@@ -108,7 +108,7 @@ JoinColumn과 ManyToOne 옵션 설정에 대한 설명은 다음과 같습니다
 
 | 속성         | 설명                                                         |
 | ------------ | ------------------------------------------------------------ |
-| optional     | true이면 해당 객체에 null이 들어갈 수 있다는 의미이다. <br />참고로 @Column 어노테이션에서도 nullable=true로 세팅해도 null이 들어갈 수 있다<br />기본 값 : true<br />옵션 설정에 따라 select 구문 쿼리 어떻게 생성되는지 [FAQ 4.3]()을 참고해주세요<br /> |
+| optional     | true이면 해당 객체에 null이 들어갈 수 있다는 의미이다. <br />참고로 @Column 어노테이션에서도 nullable=true로 세팅해도 null이 들어갈 수 있다<br />기본 값 : true<br />옵션 설정에 따라 select 구문 쿼리 어떻게 생성되는지 [FAQ 4.3](https://blog.advenoh.pe.kr/database/JPA-%EB%8B%A4%EB%8C%80%EC%9D%BC-Many-To-One-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84/#43-manytoone-%EC%98%B5%EC%85%98-%EC%A4%91%EC%97%90-optional-%EC%86%8D%EC%84%B1%EC%9D%B4-true-false%EC%9D%B8-%EA%B2%BD%EC%9A%B0%EC%97%90-%EC%BF%BC%EB%A6%AC-%EA%B5%AC%EB%AC%B8%EC%9D%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B4%EA%B2%8C-%EC%83%9D%EC%84%B1%EC%9D%B4-%EB%90%98%EB%82%98)을 참고해주세요<br /> |
 | fetch        | fetchType이 EAGER이면 연관된 엔티티를 바로 로딩한다. <br />fetchType이 LAZY이면 연관된 엔티티를 바로 로딩하지 않고 실제로 해당 객체를 조회할 때 해당 엔티티를 로딩한다<br />기본값 <br />@ManyToOne=FetchType.EAGER<br />@OneToMany=FetchType.LAZY |
 | cascade      | 영속성 전이 설정을 할 수 있다. 설정 값은 아래 cascadeType을 참고해주세요. |
 | targetEntity | 연관된 언테티의 타입 정보를 설정하는데 거의 사용하지 않는다. |
