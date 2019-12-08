@@ -1,18 +1,18 @@
 ---
-title: '[도커 - 1] Docker 도커 명령어 모음'
-date: 2019-11-15 10:23:33
+title: '[Docker-1] Docker 도커 명령어 모음'
+date: 2019-12-8 21:11:20
 category: 'cloud'
 tags: ["docker", "virtualization", "cloud", "command", "container", "도커", "컨테이너", "가상화", "명령어"]
 ---
 
 #1. 들어가며
 
-도커를 다루는데 있어서 크게 2가지 종류로 나뉠 수 있습니다. 
+도커를 다루는 데 있어서 크게 2가지 종류로 나뉠 수 있습니다. 
 
 - 도커 이미지 다루기
 - 도커 컨테이너 다루기
 
-도커 관련된 여러 명령어들이 많아서 자주 사용되는 명령어 위주로 정리를 해봤습니다. 전체 도커 명령어에 대한 내용은 [도커 문서](도커에서 자주 사용되는 명령어 위주로 정리를 해봤습니다. ) 사이트를 참고해주세요. 
+도커 관련된 여러 명령어들이 많아서 자주 사용되는 명령어 위주로 정리를 해봤습니다. 전체 도커 명령어에 대한 내용은 [도커 문서](https://docs.docker.com/engine/reference/commandline/docker/) 사이트를 참고해주세요. 
 
 
 # 2. 도커 명령어
@@ -109,13 +109,13 @@ alpine
 
 ### 2.2.2 이미지 다운로드하기
 
-도커 이미지를 도커 registry에서 내려 받으려면 docker image pull 명령을 사용합니다. 
+도커 이미지를 도커 registry에서 내려받으려면 docker image pull 명령을 사용합니다. 
 
 ```bash
 $ docker image pull [옵션] 리포지토리명[:태그명]
 ```
 
-redis 이미지를 다운로드 받으려면 다음과 같이 하면 됩니다. 태그명을 생략하면 기본적으로 latest 태그가 적용됩니다. 
+redis 이미지를 다운로드받으려면 다음과 같이 하면 됩니다. 태그 명을 생략하면 기본적으로 latest 태그가 적용됩니다. 
 
 ```bash
 $ docker image pull redis
@@ -159,7 +159,7 @@ RUN chmod +x /usr/local/bin/helloworld.sh
 
 CMD ["helloworld.sh"]
 ```
-> 참고로 이미지가 한번 다운로드 되어 있으면 로컬에 저장된 이미지를 사용한다. --pull =true 옵션을 추가하면 매번 베이스 이미지를 강제로 새로 다운로드 받는다.
+> 참고로 이미지가 한번 다운로드되어 있으면 로컬에 저장된 이미지를 사용한다. --pull =true 옵션을 추가하면 매번 베이스 이미지를 강제로 새로 다운로드받는다.
 
 ```bash
 $ docker image build -t helloworld:latest .
@@ -189,7 +189,7 @@ Successfully tagged helloworld:latest
 
 ### 2.2.4 이미지 목록 보기
 
-docker image ls 명령어로 현재 보유하고 있는 이미지의 목록을 볼 수 있습니다. Docker Hub에서 내려 받은 이미지나 이미지를 빌드한 것들이 목록으로 보여집니다. 
+docker image ls 명령어로 현재 보유하고 있는 이미지의 목록을 볼 수 있습니다. Docker Hub에서 내려받은 이미지나 이미지를 빌드한 것들이 목록으로 보여집니다. 
 
 ```bash
 $ docker image ls
@@ -267,7 +267,7 @@ kenshin579/helloworld    latest               4427b4290f55        5 days ago    
 helloworld               latest              4427b4290f55        5 days ago          123MB
 ```
 
-도커에 로그인이 안되어 있으면 로그인을 먼저하고 이미지를 push 하면 도커 허브에 공유가 됩니다. 
+도커에 로그인이 안 되어 있으면 로그인을 먼저하고 이미지를 push 하면 도커 허브에 공유가 됩니다. 
 
 ```bash
 $ docker login
@@ -282,7 +282,7 @@ latest: digest: sha256:7906b00f23cc5eb44dcedcc2d0fe39e2a7253c3f2373b88f661cb7aa2
 
 ```
 
-![image-20191206084635232](images/Docker-도커-명령어-모음/image-20191206084635232.png)
+![image-20191206084635232](images/Docker-도커-명령어-모음/image1.png)
 
 ## 2.3 도커 컨테이너 다루기
 
@@ -343,7 +343,7 @@ Linux 36e0253d1a29 4.9.184-linuxkit #1 SMP Tue Jul 2 22:58:16 UTC 2019 x86_64 GN
 
 
 
-### 2.3.2 실행중인 컨테이너 조회하기
+### 2.3.2 실행 중인 컨테이너 조회하기
 
 docker container ls 명령어로 현재 실행 중인 컨테이너를 확인할 수 있습니다. 20e9f060fc15 ID를 가진 컨테이너는 redis_test 이름을 가진 컨테이너로 --name 옵션으로 실행된 컨테이너입니다. --name 옵션 없이 실행되면 랜덤 값의 이름이 부여됩니다. 
 
@@ -353,8 +353,6 @@ CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
 20e9f060fc15  redis  "docker-entrypoint.s…"  25 hours ago  Up 25 hours  0.0.0.0:7000->6379/tcp   redis_test
 
 ```
-
-
 
 #### 2.3.2.1 컨테이너 목록 필터링해서 보기
 
@@ -380,7 +378,7 @@ $ docker container ls -a
 
 ### 2.3.3 실행중인 컨테이너 정지하기
 
-docker container stop 명령어로 실행 중인 컨테이너를 정지할 수 있습니다. 컨테이너 ID나 컨테이너 이름으로 정지 시킬 수 있습니다. 
+docker container stop 명령어로 실행 중인 컨테이너를 컨테이너 ID나 컨테이너 이름으로 정지 시킬 수 있습니다. 
 
 ```bash
 $ docker container stop 컨테이너ID_OR_컨테이너명
@@ -394,64 +392,60 @@ $ docker container stop 컨테이너ID_OR_컨테이너명
 $ docker container restart 컨테이너ID_OR_컨테이너명
 ```
 
-
-
 ### 2.3.5 실행중인 컨테이너 삭제하기
 
-컨테이너를 정지시키면 정시된 시점의 상태를 계속 유지한 체 디스크에 남아 있습니다. 완전히 파기하려면 rm 명령어를 추가하여 삭제하면 됩니다. 
+컨테이너를 정지시키면 정시된 시점의 상태를 계속 유지한 체 디스크에 남아 있습니다. 완전히 파기하려면 rm 명령어를 추가하여 삭제합니다.
 
 ```bash
 $ docker container rm 컨테이너ID_OR_컨테이너명
 ```
 
-컨테이너 실행후 종료되면 자동으로 파기하려면 다음 명령어와 같이 컨네이터 실행시 --rm 옵션을 추가하면 됩니다. 
+컨테이너 실행하고 종료한 이후에 자동으로 파기하려면 다음 명령어와 같이 컨네이터 실행시 --rm 옵션을 추가합니다.
 
 ```bash
 $ docker container run --rm -d -p 7000:6379 redis
 ```
 
+### 2.3.6 컨테이너의 stdout(표준 출력)를 호스트 stdout으로 출력하기
 
-
-### 2.3.6 stdout 호스트 화면 출력과 연결하기
-
-
+docker container logs 명령어로 도커 컨테이너의 표준 출력을 호스트 화면으로 볼 수 있습니다. 
 
 ```bash
 $ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
 ```
 
+jenkins 도커를 실행한 후 jenkins 서버에서 출력하는 내용을 보기 위해서는 다음과 명령어를 입력하면 됩니다. 
 
+| 명령어 | 옵션 | 설명                                                         |
+| ------ | ---- | ------------------------------------------------------------ |
+| logs   | -f   | 출력하는 로그를 계속 화면에 출력한다. (ex. tail -f와 같은 옵션) |
+| ls     | -q   | docker container ls에서 -q 옵션은 컨테이너의 ID를 얻어온다   |
 
 ```bash
-$ docker container run -rm -d -p 
-$ docker container 
+$ docker container run --rm -d jenkins
+$ docker container logs -f $(docker container ls --filter "ancestor=jenkins" -q)
 ```
-
-
 
 ### 2.3.7 실행중인 컨테이너에서 명령 실행하기
 
-
-```bash
-$ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
-```
-
-
-
-### 2.3.8 실행중인 컨테이너에 bash prompt 띄우기
+docker container exec 명령어로 현재 실행 중인 컨테이너에 명령을 수행할 수 있습니다. 
 
 
 ```bash
-$ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
+$ docker container exec [옵션] 컨테이너ID_OR_컨테이너명 실행할_명령
 ```
 
+셀을 오픈해서 내부 파일을 확인하고 싶으면 다음 명령어로 확인하면 됩니다. 
 
+```bash
+$ docker container exec -it 5bb352057045 bash
+$ jenkins@5bb352057045:/$ ls
+bin  boot  dev  docker-java-home  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+```
 
+### 2.3.8 파일 복사하기
 
-
-### 2.3.# 파일 복사하기
-
-컨테이너<-> 호스트 간에 파일을 복사하기 위한 명령어 입니다. 
+컨테이너<-> 호스트 간에 파일을 복사하기 위한 명령어입니다. 
 
 ```bash
 $ docker container cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH # 컨테이너 -> 호스트
@@ -467,34 +461,84 @@ $ docker container exec cat echo:/tmp/test.txt
 hello world
 ```
 
-운영과 관리를 명령
 
-실행 중이 아닌 
-
-```bash
-$ docker container prune
-```
-
-
-
-
-# 3. 기타 사항
+# 3. 부록(기타사항)
 
 ## 3.1 도커 축약 명령어
 
-도커 축약 명령어로도 자주 사용되지만, 풀 명령어...
+docker container run 명령어가 길기 때문에 축약 명령어도 제공합니다. 하지만, 축약 명령어보다는 full 명령어를 사용하는 걸 추천하는 분위기입니다. 
 
-| 도커 full 명령어     | 축약 명령어 |
-| -------------------- | ----------- |
-| docker container run | docker run  |
-| docker image pull    | docker pull |
+| 도커 full 명령어     | 축약 명령어  |
+| -------------------- | ------------ |
+| docker container run | docker run   |
+| docker image pull    | docker pull  |
+| docker image build   | docker build |
 
+## 3.2 도커 운용관련 명령어
 
+### 3.2.1 컨테이너 및 이미지 파기하기
+
+컨테이너나 이미지를 파기할 때 사용하는 명령어입니다. docker container prune은 현재 실행 중이 아닌 모든 컨테이너를 삭제하는 명령어입니다. 
+
+```bash
+$ docker container ls -a
+$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+5bd169e3043f51d33347a165e483a03ea142442cb9ef83b5faf13440d0ca329b
+350b12c364310514b7f2024ebbf8f19bdb9e5a2331337d143ef3329f90bfb089
+460912b768d82b58d7158e32d55da684d449d7b69fa144e0bff556c038d2396f
+dd91039088a7109cbcf8e365624671701c1751ea16324c1f45af3528c9bc5baa
+...(생략)...
+
+Total reclaimed space: 28.49MB
+```
+
+이미지도 사용하지 않는 것은 점차 누적되어 디스크 용량을 차지 하기 때문에 정기적으로 삭제해주면 좋습니다.
+
+docker image prune은 태그가 붙지 않는 모든 이미지를 삭제합니다. 
+
+```bash
+$ docker image ls
+$ docker image prune 
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] y
+Deleted Images:
+deleted: sha256:411cc8adaba2c3fc9d2070aca8b8a4d58041f1cfb63aebfe617991115821ff9f
+deleted: sha256:3f72f3ef13a37d85b13901e8cc89d3499beb7e452cab1d38e53041949502396f
+...(생략)...
+
+Total reclaimed space: 84B
+```
+
+docker system prune은 이미지, 컨테이너, 볼륨, 네트워크 등 모든 리소스를 일괄적으로 삭제하는 명령어입니다. 
+
+```bash
+$ docker system prune
+```
+
+### 3.2.2 컨테이너 시스템 리소스 사용 현황 확인하기
+
+현재 실행 중인 컨테이너 시스템 리소스 사용 현황을 확인할 수 있습니다. Linux의 top 명령어처럼 실시간으로 현환을 업데이트해서 보여줍니다. 
+
+```bash
+$ docker container stats [옵션] [컨테이너ID ...]
+```
+
+```bash
+$ docker container stats
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+5b3e2e966799        boring_sutherland   0.19%               1.68MiB / 1.952GiB    0.08%               648B / 0B           8.43MB / 0B         4
+5bb352057045        vigorous_meninsky   0.17%               349.5MiB / 1.952GiB   17.48%              4.18MB / 91.5kB     124MB / 24.3MB      34
+
+```
 
 # 4. 참고
 
+- 도커 명령어 참조
+  - [https://docs.docker.com/engine/reference/commandline/docker/](https://docs.docker.com/engine/reference/commandline/docker/)
+- 축약 명령어
+  - https://www.slipp.net/wiki/pages/viewpage.action?pageId=41583363
 - 책 : 도커, 쿠버네티스를 활용한 컨테이너 개발 실전 입문
-
-  - <a href="http://www.yes24.com/Product/Goods/70893433?scode=032&OzSrank=1"><img src="images/도커-명령어-모음/도커책.jpeg" alt="도커책" align="left" style="zoom:40%;" /></a>
-
-  
+  - ![도커책](images/Docker-도커-명령어-모음/image2.jpg)
