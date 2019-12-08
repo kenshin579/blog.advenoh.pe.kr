@@ -1,5 +1,5 @@
 ---
-title: '[JPA-2] JPA 다대일(N:1)+일대다(1:N) @Many-To-One, @One-To-Many 연관관계'
+title: '[JPA-2] JPA 다대일(N:1)+일대다(1:N) @ManyToOne, @OneToMany 연관관계'
 date: 2019-12-6 10:23:33
 category: 'database'
 tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne", "OneToMany", mapping", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대일", "일대다"]
