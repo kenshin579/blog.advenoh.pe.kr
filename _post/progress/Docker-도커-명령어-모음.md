@@ -65,6 +65,8 @@ Run 'docker volume COMMAND --help' for more information on a command.
 
 ## 2.2 도커 이미지 다루기
 
+도커 컨테이너를 실행하기 전에 원하는 이미지를 검색하거나 새로운 이미지를 생성할 필요가 있습니다. 도커 이미지를 어떻게 다룰 수 있는지 알아보겠습니다. 
+
 ### 2.2.1 도커 이미지 검색하기
 
 Docker Hub 레지스트리에서 도커 이미지를 검색합니다. 
@@ -249,34 +251,201 @@ helloworld   latest   4427b4290f55   3 seconds ago        123MB
 
 ### 2.2.6 이미지 공유하기
 
-pg 58
+docker image push 명령어로 도커 허브 등의 레지스트리에 등록할 수 있습니다. 
+
+```bash
+$ docker image push [옵션] 이미지명:[:태그]
+```
+
+helloworld 이미지를 도커 허브에 올려보겠습니다. helloworld:latest 이미지는 도커 허브에 이미 등록되어 있어서 이미지의 네임스페이스를 먼저 바꾸고 push를 하면 됩니다. 
+
+```bash
+$ docker image tag helloworld:latest kenshin579/helloworld:latest
+$ docker image ls
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+kenshin579/helloworld    latest               4427b4290f55        5 days ago          123MB
+helloworld               latest              4427b4290f55        5 days ago          123MB
+```
+
+도커에 로그인이 안되어 있으면 로그인을 먼저하고 이미지를 push 하면 도커 허브에 공유가 됩니다. 
+
+```bash
+$ docker login
+$ docker image push kenshin579/helloworld:latest
+The push refers to repository [docker.io/kenshin579/helloworld]
+cde5c9054b7e: Pushed 
+bc72fb2e7b74: Pushed 
+903669ee7207: Pushed 
+a5a5f8c62487: Pushed 
+788b17b748c2: Pushed 
+latest: digest: sha256:7906b00f23cc5eb44dcedcc2d0fe39e2a7253c3f2373b88f661cb7aa2bda4470 size: 1564
+
+```
+
+![image-20191206084635232](images/Docker-도커-명령어-모음/image-20191206084635232.png)
 
 ## 2.3 도커 컨테이너 다루기
 
 ### 2.3.1 컨테이너 실행하기
 
-브라브라32
+docker container run 명령어는 컨테이너를 생성하고 실행하는 명령어입니다. 
 
 ```bash
+$ docker container run [옵션] 이미지명[:태그] [명령] [명령인자...]
+```
+
+redis 이미지를 백그라운드에서 실행하려면 -d 옵션을 주고 다음과 같이 실행하면 됩니다.
+
+```bash
+$ docker container run --name redis_test -d -p 7000:6379 redis
+```
+
+-p 옵션으로 호스트 포트 7000 -> 컨테이너 포트 6379으로 포트 포워딩했으므로 다음과 같이 redis에 접속할  때 포트 번호를 7000으로 해서 접속해야 합니다. 
+
+```bash
+$ redis-cli -p 7000
+127.0.0.1:7000> set hello world
+OK
+127.0.0.1:7000> get hello
+"world"
+127.0.0.1:7000> 
+```
+
+**컨테이너 옵션**
+
+| 옵션   | 설명                                                         |
+| ------ | ------------------------------------------------------------ |
+| -d     | 백그라운드로 실행한다                                        |
+| -p     | 외부포트:컨테이터포트 (ex. 9000:8080)<br />포트를 지정하지 않는 경우 임의의 포트가 자동으로 할당된다 |
+| -t     | 유닉스 터미널 연결 활성화를 시킨다<br />-i 옵션과 같이 많이 사용되어 -it 옵션으로 합쳐서 실행한다 |
+| -i     | 컨테이너 쪽 표준 입력(stdout)과 연결을 유지한다. 컨테이너 쪽 셀에 들어가려면 이 옵션을 추가해야 한다. |
+| -rm    | 컨테이터가 종료시 컨테이너를 파기한다.                       |
+| --name | 컨테이너에 원하는 이름을 붙일 수 있다. 이름으로 조회하거나 삭제할 수 있다. |
+
+#### 2.3.1.1 명령 인자로 실행하기
+
+docker container run 명령어에 명령 인자를 추가해서 실행하면 Dockerfile에 정의된 CMD 인스트럭션은 무시되고 명령 인자로 넘어온 값으로 실행됩니다. 
+
+```bash
+$ docker container run -it redis
+1:C 07 Dec 2019 01:16:39.642 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 07 Dec 2019 01:16:39.642 # Redis version=5.0.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 07 Dec 2019 01:16:39.642 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+
+```
+
+위 명령어는 redis 디몬이 실행되는 반면에 'uname -a' 인자를 추가한 명령어는 인자 명령어를 실행한 값이 출력됩니다. 
+
+```bash
+$ docker container run -it redis uname -a 
+Linux 36e0253d1a29 4.9.184-linuxkit #1 SMP Tue Jul 2 22:58:16 UTC 2019 x86_64 GNU/Linux
+```
+
+
+
+### 2.3.2 실행중인 컨테이너 조회하기
+
+docker container ls 명령어로 현재 실행 중인 컨테이너를 확인할 수 있습니다. 20e9f060fc15 ID를 가진 컨테이너는 redis_test 이름을 가진 컨테이너로 --name 옵션으로 실행된 컨테이너입니다. --name 옵션 없이 실행되면 랜덤 값의 이름이 부여됩니다. 
+
+```bash
+$ docker container ls
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+20e9f060fc15  redis  "docker-entrypoint.s…"  25 hours ago  Up 25 hours  0.0.0.0:7000->6379/tcp   redis_test
+
+```
+
+
+
+#### 2.3.2.1 컨테이너 목록 필터링해서 보기
+
+--filter 옵션으로 필터링 조건을 추가하여 컨테이너 목록을 필터링해서 조회할 수 있습니다. 
+
+```bash
+$ docker container ls --filter "필터명=값"
+```
+
+필터 조건으로 name을 추가하면 컨테이너 이름에 redis가 포함된 컨테이너를 조회합니다. 
+
+```bash
+$ docker container ls --filter "name=redis"
+```
+
+#### 2.3.2.2 종료된 컨테이너 목록 보기
+
+종료된 컨테이너는 목록에서 보여지지 않지만, -a 옵션을 추가하여 종료된 컨테이너를 확인할 수 있습니다. 
+
+```bash
+$ docker container ls -a
+```
+
+### 2.3.3 실행중인 컨테이너 정지하기
+
+docker container stop 명령어로 실행 중인 컨테이너를 정지할 수 있습니다. 컨테이너 ID나 컨테이너 이름으로 정지 시킬 수 있습니다. 
+
+```bash
+$ docker container stop 컨테이너ID_OR_컨테이너명
+```
+
+### 2.3.4 정지된 컨테이너 재시작하기
+
+정지된 컨테이너를 다시 시작하려면 docker container restart를 사용하면 됩니다. 
+
+```bash
+$ docker container restart 컨테이너ID_OR_컨테이너명
+```
+
+
+
+### 2.3.5 실행중인 컨테이너 삭제하기
+
+컨테이너를 정지시키면 정시된 시점의 상태를 계속 유지한 체 디스크에 남아 있습니다. 완전히 파기하려면 rm 명령어를 추가하여 삭제하면 됩니다. 
+
+```bash
+$ docker container rm 컨테이너ID_OR_컨테이너명
+```
+
+컨테이너 실행후 종료되면 자동으로 파기하려면 다음 명령어와 같이 컨네이터 실행시 --rm 옵션을 추가하면 됩니다. 
+
+```bash
+$ docker container run --rm -d -p 7000:6379 redis
+```
+
+
+
+### 2.3.6 stdout 호스트 화면 출력과 연결하기
+
+
+
+```bash
+$ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
+```
+
+
+
+```bash
+$ docker container run -rm -d -p 
 $ docker container 
 ```
 
-**옵션**
-
-| 옵션 | 설명                                                         |
-| ---- | ------------------------------------------------------------ |
-| -d   | 백그라운드로 실행한다                                        |
-| -p   | EXTERNAL_PORT:CONTAINER_PORT (ex. 9000:8080)<br />CONTAINER_PORT - EXTERNAL_PORT를 지정하지 않는 경우 임의의 포트가 자동으로 할당된다 |
-| -t   | ??<br />-i 옵션과 같이 많이 사용되어 -it 옵션으로 합쳐서 실행한다 |
-| -i   | ??                                                           |
 
 
+### 2.3.7 실행중인 컨테이너에서 명령 실행하기
 
-### 2.3.2 실행중인 컨테이너 조회
 
-### 2.3.3 실행중인 컨테이너 정지
+```bash
+$ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
+```
 
-### 2.3.4 실행중인 컨테이너 삭제하기
+
+
+### 2.3.8 실행중인 컨테이너에 bash prompt 띄우기
+
+
+```bash
+$ docker container logs [옵션] 컨테이너ID_OR_컨테이너명
+```
+
+
 
 
 

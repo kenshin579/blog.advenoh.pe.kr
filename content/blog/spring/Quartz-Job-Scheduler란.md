@@ -1,5 +1,5 @@
 ---
-title: '[Quartz - 1] Quartz Job Scheduler란?'
+title: '[Quartz-1] Quartz Job Scheduler란?'
 date: 2019-9-7 15:11:13
 category: 'spring'
 tags: ["quartz", "spring", "springboot", "job", "scheduler", "스케줄러", "스케줄", "스프링", "스프링부트"]
