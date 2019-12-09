@@ -2,7 +2,7 @@
 title: '[JPA-2] JPA 다대일(N:1)+일대다(1:N) @ManyToOne, @OneToMany 연관관계'
 date: 2019-12-6 10:23:33
 category: 'database'
-tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne", "OneToMany", mapping", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대일", "일대다"]
+tags: ["jpa", "database", "db", spring", "springboot", "persistence", "ManyToOne", "OneToMany", mapping", "unidirectional", "bidirectional", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대일", "일대다"]
 ---
 
 # 1. 들어가며
@@ -25,8 +25,8 @@ JPA 연관관계 매핑에 대한 내용은 [JPA 연관관계 매핑 정리](htt
 * IDE: Intellij
 * Java : JDK 1.8
 * Source code : github
-  * [단방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-undirectional)
-  * [양방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-undirectional)
+  * [단방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-unidirectional)
+  * [양방향](https://github.com/kenshin579/tutorials-java/tree/master/springboot-jpa-many-to-one-bidirectional)
 * Software management tool : Maven
 
 # 3. 다대일 (N:1) 연관관계
