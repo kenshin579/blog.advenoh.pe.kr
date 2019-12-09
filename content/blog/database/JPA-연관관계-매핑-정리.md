@@ -29,10 +29,10 @@ SELECT * FROM comment AS c INNER JOIN post AS P ON p.id = c.post_id
 
 하지만, 객체의 경우에는 객체에 참조하는 필드가 존재하면 그 필드를 통해서 연관된 객체를 한쪽으로만 조회가 가능하여 단방향이 되고 서로 각각의 객체를 필드로 가지고 있으면 양방향이 됩니다. 
 
-- 단방향
+- 단방향 (Unidirectional)
   - 객체 관계에서 한 쪽만 참조하는 경우
   - 포스트 -> 댓글
-- 양방향
+- 양방향 (Bidirectional)
   - 객체 관계에서 양 쪽 다 참조하는 경우
   - 포스트 -> 댓글, 댓글 -> 포스트
 
@@ -42,7 +42,6 @@ SELECT * FROM comment AS c INNER JOIN post AS P ON p.id = c.post_id
 
 
 * 다대일 (N:1)
-
   * 일대다와 같이 가장 많이 사용되는 연관관계이다
 * 일대다 (1:N)
 * 일대일 (1:1)
