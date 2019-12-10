@@ -46,8 +46,7 @@ SELECT * FROM comment AS c INNER JOIN post AS P ON p.id = c.post_id
 * 일대다 (1:N)
 * 일대일 (1:1)
 * 다대다 (N:N)
-
-  * 실무에서는 거의 사용하지 않는다ㅑ
+  * 실무에서는 거의 사용하지 않는다
 
 # 4. 연관관계의 주인 (Owner)
 
