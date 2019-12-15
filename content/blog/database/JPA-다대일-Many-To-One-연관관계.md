@@ -506,7 +506,7 @@ JPA 연관관계에서 가장 기본이 되는 다대일 관계에 대해서 알
   - [https://bebong.tistory.com/entry/JPA-Lazy-Evaluation-LazyInitializationException-could-not-initialize-proxy-%E2%80%93-no-Session](https://bebong.tistory.com/entry/JPA-Lazy-Evaluation-LazyInitializationException-could-not-initialize-proxy-–-no-Session)
 - H2 옵션
   - [https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html](https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html)
-- 책 : JPA 프로그래밍 입문
+- 책 : 자바 ORM 표준 JPA 프로그래맹
   - <a href="http://www.yes24.com/Product/Goods/19040233?scode=032&OzSrank=2">![](images/JPA-다대일-Many-To-One-연관관계/jpa_book1.jpg)</a>
-- 책 : 자바 ORM 표준 JPA 프로그래밍
+- 책 : JPA 프로그래밍 입문
   - <a href="http://www.yes24.com/Product/Goods/41787023?scode=029">![](images/JPA-다대일-Many-To-One-연관관계/jpa_book2.jpg)</a>
