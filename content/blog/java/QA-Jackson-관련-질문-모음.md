@@ -8,39 +8,7 @@ tags : ["Q&A", "QA", "faq", "jackson", "java", "자바"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-[Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### - @DateTimeFormat vs @JsonFormat의 차이점은?
-* DateTimeFormat : DateTimeFormat
-* JsonFormat : jackson
-
-![](images/QA-Jackson-관련-질문-모음/image_1.png)
-
-#### - @JsonTypInfo, @JsonSubTypes?
-
-![](images/QA-Jackson-관련-질문-모음/image_6.png)
-
-참고
-* [https://www.slipp.net/questions/442](https://www.slipp.net/questions/442)
-* [https://seongtak-yoon.tistory.com/70](https://seongtak-yoon.tistory.com/70)
-
-#### - @JsonManagedReference
-#### - @JsonBackReference
-
-#### - @JsonIdentityInfo, @JsonIdentityReference란?
-
-- @OneToMany, @ManyToOne로 연결된 엔터티에서 데이터를 조회하면 Infinite recursion JsonMappingException이 발생함
-- 해결방법
-    * Jackson 1/6+
-	    * @JsonManagedReference, @JsonBackReference를 이용함
-    * Jackson 2.0+
-	    * @JsonIdentityInfo를 사용함
-
-![](images/QA-Jackson-관련-질문-모음/image_5.png)
-
-- - - -
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
 ### <span style="color:orange">[답변완료]</span>
 
@@ -103,4 +71,38 @@ tags : ["Q&A", "QA", "faq", "jackson", "java", "자바"]
 	- [https://homoefficio.github.io/2016/11/19/%EC%A1%B0%EA%B8%88%EC%9D%80-%EC%8B%A0%EA%B2%BD%EC%8D%A8%EC%A4%98%EC%95%BC-%ED%95%98%EB%8A%94-Jackson-Custom-Deserialization/](https://homoefficio.github.io/2016/11/19/조금은-신경써줘야-하는-Jackson-Custom-Deserialization/)
 	- [https://thepracticaldeveloper.com/2018/07/31/java-and-json-jackson-serialization-with-objectmapper/](https://thepracticaldeveloper.com/2018/07/31/java-and-json-jackson-serialization-with-objectmapper/)
 - Java
-  - https://nesoy.github.io/articles/2018-04/Java-Serialize
+  
+- https://nesoy.github.io/articles/2018-04/Java-Serialize
+  
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### - @DateTimeFormat vs @JsonFormat의 차이점은?
+* DateTimeFormat : DateTimeFormat
+* JsonFormat : jackson
+
+![](images/QA-Jackson-관련-질문-모음/image_1.png)
+
+#### - @JsonTypInfo, @JsonSubTypes?
+
+![](images/QA-Jackson-관련-질문-모음/image_6.png)
+
+참고
+* [https://www.slipp.net/questions/442](https://www.slipp.net/questions/442)
+* [https://seongtak-yoon.tistory.com/70](https://seongtak-yoon.tistory.com/70)
+
+#### - @JsonManagedReference
+#### - @JsonBackReference
+
+#### - @JsonIdentityInfo, @JsonIdentityReference란?
+
+- @OneToMany, @ManyToOne로 연결된 엔터티에서 데이터를 조회하면 Infinite recursion JsonMappingException이 발생함
+- 해결방법
+    * Jackson 1/6+
+	    * @JsonManagedReference, @JsonBackReference를 이용함
+    * Jackson 2.0+
+	    * @JsonIdentityInfo를 사용함
+
+![](images/QA-Jackson-관련-질문-모음/image_5.png)
+

@@ -10,11 +10,8 @@ tags : ["Q&A", "faq", "maven", "java"]
 
 ## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
-## <span style="color:orange">[미 답변 질문]</span>
 
----
-
-## <span style="color:orange">[답변완료]</span>
+### <span style="color:orange">[답변완료]</span>
 
 ### <span style="color:brown">1. maven으로 특정 클래스의 메서드 unit test 실행은 어떻게 하나?</span>
 -DTest= 옵션에 **패키지 이름.파일명#메서드이름** 형식으로 지정하면 원하는 메서드를 실행시킬 수 있습니다. 메이븐에서 -D 옵션은 system property를 지정하는 옵션입니다. 
@@ -61,3 +58,8 @@ maven 컴파일시 webxml attribute is required...이라는 오류가 발생하�
 참고
 
 -  https://www.mkyong.com/maven/maven-webxml-attribute-is-required/
+
+---
+
+## <span style="color:orange">[미 답변 질문]</span>
+

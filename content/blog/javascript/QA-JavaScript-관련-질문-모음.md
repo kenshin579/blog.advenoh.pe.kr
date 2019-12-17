@@ -10,12 +10,6 @@ tags : ["Q&A", "faq", "javascript", "defaultProps", "es6"]
 
 ### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### - defaultProps은 언제 사용되나?
-
----
-
 ### <span style="color:orange">[답변완료]</span>
 
 ### <span style="color:brown">1. `This is a ${msg}` 이건 뭔가?
@@ -82,4 +76,10 @@ ES6에 추가된 문법으로 Spread나 Rest Parameter로 사용할 수 있습�
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 - [https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543](https://scotch.io/bar-talk/javascripts-three-dots-spread-vs-rest-operators543)
 - [https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/](https://jaeyeophan.github.io/2017/04/18/ES6-4-Spread-Rest-parameter/)
+
+---
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### - defaultProps은 언제 사용되나?
 

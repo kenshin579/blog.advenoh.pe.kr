@@ -11,13 +11,6 @@ tags: ["Q&A", "faq", "spring", "springboot", "batch", "스프링", "배치", "�
 
 ### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
-### <span style="color:orange">[미 답변 질문]</span>
-
-
-
-- - - -
-
-
 ### <span style="color:orange">[답변완료]</span>
 
 ### <span style="color:brown">1. application.properties : server.compression.enabled 속성의 의미는?</span>
@@ -130,3 +123,10 @@ public @interface DataJpaTest {
 
 * [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
 * https://kok202.tistory.com/116
+
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+
+
