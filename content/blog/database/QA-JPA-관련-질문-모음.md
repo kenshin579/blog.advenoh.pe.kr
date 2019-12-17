@@ -109,7 +109,7 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 
 비식별자 연관관계 일때 사용한다. 아래 예제어서는 media_info_live 테이블에서 live_seqno(PK) 대신 media_seqno로 join하기 위해서 추가했다. 
 
-![image-20191217123403273](images/QA-JPA-관련-질문-모음/image-20191217123403273.png)
+![image-20191217123403273](images/QA-JPA-관련-질문-모음/image_13.png)
 
 참고
 
