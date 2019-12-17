@@ -8,45 +8,7 @@ tags : ["Q&A", "faq", "mysql", "database", "db", "slow query"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### - 하나의 행의 값을 복사하되 몇 열 값만 변경하고 싶을 때?
-
-참고
-* [https://stackoverflow.com/questions/2783150/mysql-how-to-copy-rows-but-change-a-few-fields](https://stackoverflow.com/questions/2783150/mysql-how-to-copy-rows-but-change-a-few-fields)
-
-
-#### -  데이터 migration은 어떻게 하나? 예. 한 테이블에 있는 데이터를 분리하는 작업은 어떻게 진행하면 되나?
-```sql
-INSERT INTO ` tmon_media ` . ` media_live_job ` ( ` live_seqno ` , ` job_id ` , ` strm_stts ` , ` rtmp_url ` , ` rtmp_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
-` video_rt ` , ` start_dt ` , ` finished_dt ` , ` use_yn ` , ` creator ` , ` create_dt ` , ` updater ` , ` update_dt ` )
-SELECT ` live_seqno ` , ` live_job_id ` AS ` job_id ` , ` strm_stts ` , ` rtmp_stream_url ` , ` rtmp_stream_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
-` video_rt ` , NOW() AS ` start_dt ` , NOW()+INTERVAL 1 MINUTE AS ` finished_dt ` , 'Y' AS ` use_yn ` , 'tvon' AS ` creator ` ,
-` create_tm ` AS ` create_dt ` , 'brightcov' AS ` updater ` , ` update_tm ` AS ` update_dt `
-FROM ` tmon_media ` . ` media_info_live ` WHERE ` live_job_id ` IS NOT NULL;
-```
-
-#### - 테이블 복사는 어떻게 하나?
-
-```sql
-INSERT INTO tmon_media.media_info_live SELECT * FROM tmon_media.bak_media_info_live;
-```
-
-#### - group_concat이란?
-
-![](images/QA-MySql-관련-질문-모음/image_5.png)
-
-![](images/QA-MySql-관련-질문-모음/image_1.png)
-
-![](images/QA-MySql-관련-질문-모음/image_8.png)
-
-참고
-
-* [https://fruitdev.tistory.com/16](https://fruitdev.tistory.com/16)
-
-- - - -
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
 ### <span style="color:orange">[답변완료]</span>
 
@@ -195,3 +157,42 @@ SELECT @lastMediaNo로 실행하면 됩니다.
 
 참고
 * [https://stackoverflow.com/questions/40905427/how-to-print-the-string-variable-in-mysql](https://stackoverflow.com/questions/40905427/how-to-print-the-string-variable-in-mysql)
+
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### - 하나의 행의 값을 복사하되 몇 열 값만 변경하고 싶을 때?
+
+참고
+* [https://stackoverflow.com/questions/2783150/mysql-how-to-copy-rows-but-change-a-few-fields](https://stackoverflow.com/questions/2783150/mysql-how-to-copy-rows-but-change-a-few-fields)
+
+
+#### -  데이터 migration은 어떻게 하나? 예. 한 테이블에 있는 데이터를 분리하는 작업은 어떻게 진행하면 되나?
+```sql
+INSERT INTO ` tmon_media ` . ` media_live_job ` ( ` live_seqno ` , ` job_id ` , ` strm_stts ` , ` rtmp_url ` , ` rtmp_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
+` video_rt ` , ` start_dt ` , ` finished_dt ` , ` use_yn ` , ` creator ` , ` create_dt ` , ` updater ` , ` update_dt ` )
+SELECT ` live_seqno ` , ` live_job_id ` AS ` job_id ` , ` strm_stts ` , ` rtmp_stream_url ` , ` rtmp_stream_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
+` video_rt ` , NOW() AS ` start_dt ` , NOW()+INTERVAL 1 MINUTE AS ` finished_dt ` , 'Y' AS ` use_yn ` , 'tvon' AS ` creator ` ,
+` create_tm ` AS ` create_dt ` , 'brightcov' AS ` updater ` , ` update_tm ` AS ` update_dt `
+FROM ` tmon_media ` . ` media_info_live ` WHERE ` live_job_id ` IS NOT NULL;
+```
+
+#### - 테이블 복사는 어떻게 하나?
+
+```sql
+INSERT INTO tmon_media.media_info_live SELECT * FROM tmon_media.bak_media_info_live;
+```
+
+#### - group_concat이란?
+
+![](images/QA-MySql-관련-질문-모음/image_5.png)
+
+![](images/QA-MySql-관련-질문-모음/image_1.png)
+
+![](images/QA-MySql-관련-질문-모음/image_8.png)
+
+참고
+
+* [https://fruitdev.tistory.com/16](https://fruitdev.tistory.com/16)
+

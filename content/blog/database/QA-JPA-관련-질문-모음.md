@@ -8,37 +8,7 @@ tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### -  @Modifying란
-  - DML (삭제, 수정)인 경우에는 @Modifying 어노테이션을 추가해야 함. 하지않으면 Not Supported for DML operation 오류가 발생함
-
-![](images/QA-JPA-관련-질문-모음/image_10.png)
-
-* [https://winmargo.tistory.com/208](https://winmargo.tistory.com/208)
-* [https://www.baeldung.com/spring-data-jpa-modifying-annotation](https://www.baeldung.com/spring-data-jpa-modifying-annotation)
-
-#### -  @Param란?
-
-![](images/QA-JPA-관련-질문-모음/image_1.png)
-
-  - 이름기반 파라미터를 바인디할 때 사용하는 어노테이션임?
-
-![](images/QA-JPA-관련-질문-모음/image_3.png)
-
-#### -  객체의 연관관계를 매핑하려면 객체에서 양쪽 방향을 모두 관리해야 함… 왜 그런가?
-  - 객체의 양방향 연관관계는 양쪽 모든 관계를 맺어줘야 하는데 왜 그런가?
-  - 연관관계 편의 메서드…
-
-#### -  @NotFound(action = NotFoundAction.IGNORE)은 언제 사용하나?
-![](images/QA-JPA-관련-질문-모음/image_9.png)
-
-* [http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/](http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/)
-* [https://lyb1495.tistory.com/91](https://lyb1495.tistory.com/91)
-
-- - - -
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
 ### <span style="color:orange">[답변완료]</span>
 
@@ -100,3 +70,48 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 * convertToEntityAttributes() : 조금 더 작성이 필요함
 
 ![](images/QA-JPA-관련-질문-모음/image_8.png)
+
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### -  @Modifying란
+  - DML (삭제, 수정)인 경우에는 @Modifying 어노테이션을 추가해야 함. 하지않으면 Not Supported for DML operation 오류가 발생함
+
+![](images/QA-JPA-관련-질문-모음/image_10.png)
+
+* [https://winmargo.tistory.com/208](https://winmargo.tistory.com/208)
+* [https://www.baeldung.com/spring-data-jpa-modifying-annotation](https://www.baeldung.com/spring-data-jpa-modifying-annotation)
+
+#### -  @Param란?
+
+![](images/QA-JPA-관련-질문-모음/image_1.png)
+
+  - 이름기반 파라미터를 바인디할 때 사용하는 어노테이션임?
+
+![](images/QA-JPA-관련-질문-모음/image_3.png)
+
+#### -  객체의 연관관계를 매핑하려면 객체에서 양쪽 방향을 모두 관리해야 함… 왜 그런가?
+  - 객체의 양방향 연관관계는 양쪽 모든 관계를 맺어줘야 하는데 왜 그런가?
+  - 연관관계 편의 메서드…
+
+#### -  @NotFound(action = NotFoundAction.IGNORE)은 언제 사용하나?
+![](images/QA-JPA-관련-질문-모음/image_9.png)
+
+참고
+
+* [http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/](http://javafreakers.com/notfoundactionnotfoundaction-ignore-annotation-example/)
+* [https://lyb1495.tistory.com/91](https://lyb1495.tistory.com/91)
+
+
+
+#### - referencedColumnName는 언제 사용하나? 
+
+비식별자 연관관계 일때 사용한다. 아래 예제어서는 media_info_live 테이블에서 live_seqno(PK) 대신 media_seqno로 join하기 위해서 추가했다. 
+
+![image-20191217123403273](images/QA-JPA-관련-질문-모음/image_13.png)
+
+참고
+
+- [https://larva.tistory.com/entry/JPA%EC%97%90%EC%84%9C-ManyToOne-%EA%B4%80%EA%B3%84%EC%97%90%EC%84%9C-%EB%B9%84%EC%8B%9D%EB%B3%84%EC%BB%AC%EB%9F%BC%EA%B3%BC-%EA%B4%80%EA%B3%84%EC%8B%9C-%EB%A7%B5%ED%95%91](https://larva.tistory.com/entry/JPA에서-ManyToOne-관계에서-비식별컬럼과-관계시-맵핑)
+

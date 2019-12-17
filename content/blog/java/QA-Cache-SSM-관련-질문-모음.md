@@ -8,13 +8,7 @@ tags: ["Q&A", "faq", "ssm", "cache-ssm", "cache"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### -
-
-- - - -
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
 ### <span style="color:orange">[답변완료]</span>
 
@@ -33,3 +27,10 @@ SSM관련 어노테이션으로 key 값 제공 메서드이고 없는 경우에�
 
 참고
 * [https://charsyam.wordpress.com/2016/07/27/입-개발-왜-cache를-사용하는가/](https://charsyam.wordpress.com/2016/07/27/%EC%9E%85-%EA%B0%9C%EB%B0%9C-%EC%99%9C-cache%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80/)
+
+- - - -
+- 
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### -
+

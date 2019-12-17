@@ -8,11 +8,11 @@ tags: ["Q&A", "QA", "faq", "java"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
-#### - java8 에서 mapToInt(ToIntFunction mapper)는 뭔가?
+### - java8 에서 mapToInt(ToIntFunction mapper)는 뭔가?
 - Intermediate operation으로 스트림의 각 요소에 mapper를 실행하고 IntStream을 반환한다
 
 ![](images/QA-Java-관련-질문-모음/image_8.png)
@@ -21,21 +21,21 @@ tags: ["Q&A", "QA", "faq", "java"]
 
 * [https://www.geeksforgeeks.org/stream-maptoint-java-examples/](https://www.geeksforgeeks.org/stream-maptoint-java-examples/)
 
-#### - bridge 메서드는 무엇인가?
+### - bridge 메서드는 무엇인가?
 
 ![](images/QA-Java-관련-질문-모음/image_2.png)
 
-#### - 이거의 의미는 뭔가?
+### - 이거의 의미는 뭔가?
 - JobKey가 상속받을 수 있는 걸 제한하는 건가?
 
 ![](images/QA-Java-관련-질문-모음/image_1.png)
 
 ![](images/QA-Java-관련-질문-모음/image_3.png)
 
-#### - facade 패턴이란?
-#### - strateggy 패턴이란?
+### - facade 패턴이란?
+### - strateggy 패턴이란?
 
-#### - @Constraint(validateBy…?) 
+### - @Constraint(validateBy…?) 
 
 ![](images/QA-Java-관련-질문-모음/image_6.png)
 

@@ -8,7 +8,33 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
-### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+
+
+### <span style="color:orange">[답변완료]</span>
+
+### <span style="color:brown">1. \_long 타입은 뭔가?</span>
+![](images/QA-Mybatis-관련-질문-모음/image_3.png)
+
+- \_long : long 타입으로 매핑된다
+- long : Long 타입이 매핑된다
+
+
+
+참고
+* [http://www.mybatis.org/mybatis-3/ko/configuration.html](http://www.mybatis.org/mybatis-3/ko/configuration.html)
+
+### <span style="color:brown">2. IN (…)안에 list을 넘겨서 처리하는 방법은?</span>
+
+IN에 들어갈 (…) 값을 <foreach> 태그로 값을 생성할 수 있습니다.
+
+![](images/QA-Mybatis-관련-질문-모음/image_2.png)
+
+참고
+
+* [http://pcdate.blogspot.com/2013/05/mybatis-foreach.html](http://pcdate.blogspot.com/2013/05/mybatis-foreach.html)
+
+----
 
 ### <span style="color:orange">[미 답변 질문]</span>
 
@@ -41,29 +67,5 @@ tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
 ![](images/QA-Mybatis-관련-질문-모음/image_4.png)
 
 참고
+
 * [https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0](https://epthffh.tistory.com/entry/Mybatis-%EC%97%90%EC%84%9C-CDATA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
-
----
-
-### <span style="color:orange">[답변완료]</span>
-
-### <span style="color:brown">1. \_long 타입은 뭔가?</span>
-![](images/QA-Mybatis-관련-질문-모음/image_3.png)
-
-- \_long : long 타입으로 매핑된다
-- long : Long 타입이 매핑된다
-
-
-
-참고
-* [http://www.mybatis.org/mybatis-3/ko/configuration.html](http://www.mybatis.org/mybatis-3/ko/configuration.html)
-
-### <span style="color:brown">2. IN (…)안에 list을 넘겨서 처리하는 방법은?</span>
-
-IN에 들어갈 (…) 값을 <foreach> 태그로 값을 생성할 수 있습니다.
-
-![](images/QA-Mybatis-관련-질문-모음/image_2.png)
-
-참고
-
-* [http://pcdate.blogspot.com/2013/05/mybatis-foreach.html](http://pcdate.blogspot.com/2013/05/mybatis-foreach.html)

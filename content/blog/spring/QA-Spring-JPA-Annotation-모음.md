@@ -10,23 +10,6 @@ tags: ["Q&A", "faq", "spring", "jpa", "db", "database"]
 
 ### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### - @NaturalId
-하이버네티으에서 Named query 대신에 사용할 수 있는 네임 쿼리란 한번 정의하면 변경할 수 없는 정적 쿼리이다.
-![](images/QA-Spring-JPA-Annotation-모음/image_1.png)
-
-참고
-* [https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/](https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/)
-
-#### - @EntityListeners, @EnableJpaAuditing
-
-참고
-* [https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html)
-* [https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-audit-listener.html](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-audit-listener.html)
-
-- - - -
-
 ### <span style="color:orange">[답변완료]</span>
 
 쉽게 찾기 위해서 알파벳 순으로 정리합니다.
@@ -69,4 +52,23 @@ tags: ["Q&A", "faq", "spring", "jpa", "db", "database"]
 
 * [https://joont92.github.io/jpa/JPA-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94/](https://joont92.github.io/jpa/JPA-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94/)
 
-#annotation #q&a #tistory
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### - @NaturalId
+하이버네티으에서 Named query 대신에 사용할 수 있는 네임 쿼리란 한번 정의하면 변경할 수 없는 정적 쿼리이다.
+![](images/QA-Spring-JPA-Annotation-모음/image_1.png)
+
+참고
+* [https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/](https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/)
+
+#### - @EntityListeners, @EnableJpaAuditing
+
+참고
+* [https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-listeners.html)
+* [https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-audit-listener.html](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/entity-audit-listener.html)
+
+
+
+

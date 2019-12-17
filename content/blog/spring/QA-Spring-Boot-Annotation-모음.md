@@ -10,13 +10,6 @@ tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfigurat
 
 ### [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/QA-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
 
-### <span style="color:orange">[미 답변 질문]</span>
-
-#### - @SpringBootTest와 @DataJpaTest의 차이점은 뭔가?
-* [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
-
-- - - -
-
 ### <span style="color:orange">[답변완료]</span>
 
 쉽게 찾기 위해서 알파벳 순으로 정리합니다.
@@ -31,4 +24,11 @@ tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfigurat
 
 참고
 * [http://partnerjun.tistory.com/54](http://partnerjun.tistory.com/54)
+
+- - - -
+
+### <span style="color:orange">[미 답변 질문]</span>
+
+#### - @SpringBootTest와 @DataJpaTest의 차이점은 뭔가?
+* [https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html](https://lalwr.blogspot.com/2018/05/spring-boot-springboottest-datajpatest.html)
 
