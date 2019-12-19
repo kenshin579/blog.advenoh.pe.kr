@@ -1,5 +1,5 @@
 ---
-title: '[자바8] Jav8 Stream 타입별로 List 생성하기 '
+title: '[자바8-2] Jav8 Stream 타입별로 List 생성하기'
 date: 2019-11-29 10:23:33
 category: 'java'
 tags: ["java", "java8", "stream", "람다", ""자바", "스트림", "람다"]
