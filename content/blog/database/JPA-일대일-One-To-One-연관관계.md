@@ -253,5 +253,7 @@ public class User extends DateAudit {
 
 * 일대일
 	* [https://kwonnam.pe.kr/wiki/java/jpa/one-to-one](https://kwonnam.pe.kr/wiki/java/jpa/one-to-one)
+	* [https://riptutorial.com/ko/jpa/example/22229/%EC%A7%81%EC%9B%90%EA%B3%BC-%EC%B1%85%EC%83%81-%EA%B0%84%EC%9D%98-%EC%9D%BC%EB%8C%80%EC%9D%BC-%EA%B4%80%EA%B3%84](https://riptutorial.com/ko/jpa/example/22229/직원과-책상-간의-일대일-관계)
+	* [https://www.popit.kr/spring-boot-jpa-step-08-onetoone-%EA%B4%80%EA%B3%84-%EC%84%A4%EC%A0%95-%ED%8C%81/](https://www.popit.kr/spring-boot-jpa-step-08-onetoone-관계-설정-팁/)
 * 책 : 자바 ORM 표준 JPA 프로그래밍
 	* <a href="http://www.yes24.com/Product/Goods/19040233?	scode=032&OzSrank=2">![](images/JPA-일대일-One-To-One-연관관계/jpa_book1.jpg)</a>
