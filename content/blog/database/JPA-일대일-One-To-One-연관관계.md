@@ -1,5 +1,5 @@
 ---
-title: '[JPA-3] JPA 일대일(1:1) @One-To-One 연관관계'
+title: '[JPA-4] JPA 일대일(1:1) @One-To-One 연관관계'
 date: 2019-12-27 15:47:32
 category: 'database'
 tags: ["jpa", "database", "db", "spring", "springboot", "persistence", "OneToOne", "mapping", "데이터베이스", "스프링", "스프링부트", "연관관계", "단방향", "양방향", "일대일"]
