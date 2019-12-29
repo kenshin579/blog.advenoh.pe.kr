@@ -71,6 +71,15 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 
 ![](images/QA-JPA-관련-질문-모음/image_8.png)
 
+### <span style="color:brown">7. findOne이 호출이 안될 때가 있는 것 같은데 왜 그런가?</span>
+
+스프링부트 1.5.x에서 2.0.x로 넘어가면서 JPA의 `findOne()` 호출은 `findById()`나 `getOne()` 메서드를 사용해서 호출해야 합니다. 
+
+참고
+
+- [https://hspmuse.tistory.com/entry/springboot-15x-%EC%97%90%EC%84%9C-springboot-20x-%EB%84%98%EC%96%B4%EA%B0%80%EB%A9%B4%EC%84%9C-%EC%83%9D%EA%B8%B4%EC%9D%BC](https://hspmuse.tistory.com/entry/springboot-15x-에서-springboot-20x-넘어가면서-생긴일)
+- https://stackoverflow.com/questions/49316751/spring-data-jpa-findone-change-to-optional-how-to-use-this/49317013
+
 - - - -
 
 ### <span style="color:orange">[미 답변 질문]</span>
