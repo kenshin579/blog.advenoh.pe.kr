@@ -1,10 +1,11 @@
 module.exports = {
-  title: `Advenoh IT Blog`,
-  description: `Blog posted about ...`,
+  title: `advenoh's dev blog`,
+  description: `IT 블로그`,
   author: `Frank Oh`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
-  siteUrl: `https://advenoh.pe.kr`, // Your blog site url
+  introduction: ``,
+  siteUrl: `https://blog.advenoh.pe.kr`, // Your blog site url
   social: {
+    instagram: `kenshin579`, // Your Instagram account
     twitter: ``, // Your Twitter account
     github: `kenshin579`, // Your GitHub account
     medium: ``, // Your Medium account
@@ -13,8 +14,8 @@ module.exports = {
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
   comment: {
-    disqusShortName: 'advenoh', // Your disqus-short-name. check disqus.com.
-    utterances: 'JaeYeopHan/gatsby-starter-bee', // Your repository for archive comment
+    disqusShortName: '', // Your disqus-short-name. check disqus.com.
+    utterances: 'kenshin579/advenoh.pe.kr', // Your repository for archive comment
   },
   configs: {
     countOfInitialPost: 10, // Config your initial count of post
@@ -24,6 +25,7 @@ module.exports = {
   },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
+    twitterAppId: '',
   },
   ga: 'UA-151046870-1', // Add your google analytics tranking ID
 }
