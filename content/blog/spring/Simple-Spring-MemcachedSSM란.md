@@ -187,7 +187,7 @@ public void testReadThroughAssignCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/5C151B92-D879-4E82-9CD9-A618155D91D4.png>)
+![](<images/20190101/image_29.png>)
 
 캐시에 저장하고 값을 확인하는 과정을 실시간으로 확인하려면 telnet으로 로그인하여 watch 명령어를 실행하면 됩니다. 더 자세한 사항은 #3.4 Memcached 유용한 명령어 모음을 참고해주세요.
 
@@ -231,7 +231,7 @@ public void testReadThroughSingleCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/1414DB68-3141-4887-9CB6-93B595B2393E.png>)
+![](<images/20190101/image_27.png>)
 
 **@ReadThroughMultiCache**
 
@@ -269,7 +269,7 @@ public void testReadThroughMultiCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/05CBEA1F-9BE2-4293-9388-E30446D38854.png>)
+![](<images/20190101/image_28.png>)
 
 ### 3.3.2 Update Cache
 
@@ -314,7 +314,7 @@ public void testUpdateAssignCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/1A74689D-C49F-4EEB-9E04-532345B6F9FC.png>)
+![](<images/20190101/image_24.png>)
 
 **@UpdateSingleCache**
 
@@ -352,7 +352,7 @@ public void testUpdateSingleCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/DF663E8C-0619-4775-99CA-DA414148E0A7.png>)
+![](<images/20190101/image_25.png>)
 
 **@UpdateMultiCache**
 
@@ -400,7 +400,7 @@ public void testUpdateMultiCache() {
 
 **watch 모니터링 결과**
 
-![](<images/20190101/08846795-A394-431D-9ADB-6B126AB08147.png>)
+![](<images/20190101/image_26.png>)
 
 ### 3.3.3 Invalidate Cache
 
