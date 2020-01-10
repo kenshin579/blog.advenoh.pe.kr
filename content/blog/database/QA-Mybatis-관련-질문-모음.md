@@ -34,6 +34,61 @@ IN에 들어갈 (…) 값을 <foreach> 태그로 값을 생성할 수 있습니�
 
 * [http://pcdate.blogspot.com/2013/05/mybatis-foreach.html](http://pcdate.blogspot.com/2013/05/mybatis-foreach.html)
 
+
+
+### <span style="color:brown">3. association columnPrefix 중첩으로 사용할 때 매핑아 인되는 이슈?</span>
+
+association을 중첩으로 columnPrefix로 매핑하는 경우에는 prefix가 중첩으로 append 되기 때문에 v_r_file_nm 형식으로 작성을 해야 합니다. 
+
+**Mybatis Mapper 파일**
+
+```xml
+<resultMap id="vodCollectionInfo" type="domain.entity.VodCollection" >
+  <result column="vod_collection_seqno" property="vodCollectionNo"/>
+  <result column="collection_title" property="collectionTitle"/>
+  <association property="vodInfo" resultMap="vodInfo" columnPrefix="v_"/>
+</resultMap>
+
+<resultMap id="vodInfo" type="domain.entity.MediaVod" >
+  <result column="vod_seqno" property="vodNo"/>
+  <result column="vod_title" property="vodTitle"/>
+  <association property="resourceInfo" resultMap="mediaResource" columnPrefix="r_"/>
+</resultMap>
+
+<resultMap id="mediaResourceMap" type="domain.entity.resource.MediaResource">
+  <result column="resource_seqno" property="resourceSeqno"/>
+  <result column="file_nm" property="fileName"/>
+  <result column="file_size" property="fileSize" javaType="Integer"/>
+</resultMap>
+```
+
+```xml
+<select id="selectAllVodsByVodCollectionWithPaging" parameterType="domain.dto.VodCollectionPageMeta" resultMap="Common.vodCollectionInfo">
+        SELECT vc.vod_collection_seqno,
+               vc.collection_title,
+               v.vod_seqno AS v_vod_seqno,
+               v.vod_title AS v_vod_title,
+               rv.original_file_nm AS v_r_original_file_nm,
+               rv.file_nm AS v_r_file_nm,
+               rv.width AS v_r_width,
+               rv.height AS v_r_height
+        FROM media_vod_collection AS vc
+                 INNER JOIN media_vod_collection_mapping AS vcm
+                            ON vcm.vod_collection_seqno = vc.vod_collection_seqno
+                 INNER JOIN media_vod AS v
+                            ON v.vod_seqno = vcm.vod_seqno
+                 LEFT JOIN media_resource AS rv
+                           ON rv.resource_seqno = v.resource_seqno
+        WHERE vc.vod_collection_seqno = #{vodCollectionNo}
+    </select>
+```
+
+
+
+참고
+
+- https://androphil.tistory.com/733?category=423961
+
 ----
 
 ### <span style="color:orange">[미 답변 질문]</span>

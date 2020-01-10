@@ -1,8 +1,10 @@
-# 블로그 : ModelMapper란
-* 들어가며
-* 개발 환경
-* 사용법
-* 참고
+---
+title: 'DTO 변환 - ModelMapper 사용하기'
+date: 2020-1-3 10:23:33
+category: 'database'
+tags: ["modelmapper", "dto", "convert", "변환"]
+---
+
 
 **코멘트**
 - [ ] web + app 일때 다른 데이터를 반환할 때 어떻게 디자인을 하면 좋을지 고민해보자.
@@ -26,9 +28,9 @@
 * map().setName(source.getFirstName());
 * map().setLastName(source.surName);
 
-1. 들어가며
+# 1. 들어가며
 
-2. 개발 환경
+# 2. 개발 환경
 
 * OS : Mac OS
 * IDE: Intellij
@@ -36,9 +38,18 @@
 * Source code : github
 * Software management tool : Maven
 
-3. 사용법
+# 3. 사용법
+# 4. FAQ
+## 4.1 Null값은 제외해서 변환하고 싶을 때는 어떻게 할 수 있나? 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 
-4. 참고
+```
+mapper.getConfiguration()
+      .setAmbiguityIgnored(true)
+      .setSkipNullEnabled(true);
+```
+
+# 5. 참고
 
 * Model Mapper
 	* [https://github.com/amdegregorio/ModelMapperExample](https://github.com/amdegregorio/ModelMapperExample)
