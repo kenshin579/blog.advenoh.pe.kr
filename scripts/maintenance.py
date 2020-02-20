@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from builtins import NotADirectoryError
+
 import argparse
 import os
 import re
@@ -101,6 +103,16 @@ def get_invalidate_images():
     print("bsObj", bsObj)
 
 
+def dir_path(path):
+    if os.path.isdir(path):
+        return path
+    else:
+        raise NotADirectoryError(path)
+
+def change_text_to_code_block(path):
+    print('path', path)
+    pass
+
 ################################################################################################
 # Main function
 #
@@ -116,6 +128,10 @@ def main():
     parser.add_argument("-i", "--image", action='store_true',
                         help="Find images that are not rendered in Gatsby (ex. image-23432.jpg")
 
+    parser.add_argument("-c", "--code", type=dir_path,
+                        help="Find and text that are considered code block")
+
+
     if len(sys.argv[1:]) == 0:
         parser.print_help()
         parser.exit()
@@ -128,6 +144,8 @@ def main():
         generate_blog_list()
     if args.image:
         get_invalidate_images()
+    if args.code:
+        change_text_to_code_block(args.code)
 
 
 if __name__ == "__main__":
