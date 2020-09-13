@@ -151,8 +151,8 @@ Request 처리시 Argument Resolver가 실행되는 순서는 크게 보면 아�
 1. Client에서 Request 요청을 보낸다
 2. 요청은 Dispatcher Serlvet에서 처리가 된다
 3. 요청에 대한 HandlerMapping 처리
-   1. (스프링 구동시) RequestMappingHandlerAdapter에서 필요한 Argument resolver를 등록한다 ([#1.2.1](#111-whitelabel-error-page))
-   2. (요청시) RequestMappingHandlerAdapter.invokeHandlerMethod()에서 Argument resolver를 실행한다 ([#1.2.2](#111-whitelabel-error-page))
+   1. (스프링 구동시) RequestMappingHandlerAdapter에서 필요한 Argument resolver를 등록한다 ([#1.2.1](https://blog.advenoh.pe.kr/spring/HandlerMethodArgumentResolver-%EC%9D%B4%EB%9E%80/#121-%EC%8A%A4%ED%94%84%EB%A7%81-%EA%B8%B0%EB%B3%B8--custom-argument-resolver%EC%9D%80-%EC%96%B4%EB%94%94%EC%84%9C-%EB%93%B1%EB%A1%9D%EC%9D%B4-%EB%90%98%EB%82%98))
+   2. (요청시) RequestMappingHandlerAdapter.invokeHandlerMethod()에서 Argument resolver를 실행한다 ([#1.2.2](https://blog.advenoh.pe.kr/spring/HandlerMethodArgumentResolver-%EC%9D%B4%EB%9E%80/#122-supportsparameter%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90%EC%84%9C-%ED%98%B8%EC%B6%9C%EB%90%98%EB%82%98))
       1. DispatcherServlet.doDispatch() -> RequestMappingHandlerAdapter.handleInternal() -> invokeHandlerMethod()
 4. 컨트롤러 메서드 실행
 
