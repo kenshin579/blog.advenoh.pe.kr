@@ -1,8 +1,9 @@
 [![HitCount](http://hits.dwyl.io/kenshin579/advenohpekr.svg)](http://hits.dwyl.io/kenshin579/advenohpekr)
 
-# Advenoh Blog Code
+# Frank's Blog Code
 
 [Advenoh](https://blog.advenoh.pe.kr)
+
 
 ## Database
 * [[JPA-2] JPA 다대일(N:1)+일대다(1:N) @ManyToOne, @OneToMany 연관관계](https://blog.advenoh.pe.kr/database/JPA-다대일-Many-To-One-연관관계)
