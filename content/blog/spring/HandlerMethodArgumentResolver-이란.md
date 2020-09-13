@@ -11,11 +11,7 @@ tags: ["java", "spring", "springboot", "ArgumentResolver", "자바", "스프링"
 
 HandlerMethodArgumentResolver에 대해서 알아보자. 아래와 같이 컨트롤러 메서드에 여러 인자 값(ex. @PathVariable)을 추가하여 자주 작업을 한다. 이런 인자는 HandlerMethodArgumentHandler에 의해서 처리가 된다. 
 
-
-
 필요에 따라서 컨트롤러 메서드에 여러 인자 값을 추가하는데 이런 인자는 HandlerMethodArgumentHandler에 의해서 처리가 된다. 
-
-필요한 여러 인자 값들(ex. @PathVariable)이 추가됩니다. 
 
 ```java
 @GetMapping
@@ -35,14 +31,33 @@ HandlerMethodArgumentHandler는 어노테이션이나 타입에 따라서 실제
 - RequestHeaderMapMethodArgumentResolver
   - @RequestHeader 어노테이션으로 선언된 인자의 실제 값을 지정해 준다
 
-HandlerMethodArgumentHandler을 사용하게 되면 중복 코드를 줄이고 공통 기능으로 사용할 수 있는 장점이 있다. 이제 Custom HandlerMethodArgumentResolver를 직접 구현해보도록 하자. 
+HandlerMethodArgumentHandler을 사용하게 되면 중복 코드를 줄이고 공통 기능으로 빼서 사용할 수 있는 장점이 있다. 이제 Custom HandlerMethodArgumentResolver를 직접 구현해보도록 하자. 
 
 
 # 2. Custom Argument Resolver 만들기
 
-## 2.1 Argument Resolver 생성하기
 
-Argument Resolver
+
+## 2.1 Argument Resolver 컨트롤러에 사용예제
+
+컨트롤러 메서드에서 @ClientIp 어노테이션이 추가된 인자를 넘겨주면 Client Ip 주소를 얻어 올 수 있는 Resolver를 만들어보자.
+
+```java
+@RestController
+public class IpController {
+    @GetMapping("/test")
+    public String getIpAddress(@ClientIp String clientIp) {
+        return String.format("ip address : %s", clientIp);
+    }
+}
+
+```
+
+
+
+## 2.2 Argument Resolver 생성하기
+
+Argument Resolver 인터페이스에는 2가지 메서드가 존재하고 supportsParameter()가 참인 경우에 resolveArgument() 메서드를 실행한다.
 
 ```java
 public interface HandlerMethodArgumentResolver {
@@ -57,21 +72,10 @@ public interface HandlerMethodArgumentResolver {
 
 ```
 
-| 메서드            | 설명 |
-| ----------------- | ---- |
-| supportsParameter |      |
-| resolveArgument   |      |
-
-
-
-
-```java
-@Target(ElementType.PARAMETER)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface ClientIp {
-}
-
-```
+| 메서드            | 설명                                                       |
+| ----------------- | ---------------------------------------------------------- |
+| supportsParameter | 현재 parameter를 resolver가 지원할지 true/false로 반환한다 |
+| resolveArgument   | 실제 바인딩할 객체를 반환한다                              |
 
 
 
@@ -98,9 +102,12 @@ public class ClientIpArgumentResolver implements HandlerMethodArgumentResolver {
 }
 ```
 
+- supportsParameter() 메서드에서는 인자 값에 ClientIp 어노테이션이 포함되어 있는 지 확인한다
+- resolveArgument() 메서드에서는 실제 client Ip 주소를 request에서 얻어 오는 로직이 있다
 
+## 2.3 Argument Resolver 등록하기
 
-## 2.2 Argument Resolver 등록하기
+이제 앞에서 생성한 Resolver를 addArgumentResolvers() 메서드에서 추가해주면 된다.
 
 ```java
 @RequiredArgsConstructor
@@ -117,17 +124,18 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-## 2.3 Argument Resolver 컨트롤러에 적용하기
+## 2.4 Controller 실행하기
+
+Unit Test로 확인해보자. 컨트롤러에서 Client Ip 주소를 잘 반환해주고 있다. 
 
 ```java
-@RestController
-public class IpController {
-    @GetMapping("/test")
-    public String getIpAddress(@ClientIp String clientIp) {
-        return String.format("ip address : %s", clientIp);
-    }
+@Test
+void getIpAddress() throws Exception {
+  this.mockMvc.perform(get("/test"))
+  .andDo(print())
+  .andExpect(status().isOk())
+  .andExpect(jsonPath("$", is("ip address : 127.0.0.1")));
 }
-
 ```
 
 
@@ -191,15 +199,16 @@ private HandlerMethodArgumentResolver getArgumentResolver(MethodParameter parame
 }
 ```
 
+getArgumentResolver() 메서드는 아래 여러 메서드에 의해서 호출된다. 
+
+- DispatcherServlet.doDispatch() -> ...생략... -> invokeHandlerMethod() -> ...생략... -> InvocableHandlerMethod.getMethodArgumentValues() -> getArgumentResolver() 순으로 실행되는 것을 확인할 수 있다. 
 
 
-DispatcherServlet.doDispatch() -> ...생략... -> invokeHandlerMethod() -> ...생략... -> InvocableHandlerMethod.getMethodArgumentValues() -> getArgumentResolver() 순으로 실행되는 것을 확인할 수 있다. 
-
-![image-20200912154932896](images/HandlerMethodArgumentResolver-이란/image-20200912154932896.png)
+![image-20200912154932896](images/HandlerMethodArgumentResolver-이란/image-20200912154932896.png)
 
 # 4. 마무리
 
-HandlerMethodArgumentResolver는 컨트롤러 메서드에서 인자 값에 대한 처리를 위해 사용된다. 이미 스프링에서 공통기능으로 많이 제공하고 있지만, 사용자용 메서드도 쉽게 작성하여 중복 로직을 많이 줄일 수 있다. 
+HandlerMethodArgumentResolver는 컨트롤러 메서드에서 인자 값에 대한 처리를 위해 사용된다. 이미 스프링에서 공통기능으로 많이 제공하고 있지만, 사용자용 메서드도 쉽게 작성하여 중복 로직을 많이 줄일 수 있어 용의하게 사용된다. 
 
 관련 소스는 [github](https://github.com/kenshin579/tutorials-java/tree/master/springboot-handler-method-argument-resolver)에 올려두어서 참고하시면 됩니다. 
 
