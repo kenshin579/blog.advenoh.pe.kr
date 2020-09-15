@@ -28,10 +28,11 @@ jobs:
     - name: Run maintenance.py
       run: |
         python scripts/maintenance.py -g
+    - name: Create commits
+        run: |
+          git config user.name 'kenshin579'
+          git config user.email 'kenshin579@hotmail.com'
+          git add README.md
+          git commit -m "update README file"
     - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: auto generate README file
-          title: Update README file
-          body: generate README file and create pr
-          branch: feature/update-readme
