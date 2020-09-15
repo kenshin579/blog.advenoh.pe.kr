@@ -28,3 +28,10 @@ jobs:
     - name: Run maintenance.py
       run: |
         python scripts/maintenance.py -g
+    - name: Commit README file
+      run: |
+        git config --local user.email "kenshin579@hotmail.com"
+        git config --local user.name "kenshin579"
+        git commit -m "update generated README" -a
+    - name: Push changes
+        uses: ad-m/github-push-action@master
