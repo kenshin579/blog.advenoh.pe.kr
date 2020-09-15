@@ -28,13 +28,10 @@ jobs:
     - name: Run maintenance.py
       run: |
         python scripts/maintenance.py -g
-    - name: commit and push
-        uses: github-actions-x/commit@v2.7
+    - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: 'master'
-          commit-message: 'auto generate README'
-          force-add: 'true'
-          files: README.md
-          name: kenshin579
-          email: kenshin579@hotmail.com
+          commit-message: auto generate README file
+          title: Update README file
+          body: generate README file and create pr
+          branch: feature/update-readme
