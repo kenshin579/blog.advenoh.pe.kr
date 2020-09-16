@@ -4,8 +4,8 @@
 name: Generate README 파일
 
 on:
-  push:
-    branches: [ blog ]
+#  push:
+#    branches: [ blog ]
   pull_request:
     branches: [ blog ]
 
@@ -33,6 +33,7 @@ jobs:
           git config user.name 'kenshin579'
           git config user.email 'kenshin579@hotmail.com'
           git add README.md
-          git commit -m "update README file"
+          git commit -am "update README file"
+          git push
 #    - name: Create Pull Request
 #      uses: peter-evans/create-pull-request@v3
