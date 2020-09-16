@@ -5,9 +5,9 @@ name: Generate README 파일
 
 on:
   push:
-    branches: [ master ]
+    branches: [ blog ]
   pull_request:
-    branches: [ master ]
+    branches: [ blog ]
 
 jobs:
   build:
