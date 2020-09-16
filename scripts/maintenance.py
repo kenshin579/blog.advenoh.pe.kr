@@ -5,10 +5,10 @@ import os
 import re
 import shutil
 import sys
+from datetime import datetime
 from itertools import islice
 from bs4 import BeautifulSoup
 import requests
-
 
 ################################################################################################
 # todo :
@@ -26,7 +26,7 @@ import requests
 #
 ################################################################################################
 BLOG_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BLOG_CONTENT = '/'.join([BLOG_DIR, 'content', 'blog'])
+BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'content', 'blog'])
 README_FILE = os.path.join(BLOG_DIR, 'README.md')
 README_HEADER_FILE = '/'.join([BLOG_DIR, 'scripts', 'data', 'HEADER.md'])
 BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
@@ -39,13 +39,13 @@ BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
 
 def generate_blog_list():
     result = {}
-    for file in get_all_files_with_extension(BLOG_CONTENT, ['md']):
+    for file in get_all_files_with_extension(BLOG_CONTENT_DIR, ['md']):
         category = os.path.basename(os.path.dirname(file)).capitalize()
         if result.get(category):
             result[category].append({'title': get_blog_title(file), 'filename': file})
         else:
             result[category] = [{'title': get_blog_title(file), 'filename': file}]
-    print(result)
+
     write_blog_list_to_file(result, README_FILE)
 
 
@@ -56,28 +56,25 @@ def get_blog_title(filename):
 
 
 def write_blog_list_to_file(result, filename):
-    '''
-    ## Node
-    * [Loopback 게시판 만들기 (1)](https://github.com/cheese10yun/blog-sample/tree/master/loopback-boards)
-
-    :param filename:
-    :return:
-    '''
     shutil.copyfile(README_HEADER_FILE, README_FILE)
 
     # write header to the file
     with open(filename, 'a') as out_file:
-        out_file.write('\n\n')
-        for category, data in result.items():
+        out_file.write('\nUpdated ' + datetime.now().strftime('%Y-%m-%d') + '\n\n')
+        out_file.write('현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.\n\n')
+        for category in sorted(result):
+            print('category', category)
+            # print('data', result[category])
             out_file.write('## {}\n'.format(category))
-            for title_file in data:
+            for title_file in sorted(result[category], key=lambda k: k['title']):
+                print('title_file', title_file)
+                filename = title_file.get('filename')
+                # print('filename', filename)
                 out_file.write('* [{}]({})\n'.format(
                     title_file.get('title'),
-                    os.path.splitext(title_file.get('filename'))[0].replace(
-                        '/Users/ykoh/WebstormProjects/advenoh.pe.kr/content/blog', BLOG_HOME_URL)
-                ))
-
+                    re.sub('.*\/content\/blog', BLOG_HOME_URL, os.path.splitext(title_file.get('filename'))[0])))
             out_file.write('\n')
+
 
 def get_all_files_with_extension(path, extensions):
     filenames_with_extension = []
@@ -90,6 +87,7 @@ def get_all_files_with_extension(path, extensions):
     return filenames_with_extension
 
 
+# todo : 작업이 더 필요함
 def get_invalidate_images():
     session = requests.Session()
     headers = {
