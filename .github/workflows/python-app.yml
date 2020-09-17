@@ -37,3 +37,15 @@ jobs:
 #          git push
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Update README file
+        committer: kenshin579@
+        branch: readme-patches
+        delete-branch: true
+        title: '[AUTO] Update README file'
+        body: |
+          Update README file
+        labels: |
+          automated pr
+        assignees: kenshin579
+        reviewers: kenshin579
