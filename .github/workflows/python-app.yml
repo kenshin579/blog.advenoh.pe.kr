@@ -9,7 +9,7 @@ on:
     - 'README.md'
 
     branches:
-    - master
+    - blog
 
 jobs:
   build:
