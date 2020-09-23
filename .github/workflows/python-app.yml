@@ -5,9 +5,11 @@ name: Generate README 파일
 
 on:
   push:
-    branches: [ blog ]
-#  pull_request:
-#    branches: [ blog ]
+    paths-ignore:
+    - 'README.md'
+
+    branches:
+    - master
 
 jobs:
   build:
