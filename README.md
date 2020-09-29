@@ -2,7 +2,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2020-09-27
+Updated 2020-09-29
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -76,7 +76,7 @@ Updated 2020-09-27
 * [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/python/웹-스크래핑하면서-차단-방지하는-방법)
 * [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/python/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기)
 * [파이썬 딕셔너리 리스트에서 특정 키 값으로 정렬하기](https://blog.advenoh.pe.kr/python/파이썬-딕셔너리-리스트에서-특정-키-값으로-정렬하기)
-* [파이썬에서 람다 함수 사용해보기](https://blog.advenoh.pe.kr/python/파이썬에서-람다-함수-사용해보기)
+* [파이썬에서 람다 함수 익숙해지기](https://blog.advenoh.pe.kr/python/파이썬에서-람다-함수-익숙해지기)
 * [파이썬으로 웹 스크래핑하는 방법 - Web scraping](https://blog.advenoh.pe.kr/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping)
 
 ## Spring
