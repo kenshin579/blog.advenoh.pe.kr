@@ -1,5 +1,5 @@
 ---
-title: 'SSL 인증서 Ngnix 서버에 설치하기 (무료 Let's Encrypt 인증서 발급)'
+title: 'SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)'
 date: 2020-10-01 10:23:33
 category: 'cloud'
 tags: ["aws", "ec2", "http2", "ssl", "letsencrypt", "certificate", "ngnix", "인증서"]
