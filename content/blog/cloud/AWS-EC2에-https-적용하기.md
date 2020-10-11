@@ -101,7 +101,7 @@ Ngnix 서버를 재시작하고 https 주소로 접속해보자.
 $ sudo service nginx restart
 ```
 
-![image-20201011162611682](images/AWS-EC2에-https-적용하기/image-20201011162611682.png)
+![image-20201011162611682](images/AWS-EC2에-https-적용하기/image-202010111626116.png)
 
 
 
