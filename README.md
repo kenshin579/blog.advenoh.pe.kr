@@ -13,7 +13,7 @@ Updated 2020-10-11
 
 ## Cloud
 * [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/cloud/Heroku에-Node-js-MongoDB-App-배포하기)
-* [SSL 인증서 Ngnix 서버에 설치하기 (무료 Let's Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/AWS-EC2에-https-적용하기)
+* [SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/AWS-EC2에-https-적용하기)
 * [[Docker-1] Docker 도커 명령어 모음](https://blog.advenoh.pe.kr/cloud/Docker-도커-명령어-모음)
 
 ## Database
