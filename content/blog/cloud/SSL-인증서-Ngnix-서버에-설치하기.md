@@ -184,9 +184,7 @@ server {
 
 #3.  마무리
 
-letsencrypt에서 SSL 인증서를 무료로 제공하고 쉽게 설치할 수 있는 certbot도 제공한다. certbot 명령어로 거의 5분 안에 https를 설정할 수 있었다.
-
-ngnix 전체 설정 파일은 gist를 참고해주세요.  
+letsencrypt에서 SSL 인증서를 무료로 제공하고 쉽게 설치할 수 있는 certbot도 제공한다. certbot 명령어로 거의 5분 안에 https를 설정할 수 있었다. 전체 ngnix은 [gist](https://gist.github.com/kenshin579/489a13d194e310ec741f64f508c1f987)를 참고해주세요. 
 
 #4. 참고
 
