@@ -142,6 +142,8 @@ public void 중복키가_존재하는_경우_3rd_인자에_merge함수로_해결
 
 자바 8의 스트림을 사용해서 List -> Map 형태로 변환해주는 방식을 알아보았다. 자바 8전의 코드 스타일보다 스트림 형태로 작성 코드들이 훨씬 더 코드를 빠르게 이해할 수 있는 장점이 있는 듯하다. 
 
+전체 소스는 [github](https://github.com/kenshin579/tutorials-java/blob/master/java8/src/test/java/com/advenoh/streams/ConvertListToMapTest.java)를 참고해주세요
+
 # 4. 참고
 
 * List -> Map 변환
