@@ -96,6 +96,8 @@ public void test_student_age() {
 
 `PriorityQueue`은 우선순위를 가지는 Queue 자료구조이다. 개발 시 `PriorityQueue`를 사용하면 쉽게 Min+Max Heap 자료구조로 사용할 수 있다. 
 
+예제 코드는 [github](https://github.com/kenshin579/tutorials-java/blob/master/java8/src/test/java/com/advenoh/structure/PriorityQueueTest.java)를 참고해주세요.
+
 # 4. 참고
 
 - Priority Queue
