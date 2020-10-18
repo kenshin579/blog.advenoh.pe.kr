@@ -56,6 +56,7 @@ Updated 2020-10-18
 * [자바 Comparable과 Comparator의 차이점](https://blog.advenoh.pe.kr/java/자바8-compable-comparator-차이점)
 * [자바 Garbage Collection이란](https://blog.advenoh.pe.kr/java/자바-Garbage-Collection이란)
 * [자바 keystore에 SSL 인증서 import 하기](https://blog.advenoh.pe.kr/java/자바-keystore에-SSL-인증서-import-하기)
+* [자바 자료구조 - Priority Queue (우선순위 큐)](https://blog.advenoh.pe.kr/java/자바-자료구조-Priority-Queue-우선순위-큐)
 * [자바 커스텀 어노테이션 만들기](https://blog.advenoh.pe.kr/java/자바-커스텀-어노테이션-만들기)
 * [자바8 HashMap 보다 간결하고 효과적으로 작성하기](https://blog.advenoh.pe.kr/java/자바8-HashMap-보다-간결하고-효과적으로-작성하기)
 * [자바8 스트림 사용해서 List -> Map 형태로 변환하는 방법](https://blog.advenoh.pe.kr/java/자바8-스트림-사용해서-List-Map-형태로-변환하는-방법)
