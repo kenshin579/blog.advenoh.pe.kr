@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2020-10-18
+Updated 2020-10-24
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -46,6 +46,7 @@ Updated 2020-10-18
 * [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Lombok-관련-질문-모음)
 * [Q&A : Maven 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Maven-관련-질문-모음)
 * [Q&A : 개발관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-개발관련-질문-모음)
+* [Travis CI에서 Slack 연동해서 빌드 notification 받기](https://blog.advenoh.pe.kr/java/Travis-CI에서-Slack-연동해서-빌드-notification-받기)
 * [[자바8-1] 자바8 Optional이란](https://blog.advenoh.pe.kr/java/자바8-Optional이란)
 * [새로운 기능 및 개선 사항 목록 - 자바10에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바10에서의-변화)
 * [새로운 기능 및 개선 사항 목록 - 자바11에서의 변화](https://blog.advenoh.pe.kr/java/새로운-기능-및-개선-사항-목록-자바11에서의-변화)
