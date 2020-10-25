@@ -1,7 +1,7 @@
 ---
 title: 'Travis CI에서 Slack 연동해서 빌드 notification 받기'
 date: 2020-10-22 10:23:33
-category: 'java'
+category: 'devops'
 tags: ["travis", "ci", "slack", "integration", "notification", "build", "빌드", "슬랙"]
 ---
 
@@ -23,19 +23,19 @@ Travis CI로 빌드 이후 notification을 Slack으로 받는 방법에 대해�
 
 slack app directory에서 Travis CI App을 찾아 추가한다. 
 
-![Travis CI App](images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-202010243533216.png)
+![Travis CI App](../java/images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-202010243533216.png)
 
 Slack에 추가 > 채널 선택 > Travis CI 통합 앱 추가 버튼 클릭하여 Slack와 Travis CI를 연동한다. 
 
-![image-20201024185548896](images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-20201024185548896.png)
+![image-20201024185548896](../java/images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-20201024185548896.png)
 
 Travis CI 통합 앱 추가 이후에는 앱 토큰 정보를 알려준다. 이 정보를 기반으로 추후 작업을 하면 된다. 여기서도 언급되어 있는 것처럼 소스 코드가 public으로 되어 있어 앱 토큰이 노출되면 누구나 메시지를 보낼 수 있기 때문에 해당 토큰을 암호화하도록 하자. 
 
-![image-20201024190107595](images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-20201024190107595.png)
+![image-20201024190107595](../java/images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/image-20201024190107595.png)
 
 연동이 잘 되면 Slack 채널에 메시지를 받게 된다.
 
-![205B5442-FCB2-4013-AA4D-1FEC7AB6CA46](images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/205B5442-FCB2-4013-AA4D-1FEC7AB6CA46.png)
+![205B5442-FCB2-4013-AA4D-1FEC7AB6CA46](../java/images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/205B5442-FCB2-4013-AA4D-1FEC7AB6CA46.png)
 
 ## 2. travis.yml 설정에 slack 정보 추가하기
 
@@ -82,7 +82,7 @@ notifications:
 
 Travis CI에서 빌드를 직접해보면 Slack에 빌드 메시지를 잘 받는 것을 확인할 수 있다. 
 
-![BE2B65F9-8EFE-4991-9118-849627BE8F8B](images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/BE2B65F9-8EFE-4991-9118-849627BE8F8B.png)
+![BE2B65F9-8EFE-4991-9118-849627BE8F8B](../java/images/Travis-CI에서-Slack-연동해서-빌드-notification-받기/BE2B65F9-8EFE-4991-9118-849627BE8F8B.png)
 
 #마무리
 
