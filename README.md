@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2020-10-24
+Updated 2020-10-25
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -60,6 +60,7 @@ Updated 2020-10-24
 * [자바 자료구조 - Priority Queue (우선순위 큐)](https://blog.advenoh.pe.kr/java/자바-자료구조-Priority-Queue-우선순위-큐)
 * [자바 커스텀 어노테이션 만들기](https://blog.advenoh.pe.kr/java/자바-커스텀-어노테이션-만들기)
 * [자바8 HashMap 보다 간결하고 효과적으로 작성하기](https://blog.advenoh.pe.kr/java/자바8-HashMap-보다-간결하고-효과적으로-작성하기)
+* [자바8 Stream API 사용해서 List of Object 생성하기](https://blog.advenoh.pe.kr/java/자바8-Stream-API-사용해서-List-of-Object-생성하기)
 * [자바8 스트림 사용해서 List -> Map 형태로 변환하는 방법](https://blog.advenoh.pe.kr/java/자바8-스트림-사용해서-List-Map-형태로-변환하는-방법)
 * [자바에서 final에 대한 이해](https://blog.advenoh.pe.kr/java/자바에서-final에-대한-이해)
 * [자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance](https://blog.advenoh.pe.kr/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance)
