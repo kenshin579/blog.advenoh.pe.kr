@@ -1,6 +1,6 @@
 ---
 title: 'nGrinder 사용법에 대해서 알아보자'
-date: 2020-10-22 10:23:33
+date: 2020-03-22 10:23:33
 category: 'devops'
 tags: ["ngrinder", "test", "performance", "api", "테스트", "성능테스트"]
 ---
