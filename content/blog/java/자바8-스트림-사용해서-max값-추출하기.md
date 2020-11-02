@@ -68,7 +68,7 @@ public void 숫자_array_max_값_찾기() {
 }
 ```
 
-- Arrays.stream()
+- `Arrays.stream()`
   - 기본 배열을 IntStream 스트림으로 변환한다
 - `max()`
   - 결과를 Optional 객체로 반환한다
