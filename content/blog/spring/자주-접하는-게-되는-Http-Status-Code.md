@@ -1,6 +1,6 @@
 ---
-title: '자주 접하는 게 되는 Http Status Code 목록'
-date: 2020-11-12 15:11:13
+title: '자주 접하는 게 되는 Http Status Code'
+date: 2020-09-12 15:11:13
 category: 'spring'
 tags: ["http", "status", "code", "statuscode", "상태값", "응답값", "상태코드"]
 ---
