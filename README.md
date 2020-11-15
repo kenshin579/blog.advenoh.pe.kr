@@ -103,5 +103,5 @@ Updated 2020-11-15
 * [스프링 RestTemplate](https://blog.advenoh.pe.kr/spring/스프링-RestTemplate)
 * [스프링 파일 업로드 처리](https://blog.advenoh.pe.kr/spring/스프링-파일-업로드-처리)
 * [스프링부트 기본 에러 페이지 변경하기 - Customize Whitelabel Error Page](https://blog.advenoh.pe.kr/spring/스프링부트-기본-오류-페이지-변경하기)
-* [자주 접하는 게 되는 Http Status Code 목록](https://blog.advenoh.pe.kr/spring/Http-Status-Code)
+* [자주 접하는 게 되는 Http Status Code](https://blog.advenoh.pe.kr/spring/자주-접하는-게-되는-Http-Status-Code)
 
