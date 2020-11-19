@@ -15,7 +15,16 @@ export default class HTML extends React.Component {
           <meta name="naver-site-verification" content="a498d108eb43fa7560493c733ece7c609dacfaf7"/>
           {/*<meta name="google-site-verification" content="zJ5_7xeoUF73cEE-Vkt2yFp28N2Az0r4-r-zBWnWGQI" />*/}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0KLVK60W1"></script>
-            <script src="utils/gtag.js"></script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B0KLVK60W1');
+          `,
+                }}
+            />
           <script data-ad-client="ca-pub-8868959494983515" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           {this.props.headComponents}
         </head>
