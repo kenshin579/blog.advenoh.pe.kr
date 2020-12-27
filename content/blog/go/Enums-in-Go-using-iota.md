@@ -9,7 +9,7 @@ tags: ["go", "golang", "enums", "iota", "열거형", "고", "고랭"]
 
 Go에서는 Java에서 제공하는 Enums 타입은 존재하지 않는다. 하지만, Go에서도 `iota`를 이용해서 Enums과 같은 상수값을 쉽게 선언하여 사용할 수 있다. 
 
-`iota` 키워드는 `const` 선언에서 사용할 수 있는 predefined identifier로 연속적인 정수 상수 0, 1, 2, ...를 나타낸다. 예제를 통해서 어떻게 사용하는지 알아보자.
+`iota` 키워드는 `const` 선언에서 사용할 수 있는 `predefined identifier`로 연속적인 정수 상수 0, 1, 2, ...를 나타낸다. 예제를 통해서 어떻게 사용하는지 알아보자.
 
 ```go
 //#builtin.go
@@ -84,7 +84,7 @@ func Example_iota_시작값_변경() {
 
 ### 2.3.1 하나의 값을 스킵하는 방법
 
-중간 값을 스킵하려면 `blank identifier`를 사용해서 중간 값을 스킵할 수 있다. 
+중간 값을 스킵하려면 `blank identifier`를 사용해서 중간 값을 스킵한다. 
 
 ```go
 
@@ -132,7 +132,7 @@ func Example_iota_중간값_다르게_지정() {
 
 #### 2.4.2.2 const 그룹 별로 나눠서 선언하기
 
-jump 뛰어야 하는 구간을 직접 계산하기보다는 아래와 같이 여러 상수 그룹으로 나눠서 선언하면 조금 더 쉽게 선언이 가능하다.
+jump 뛰어야 하는 구간을 직접 계산하기보다는 아래와 같이 여러 그룹으로 나눠서 선언하면 조금 더 쉽게 선언이 가능하다.
 
 ```go
 func Example_iota_중간값_다르게_지정2() {
@@ -159,15 +159,11 @@ func Example_iota_중간값_다르게_지정2() {
 
 # 3. Enums 예제 모음
 
-Go 언어에서 Enums 식으로 많이 사용할 수 있는 예제들이다. 
+Enums 식으로 사용할 수 있는 예제들이다. 
 
 ## 3.1 ByteSize 상수 값 선언하기
 
-데이터 단위 
-
-데이터 단위 
-
-선언시 Enums 으로 선언하여 사용하
+데이터 단위를 아래와 같이 선언한다. KB 단위만 선언하면 나머지 MB, GB... 단위도 쉽게 선언이 된다.
 
 ```go
 func Example_iota_BYTE_예제() {
@@ -193,27 +189,29 @@ func Example_iota_BYTE_예제() {
 
 
 
-## 3.2 Bitwise로 role 
+## 3.2 Bitwise 연산으로 플래그 값이나 옵션 확인하기
+
+비트 연산을 통해서 여러 옵션이나 플래그를 적용하고 AND 연산으로 적용되었는지 확인하는 예제이다. 이 예제에서는 사용자에게 여러 역할을 부여하고 역할을 확인한다. 
 
 ```go
 
 func Example_iota_bitwise_role_예제() {
 	const (
-		isAdmin = 1 << iota
-		isHeadquarters
-		canSeeFinancials
+		isAdmin          = 1 << iota //1
+		isHeadquarters               //10
+		canSeeFinancials             //100
 
-		canSeeAfrica
-		canSeeAsia
-		canSeeEurope
-		canSeeNorthAmerica
-		canSeeSouthAmerica
+		canSeeAfrica       //1000
+		canSeeAsia         //10000
+		canSeeEurope       //100000
+		canSeeNorthAmerica //1000000
+		canSeeSouthAmerica //10000000
 	)
 
 	var myRoles byte = isAdmin | canSeeFinancials | canSeeEurope
 	fmt.Printf("%b\n", myRoles)
-	fmt.Printf("is admin? %v\n", isAdmin&myRoles == isAdmin)
-	fmt.Printf("is HQ? %v\n", isHeadquarters&myRoles == isHeadquarters)
+	fmt.Printf("is admin? %v\n", isAdmin & myRoles == isAdmin)
+	fmt.Printf("is HQ? %v\n", isHeadquarters & myRoles == isHeadquarters)
 	//Output:
 	//100101
 	//is admin? true
@@ -224,7 +222,9 @@ func Example_iota_bitwise_role_예제() {
 
 
 
-## 3.3 Enums iterate
+## 3.3 선언한 Enums iterate해보기
+
+상수 선언시 마지막 값을 이용해서 iterate한다. 
 
 ```go
 type WeekDay int
@@ -264,13 +264,9 @@ func (d WeekDay) String() string {
 }
 ```
 
-
-
 # 4. 마무리
 
-이번 시간에는 Iota을 이용해서 Go 언어에서 Enums을 
-
-포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-enums-iota)에서 확인할 수 있다.
+Go 언어에서 Enums 형식으로 선언하는 방법에 대해서 알아보았다. 쉽게 상수 값을 선언하기 위해서 iota 키워드를 사용했고 다양한 예제도 볼 수 있었다. 본 포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-enums-iota)에서 확인할 수 있다.
 
 # 5. 참고
 
