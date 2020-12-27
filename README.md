@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2020-12-13
+Updated 2020-12-27
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -38,6 +38,9 @@ Updated 2020-12-13
 * [Git Rebase로 병합하기](https://blog.advenoh.pe.kr/git/Git-Rebase로-병합하기)
 * [Git 브랜치 여러 개 한번에 삭제하기](https://blog.advenoh.pe.kr/git/Git-브랜치-여러개-한번에-삭제하기)
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
+
+## Go
+* [Enums in Go (using iota)](https://blog.advenoh.pe.kr/go/Enums-in-Go-using-iota)
 
 ## Java
 * [JUnit Rules이란](https://blog.advenoh.pe.kr/java/JUnit-Rules이란)
