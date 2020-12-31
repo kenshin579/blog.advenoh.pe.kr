@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: */tags/
+Disallow: */categories/
+
+sitemap: https://blog.advenoh.pe.kr/sitemap.xml
