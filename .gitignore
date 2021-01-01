@@ -1,8 +1,19 @@
-### Node ###
+# =========================
+# Node.js-Specific Ignores
+# =========================
+
+# Build directory
+public/
+
+# Gatsby cache
+.cache/
+
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
@@ -22,6 +33,9 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+# Bower dependency directory (https://bower.io/)
+bower_components
+
 # node-waf configuration
 .lock-wscript
 
@@ -29,8 +43,11 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
-jspm_packages
+node_modules/
+jspm_packages/
+
+# Typescript v1 declaration files
+typings/
 
 # Optional npm cache directory
 .npm
@@ -47,13 +64,53 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# dotenv environment variables file
+.env
 
-# Build Files
-public/
-.cache/
+# =========================
+# Operating System Files
+# =========================
 
-# Gatsby context
-.gatsby-context.js
+# OSX
+# =========================
 
-# Bundle stats
-bundle-stats.json
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+.vscode
