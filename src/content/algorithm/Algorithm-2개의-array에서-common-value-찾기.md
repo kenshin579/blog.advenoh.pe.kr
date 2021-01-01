@@ -1,8 +1,12 @@
 ---
+layout: post
 title: 'Algorithm : 2개의 array에서 common value 찾기'
-date: 2018-7-29 14:54:31
-category: 'algorithm'
+author: [Frank Oh]
 tags: ["algorithm", "interview", "array", "common", "알고리즘", "인터뷰", "면접", "코드면접", "배열", "공통값"]
+image: img/demo4.jpg
+date: '2018-07-29T14:54:31.000Z'
+draft: false
+
 ---
 
 # 1. Problem
