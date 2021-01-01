@@ -1,8 +1,12 @@
 ---
-title: '[Quartz-1] Quartz Job Scheduler란?'
-date: 2019-9-7 15:11:13
+layout: post
 category: 'spring'
+title: '[Quartz-1] Quartz Job Scheduler란?'
+author: [Frank Oh]
 tags: ["quartz", "spring", "springboot", "job", "scheduler", "스케줄러", "스케줄", "스프링", "스프링부트"]
+image: img/demo4.jpg
+date: '2019-09-07T15:11:13.000Z'
+draft: false
 ---
 
 # 1. 들어가며

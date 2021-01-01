@@ -1,9 +1,12 @@
 ---
-title: 'H2 데이터베이스 사용법 및 Intellij에서 Database 연동하기'
-date: 2019-11-20 10:23:33
+layout: post
 category: 'spring'
+title: 'H2 데이터베이스 사용법 및 Intellij에서 Database 연동하기'
+author: [Frank Oh]
 tags: ["h2", "database", "spring", "springboot", "intellij", "In-Memory", "인메모리", "DB", "데이터베이스", "인텔리제이"]
-
+image: img/demo4.jpg
+date: '2019-11-20T10:23:33.000Z'
+draft: false
 ---
 # 1. 들어가며
 

@@ -1,8 +1,12 @@
 ---
-title: '[Quartz-4] Quartz에서 실행중인 Job을 Interrupt하여 Job Scheduler를 정상종료 시키는 방법'
-date: 2019-10-12 22:51:31
+layout: post
 category: 'spring'
+title: '[Quartz-4] Quartz에서 실행중인 Job을 Interrupt하여 Job Scheduler를 정상종료 시키는 방법'
+author: [Frank Oh]
 tags: ["quartz", "spring", "springboot", "job", "scheduler", "interrupt", "shutdown", "hook", "인터럽트", "셧다운훅", "스케줄러", "스케줄", "스프링", "스프링부트"]
+image: img/demo4.jpg
+date: '2019-10-12T22:51:31.000Z'
+draft: false
 ---
 
 # 1. 들어가며

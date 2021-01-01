@@ -1,8 +1,12 @@
 ---
-title: '자주 접하는 게 되는 Http Status Code'
-date: 2020-09-12 15:11:13
+layout: post
 category: 'spring'
+title: '자주 접하는 게 되는 Http Status Code'
+author: [Frank Oh]
 tags: ["http", "status", "code", "statuscode", "상태값", "응답값", "상태코드"]
+image: img/demo4.jpg
+date: '2020-09-12T15:11:13.000Z'
+draft: false
 ---
 
 API 개발 시 접하게 되는 HTTP 상태 코드를 정리해보았다. 이외에도 더 많겠지만, 한 번쯤 들어보고 접한 응답 코드들이다. 

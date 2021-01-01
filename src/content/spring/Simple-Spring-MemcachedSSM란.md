@@ -1,8 +1,12 @@
 ---
-title: 'Simple Spring Memcached(SSM)란'
-date: 2019-1-1 22:21:23
+layout: post
 category: 'spring'
+title: 'Simple Spring Memcached(SSM)란'
+author: [Frank Oh]
 tags: ["ssm", "cache", "java", "spring", "memcache", "캐쉬", "스프링"]
+image: img/demo4.jpg
+date: '2019-01-01T22:21:23.000Z'
+draft: false
 ---
 
 # 1. 들어가며
