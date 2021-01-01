@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Heroku에 Node.js+MongoDB App 배포하기'
-date: 2018-8-21 13:09:01
-category: 'cloud'
+author: [Frank Oh]
 tags: ["heroku", "node", "mongodb", "deploy", "virtualization", "cloud", "PaaS", "하루쿠", "클라우드", "노드", "몽고", "배포", "가상화"]
+image: img/demo4.jpg
+date: '2018-08-21T13:09:01.000Z'
+draft: false
 ---
 
 # 1. Heroku란

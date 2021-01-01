@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)'
-date: 2020-10-01 10:23:33
-category: 'cloud'
+author: [Frank Oh]
 tags: ["aws", "ec2", "http2", "ssl", "letsencrypt", "certificate", "ngnix", "인증서"]
+image: img/demo4.jpg
+date: '2020-10-01T10:23:33.000Z'
+draft: false
 ---
 
 # 1. 들어가며
@@ -101,7 +104,7 @@ Ngnix 서버를 재시작하고 https 주소로 접속해보자.
 $ sudo service nginx restart
 ```
 
-![image-20201011162611682](images/AWS-EC2에-https-적용하기/image-20201011162611682.png)
+![image-20201011162611682](images/AWS-EC2에-https-적용하기/image-20201011162611682.png)
 
 
 
