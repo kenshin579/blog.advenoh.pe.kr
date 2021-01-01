@@ -1,8 +1,11 @@
 ---
+layout: post
 title: '관계형 데이터베이스에서 조인(join)이란?'
-date: 2019-2-6 21:31:21
-category: 'database'
+author: [Frank Oh]
 tags: ["join", "inner", "cross", "cartesin", "equi", "non-equi", "natural", "outer", "left", "right", "self", "anti", "semi", "database", "db", "mysql", "sql", "조인", "내부조인", "교차조인", "비등가조인", "외부조인"]
+image: img/demo4.jpg
+date: '2019-02-06T21:31:21.000Z'
+draft: false
 ---
 
 # 1.JOIN에 대한 기본 개념정리
@@ -191,7 +194,7 @@ ON employees.dept_no = departments.dept_no;
 
 **내부 조인 결과**
 
-![](images/관계형-데이터베이스에서-조인-join이란/22B68707-E0B8-4DA8-82FA-3CFEE9B05EFD%202.png)
+![](images/관계형-데이터베이스에서-조인-join이란/22B68707-E0B8-4DA8-82FA-3CFEE9B05EFD 2.png)
 
 ### 3.2.2 오른쪽 외부 조인 (RIGHT OUTER JOIN)
 
