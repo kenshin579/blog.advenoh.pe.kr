@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Q&A : Git 관련 질문 모음'
-date: 2019-7-3 20:41:23
-category: 'git'
+author: [Frank Oh]
 tags: ["Q&A", "faq", "git", "github", "gitraken", "wip", "push", "commit", "push"]
+image: img/demo4.jpg
+date: '2019-07-03T20:41:23.000Z'
+draft: false
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.

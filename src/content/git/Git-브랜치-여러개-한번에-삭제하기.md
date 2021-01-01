@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Git 브랜치 여러 개 한번에 삭제하기'
-date: 2020-7-11 23:05:23
-category: 'git'
+author: [Frank Oh]
 tags: ["git", "branch", "multiple", "delete"]
+image: img/demo4.jpg
+date: '2020-07-11T23:05:23.000Z'
+draft: false
 ---
 
 Git 브랜치를 한번에 정리하는 방법입니다. 
