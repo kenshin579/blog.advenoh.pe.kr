@@ -4,7 +4,7 @@ category: 'java'
 title: 'Q&A : 개발관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "QA", faq", "질문", 개발"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2018-07-29T14:54:31.000Z'
 draft: false
 ---

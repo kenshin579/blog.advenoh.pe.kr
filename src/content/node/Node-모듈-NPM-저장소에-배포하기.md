@@ -4,7 +4,7 @@ category: 'node'
 title: 'Node.js 모듈 NPM 저장소에 배포하기'
 author: [Frank Oh]
 tags: ["npm", "node", "노드", "배포", "저장소"]
-image: img/demo4.jpg
+image: ../img/cover-node.png
 date: '2019-03-24T20:41:32.000Z'
 draft: false
 ---

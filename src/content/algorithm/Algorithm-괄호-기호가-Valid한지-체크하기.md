@@ -4,7 +4,7 @@ category: 'algorithm'
 title: 'Algorithm : 괄호 기호가 Valid한지 체크하기'
 author: [Frank Oh]
 tags: ["algorithm", "interview", "parenthesis", "valid", "알고리즘", "인터뷰", "면접", "코드면접", "괄호"]
-image: img/demo4.jpg
+image: ../img/cover-algorithm.jpg
 date: '2018-07-29T14:54:31.000Z'
 draft: false
 ---

@@ -4,7 +4,7 @@ category: 'database'
 title: 'Q&A : JPA 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-10-21T22:18:36.000Z'
 draft: false
 ---

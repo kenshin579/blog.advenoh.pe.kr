@@ -4,7 +4,7 @@ category: 'spring'
 title: 'Q&A : Spring Boot Annotation 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfiguration"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-07-03T20:41:23.000Z'
 draft: false
 ---

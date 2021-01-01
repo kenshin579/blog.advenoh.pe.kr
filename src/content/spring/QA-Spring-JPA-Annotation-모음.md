@@ -4,7 +4,7 @@ category: 'spring'
 title: 'Q&A : Spring JPA Annotation 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "jpa", "db", "database"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-07-03T20:39:23.000Z'
 draft: false
 ---

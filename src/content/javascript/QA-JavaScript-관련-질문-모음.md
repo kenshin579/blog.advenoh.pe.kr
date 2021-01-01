@@ -4,7 +4,7 @@ category: 'javascript'
 title: 'Q&A : JavaScript 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "faq", "javascript", "defaultProps", "es6"]
-image: img/demo4.jpg
+image: ../img/cover-javascript.jpg
 date: '2018-03-23T08:49:23.000Z'
 draft: false
 ---

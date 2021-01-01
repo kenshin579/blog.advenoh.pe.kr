@@ -4,7 +4,7 @@ category: 'git'
 title: 'Git Rebase로 병합하기'
 author: [Frank Oh]
 tags: ["git", "rebase", "merge", "깃", "병합"]
-image: img/demo4.jpg
+image: ../img/cover-git.png
 date: '2019-08-11T23:05:23.000Z'
 draft: false
 ---

@@ -4,7 +4,7 @@ category: 'spring'
 title: 'Q&A : Spring Boot 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "springboot", "batch", "스프링", "배치", "질문"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-12-04T19:30:23.000Z'
 draft: false
 ---

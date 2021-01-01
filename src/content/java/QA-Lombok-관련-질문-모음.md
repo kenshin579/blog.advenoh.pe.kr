@@ -4,7 +4,7 @@ category: 'java'
 title: 'Q&A : Lombok 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "QA", "faq", "lombok", "annotation", "java", "자바", "어노테이션"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-03-23T14:54:31.000Z'
 draft: false
 ---

@@ -4,7 +4,7 @@ category: 'database'
 title: 'Q&A : Mybatis 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2018-07-29T14:54:31.000Z'
 draft: false
 ---

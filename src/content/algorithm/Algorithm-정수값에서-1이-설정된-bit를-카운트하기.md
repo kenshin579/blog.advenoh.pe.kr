@@ -4,7 +4,7 @@ category: 'algorithm'
 title: 'Algorithm : 정수값에서 1이 설정된 bit를 카운트하기'
 author: [Frank Oh]
 tags: ["algorithm", "interview", "code", "count", "bit", "알고리즘", "인터뷰", "면접", "코드면접", "비트", "카운트"]
-image: algorithm/images/Algorithm-정수값에서-1이-설정된-bit를-카운트하기/image_1.jpeg
+image: ../img/cover-algorithm.jpg
 date: '2018-10-28T23:24:09.000Z'
 draft: false
 ---

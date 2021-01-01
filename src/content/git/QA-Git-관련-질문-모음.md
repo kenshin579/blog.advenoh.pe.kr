@@ -4,7 +4,7 @@ category: 'git'
 title: 'Q&A : Git 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "git", "github", "gitraken", "wip", "push", "commit", "push"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2019-07-03T20:41:23.000Z'
 draft: false
 ---

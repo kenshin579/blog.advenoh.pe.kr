@@ -4,7 +4,7 @@ category: 'python'
 title: '파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기'
 author: [Frank Oh]
 tags: ["python", "argparse", "command", "option", "argument"]
-image: img/demo4.jpg
+image: ../img/cover-python.jpg
 date: '2018-11-04T18:54:29.000Z'
 draft: false
 ---

@@ -4,7 +4,7 @@ category: 'spring'
 title: '스프링 RestTemplate'
 author: [Frank Oh]
 tags: ["spring", "springboot", "resttemplate", "REST", "API", "get", "post", "exchange", "java", "스프링", "스프링부트"]
-image: img/demo4.jpg
+image: ../img/cover-spring.png
 date: '2019-05-06T21:01:31.000Z'
 draft: false
 ---

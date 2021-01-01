@@ -4,7 +4,7 @@ category: 'java'
 title: 'Q&A : Jackson 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "QA", "faq", "jackson", "java", "자바"]
-image: img/demo4.jpg
+image: ../img/cover-faq.png
 date: '2018-03-25T14:54:31.000Z'
 draft: false
 ---

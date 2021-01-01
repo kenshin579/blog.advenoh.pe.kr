@@ -4,7 +4,7 @@ category: 'cloud'
 title: 'Heroku에 Node.js+MongoDB App 배포하기'
 author: [Frank Oh]
 tags: ["heroku", "node", "mongodb", "deploy", "virtualization", "cloud", "PaaS", "하루쿠", "클라우드", "노드", "몽고", "배포", "가상화"]
-image: img/demo4.jpg
+image: ../img/cover-heroku.png
 date: '2018-08-21T13:09:01.000Z'
 draft: false
 ---

@@ -4,7 +4,7 @@ category: 'cloud'
 title: '[Docker-1] Docker 도커 명령어 모음'
 author: [Frank Oh]
 tags: ["docker", "virtualization", "cloud", "command", "container", "도커", "컨테이너", "가상화", "명령어"]
-image: img/demo4.jpg
+image: ../img/cover-docker.png
 date: '2019-12-08T21:11:20.000Z'
 draft: false
 ---

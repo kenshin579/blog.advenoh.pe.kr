@@ -4,7 +4,7 @@ category: 'spring'
 title: '[Quartz-2] Spring Boot + Quartz을 이용한 Job Scheduler 구현 (In-memory)'
 author: [Frank Oh]
 tags: ["quartz", "spring", "springboot", "job", "scheduler", "memory", "메모리기반", "스케줄러", "스케줄", "스프링", "스프링부트"]
-image: img/demo4.jpg
+image: ../img/cover-spring.png
 date: '2019-09-09T23:08:31.000Z'
 draft: false
 ---
