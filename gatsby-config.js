@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://blog.advenoh.pe.kr',
+        siteUrl: config.siteUrl,
       },
     },
     'gatsby-plugin-typescript',
