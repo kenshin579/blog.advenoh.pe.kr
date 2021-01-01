@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: '자바 자료구조 - Priority Queue (우선순위 큐)'
 author: [Frank Oh]
 tags: ["java", "queue", "priority", "priorityqueue", "heap", "자바", "자료구조", "우선순위", "큐", "힙"]

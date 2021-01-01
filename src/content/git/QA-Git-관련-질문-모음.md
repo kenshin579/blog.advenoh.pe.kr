@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'git'
 title: 'Q&A : Git 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "git", "github", "gitraken", "wip", "push", "commit", "push"]

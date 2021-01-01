@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: '자바 Garbage Collection이란'
 author: [Frank Oh]
 tags: ["gc", "garbage", "java", "garbage collection"]

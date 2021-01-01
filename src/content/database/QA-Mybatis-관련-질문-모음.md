@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'database'
 title: 'Q&A : Mybatis 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "mybatis", "db", "database", "mysql", "sql"]

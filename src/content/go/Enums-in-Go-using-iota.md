@@ -1,4 +1,6 @@
 ---
+layout : post
+category: 'go'
 title: 'Enums in Go (using iota)'
 author: [Frank Oh]
 image: ../img/marvin-meyer-794521-unsplash.jpg

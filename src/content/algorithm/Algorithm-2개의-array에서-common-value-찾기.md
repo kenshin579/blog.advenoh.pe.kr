@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'algorithm'
 title: 'Algorithm : 2개의 array에서 common value 찾기'
 author: [Frank Oh]
 tags: ["algorithm", "interview", "array", "common", "알고리즘", "인터뷰", "면접", "코드면접", "배열", "공통값"]

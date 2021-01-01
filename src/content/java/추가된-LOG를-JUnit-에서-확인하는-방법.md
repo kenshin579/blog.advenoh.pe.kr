@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: '추가된 LOG를 JUnit에서 확인하는 방법'
 author: [Frank Oh]
 tags: ["java", "logger", "junit", "unittest", "자바", "유닛테스트", "로거"]

@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'git'
 title: 'Git Rebase로 병합하기'
 author: [Frank Oh]
 tags: ["git", "rebase", "merge", "깃", "병합"]

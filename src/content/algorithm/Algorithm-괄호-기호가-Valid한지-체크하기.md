@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'algorithm'
 title: 'Algorithm : 괄호 기호가 Valid한지 체크하기'
 author: [Frank Oh]
 tags: ["algorithm", "interview", "parenthesis", "valid", "알고리즘", "인터뷰", "면접", "코드면접", "괄호"]

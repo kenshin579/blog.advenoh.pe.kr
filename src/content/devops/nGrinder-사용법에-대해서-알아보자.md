@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'devops'
 title: 'nGrinder 사용법에 대해서 알아보자'
 author: [Frank Oh]
 tags: ["ngrinder", "test", "performance", "api", "테스트", "성능테스트"]

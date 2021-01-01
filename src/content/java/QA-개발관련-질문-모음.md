@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: 'Q&A : 개발관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "QA", faq", "질문", 개발"]

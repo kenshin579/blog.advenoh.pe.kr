@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: '전후처리를 위한 자바 메서드 래퍼 메서드 생성하기 - pre and post processing for java wrapper method'
 author: [Frank Oh]
 tags: ["java", "wrapper", "prepost", "자바", "래퍼 메서드", 전후처리"]

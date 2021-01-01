@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: 'Java Jayway JsonPath 사용법'
 author: [Frank Oh]
 tags: ["jayway", "java", "jsonpath", "xpath", "json-path"]

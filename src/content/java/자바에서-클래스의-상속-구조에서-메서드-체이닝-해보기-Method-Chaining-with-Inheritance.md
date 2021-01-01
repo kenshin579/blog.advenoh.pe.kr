@@ -1,5 +1,6 @@
 ---
 layout: post
+category: 'java'
 title: '자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance'
 author: [Frank Oh]
 tags: ["method", "chaining", "java", "inheritance", "자바", "메서드", "체이닝"]
