@@ -3,7 +3,7 @@ layout : post
 category: 'go'
 title: 'Enums in Go (using iota)'
 author: [Frank Oh]
-image: ../img/cover-go.jpeg
+image: ../img/cover-go.png
 date: '2020-12-20T16:05:23.000Z'
 draft: false
 tags: ["go", "golang", "enums", "iota", "열거형", "고", "고랭"]
