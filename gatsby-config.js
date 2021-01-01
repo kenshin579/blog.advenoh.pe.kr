@@ -1,122 +1,74 @@
-const metaConfig = require('./gatsby-meta-config')
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+const config = require('./SiteConfig');
 
 module.exports = {
-  siteMetadata: metaConfig,
+  siteMetadata: {
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+  },
+  mapping: {
+    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
+  },
   plugins: [
+    'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        defaultQuality: 100,
+        stripMetadata: true,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/__about`,
-        name: `about`,
+        name: 'content',
+        path: path.join(__dirname, 'src', 'content'),
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              maxWidth: 590,
-              linkImagesToOriginal: false,
+              wrapperStyle: 'margin-bottom: 1rem',
             },
           },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+          'gatsby-remark-abbr',
           {
-            resolve: `gatsby-remark-images-medium-zoom`,
+            resolve: 'gatsby-remark-images',
             options: {
-              margin: 36,
-              scrollOffset: 0,
+              maxWidth: 2000,
+              quality: 100,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: '%',
-            },
-          },
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-emoji`,
         ],
       },
     },
+    'gatsby-transformer-json',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        name: metaConfig.title,
-        short_name: metaConfig.title,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: metaConfig.icon,
+        siteUrl: config.siteUrl,
       },
     },
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-emotion',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-yaml',
+    'gatsby-plugin-feed',
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-postcss',
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
       },
     },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-          query: `
-      {
-        site {
-          siteMetadata {
-            siteUrl: siteUrl
-          }
-        }
-        allSitePage(
-          filter: {
-            path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-          }
-        ) {
-          edges {
-            node {
-              path
-            }
-          }
-        }
-      }
-    `,
-      output: '/sitemap.xml',
-      serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
-          changefreq: 'daily',
-          priority: 0.7
-      }))
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-lodash`,
-    `gatsby-plugin-feed`,
   ],
-}
+};
