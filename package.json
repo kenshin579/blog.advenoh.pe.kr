@@ -29,7 +29,7 @@
     "gatsby-plugin-postcss": "3.3.0",
     "gatsby-plugin-react-helmet": "3.6.0",
     "gatsby-plugin-sharp": "2.10.1",
-    "gatsby-plugin-sitemap": "2.8.0",
+    "gatsby-plugin-sitemap": "^2.9.0",
     "gatsby-plugin-typescript": "2.8.0",
     "gatsby-remark-abbr": "2.0.0",
     "gatsby-remark-copy-linked-files": "2.6.0",
