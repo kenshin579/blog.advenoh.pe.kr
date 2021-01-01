@@ -1,8 +1,11 @@
 ---
+layout: post
 title: '자바에서 클래스의 상속 구조에서 메서드 체이닝 해보기 - Method Chaining with Inheritance'
-date: 2018-8-19 21:47:23
-category: 'java'
+author: [Frank Oh]
 tags: ["method", "chaining", "java", "inheritance", "자바", "메서드", "체이닝"]
+image: img/demo4.jpg
+date: '2018-08-19T21:47:23.000Z'
+draft: false
 ---
 
 # 1. 메서드 체이닝이란

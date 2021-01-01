@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Q&A : 개발관련 질문 모음'
-date: 2018-7-29 14:54:31
-category: 'java'
+author: [Frank Oh]
 tags: ["Q&A", "QA", faq", "질문", 개발"]
+image: img/demo4.jpg
+date: '2018-07-29T14:54:31.000Z'
+draft: false
 ---
 
 새로운 직장에 와서 보니 모르는 거 천지라 전혀 모르고 어설프게 아는 것들을 질문 형식으로 정리를 해봤습니다.

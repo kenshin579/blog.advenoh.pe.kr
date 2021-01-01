@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Lombok 기본 사용법 익히기'
-date: 2018-12-16 22:43:33
-category: 'java'
+author: [Frank Oh]
 tags: ["lombok", "java", "annotation", "자바", "어노테이션"]
+image: img/demo4.jpg
+date: '2018-12-16T22:43:33.000Z'
+draft: false
 ---
 
 # 1. 들어가며

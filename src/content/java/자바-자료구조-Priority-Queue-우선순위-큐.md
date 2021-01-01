@@ -1,8 +1,11 @@
 ---
+layout: post
 title: '자바 자료구조 - Priority Queue (우선순위 큐)'
-date: 2020-09-20 10:23:33
-category: 'java'
+author: [Frank Oh]
 tags: ["java", "queue", "priority", "priorityqueue", "heap", "자바", "자료구조", "우선순위", "큐", "힙"]
+image: img/demo4.jpg
+date: '2020-09-20T10:23:33.000Z'
+draft: false
 ---
 
 # 1.Priority Queue (우선순위 큐)란?

@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'JUnit Rules이란'
-date: 2018-7-29 14:54:31
-category: 'java'
+author: [Frank Oh]
 tags: ["junit", "unit test", "test", "rules"]
+image: img/demo4.jpg
+date: '2018-07-29T14:54:31.000Z'
+draft: false
 ---
 
 # 1. 들어가며

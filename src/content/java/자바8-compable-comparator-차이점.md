@@ -1,8 +1,12 @@
 ---
-title: '자바 Comparable과 Comparator의 차이점'
-date: 2020-04-15 19:56:00
+layout: post
 category: 'java'
+title: '자바 Comparable과 Comparator의 차이점'
+author: [Frank Oh]
 tags: ["java", "java8", "comparator", "comparing", "comparable", "sort", "자바", "자바8", "정렬"]
+image: img/demo4.jpg
+date: '2020-04-15T19:56:00.000Z'
+draft: false
 ---
 
 자바에서 객체 정렬 시 사용되는 Comparator와 Comparable 인터페이스 간의 차이점을 알아보겠습니다. 

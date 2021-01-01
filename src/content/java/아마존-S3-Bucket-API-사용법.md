@@ -1,8 +1,12 @@
 ---
-title: '아마존 S3 Bucket API 사용법'
-date: 2018-7-29 18:34:32
+layout: post
 category: 'java'
+title: '아마존 S3 Bucket API 사용법'
+author: [Frank Oh]
 Tags: ["s3", "amazon", "sdk", "bucket", "버킷", "아마존"]
+image: img/demo4.jpg
+date: '2018-07-29T18:34:32.000Z'
+draft: false
 ---
 
 # 1. 들어가며
