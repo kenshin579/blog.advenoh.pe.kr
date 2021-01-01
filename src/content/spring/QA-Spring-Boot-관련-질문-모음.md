@@ -1,8 +1,12 @@
 ---
-title: 'Q&A : Spring Boot 관련 질문 모음'
-date: 2019-12-4 19:30:23
+layout: post
 category: 'spring'
+title: 'Q&A : Spring Boot 관련 질문 모음'
+author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "springboot", "batch", "스프링", "배치", "질문"]
+image: img/demo4.jpg
+date: '2019-12-04T19:30:23.000Z'
+draft: false
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.
