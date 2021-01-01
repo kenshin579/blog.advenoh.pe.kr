@@ -1,8 +1,11 @@
 ---
+layout: post
 title: 'Maven + JaCoCo + Coveralls + Travis CI : 자바 프로젝트 Coverage 생성하는 방법'
-date: 2020-12-12 10:23:33
-category: 'devops'
+author: [Frank Oh]
 tags: ["jacoco", "coveralls", "travis", "ci", "maven", "coverage", "junit", "unit test", "java", "spring", "자바", "메이븐", "커버리지", "테스트"]
+image: img/demo4.jpg
+date: '2020-12-12T10:23:33.000Z'
+draft: false
 ---
 
 # 1. 들어가며
