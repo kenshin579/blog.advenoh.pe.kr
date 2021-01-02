@@ -1,7 +1,7 @@
 ---
+title: '파이썬으로 웹 스크래핑하는 방법 - Web scraping'
 layout: post
 category: 'python'
-title: '파이썬으로 웹 스크래핑하는 방법 - Web scraping'
 author: [Frank Oh]
 tags: ["web", "scrapping", "python", "cheerio", "beautifulsoup", "beautifulsoup4", "urllib", "requests", "웹", "스크래핑", "파이썬"]
 image: ../img/cover-python.jpg

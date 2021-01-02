@@ -1,7 +1,7 @@
 ---
+title: '자바에서 final에 대한 이해'
 layout: post
 category: 'java'
-title: '자바에서 final에 대한 이해'
 author: [Frank Oh]
 tags: ["final", "java", "자바"]
 image: img/demo4.jpg

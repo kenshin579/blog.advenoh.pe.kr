@@ -1,7 +1,7 @@
 ---
+title: '자주 접하는 게 되는 Http Status Code'
 layout: post
 category: 'spring'
-title: '자주 접하는 게 되는 Http Status Code'
 author: [Frank Oh]
 tags: ["http", "status", "code", "statuscode", "상태값", "응답값", "상태코드"]
 image: img/demo4.jpg

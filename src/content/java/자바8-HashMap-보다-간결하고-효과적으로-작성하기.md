@@ -1,7 +1,7 @@
 ---
+title: '자바8 HashMap 보다 간결하고 효과적으로 작성하기'
 layout: post
 category: 'java'
-title: '자바8 HashMap 보다 간결하고 효과적으로 작성하기'
 author: [Frank Oh]
 tags: ["java", "java8", "Map", "HashMap", "putIfAbsent", "computeIfAbsent", "compute", "computeIfPresent", "getOrDefault", "자바", "자바8", "맵"]
 image: img/demo4.jpg

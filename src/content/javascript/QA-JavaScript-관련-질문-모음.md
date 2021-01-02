@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : JavaScript 관련 질문 모음'
 layout: post
 category: 'javascript'
-title: 'Q&A : JavaScript 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "faq", "javascript", "defaultProps", "es6"]
 image: ../img/cover-javascript.jpg

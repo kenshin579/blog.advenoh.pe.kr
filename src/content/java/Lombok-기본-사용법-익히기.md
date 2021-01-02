@@ -1,7 +1,7 @@
 ---
+title: 'Lombok 기본 사용법 익히기'
 layout: post
 category: 'java'
-title: 'Lombok 기본 사용법 익히기'
 author: [Frank Oh]
 tags: ["lombok", "java", "annotation", "자바", "어노테이션"]
 image: img/demo4.jpg

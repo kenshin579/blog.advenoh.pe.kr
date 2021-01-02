@@ -1,7 +1,7 @@
 ---
+title: 'Simple Spring Memcached(SSM)란'
 layout: post
 category: 'spring'
-title: 'Simple Spring Memcached(SSM)란'
 author: [Frank Oh]
 tags: ["ssm", "cache", "java", "spring", "memcache", "캐쉬", "스프링"]
 image: ../img/cover-spring.png

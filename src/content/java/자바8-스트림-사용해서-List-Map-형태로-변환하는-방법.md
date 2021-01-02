@@ -1,7 +1,7 @@
 ---
+title: '자바8 스트림 사용해서 List -> Map 형태로 변환하는 방법'
 layout: post
 category: 'java'
-title: '자바8 스트림 사용해서 List -> Map 형태로 변환하는 방법'
 author: [Frank Oh]
 tags: ["java", "java8", "stream", "list", "map", "스트림", "자바", "자바8", "리스트", "맵"]
 image: img/demo4.jpg
