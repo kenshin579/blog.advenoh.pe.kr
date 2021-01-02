@@ -9,7 +9,6 @@ draft: false
 tags: ["go", "golang", "log", "logging", "logger", logrus", 고", "고랭", "로그", "로깅"]
 ---
 
-
 #1. 들어가며
 
 Go 표준 패키지 중에 log에서 로깅에 필요한 기본 메서드를 제공한다. 표준 출력 stdout, stderr외에 파일로 로그를 저장하는 방법, 그리고 로그 포맷 변경해서 출력하는 방법 등에 대해서 알아보자. 
