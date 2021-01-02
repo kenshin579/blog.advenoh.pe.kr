@@ -1,14 +1,13 @@
 ---
+title: 'Logging in Go - 기본 Log package'
 layout : post
 category: 'go'
-title: 'Logging in Go - 기본 Log package'
 author: [Frank Oh]
 image: ../img/cover-go.png
 date: '2021-01-02T15:18:23.000Z'
 draft: false
 tags: ["go", "golang", "log", "logging", "logger", logrus", 고", "고랭", "로그", "로깅"]
 ---
-
 
 #1. 들어가며
 

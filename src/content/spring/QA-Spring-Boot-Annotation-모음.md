@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : Spring Boot Annotation 모음'
 layout: post
 category: 'spring'
-title: 'Q&A : Spring Boot Annotation 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "springboot", "annotation", "EnableAutoConfiguration"]
 image: ../img/cover-faq.png

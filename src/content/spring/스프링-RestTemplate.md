@@ -1,7 +1,7 @@
 ---
+title: '스프링 RestTemplate'
 layout: post
 category: 'spring'
-title: '스프링 RestTemplate'
 author: [Frank Oh]
 tags: ["spring", "springboot", "resttemplate", "REST", "API", "get", "post", "exchange", "java", "스프링", "스프링부트"]
 image: ../img/cover-spring.png

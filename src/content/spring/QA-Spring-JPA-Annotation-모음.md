@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : Spring JPA Annotation 모음'
 layout: post
 category: 'spring'
-title: 'Q&A : Spring JPA Annotation 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "spring", "jpa", "db", "database"]
 image: ../img/cover-faq.png

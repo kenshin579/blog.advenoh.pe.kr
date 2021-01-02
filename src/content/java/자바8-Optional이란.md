@@ -1,7 +1,7 @@
 ---
+title: '[자바8-1] 자바8 Optional이란'
 layout: post
 category: 'java'
-title: '[자바8-1] 자바8 Optional이란'
 author: [Frank Oh]
 tags: ["java", "java10", "jdk", "openjdk"]
 image: img/demo4.jpg

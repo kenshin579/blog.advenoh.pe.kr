@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : JPA 관련 질문 모음'
 layout: post
 category: 'database'
-title: 'Q&A : JPA 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
 image: ../img/cover-faq.png

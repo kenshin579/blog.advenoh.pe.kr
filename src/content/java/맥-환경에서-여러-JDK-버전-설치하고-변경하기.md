@@ -1,7 +1,7 @@
 ---
+title: '맥 환경에서 여러 JDK 버전 설치하고 변경하기'
 layout: post
 category: 'java'
-title: '맥 환경에서 여러 JDK 버전 설치하고 변경하기'
 author: [Frank Oh]
 tags: ["java", "mac", "jdk", "version", "자바", "버전"]
 date: '2018-11-11T16:11:27.000Z'

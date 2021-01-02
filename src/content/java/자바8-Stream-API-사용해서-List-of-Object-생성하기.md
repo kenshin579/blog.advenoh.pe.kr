@@ -1,7 +1,7 @@
 ---
+title: '자바8 Stream API 사용해서 List of Object 생성하기'
 layout: post
 category: 'java'
-title: '자바8 Stream API 사용해서 List of Object 생성하기'
 author: [Frank Oh]
 tags: ["java", "java8", "stream", "object", "람다", "자바", "스트림", "객체"]
 image: img/demo4.jpg

@@ -1,7 +1,7 @@
 ---
+title: 'Node.js 모듈 NPM 저장소에 배포하기'
 layout: post
 category: 'node'
-title: 'Node.js 모듈 NPM 저장소에 배포하기'
 author: [Frank Oh]
 tags: ["npm", "node", "노드", "배포", "저장소"]
 image: ../img/cover-node.png

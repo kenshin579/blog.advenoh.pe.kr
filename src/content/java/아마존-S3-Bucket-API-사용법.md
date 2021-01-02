@@ -1,7 +1,7 @@
 ---
+title: '아마존 S3 Bucket API 사용법'
 layout: post
 category: 'java'
-title: '아마존 S3 Bucket API 사용법'
 author: [Frank Oh]
 Tags: ["s3", "amazon", "sdk", "bucket", "버킷", "아마존"]
 image: img/demo4.jpg

@@ -1,12 +1,13 @@
 ---
+title: 'Enums in Go (using iota)'
 layout : post
 category: 'go'
-title: 'Enums in Go (using iota)'
 author: [Frank Oh]
 image: ../img/cover-go.png
 date: '2020-12-20T16:05:23.000Z'
 draft: false
 tags: ["go", "golang", "enums", "iota", "열거형", "고", "고랭"]
+excerpt: Go에서 Enums 상수 값 설정하는 방법
 ---
 
 #1. 들어가며

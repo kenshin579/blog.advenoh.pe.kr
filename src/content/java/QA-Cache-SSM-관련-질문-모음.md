@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : Cache-SSM 관련 질문 모음'
 layout: post
 category: 'java'
-title: 'Q&A : Cache-SSM 관련 질문 모음'
 author: [Frank Oh]
 tags: ["Q&A", "faq", "ssm", "cache-ssm", "cache"]
 image: ../img/cover-faq.png

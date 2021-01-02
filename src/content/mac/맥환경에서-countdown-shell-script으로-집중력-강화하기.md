@@ -1,7 +1,7 @@
 ---
+title: '맥환경에서 countdown shell script으로 집중력 강화하기'
 layout: post
 category: 'mac'
-title: '맥환경에서 countdown shell script으로 집중력 강화하기'
 author: [Frank Oh]
 tags: ["countdown", "shell", "script", "mac", "timer", "pomodoro", "맥", "스트립트", "뽀모도로"]
 image: ../img/cover-mac.jpg
