@@ -26,7 +26,7 @@ import requests
 #
 ################################################################################################
 BLOG_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'content', 'blog'])
+BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'src', 'content'])
 README_FILE = os.path.join(BLOG_DIR, 'README.md')
 README_HEADER_FILE = '/'.join([BLOG_DIR, 'scripts', 'data', 'HEADER.md'])
 BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
@@ -52,6 +52,7 @@ def generate_blog_list():
 def get_blog_title(filename):
     with open(filename, 'r') as f:
         for line in islice(f, 1, 2):
+            print('line', line)
             return re.findall('title:\\s*\'(.*)\'', line)[0]
 
 
