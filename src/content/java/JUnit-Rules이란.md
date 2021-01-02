@@ -1,7 +1,7 @@
 ---
+title: 'JUnit Rules이란'
 layout: post
 category: 'java'
-title: 'JUnit Rules이란'
 author: [Frank Oh]
 tags: ["junit", "unit test", "test", "rules"]
 image: img/demo4.jpg

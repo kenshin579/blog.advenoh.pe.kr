@@ -1,7 +1,7 @@
 ---
+title: 'Gitbook으로 전자책 만들어보기'
 layout: post
 category: 'python'
-title: 'Gitbook으로 전자책 만들어보기'
 author: [Frank Oh]
 tags: ["gitbook", "ebook", "pdf", "epub", "kindle", "git", "github", 전자책"]
 image: img/demo4.jpg

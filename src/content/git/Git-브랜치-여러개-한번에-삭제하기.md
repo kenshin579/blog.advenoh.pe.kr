@@ -1,7 +1,7 @@
 ---
+title: 'Git 브랜치 여러 개 한번에 삭제하기'
 layout: post
 category: 'git'
-title: 'Git 브랜치 여러 개 한번에 삭제하기'
 author: [Frank Oh]
 tags: ["git", "branch", "multiple", "delete"]
 image: ../img/cover-git.png

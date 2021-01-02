@@ -1,7 +1,7 @@
 ---
+title: 'Q&A : MySql 관련 질문 모음'
 layout: post
 category: 'database'
-title: 'Q&A : MySql 관련 질문 모음'
 author: [Frank Oh]
 tags : ["Q&A", "faq", "mysql", "database", "db", "slow query"]
 image: ../img/cover-faq.png
