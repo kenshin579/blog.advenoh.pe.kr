@@ -1,5 +1,5 @@
 ---
-title: 'Git Reset하는 방법'
+title: 'Git Reset으로 커밋된 내용 다시 되돌리기'
 layout: post
 category: 'git'
 author: [Frank Oh]
@@ -9,7 +9,7 @@ date: '2020-01-02T22:43:23.000Z'
 draft: false
 ---
 
-
+Git으로 작업하보면 커밋된 이력을 다시 되돌려야 할 때가 종종 발생한다. Git Reset
 
 
 
