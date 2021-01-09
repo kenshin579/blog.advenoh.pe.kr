@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
 
@@ -55,7 +54,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
   return (
     <IndexLayout css={HomePosts}>
-      <Helmet>
+      <head>
         <html lang={config.lang} />
         <title>{config.title}</title>
         <meta name="description" content={config.description} />
@@ -98,7 +97,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           }}
         />
         <script data-ad-client="ca-pub-8868959494983515" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      </Helmet>
+      </head>
       <Wrapper>
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
