@@ -89,6 +89,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
         <meta name="naver-site-verification" content="a498d108eb43fa7560493c733ece7c609dacfaf7"/>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0KLVK60W1"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
