@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-01-02
+Updated 2021-01-10
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -36,6 +36,7 @@ Updated 2021-01-02
 
 ## Git
 * [Git Rebase로 병합하기](/home/runner/work/advenoh.pe.kr/advenoh.pe.kr/src/content/git/Git-Rebase로-병합하기)
+* [Git Reset으로 커밋된 내용 다시 되돌리기 (using GitKraken)](/home/runner/work/advenoh.pe.kr/advenoh.pe.kr/src/content/git/Git-Reset으로-커밋된-내용-다시-되돌리기-using-GitKraken)
 * [Git 브랜치 여러 개 한번에 삭제하기](/home/runner/work/advenoh.pe.kr/advenoh.pe.kr/src/content/git/Git-브랜치-여러개-한번에-삭제하기)
 * [Q&A : Git 관련 질문 모음](/home/runner/work/advenoh.pe.kr/advenoh.pe.kr/src/content/git/QA-Git-관련-질문-모음)
 
