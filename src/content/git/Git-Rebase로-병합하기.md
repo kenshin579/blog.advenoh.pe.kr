@@ -4,7 +4,7 @@ layout: post
 category: 'git'
 author: [Frank Oh]
 tags: ["git", "rebase", "merge", "깃", "병합"]
-image: ../img/cover-git.png
+image: ../img/cover-git.jpg
 date: '2019-08-11T23:05:23.000Z'
 draft: false
 ---
