@@ -41,7 +41,7 @@ Git으로 작업하다 보면 커밋된 이력을 다시 되돌려야 할 때가
 
 #### 1.2.1.1 Git 명령어로
 
-Git Reset 명령어는 아래 형식으로 실행된다. 모드 옵션은 위 3가지 중에 하나이고 없는 경우 기본 값으로 `mixed` 모드로 동작한다. Reset할 commit은 commit 번호나 HEAD~# 형식으로 지정할 수 있다. 
+Git Reset 명령어는 아래 형식으로 실행된다. 모드 옵션은 위 3가지 중에 하나이고 없는 경우 기본 값으로 `mixed` 모드로 동작한다. 리리셋할 커밋은 commit 번호나 HEAD~# 형식으로 지정할 수 있다. 
 
 > HEAD 현재 커밋될 위치를 나타낸다. HEAD~2의 의미는 이전 2개 커밋을 의미한다. 
 
@@ -61,7 +61,7 @@ $ git reset --hard c1c2239a #c1c2239a 커밋으로 되돌린다 (hard 모드)
 
 #### 1.2.1.2 GitKraken으로 
 
-GitKraken에서는 commit 목록에서 리셋하려는 commit에서 우클릭하면 pop-up 메뉴가 뜬다. 여기서 **Reset ### to this commit** 메뉴에서 원하는 모드를 선택할 수 있다. 
+GitKraken에서는 commit 목록에서 리셋하려는 커밋에서 우 클릭하면 pop-up 메뉴가 뜬다. 여기서 **Reset ### to this commit** 메뉴에서 원하는 모드를 선택한다.
 
 ![image-20210110173843306](images/Git-Reset/image-20210110173843306.png)
 
@@ -92,7 +92,7 @@ Changes to be committed:
 
 #### 1.2.2.2 Mixed Reset (기본 모드)
 
-Mixed Reset이다. 브랜치 위치는 그전 커밋으로 위치가 되었고 커밋한 건 `staged area`에서 제외되어 커밋하려면 `staged area`에 다시 추가해줘야 한다. 
+Mixed Reset이다. 브랜치 위치는 전 커밋으로 위치가 되었고 그전에 커밋한 건 파일들은 `staged area`에서 제외되어 커밋하려면 `staged area`에 다시 추가해줘야 한다. 
 
 ![image-20210104224657791](images/Git-Reset/image-20210104224657791.png)
 
@@ -115,7 +115,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 #### 1.2.2.3 Hard Reset
 
-Hard Reset이다. 이전 커밋으로 되돌리면 그전 커밋은 그냥 사라지게 된다. 사용시 주의가 필요하다. 
+Hard Reset이다. 이전 커밋으로 되돌리면 그전 커밋은 그냥 사라지게 되어 사용시 주의가 필요하다. 
 
 ![image-20210104224726235](images/Git-Reset/image-20210104224726235.png)
 
@@ -132,9 +132,7 @@ nothing to commit, working tree clean
 
 ### 1.2.3 제목 변경해서 다시 commit하는 예제 (mixed 모드)
 
-지금까지는 모드 종류별로 어떤 차이점 있는지 알아보았다. 이제 여기서는 되돌릴 커밋을 원격으로 푸시하는 것까지 어떻게 하는지 알아보자. 
-
-이 예제에서는 커밋 내용을 수정해서 다시 푸시하는 예제이다. 
+지금까지는 3가지 모드별로 어떤 차이점 있는지 알아보았다. 마지막 예제는 이미 원격으로 푸시된 커밋의 제목을 수정하는 예제로 마무리해보자. 
 
 1.mixed 모드로 전 커밋으로 리셋시킨다. 다시 커밋할 파일을 staged area에 추가하고 커밋 제목을 다시 변경해서 커밋한다. 
 
