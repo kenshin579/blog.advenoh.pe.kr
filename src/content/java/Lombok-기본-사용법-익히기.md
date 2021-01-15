@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["lombok", "java", "annotation", "자바", "어노테이션"]
-image: img/demo4.jpg
 date: '2018-12-16T22:43:33.000Z'
 draft: false
 ---

@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["final", "java", "자바"]
-image: img/demo4.jpg
 date: '2018-09-11T20:15:27.000Z'
 draft: false
 ---

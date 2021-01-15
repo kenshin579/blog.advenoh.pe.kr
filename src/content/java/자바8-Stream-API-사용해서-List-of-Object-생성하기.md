@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["java", "java8", "stream", "object", "람다", "자바", "스트림", "객체"]
-image: img/demo4.jpg
 date: '2020-06-29T10:23:33.000Z'
 draft: false
 ---

@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags : ["ssl", "keystore", "import", "certificate", "인증서", "자바"]
-image: img/demo4.jpg
 date: '2019-01-09T22:52:35.000Z'
 draft: false
 ---

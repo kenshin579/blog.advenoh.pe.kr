@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["java", "java8", "stream", "list", "map", "스트림", "자바", "자바8", "리스트", "맵"]
-image: img/demo4.jpg
 date: '2020-04-20T10:23:33.000Z'
 draft: false
 ---

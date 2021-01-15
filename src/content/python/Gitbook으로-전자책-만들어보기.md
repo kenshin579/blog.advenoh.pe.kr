@@ -4,7 +4,6 @@ layout: post
 category: 'python'
 author: [Frank Oh]
 tags: ["gitbook", "ebook", "pdf", "epub", "kindle", "git", "github", 전자책"]
-image: img/demo4.jpg
 date: '2018-07-29T14:54:31.000Z'
 draft: false
 ---

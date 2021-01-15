@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["TAGCircular", "INFINITE", "Jackson", "JsonBackReference", "JsonIdentityInfo", "JsonIdentityReference", "jsonignore", "JsonManagedReference", "JsonMappingException", "stackoverflowerror"]
-image: img/demo4.jpg
 date: '2019-10-12T22:51:31.000Z'
 draft: false
 ---

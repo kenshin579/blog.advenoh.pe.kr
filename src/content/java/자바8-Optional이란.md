@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["java", "java10", "jdk", "openjdk"]
-image: img/demo4.jpg
 date: '2018-07-29T14:54:31.000Z'
 draft: false
 ---

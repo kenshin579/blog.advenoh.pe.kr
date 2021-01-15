@@ -4,7 +4,6 @@ layout: post
 category: 'spring'
 author: [Frank Oh]
 tags: ["spring", "springboot", "quartz", "java", "scheduler", "multi", "job", "cluster", "자바", "스프링", "퀄츠", "스케줄러", "이중화", "클러스터", "스케줄러"]
-image: img/demo4.jpg
 date: '2019-10-13T10:23:33.000Z'
 draft: false
 ---
