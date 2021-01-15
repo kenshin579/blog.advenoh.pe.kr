@@ -7,7 +7,7 @@ tags: ["algorithm", "interview", "array", "common", "알고리즘", "인터뷰",
 image: ../img/cover-algorithm2.jpeg
 date: '2018-07-29T14:54:31.000Z'
 draft: false
-excerpt : 'this isa sdfs'
+excerpt : 'Algorithm : 2개의 array에서 common value 찾기'
 ---
 
 # 1. Problem
