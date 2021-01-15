@@ -85,7 +85,7 @@ COUNT = 4
 
 이 방법 외에도 다양한 알고리즘은 더 많이 존재 합니다 (참고: [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html) ). 누군가 정말로 열심히 연구하고 공부한 것 같아요.
 
-3. Reference
+# 3. Reference
 
 - [https://www.geeksforgeeks.org/count-set-bits-in-an-integer/](https://www.geeksforgeeks.org/count-set-bits-in-an-integer/)
 - [https://www.quora.com/How-do-you-count-the-number-of-1-bits-in-a-number-using-only-bitwise-operations](https://www.quora.com/How-do-you-count-the-number-of-1-bits-in-a-number-using-only-bitwise-operations)
