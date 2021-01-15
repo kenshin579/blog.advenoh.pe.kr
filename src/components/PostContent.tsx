@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
 
 import { colors } from '../styles/colors';
+import AdSense from 'react-adsense';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -25,6 +26,13 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst }) => {
     <PostFullContent className="post-full-content">
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
       <Ast className="post-content" ast={htmlAst} />
+      <AdSense.Google
+        client="ca-pub-8868959494983515"
+        slot="5560009326"
+        style={{ display: 'block' }}
+        layout="in-article"
+        format="fluid"
+      />
     </PostFullContent>
   );
 };

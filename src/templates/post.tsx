@@ -20,7 +20,6 @@ import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 import { AuthorList } from '../components/AuthorList';
-import AdSense from 'react-adsense';
 
 export interface Author {
   id: string;
@@ -172,6 +171,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         )}
         {width && <meta property="og:image:width" content={width} />}
         {height && <meta property="og:image:height" content={height} />}
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
       </Helmet>
       <Wrapper css={PostTemplate}>
         <header className="site-header">
@@ -236,13 +236,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               {config.showSubscribe && <Subscribe title={config.title} />}
             </article>
           </div>
-          <AdSense.Google
-            client="ca-pub-8868959494983515"
-            slot="5560009326"
-            style={{ display: 'block' }}
-            layout="in-article"
-            format="fluid"
-          />
         </main>
 
         <ReadNext
