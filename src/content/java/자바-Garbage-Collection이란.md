@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["gc", "garbage", "java", "garbage collection"]
-image: img/demo4.jpg
 date: '2018-10-17T21:39:28.000Z'
 draft: false
 ---

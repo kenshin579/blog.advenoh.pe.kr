@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["java", "wrapper", "prepost", "자바", "래퍼 메서드", 전후처리"]
-image: img/demo4.jpg
 date: '2018-08-26T21:19:23.000Z'
 draft: false
 ---

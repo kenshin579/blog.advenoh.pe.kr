@@ -20,6 +20,7 @@ import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 import { AuthorList } from '../components/AuthorList';
+import AdSense from 'react-adsense';
 
 export interface Author {
   id: string;
@@ -246,6 +247,13 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
         <Footer />
       </Wrapper>
+      <AdSense.Google
+        client="ca-pub-8868959494983515"
+        slot="5560009326"
+        style={{ display: 'block' }}
+        layout="in-article"
+        format="fluid"
+      />
     </IndexLayout>
   );
 };

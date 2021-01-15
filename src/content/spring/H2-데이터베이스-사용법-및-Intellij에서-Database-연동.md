@@ -4,7 +4,6 @@ layout: post
 category: 'spring'
 author: [Frank Oh]
 tags: ["h2", "database", "spring", "springboot", "intellij", "In-Memory", "인메모리", "DB", "데이터베이스", "인텔리제이"]
-image: img/demo4.jpg
 date: '2019-11-20T10:23:33.000Z'
 draft: false
 ---

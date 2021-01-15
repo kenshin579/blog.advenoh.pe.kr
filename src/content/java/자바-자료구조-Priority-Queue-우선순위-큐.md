@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["java", "queue", "priority", "priorityqueue", "heap", "자바", "자료구조", "우선순위", "큐", "힙"]
-image: img/demo4.jpg
 date: '2020-09-20T10:23:33.000Z'
 draft: false
 ---

@@ -4,7 +4,6 @@ layout: post
 category: 'database'
 author: [Frank Oh]
 tags: ["database", "jpa", "db", spring", "springboot", "persistence", "ManyToMany", "ManyToOne", "OneToMany", "OneToOne", "mapping", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대다", "다대일", "일대다", "일대일"]
-image: img/demo4.jpg
 date: '2019-12-04T21:10:23.000Z'
 draft: false
 ---

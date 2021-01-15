@@ -4,7 +4,6 @@ layout: post
 category: 'spring'
 author: [Frank Oh]
 tags: ["quartz", "spring", "springboot", "job", "scheduler", "interrupt", "shutdown", "hook", "인터럽트", "셧다운훅", "스케줄러", "스케줄", "스프링", "스프링부트"]
-image: img/demo4.jpg
 date: '2019-10-12T22:51:31.000Z'
 draft: false
 ---

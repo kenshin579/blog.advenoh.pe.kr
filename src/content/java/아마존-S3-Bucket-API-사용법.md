@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 Tags: ["s3", "amazon", "sdk", "bucket", "버킷", "아마존"]
-image: img/demo4.jpg
 date: '2018-07-29T18:34:32.000Z'
 draft: false
 ---

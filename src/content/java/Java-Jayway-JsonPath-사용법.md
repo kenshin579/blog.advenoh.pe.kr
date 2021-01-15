@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["jayway", "java", "jsonpath", "xpath", "json-path"]
-image: img/demo4.jpg
 date: '2019-01-19T13:50:26.000Z'
 draft: false
 ---

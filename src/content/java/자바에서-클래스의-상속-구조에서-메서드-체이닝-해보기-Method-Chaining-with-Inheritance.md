@@ -4,7 +4,6 @@ layout: post
 category: 'java'
 author: [Frank Oh]
 tags: ["method", "chaining", "java", "inheritance", "자바", "메서드", "체이닝"]
-image: img/demo4.jpg
 date: '2018-08-19T21:47:23.000Z'
 draft: false
 ---

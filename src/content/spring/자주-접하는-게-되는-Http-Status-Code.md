@@ -4,7 +4,6 @@ layout: post
 category: 'spring'
 author: [Frank Oh]
 tags: ["http", "status", "code", "statuscode", "상태값", "응답값", "상태코드"]
-image: img/demo4.jpg
 date: '2020-09-12T15:11:13.000Z'
 draft: false
 ---
