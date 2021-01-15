@@ -495,7 +495,6 @@ const IndexLayout: React.FC<IndexProps> = props => {
         `}
       />
       {props.children}
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
     </div>
   );
 };
