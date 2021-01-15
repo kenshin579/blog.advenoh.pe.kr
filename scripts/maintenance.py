@@ -31,7 +31,7 @@ README_FILE = os.path.join(BLOG_DIR, 'README.md')
 README_HEADER_FILE = '/'.join([BLOG_DIR, 'scripts', 'data', 'HEADER.md'])
 BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
 
-
+REGEX_SUB_PATTERN = '.*\/blog.advenoh.pe.kr\/src\/content'
 ################################################################################################
 # Functions
 #
@@ -71,9 +71,10 @@ def write_blog_list_to_file(result, filename):
                 print('title_file', title_file)
                 filename = title_file.get('filename')
                 # print('filename', filename)
+
                 out_file.write('* [{}]({})\n'.format(
                     title_file.get('title'),
-                    re.sub('.*\/content\/blog', BLOG_HOME_URL, os.path.splitext(title_file.get('filename'))[0])))
+                    re.sub(REGEX_SUB_PATTERN, BLOG_HOME_URL, os.path.splitext(title_file.get('filename'))[0])))
             out_file.write('\n')
 
 
