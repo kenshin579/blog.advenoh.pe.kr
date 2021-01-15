@@ -236,6 +236,13 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               {config.showSubscribe && <Subscribe title={config.title} />}
             </article>
           </div>
+          <AdSense.Google
+            client="ca-pub-8868959494983515"
+            slot="5560009326"
+            style={{ display: 'block' }}
+            layout="in-article"
+            format="fluid"
+          />
         </main>
 
         <ReadNext
@@ -247,13 +254,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
         <Footer />
       </Wrapper>
-      <AdSense.Google
-        client="ca-pub-8868959494983515"
-        slot="5560009326"
-        style={{ display: 'block' }}
-        layout="in-article"
-        format="fluid"
-      />
     </IndexLayout>
   );
 };
