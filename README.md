@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-01-15
+Updated 2021-01-16
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -44,6 +44,7 @@ Updated 2021-01-15
 * [Enums in Go (using iota)](https://blog.advenoh.pe.kr/go/Enums-in-Go-using-iota)
 * [Getter, Setter in Go](https://blog.advenoh.pe.kr/go/Getter-Setter-in-Go)
 * [Logging in Go - 기본 Log package](https://blog.advenoh.pe.kr/go/Logging-in-Go)
+* [형 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/형-변환-Type-Conversion)
 
 ## Java
 * [JUnit Rules이란](https://blog.advenoh.pe.kr/java/JUnit-Rules이란)
