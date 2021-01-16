@@ -44,7 +44,8 @@ Updated 2021-01-16
 * [Enums in Go (using iota)](https://blog.advenoh.pe.kr/go/Enums-in-Go-using-iota)
 * [Getter, Setter in Go](https://blog.advenoh.pe.kr/go/Getter-Setter-in-Go)
 * [Logging in Go - 기본 Log package](https://blog.advenoh.pe.kr/go/Logging-in-Go)
-* [형 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/형-변환-Type-Conversion)
+* [타입 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/타입-변환-Type-Conversion)
+* [타입 스위치 (Type switch)](https://blog.advenoh.pe.kr/go/타입-스위치-Type-switch)
 
 ## Java
 * [JUnit Rules이란](https://blog.advenoh.pe.kr/java/JUnit-Rules이란)
