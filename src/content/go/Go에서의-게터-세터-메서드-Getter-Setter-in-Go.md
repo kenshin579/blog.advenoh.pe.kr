@@ -1,5 +1,5 @@
 ---
-title: 'Getter, Setter in Go'
+title: 'Go에서의 게터, 세터 메서드 (Getter, Setter in Go)'
 layout : post
 category: go
 author: [Frank Oh]
