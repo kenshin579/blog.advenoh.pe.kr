@@ -160,7 +160,7 @@ func Example_TypeAssertion_다른_인터페이스가_타입_T를_구현하지_�
 타입 단언은 인터페이스 변수에서 실제 타입 값을 얻어와 해당 타입에 맞는 메서드를 실행할 때 사용된다. 
 
 
-본 포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-enums-iota)에서 확인할 수 있다.
+본 포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-type-assertions)에서 확인할 수 있다.
 
 # 참고
 
