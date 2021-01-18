@@ -53,13 +53,25 @@ tags: ["go", "golang", "method", "고", "고랭", "메서드"]
 
     - receiver 인자가 pointer가 아니고 호출할 때 &로 호출하며 자동으로 p.Abs() -> (*).Abs() 해석한다
 
-- 
 
+
+
+
+```go
+func(reciver_name Type) method_name(parameter_list) (return_type) {
+}
+```
 
 본 포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-type-assertions)에서 확인할 수 있다.
 
 # 참고
 
 - https://tour.golang.org/methods/4
+- http://golang.site/go/article/17-Go-%EB%A9%94%EC%84%9C%EB%93%9C
+- https://gobyexample.com/methods
+- https://golangbot.com/methods/
+- https://hoony-gunputer.tistory.com/entry/golang-part4Method-Pointer-and-Method-Interface-Stringers-Error-Readers
+- https://go101.org/article/method.html
+- https://www.geeksforgeeks.org/methods-in-golang/
 - 
 
