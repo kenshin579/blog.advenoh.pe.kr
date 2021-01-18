@@ -1,5 +1,5 @@
 ---
-title: 'Logging in Go - 기본 Log package'
+title: 'Go에서의 로그깅 (Logging in Go)'
 layout : post
 category: 'go'
 author: [Frank Oh]
