@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-01-16
+Updated 2021-01-18
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -41,9 +41,10 @@ Updated 2021-01-16
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
 
 ## Go
-* [Enums in Go (using iota)](https://blog.advenoh.pe.kr/go/Enums-in-Go-using-iota)
-* [Getter, Setter in Go](https://blog.advenoh.pe.kr/go/Getter-Setter-in-Go)
-* [Logging in Go - 기본 Log package](https://blog.advenoh.pe.kr/go/Logging-in-Go)
+* [Go에서의 게터, 세터 메서드 (Getter, Setter in Go)](https://blog.advenoh.pe.kr/go/Go에서의-게터-세터-메서드-Getter-Setter-in-Go)
+* [Go에서의 로그깅 (Logging in Go)](https://blog.advenoh.pe.kr/go/Go에서의-로그깅-Logging-in-Go)
+* [Go에서의 열거형 상수 (Enums in Go)](https://blog.advenoh.pe.kr/go/Go에서의-열거형-상수-Enums-in-Go)
+* [타입 단언 (Type Assertion)](https://blog.advenoh.pe.kr/go/타입-단언-Type-Assertion)
 * [타입 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/타입-변환-Type-Conversion)
 * [타입 스위치 (Type switch)](https://blog.advenoh.pe.kr/go/타입-스위치-Type-switch)
 
