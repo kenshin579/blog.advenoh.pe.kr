@@ -6,61 +6,145 @@ author: [Frank Oh]
 image: ../img/cover-go.png
 date: '2021-01-18T21:11:23.000Z'
 draft: false
-tags: ["go", "golang", "method", "고", "고랭", "메서드"]
+tags: ["go", "golang", "method", "receiver", "parameter", "고", "고랭", "메서드"]
 ---
 
-- method란?
+Go에서는 함수외에도 메서드를 제공한다. 메서드는 리시버 인자(Receiver Parameter)를 가진 함수를 말한다. 기능적으로 보면 일반 함수와는 차이점이 없고 아래 문법과 같이 func 키워드와 메서드이름 사이에 리시버 인자를 추가할 수 있다.
 
-- - 메서드는 함수랑 같지만, receiver 인자가 있는 함수를 말한다
-  - 정의된 타입에 모든 값에 메서드를 실행할 수 있다. 
+```go
+func (receiver_name Type) methodName(parameter_list) (return_type) {
 
-- receiver parameter ()
+```
 
-- - receiver parameter란?
+# 1. Go 메서드 예제
 
-  - - 함수 앞에 정의하는 인자
-    - 다른 언어에서는 self, this를 사용하는 대신 GO에서는 receiver parameter를 사용한다
+## 1.1 리시버 인자 (Receiver Parameter)가 있는 메서드
 
-  - conventions
+### 1.1.1 밸류 리시버 (Value Receiver)
 
-  - - receiver parameter 정의시 convention
+```go
+type Car struct {
+	brand   string
+	color   string
+	mileage int
+	speed   int
+}
 
-    - - single letter
-      - first letter of receiver's type name
+func (c Car) Color() string {
+	return c.color
+}
+```
+`Car` 타입의 값을 메서드 형식으로 반환하려면 메서드 이름 앞에 리시버 인자로 `Car` 타입을 선언하면 된다. `Color()` 메서드에서는 `c.color` 값을 반환한다.
 
-  - pointer receivers
+```go
+func Example_Method_Value_Receiver() {
+	hyundaiCar := Car{"현대", "빨강", 10000, 0}
+	//fmt.Println("hyundaiCar", hyundaiCar)
 
-  - - *가 있는 경우
-    - 자동으로 해석되는 케이스 언급
+	fmt.Println(hyundaiCar.Color())
 
-  - 메서드에서 사용할 수 있는 인자
+	//Output:
+	//빨강
+}
+```
 
-  - - struct 타입
-    - non-struct 타입이던 가능함
-    - 같은 패키지 안에 정의된 것들만 다른 패키지에 있는 타입을 receive 인자로 사용 안됨
+객체지향 프로그래밍 언어에서 지원하는 메서드처럼 dot(.)으로 메서드를 호출한다. `hyundaiCar.Color()` 메서드를 호출해 자동차 색깔을 출력하였다. 
 
-- 함수, 메서드의 pointer indirection 차이점
+### 1.1.2 포인터 리시버 (Pointer Receiver)
 
-- - 함수
+위 예제에서는 리시버 인자를 밸류 인자로 선언하였기 때문에 메서드 실행후에는 데이터 타입 값에 반영이 안된다. 메서드 실행이후 변경된 값을 유지하면 포인터 리시버를 사용해야 한다. 
 
-  - - 함수의 경우에는 포인터 인자는 포인터 인자만 받는다
+```go
+func (c *Car) SpeedUp(s int) {
+	c.speed += s
+}
+```
+`SpeedUp()` 메서드에서는 `c.speed` 값을 증가하는 메서드로 포인터 리시버로 선언해줘야 메서드 실행이후에 변경된 값이 유지가 된다. 
 
-  - 메서드
+```go
+func Example_Method_Pointer_Receiver() {
+	hyundaiCar := Car{"현대", "빨강", 10000, 0}
+	fmt.Println("hyundaiCar", hyundaiCar)
 
-  - - value, pointer던 둘바 받을 수 있다
+	hyundaiCar.SpeedUp(10)
+	fmt.Println("hyundaiCar", hyundaiCar) //증가된 값
 
-    - - 포인터를 value로 받으면 Go에서 자동으로 해석을 해준다
+	//Output:
+	//hyundaiCar {현대 빨강 10000 0}
+	//hyundaiCar {현대 빨강 10000 10}
+}
+```
 
-    - receiver 인자가 pointer가 아니고 호출할 때 &로 호출하며 자동으로 p.Abs() -> (*).Abs() 해석한다
+`hyundaiCar.SpeedUp(10)` 메서드 실행이후에도 증가된 값으로 출력된다. 
 
+### 1.1.3 메서드에 대한 컨벤션
 
+메서드 정의시에는 Go에서는 아래와 같은 컨벤션을 일반적으로 따른다. 
 
+- 리시버 인자 정의
+  - 리시버 인자의 변수 이름은 리시버 타입 이름의 첫 글자를 사용한다
+  - 변수는 한 글자로 선언한다
+- 밸류 vs 포인터 선언
+  - 값을 변경할 필요가 없는 경우에는 배류 리시버로 선언해야 하지만, 통일성을 위해서 밸류와 포인터를 섞어서 선언하지 않고 포인터로 선언한다
+
+### 1.1.4 비구조체(Non-struct)가 있는 메서드
+
+지금까지 구조체 타입에 대해서만 메서드를 정의했다. 비구조체 타입에 대한 메서드를 정의하는 것도 가능하지만, 주의가 필요하다. 리시버 타입의 정의와 메서드의 정의가 동일한 패키지 내에 있어야 한다.
 
 
 ```go
-func(reciver_name Type) method_name(parameter_list) (return_type) {
+func (f float64) ceil() float64 {
+	return math.Ceil(float64(i))
 }
 ```
+`float64` 타입과 `ceil()` 메서드는 같은 패키지 레벨이 존재하지 않기 때문에 컴파일 오류가 발생한다. 
+
+```go
+
+type myFloat float64
+
+func (m myFloat) ceil() float64 {
+	return math.Ceil(float64(m))
+}
+
+func Example_Method_Non_Struct_Type() {
+	v := myFloat(1.3)
+	fmt.Println(v)
+
+	//Output:
+	//1.3
+}
+```
+
+비구조체를 리시버 인자를 받으려면 float64를 별도 타입으로 선언하여 사용하며 메서드를 만들면 가능해진다. 
+
+## 1.2 메서드와 포인터 역참조 (Pointer indirection/dereference)
+
+함수, 메서드의 pointer indirection 차이점
+
+- 함수
+
+  - 함수의 경우에는 포인터 인자는 포인터 인자만 받는다
+
+- 메서드
+
+  - pointer receiver
+    - 함수는 인자로 포인터만 받을 수 있음
+
+- 메서드는 pointer, value 값을 둘다 받을 수 있음
+
+     - pointer이면 자동으로 (&pointer)로 실행됨
+
+  - value receiver
+    - 함수는 그냥 value만 받을 수 있음
+    - 메서드는 pointer, value값을 받을 수 있음
+      - pointer이면 자동으로 (*pointer)로 실행됨
+  - 
+  - value, pointer던 둘바 받을 수 있다
+    - 포인터를 value로 받으면 Go에서 자동으로 해석을 해준다
+  - receiver 인자가 pointer가 아니고 호출할 때 &로 호출하며 자동으로 p.Abs() -> (*).Abs() 해석한다
+
+# 정리
 
 본 포스팅에서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-type-assertions)에서 확인할 수 있다.
 
