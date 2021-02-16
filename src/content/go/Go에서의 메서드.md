@@ -120,6 +120,28 @@ func Example_Method_Non_Struct_Type() {
 
 ## 1.2 메서드와 포인터 역참조 (Pointer indirection/dereference)
 
+포인터를 다루는 데 있어서 함수와 메서드간의 차이점이 존재한다. 
+
+- 함수는 포인터 인자만 받을 수 있다.
+- 메서드는 리시버 인자로 포인터와 value (todo : 여기서 부터 작성하면 됨)
+
+```go
+func Example_Indirection_Func_Pointer_Parameter() {
+	r := Rectangle{
+		height: 10,
+		width:  3,
+	}
+
+	//area(r) //컴파일 오류 - 함수는 포인터 인자만 받을 수 있음
+	area(&r)
+
+	//Output:
+	//30
+}
+```
+
+
+
 함수, 메서드의 pointer indirection 차이점
 
 - 함수
