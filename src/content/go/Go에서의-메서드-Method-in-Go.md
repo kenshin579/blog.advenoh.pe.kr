@@ -1,5 +1,5 @@
 ---
-title: 'Go에서의 메서드'
+title: 'Go에서의 메서드 (Method in Go)'
 layout : post
 category: go
 author: [Frank Oh]
