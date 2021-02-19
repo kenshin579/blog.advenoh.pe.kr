@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-01-18
+Updated 2021-02-19
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -43,6 +43,7 @@ Updated 2021-01-18
 ## Go
 * [Go에서의 게터, 세터 메서드 (Getter, Setter in Go)](https://blog.advenoh.pe.kr/go/Go에서의-게터-세터-메서드-Getter-Setter-in-Go)
 * [Go에서의 로그깅 (Logging in Go)](https://blog.advenoh.pe.kr/go/Go에서의-로그깅-Logging-in-Go)
+* [Go에서의 메서드 (Method in Go)](https://blog.advenoh.pe.kr/go/Go에서의-메서드-Method-in-Go)
 * [Go에서의 열거형 상수 (Enums in Go)](https://blog.advenoh.pe.kr/go/Go에서의-열거형-상수-Enums-in-Go)
 * [타입 단언 (Type Assertion)](https://blog.advenoh.pe.kr/go/타입-단언-Type-Assertion)
 * [타입 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/타입-변환-Type-Conversion)
