@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-02-19
+Updated 2021-05-08
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -41,6 +41,7 @@ Updated 2021-02-19
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
 
 ## Go
+* [Go에서 삼 도트 (dot) 사용방법 (Three Dots Usage)](https://blog.advenoh.pe.kr/go/Go에서-삼-도트-dot-사용방법-Three-Dots-Usage)
 * [Go에서의 게터, 세터 메서드 (Getter, Setter in Go)](https://blog.advenoh.pe.kr/go/Go에서의-게터-세터-메서드-Getter-Setter-in-Go)
 * [Go에서의 로그깅 (Logging in Go)](https://blog.advenoh.pe.kr/go/Go에서의-로그깅-Logging-in-Go)
 * [Go에서의 메서드 (Method in Go)](https://blog.advenoh.pe.kr/go/Go에서의-메서드-Method-in-Go)
