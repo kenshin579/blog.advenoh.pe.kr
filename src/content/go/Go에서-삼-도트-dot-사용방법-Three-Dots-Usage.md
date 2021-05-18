@@ -93,11 +93,11 @@ $ go test ./...
 
 Go 명령에서 `...` 표기법은 패키지 목록을 wildcard로 사용하겠다는 의미를 가지고 있다. 위 명령어는 현재 폴더에서 모든 폴더에 있는 테스트 파일을 실행하라는 의미이다. 
 
-# 4. 마무리
+# 3. 마무리
 
 Go에서 `...` 표기법의 여러 사용방법에 대해서 알아보았고 여기서 작성한 코드는 [github](https://github.com/kenshin579/tutorials-go/tree/master/go-three-dots)에서 확인할 수 있다. 오늘 포스팅은 여기까지... 
 
-# 5. 참고
+# 4. 참고
 
 - https://yourbasic.org/golang/three-dots-ellipsis/
 - https://blog.learngoprogramming.com/golang-variadic-funcs-how-to-patterns-369408f19085
