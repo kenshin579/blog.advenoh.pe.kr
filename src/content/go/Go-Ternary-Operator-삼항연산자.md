@@ -6,7 +6,7 @@ author: [Frank Oh]
 image: ../img/cover-go.png
 date: '2021-05-18T18:18:23.000Z'
 draft: false
-tags: ["go", "golang", "ternary", "operator", "고랭", "연산자", "삼항", "삼항연산자, "3항연산자"]
+tags: ["go", "golang", "ternary", "operator", "고랭", "연산자", "삼항", "삼항연산자", "3항연산자"]
 ---
 
 # 삼항연산자란?
