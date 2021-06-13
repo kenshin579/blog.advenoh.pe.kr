@@ -3,7 +3,7 @@ title: 'Helm으로 Mysql 설치하기'
 layout : post
 category: 'cloud'
 author: [Frank Oh]
-image: ../img/cover-go.png
+image: ../img/cover-helm2.png
 date: '2021-05-28T18:18:23.000Z'
 draft: false
 tags: ["kubernetes", "k8s", "helm", "mysql", "db", cloud", "docker", "쿠버네티스", "도커", "헬룸"]
