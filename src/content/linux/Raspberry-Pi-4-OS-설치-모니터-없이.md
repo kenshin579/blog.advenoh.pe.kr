@@ -6,7 +6,7 @@ author: [Frank Oh]
 image: ../img/cover-raspberry4.jpg
 date: '2021-06-19T18:05:23.000Z'
 draft: false
-tags: ["raspberry", "linux", "pi", "os", "install", "monitor", 라즈베리파이", "설치", "모니터"]
+tags: ["raspberry", "linux", "pi", "os", "install", "monitor", "라즈베리파이", "설치", "모니터"]
 
 ---
 
