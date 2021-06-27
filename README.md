@@ -92,6 +92,7 @@ Updated 2021-06-27
 * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
 
 ## Linux
+* [test](https://blog.advenoh.pe.kr/linux/test)
 * [모니터 없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/모니터-없이-Raspberry-Pi-4-OS-설치)
 
 ## Mac
