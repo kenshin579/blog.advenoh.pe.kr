@@ -92,7 +92,7 @@ Updated 2021-06-27
 * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
 
 ## Linux
-* [모니터 없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/모니터-없이-Raspberry-Pi-4-OS-설치)
+* [모니터 없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/Raspberry-Pi4-OS-설치)
 
 ## Mac
 * [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기)
