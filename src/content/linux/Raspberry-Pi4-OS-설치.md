@@ -35,11 +35,11 @@ OS 설치는 아래 순서대로 진행하면 된다. 맥을 사용하고 있어
 
 먼저 [라즈베리파이 PI 사이트](https://www.raspberrypi.org/software/)에 접속하여 Raspberry Pi Imager를 다운로드한다. 다운로드한 파일을 더블클릭하고 App 파일을 선택하여 Applications 폴더로 옮겨 파일을 복사하면 설치가 완료된다.
 
-![image-20210619003518201](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619003518201.png)
+![image-20210628001120](images/Raspberry-Pi4-OS-설치/image-20210628001120.png)
 
 Spotlight로 Raspberry Pi를 검색하여 Application을 구동시키면 다음 화면을 볼 수 있다. 
 
-![image-20210619000438112](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619000438112.png)
+![image-20210628001112](images/Raspberry-Pi4-OS-설치/image-20210628001112.png)
 
 다음은 SD card를 포맷시키기 위해 SD card 리더기에 SD card를 넣고 컴퓨터에 연결한다. 그리고 Raspberry Pi Imager에서 아래 옵션을 선택하여 포맷을 시킨다. 
 
@@ -51,7 +51,7 @@ Spotlight로 Raspberry Pi를 검색하여 Application을 구동시키면 다음 
 - Operating System > Raspberry PI OS Full (32-BIT) 선택
 - Storage > 삽입된 SD card를 선택
 
-![image-20210619000438111](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619000438111.png)
+![image-20210628001111](images/Raspberry-Pi4-OS-설치/image-20210628001111.png)
 
 ## 2.2 로컬 환경에서 라즈베리파이에 접근하기
 
@@ -77,7 +77,7 @@ network={
 
 SD card 리더기에서 분리하여 라즈베리파이 보드에서 rpi에 넣고 전원 케이블을 연결하여 구동시킨다. 공유기로부터 할당받은 IP 주소를 확인하기 위해 공유기 어드민에 접속하여 확인한다. 내 공유기에서는 `192.168.0.24`로 할당을 받았다. 
 
-![image-20210619000438531](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619000438531.jpg)
+![image-20210628001113](images/Raspberry-Pi4-OS-설치/image-20210628001113.png)
 
 IP 주소는 변경될 수 있으니 `/etc/hosts` 파일에 도메인 이름을 설정하여 도메인 이름을 사용하는게 좋을 듯하다. 
 
@@ -96,7 +96,7 @@ $ ssh pi@raspberry.local
 > 라즈베리파이 `id/pasword` 기본 값은 `pi/raspberry` 이다. 
 
 
-![image-20210619001333637](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619001333637.png)
+![image-20210628001114](images/Raspberry-Pi4-OS-설치/image-20210628001114.png)
 
 ### 2.2.2 Remote Desktop으로 접근하기
 
@@ -120,12 +120,12 @@ $ brew install vnc-viewer
 
 VNC Viewer를 구동시켜 아래와 같이 Connect 설정후 로그인을 한다. 
 
-![image-20210619002439581](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619002439581.png)
+![image-20210628001118](images/Raspberry-Pi4-OS-설치/image-20210628001118.png)
 
-![image-20210619002157113](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619002157113.png)
+![image-20210628001117](images/Raspberry-Pi4-OS-설치/image-20210628001117.png)
 
 
-![image-20210619001952850](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619001952850.png)
+![image-20210628001115](images/Raspberry-Pi4-OS-설치/image-20210628001115.png)
 
 #### 2.2.2.2 XRDP 
 
@@ -138,10 +138,10 @@ $ sudo reboot
 
 맥에서 Microsoft Remote Desktop가 없은 경우에는 AppStore 찾아 설치하고 Connect 설정을 한다. 
 
-![image-20210619002847719](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619002847719.png)
+![image-20210628001119](images/Raspberry-Pi4-OS-설치/image-20210628001119.png)
 
 XRDP로 로그인한 화면이다. 
-![image-20210619002008328](images/모니터-없이-Raspberry-Pi-4-OS-설치/image-20210619002008328.png)
+![image-20210628001116](images/Raspberry-Pi4-OS-설치/image-20210628001116.png)
 
 # 3. 기타 설정
 
