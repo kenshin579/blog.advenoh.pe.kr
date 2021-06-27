@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-06-06
+Updated 2021-06-27
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -90,6 +90,9 @@ Updated 2021-06-06
 
 ## Javascript
 * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/QA-JavaScript-관련-질문-모음)
+
+## Linux
+* [모니터 없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/모니터-없이-Raspberry-Pi-4-OS-설치)
 
 ## Mac
 * [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기)
