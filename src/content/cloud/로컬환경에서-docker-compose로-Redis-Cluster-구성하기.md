@@ -16,12 +16,24 @@ draft: false
   - redis-cluster-tmpl
   - redis-cluster-config.sh
 - 실행?
+- 클러스 확인하기
 
 # 1.들어가며
 
-![image-20210620000553739](images/로컬환경에서-docker로-redis-cluster-구성하기/image-20210620000553739.png)
+
+
+도커로 레디스 클러스를 구성하는 방법에 대해서 알아보자. 
+
+![image-20210620000553739](images/로컬환경에서-docker-compose로-Redis-Cluster-구성하기/image-20210620000553739.png)
+
+사전에 필요한 부분은 설치하고 
+
+- 도커 설치
+- 
 
 # 2. 레디스 클러스터 구성하기
+
+
 
 ## 2.1 레디스 설정
 
@@ -48,7 +60,6 @@ version: '3.7'
 services:
   redis7001:
     image: redis:6
-#    image: redis:4
     container_name: redis7001
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf"]
@@ -180,7 +191,14 @@ $ mkdir 7001 7002
 $ docker-compose -f docker-compose-cluster.yaml up
 ```
 
+## 2.4 클러스터 구동 확인
 
+- redis-cli 연결해서 set/get 확인
+- Cluster stats
+- cluster info
+- 클러스터 shutdown 시켜도 구동 잘되는지 확인하기
+
+ 
 
 # 4. 참고
 
