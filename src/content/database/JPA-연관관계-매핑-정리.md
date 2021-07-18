@@ -23,7 +23,7 @@ JPA에서 테이블 간의 관계를 엔티티의 연관관계로 매핑하는 �
 
 테이블은 외래 키 하나로 테이블을 조인해서 양쪽으로 쿼리가 가능합니다. 
 
-```mysql
+```sql
 SELECT * FROM post AS p INNER JOIN comment AS c ON p.id = c.post_id
 # or
 SELECT * FROM comment AS c INNER JOIN post AS P ON p.id = c.post_id
