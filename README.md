@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2021-07-17
+Updated 2021-07-18
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -16,6 +16,7 @@ Updated 2021-07-17
 * [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/cloud/Heroku에-Node-js-MongoDB-App-배포하기)
 * [SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/SSL-인증서-Ngnix-서버에-설치하기)
 * [[Docker-1] Docker 도커 명령어 모음](https://blog.advenoh.pe.kr/cloud/Docker-도커-명령어-모음)
+* [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/cloud/헬름으로-Kafka-설치하기)
 
 ## Database
 * [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-JPA-관련-질문-모음)
