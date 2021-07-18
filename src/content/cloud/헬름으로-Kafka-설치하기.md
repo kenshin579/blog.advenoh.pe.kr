@@ -108,7 +108,8 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 ```
 
 테스트해보았던 화면으로 마무리하겠습니다. 오늘도 수고하셨습니다 :)
-![image-20210718110524772](images/kafka-설치-helm/image-20210718110524772.png)
+
+![image-20210718110524](src/content/cloud/images/헬름으로-Kafka-설치하기/image-20210718110524.png)
 
 # 5. 참고
 
