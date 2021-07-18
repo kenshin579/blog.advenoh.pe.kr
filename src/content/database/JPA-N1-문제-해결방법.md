@@ -81,7 +81,7 @@ public void test_N1_문제_발생_즉시로딩_하는_경우() throws JsonProces
 
 실제 실행되는 쿼리를 살펴보면 먼저 `Post` select 쿼리를 실행합니다. 그리고 해당 `Post`에 대해서 `Comment`를 조회하기 위해서 `Post`의 수만큼 4번의 쿼리가 추가로 발생합니다. 데이터의 수만큼 조회하는 것을 **N+1 문제**라고 합니다. 데이터가 많을수록 쿼리 해야 하는 수가 많아져서 성능에도 큰 영향을 주게 됩니다. 
 
-```mysql
+```sql
 Hibernate: select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1_, post0_.updated_dt as updated_3_1_, post0_.author as author4_1_, post0_.content as content5_1_, post0_.like_count as like_cou6_1_, post0_.title as title7_1_ from post post0_
 
 Hibernate: select commentlis0_.post_id as post_id6_0_0_, commentlis0_.comment_id as comment_1_0_0_, commentlis0_.comment_id as comment_1_0_1_, commentlis0_.create_dt as create_d2_0_1_, commentlis0_.updated_dt as updated_3_0_1_, commentlis0_.author as author4_0_1_, commentlis0_.content as content5_0_1_, commentlis0_.post_id as post_id6_0_1_ from comment commentlis0_ where commentlis0_.post_id=?
@@ -118,7 +118,7 @@ List<Post> posts = postRepository.findAll(); //N+1 발생하지 않음
 변경 이후 `findAll()` 메서드로 호출하면 지연 로딩이기 때문에 `Post` select 쿼리만 실행됩니다. 
 
 
-```mysql
+```sql
 Hibernate: select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1_, post0_.updated_dt as updated_3_1_, post0_.author as author4_1_, post0_.content as content5_1_, post0_.like_count as like_cou6_1_, post0_.title as title7_1_ from post post0_
 ```
 지연 로딩은 실제 `Comment`의 값을 조회하는 경우에만 해당 select 쿼리가 발생합니다. 
@@ -126,7 +126,7 @@ Hibernate: select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1
 ```java
 log.info("post : {}", posts.get(0).getCommentList()); //조회 쿼리가 실행된다
 ```
-```mysql
+```sql
 Hibernate: select commentlis0_.post_id as post_id6_0_0_, commentlis0_.comment_id as comment_1_0_0_, commentlis0_.comment_id as comment_1_0_1_, commentlis0_.create_dt as create_d2_0_1_, commentlis0_.updated_dt as updated_3_0_1_, commentlis0_.author as author4_0_1_, commentlis0_.content as content5_0_1_, commentlis0_.post_id as post_id6_0_1_ from comment commentlis0_ where commentlis0_.post_id=?
 ```
 
@@ -165,7 +165,7 @@ public void test_N1_문제_발생_지연로딩설정_loop으로_조회하는_경
 
 [3.1.1]()에서와 같이 동일하게 N+1 이슈가 발생합니다. 
 
-```mysql
+```sql
 Hibernate: select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1_, post0_.updated_dt as updated_3_1_, post0_.author as author4_1_, post0_.content as content5_1_, post0_.like_count as like_cou6_1_, post0_.title as title7_1_ from post post0_
 
 Hibernate: select commentlis0_.post_id as post_id6_0_0_, commentlis0_.comment_id as comment_1_0_0_, commentlis0_.comment_id as comment_1_0_1_, commentlis0_.create_dt as create_d2_0_1_, commentlis0_.updated_dt as updated_3_0_1_, commentlis0_.author as author4_0_1_, commentlis0_.content as content5_0_1_, commentlis0_.post_id as post_id6_0_1_ from comment commentlis0_ where commentlis0_.post_id=?
@@ -200,13 +200,13 @@ public void test_N1_문제_발생_지연로딩설정_loop으로_조회하는_경
 
 (1) 지연로딩으로 findAll() 실행시 `Post` 객체 관련된 정보를 조회합니다. 
 
-```mysql
+```sql
 select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1_, post0_.updated_dt as updated_3_1_, post0_.author as author4_1_, post0_.content as content5_1_, post0_.like_count as like_cou6_1_, post0_.title as title7_1_ from post post0_ 
 ```
 
 (2) 여기서 Comment 정보를 조회하면, Post에 대한 조회는 이미 끝난 상태라서 JOIN으로 쿼리가 생성이 안 됩니다. 단지 Post에 대한 정보 ID로 조회할 수밖에 없어서 where comment.postId=? 형식으로 JPQL 쿼리를 생성합니다. 이로 인해 매번 조회 쿼리가 생성이 되어 N 번 실행하는 이슈가 발생합니다. 
 
-```mysql
+```sql
 Hibernate: select commentlis0_.post_id as post_id6_0_0_, commentlis0_.comment_id as comment_1_0_0_, commentlis0_.comment_id as comment_1_0_1_, commentlis0_.create_dt as create_d2_0_1_, commentlis0_.updated_dt as updated_3_0_1_, commentlis0_.author as author4_0_1_, commentlis0_.content as content5_0_1_, commentlis0_.post_id as post_id6_0_1_ from comment commentlis0_ where commentlis0_.post_id=?
 ```
 
@@ -247,7 +247,7 @@ public void test_N1_문제_해결방법_fetch_join_사용() {
 로그에서도 left outer join으로 조회해 오는 것을 볼 수 있습니다. 
 
 
-```mysql
+```sql
 Hibernate: select post0_.post_id as post_id1_1_0_, commentlis1_.comment_id as comment_1_0_1_, post0_.create_dt as create_d2_1_0_, post0_.updated_dt as updated_3_1_0_, post0_.author as author4_1_0_, post0_.content as content5_1_0_, post0_.like_count as like_cou6_1_0_, post0_.title as title7_1_0_, commentlis1_.create_dt as create_d2_0_1_, commentlis1_.updated_dt as updated_3_0_1_, commentlis1_.author as author4_0_1_, commentlis1_.content as content5_0_1_, commentlis1_.post_id as post_id6_0_1_, commentlis1_.post_id as post_id6_0_0__, commentlis1_.comment_id as comment_1_0_0__ from post post0_ left outer join comment commentlis1_ on post0_.post_id=commentlis1_.post_id
 ```
 
@@ -266,7 +266,7 @@ public class Post extends DateAudit {
 }
 ```
 
-```mysql
+```sql
 @Transactional
 @Test
 public void test_N1_문제_해결방법_증시로딩설정_loop으로_조회하는_경우() throws JsonProcessingException {
@@ -275,7 +275,7 @@ public void test_N1_문제_해결방법_증시로딩설정_loop으로_조회하�
 }
 ```
 
-```mysql
+```sql
 Hibernate: select post0_.post_id as post_id1_1_, post0_.create_dt as create_d2_1_, post0_.updated_dt as updated_3_1_, post0_.author as author4_1_, post0_.content as content5_1_, post0_.like_count as like_cou6_1_, post0_.title as title7_1_ from post post0_
 
 Hibernate: select commentlis0_.post_id as post_id6_0_1_, commentlis0_.comment_id as comment_1_0_1_, commentlis0_.comment_id as comment_1_0_0_, commentlis0_.create_dt as create_d2_0_0_, commentlis0_.updated_dt as updated_3_0_0_, commentlis0_.author as author4_0_0_, commentlis0_.content as content5_0_0_, commentlis0_.post_id as post_id6_0_0_ from comment commentlis0_ where commentlis0_.post_id in (?, ?)
