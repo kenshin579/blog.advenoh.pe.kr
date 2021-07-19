@@ -9,15 +9,6 @@ date: '2021-06-19T21:11:20.000Z'
 draft: false
 ---
 
-- 구성하려는 레디스 환경
-  - ip:port
-  - 그림
-- 레디스 설정
-  - redis-cluster-tmpl
-  - redis-cluster-config.sh
-- 실행?
-- 클러스 확인하기
-
 # 1.들어가며
 
 
@@ -65,7 +56,6 @@ services:
       ["redis-server", "/usr/local/etc/redis/redis.conf"]
     volumes:
       - ./7001/conf/redis.conf:/usr/local/etc/redis/redis.conf
-      - ./7001/script/:/usr/local/etc/redis/redis.conf
       - ./7001/data:/data
     ports:
       - "7001:7001"
@@ -198,7 +188,11 @@ $ docker-compose -f docker-compose-cluster.yaml up
 - cluster info
 - 클러스터 shutdown 시켜도 구동 잘되는지 확인하기
 
- 
+# 3.정리
+
+ helm으로 redis cluster 구성하는 방법에 대해서 알아보자. 
+
+
 
 # 4. 참고
 
