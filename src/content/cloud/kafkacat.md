@@ -9,7 +9,7 @@ date: '2021-07-20T11:11:20.000Z'
 draft: false
 ---
 
-`kafkacat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kafkacat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적으로 동적에 대해서 알아보자. Kafka 설치는 [헬름으로 Kafka 설치](https://blog.advenoh.pe.kr/cloud/%ED%97%AC%EB%A6%84%EC%9C%BC%EB%A1%9C-Kafka-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)를 참고해주세요. 
+`kafkacat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kafkacat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방밥에 대해서 알아보자. 카프카 설치는 [헬름으로 Kafka 설치](https://blog.advenoh.pe.kr/cloud/%ED%97%AC%EB%A6%84%EC%9C%BC%EB%A1%9C-Kafka-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)를 참고해주세요. 
 
 ## kafkacat 설치
 
@@ -26,7 +26,7 @@ $ brew install kafkacat
 
 ### 기본 Synatx
 
-`kafkacat` 의 기본 명령어 포맷은 아래와 같다. 기본적인 
+`kafkacat` 의 기본 명령어 포맷은 아래와 같다.  
 
 ```bash
 $ kafkacat <mode> -b <brokers> -t new_topic
@@ -41,7 +41,9 @@ $ kafkacat <mode> -b <brokers> -t new_topic
 
 ## 메시지 보내기 (-P)
 
-메시지는 Produce (`-P`) 모드를 지정해서 메시지를 보낼 수 있다. 필수로 Kafka 브로커 (`-b`)와 토픽 옵션 (`-t`)을 지정해줘야 한다. kafkacat을 사용하여 특정 토픽에 쉽게 메시지를 보낼 수 있다. -P 명령으로 실행하고 원하는 데이터를 입력한 다음 Ctrl-D를 눌러 완료한다. 
+메시지는 Produce (`-P`) 모드를 지정해서 메시지를 보낼 수 있다. 필수로 카프카 브로커 (`-b`)와 토픽 옵션 (`-t`)을 지정해줘야 한다. `kafkacat`을 사용하여 특정 토픽에 쉽게 메시지를 보낼 수 있다. `-P` 명령으로 실행하고 원하는 데이터를 입력한 다음 `Ctrl-D`를 눌러 완료한다. 
+
+### 메시지 값 생성하기
 
 ```bash
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
@@ -49,7 +51,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
 22
 ```
 
-잘 보내줬는지 확인하려면 -C consume 모드로 확인한다. 
+잘 보내줬는지 확인하려면 `-C` consume 모드로 확인한다. 
 
 ```bash
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
@@ -57,7 +59,9 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 22
 ```
 
-메시지를 키와 함께 생성하고 싶은 경우에는 키 구분자 (key delimiter) -K 옵션으로 원하는 구분자를 같이 지정해서 사용하면 된다. 
+### 키와 값을 가진 메시지를 생성하기
+
+메시지를 키와 함께 생성하고 싶은 경우에는 키 구분자 (key delimiter) `-K` 옵션으로 원하는 구분자를 같이 지정해서 사용한다.
 
 ```bash
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -K :
@@ -65,7 +69,9 @@ key1:msg1
 key2:msg2
 ```
 
-메시지를 파일에서 읽어올 수도 있다. 
+### 파일로 메시지 생성하기
+
+메시지를 파일에서도 읽어 드려 메시지를 생성할 수 있다. 
 
 ```bash
 $ cat msg.txt
@@ -88,7 +94,9 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -p 1
 hello world
 ```
 
-토픽의 파티션의 수를 늘려주려면 아래와 같이 kafka script를 통해서 늘려주면 된다. 
+### 토픽의 파티션의 수 늘리기
+
+토픽의 파티션의 수를 늘려주려면 아래와 같이 카프카에서 제공하는 스트립트를 통해서 파티션을 추가할 수 있다. 
 
 ```bash
 # kafka script를 사용을 위해 my-kafka-client POD를 띄워준다
@@ -114,47 +122,102 @@ Topic: test	TopicId: sLitGkHfRSyg261FxMoGCA	PartitionCount: 3	ReplicationFactor:
 	Topic: test	Partition: 2	Leader: 0	Replicas: 0	Isr: 0
 ```
 
-> 카프카에서는 파티션을 한번 늘리면 줄일 수 있는 방법은 없어서 실제 production 환경에서는 더 많은 고려이후 파티션을 늘려줘야 한다. 
->
+> 카프카에서는 파티션을 한번 늘리면 줄일 수 있는 방법은 없기 때문에 Real 환경에서는 늘려주기 전에 꼭 필요한 상황인지 판단할 필요가 있다.
 
 ## 메시지 받기 (-D)
 
-- consumer
-  - - 
-  - 
-  - 특정 오프셋부터 가져오기
-  - 특정 파티션에서 마지막 데이터 가져오기
-  - timestamp 기반으로 메시지 가져오기
-    - 시작 ~ 끝으로 지정해서 메디지를 가져올 수 있음
-- - 
-  
-- 
+### 토픽에서 모든 메시지 받기
 
-모든 메시지 가져오기
-
-- 기본적으로 kafkacat는 처음부터 메시지를 가져온다
+ `kafkacat`은 기본적으로 추가 옵선 지정없이 토픽에서 처음부터 모든 메시지를 가져온다. 
 
 ```bash
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
+11
+22
+33
+44
+
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
+11
+22
+33
+44
 ```
 
+### N 개만 메시지 받기
 
-
-X 만개의 메시지만 가져오기
+모든 메시지를 가져오는 대신 몇개만 메시지를 가져오려면 `-c` 옵션으로 개수를 지정하면 된다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -c10
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -c 2
+11
+22
 ```
 
+### 특정 오프셋에서 메시지 가져오기
 
+`-o` 옵션으로 특정 오프셋이후부터 데이터를 가져온다. 
 
-Formatting output
+```bash
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o 1
+22
+33
+44
+```
 
-- 기본적으로 message payload를 출력한다 (record의 값만)
+> 오프셋을 절대 값으로 지정할 수도 있지만, 처음과 끝은 `begining`이나 `end`  로 지정할 수 있다. 
+>
+> `$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o begining`
+
+오프셋 값을 음수로 지정하면 끝에서부터 메시지를 가져온다. 
+
+```bash
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o -2
+33
+44
+```
+
+### 출력 포멧 변경하기
+
+기본적으로 `kafkacat`은 메시지 값(카프카 레코드의 값)만 출력한다. 출력의 포멧을 변경하려면 `-f` 옵션으로 아래와 같이 여러 값을 사용해서 정의할 수 있다. 
+
+```bash
+Format string tokens:
+  %s                 Message payload
+  %S                 Message payload length (or -1 for NULL)
+  %k                 Message key
+  %K                 Message key length (or -1 for NULL)
+  %t                 Topic
+  %p                 Partition
+  %o                 Message offset
+  \n \r \t           Newlines, tab
+  \xXX \xNNN         Any ASCII character
+```
+
+Key와 Value, 그리고 Partition, Offset의 값을 읽게 편하게 출력할 수 있다. 
 
 ```bash
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C  -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\tPartition: %p\tOffset: %o\n--\n'
 
+Key (-1 bytes):
+Value (2 bytes): 11
+	Partition: 0	Offset: 0
+--
+
+Key (-1 bytes):
+Value (2 bytes): 22
+	Partition: 0	Offset: 1
+--
+
+Key (-1 bytes):
+Value (2 bytes): 33
+	Partition: 0	Offset: 2
+--
+
+Key (-1 bytes):
+Value (2 bytes): 44
+	Partition: 0	Offset: 3
+--
 
 ```
 
@@ -162,35 +225,33 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C  -f '\nKey (%K 
 
 ## 메타데이터 조회하기 (-L)
 
-- 특정 topic metadata 조회하기
-
--L 옵션으로 
-
-
+브로커나 현재 토픽에 대한 정보를 확인하려면 `-L` 옵션으로 확인할 수 있다. 브로커는 총 3대로 구성되어 있고 토픽당 몇개의 파티션으로 구성되어 있는지도 확인할 수 있다. 
 
 ```bash
 $ kafkacat -L -b my-kafka.default.svc.cluster.local
 Metadata for all topics (from broker -1: my-kafka.default.svc.cluster.local:9092/bootstrap):
  3 brokers:
   broker 0 at my-kafka-0.my-kafka-headless.default.svc.cluster.local:9092
-  broker 2 at my-kafka-2.my-kafka-headless.default.svc.cluster.local:9092 (controller)
+  broker 2 at my-kafka-2.my-kafka-headless.default.svc.cluster.local:9092
   broker 1 at my-kafka-1.my-kafka-headless.default.svc.cluster.local:9092
- 2 topics:
-  topic "test" with 1 partitions:
+ 3 topics:
+  topic "test" with 3 partitions:
     partition 0, leader 1, replicas: 1, isrs: 1
+    partition 2, leader 0, replicas: 0, isrs: 0
+    partition 1, leader 2, replicas: 2, isrs: 2
+  topic "test1" with 1 partitions:
+    partition 0, leader 0, replicas: 0, isrs: 0
   topic "__consumer_offsets" with 50 partitions:
     partition 0, leader 2, replicas: 2, isrs: 2
-    partition 1, leader 1, replicas: 1, isrs: 1
-    partition 2, leader 0, replicas: 0, isrs: 0
-    partition 3, leader 2, replicas: 2, isrs: 2
-    partition 4, leader 1, replicas: 1, isrs: 1
-    partition 5, leader 0, replicas: 0, isrs: 0
-    partition 6, leader 2, replicas: 2, isrs: 2
+    partition 10, leader 1, replicas: 1, isrs: 1
+    partition 20, leader 0, replicas: 0, isrs: 0
+    partition 40, leader 1, replicas: 1, isrs: 1
+    ...생략...
 ```
 
 
 
-# 참고
+## 참고
 
 - https://docs.confluent.io/platform/current/app-development/kafkacat-usage.html
 - https://github.com/edenhill/kafkacat
