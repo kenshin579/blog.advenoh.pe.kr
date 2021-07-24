@@ -3,7 +3,7 @@ title: 'kafkacat 사용방법 (메시지 보내고 받기 테스트)'
 layout: post
 category: 'cloud'
 author: [Frank Oh]
-tags: ["kafka", "kafkacat", "broker", "message", "producer", "consumer", "apache", "카프카", "브로커", "메시지", "아파치""]
+tags: ["kafka", "kafkacat", "broker", "message", "producer", "consumer", "apache", "카프카", "브로커", "메시지", "아파치"]
 image: ../img/cover-kafka-helm.jpg
 date: '2021-07-20T11:11:20.000Z'
 draft: false
