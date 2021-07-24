@@ -1,5 +1,5 @@
 ---
-title: 'kafkacat'
+title: 'kafkacat 사용방법 (메시지 보내고 받기 테스트)'
 layout: post
 category: 'cloud'
 author: [Frank Oh]
@@ -14,6 +14,7 @@ draft: false
 ## kafkacat 설치
 
 여러 방법으로 설치 가능하지만, 본 포스팅에서는 맥기준으로 설명합니다. `brew`로 `kafkacat`을 설치한다. 
+
 
 ```bash
 $ brew install kafkacat
@@ -67,24 +68,54 @@ key2:msg2
 메시지를 파일에서 읽어올 수도 있다. 
 
 ```bash
-$ 
+$ cat msg.txt
+key1:msg1
+key2:msg2
+key3:msg3
+
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -K: msg.txt
 ```
 
+파티션 (Partition)은 각 토픽 당 데이터를 분산 처리하는 단위로 카프카에서는 토픽을 여러 파티션에 나눠서 저장하고 카프카 옵션에서 지정한 replica의 수만큼 파티션이 각 브로커에 복제가 된다. 
 
-
-set partiioin
+토픽을 여러 파티션으로 설정해두었다면 아래와 같이 파티션 1에 메시지를 보내고 받을 수 있다. 
 
 ```bash
-kafkacat -b 
-my-kafka.default.svc.cluster.local:9092 -t partitioned_topic -P -K: -p 1
-1:foo
-$ kafkacat -b localhost:9092 -t partitioned_topic -P -K: -p 2
-2:bar
-$ kafkacat -b localhost:9092 -t partitioned_topic -P -K: -p 3
-3:wibble
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -p 1 
+hello world
+
+$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -p 1
+hello world
 ```
 
+토픽의 파티션의 수를 늘려주려면 아래와 같이 kafka script를 통해서 늘려주면 된다. 
 
+```bash
+# kafka script를 사용을 위해 my-kafka-client POD를 띄워준다
+$ kubectl run my-kafka-client --restart='Never' --image docker.io/bitnami/kafka:2.8.0-debian-10-r30 --namespace default --command -- sleep infinity
+$ kubectl exec -it my-kafka-client -- /bin/bash
+
+# 현재 파티션 수를 확인한다
+$ kafka-topics.sh --describe --zookeeper my-kafka-zookeeper:2181 --topic test
+\Topic: test	TopicId: sLitGkHfRSyg261FxMoGCA	PartitionCount: 1	ReplicationFactor: 1	Configs:
+	Topic: test	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+```
+
+```bash
+# test 토픽의 파티션 수를 3으로 늘려준다
+$ kafka-topics.sh --zookeeper my-kafka-zookeeper:2181 --alter --topic test --partitions 3WARNING: If partitions are increased for a topic that has a key, the partition logic or ordering of the messages will be affected
+Adding partitions succeeded!
+
+# 수정된 파티션의 수를 확인한다
+$ kafka-topics.sh --describe --zookeeper my-kafka-zookeeper:2181 --topic test
+Topic: test	TopicId: sLitGkHfRSyg261FxMoGCA	PartitionCount: 3	ReplicationFactor: 1	Configs:
+	Topic: test	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+	Topic: test	Partition: 1	Leader: 2	Replicas: 2	Isr: 2
+	Topic: test	Partition: 2	Leader: 0	Replicas: 0	Isr: 0
+```
+
+> 카프카에서는 파티션을 한번 늘리면 줄일 수 있는 방법은 없어서 실제 production 환경에서는 더 많은 고려이후 파티션을 늘려줘야 한다. 
+>
 
 ## 메시지 받기 (-D)
 
