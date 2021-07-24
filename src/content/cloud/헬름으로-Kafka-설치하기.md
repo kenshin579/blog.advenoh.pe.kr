@@ -101,11 +101,19 @@ $ kafka-console-consumer.sh \
 
 # 4. 정리
 
-본 포스팅에서는 헬름 차트로 쉽게 Kafka를 설치해보고 kafka client pod에 포함된 여러 script를 사용해서 메시지를 보내고 받는 테스트까지 해보았습니다. 다음 시간에 `kafkacat` utility 명령어로도 동일하게 아래와 같이 테스트가 가능하다. `kafkacat`에 대한 사용 방법은 다음 포스팅에서 기다려주세요. 
+본 포스팅에서는 헬름 차트로 쉽게 Kafka를 설치해보고 kafka client pod에 포함된 여러 script를 사용해서 메시지를 보내고 받는 테스트까지 해보았습니다. 다음 시간에 `kafkacat` utility 명령어로도 동일하게 아래와 같이 테스트가 가능합니다. `kafkacat`에 대한 사용 방법은 다음 포스팅에서 기다려주세요. 
 
 ```bash
 $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 ```
+
+> bitnami/kafka 이미지는 non-root 도커 이미지라서 root 권한으로 다른 패키지를 설치를 할 수 없는 듯하다. (혹시 방법을 아시는 분은 댓글 부탁드립니다)
+>
+> 참고로 저는 다른 도커 이미지를 사용해서 kafkacat를 설치했습니다.
+>
+> $ kubectl run -i --tty ubuntu --image=ubuntu:16.04 --restart=Never -- bash -il
+>
+> $ apt-get update && apt-get install kafkacat
 
 테스트해보았던 화면으로 마무리하겠습니다. 오늘도 수고하셨습니다 :)
 
