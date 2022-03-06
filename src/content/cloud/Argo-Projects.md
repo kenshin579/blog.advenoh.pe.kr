@@ -14,7 +14,7 @@ tags: ["argo", "argocd", "events", "workflow", "cloud", "kubernetes", "docker", 
 
 # Argo Projects?
 
-Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하거나 배포를 도와주는 일련의 쿠버네티스 도구 집합이다. 모든 Argo 프로그램은 컨트롤러와 CRD (Custom Resource Definition)로 구현되어 있다. 현재 4가지 대표 서브 프로젝트가 존재하고 각 프로그램은 독립적으로 사용할 수도 있지만, 함께 사용하면 더욱 강력한 도구가 되기도 한다. 
+Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하거나 배포를 도와주는 일련의 쿠버네티스 도구 집합이다. 모든 Argo 프로그램은 CRD (Custom Resource Definition)와 사용자 쿠버네티스 클러스터로 구현되어 있다. 현재 4가지 대표 서브 프로젝트가 존재하고 각 프로그램은 독립적으로 사용할 수도 있지만, 함께 사용하면 더욱 강력한 도구가 되기도 한다. 
 
 ## What?
 
