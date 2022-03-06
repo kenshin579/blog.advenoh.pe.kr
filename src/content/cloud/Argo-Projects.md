@@ -18,41 +18,38 @@ Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하�
 
 ## What?
 
-- Argo Workflows
-
+- `Argo Workflows`
   - 컨테이너 기반의 워크플로우 엔진
-
+  
     - Job 단위가 프로세스가 아닌 컨테이너 단위로 실행된다
-
+  
     - 다양한 실행 방식을 지원한다
-
+  
       - ex. sequence, parallel, with dependency w/ DAG, etc
-
-- Argo Events
-
+  
+- `Argo Events`
   - 쿠버네티스를 위한 이벤트 기반 워크로플로우 자동화 프레임워크 도구
-
+  
     - 아래와 같은 다양한 Event와 Trigger를 제공하고 Event 발생시 Trigger하는 역할을 수행한다
-
+  
     - Events Source (20+): 
-
+  
       - Github, NATS, File, NATS, MQTT, Slack, Webhooks, HDFS, K8s Resources, Kafka, Redis, etc
-
+  
     - Triggers (10+)
-
+  
       - Argo Workflow, Argo Rollouts, k8s Object, AWS Lambda, AWS Lamda, NATS message, Kafka message, Log, Slack Notification, etc
-
+  
 - Argo CD
 
   - 선언적인 GitOps 기반의 CD (Continuous Deployment) 도구
 
-- Argo Rollouts
-
-  - Progress Delivery 를 지원하는 도구
-
-  - 여러 배포 방식을 지원한다
-
-  - ex. canary, blue/green, rolling updates, etc
+- `Argo Rollouts`
+- Progress Delivery 를 지원하는 도구
+  
+- 여러 배포 방식을 지원한다
+  
+- ex. canary, blue/green, rolling updates, etc
 
 ### 참고
 
