@@ -14,45 +14,42 @@ tags: ["argo", "argocd", "events", "workflow", "cloud", "kubernetes", "docker", 
 
 # Argo Projects?
 
-Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하거나 배포를 도와주는 일련의 쿠버네티스 도구 집합이다. 모든 Argo 프로그램은 컨트롤러와 CRD (Custom Resource Definition)로 구현되어 있다. 현재 4가지 대표 서브 프로젝트가 존재하고 각 프로그램은 독립적으로 사용할 수도 있지만, 함께 사용하면 더욱 강력한 도구가 되기도 한다. 
+Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하거나 배포를 도와주는 일련의 쿠버네티스 도구 집합이다. 모든 Argo 프로그램은 `CRD (Custom Resource Definition)`와 사용자 쿠버네티스 클러스터로 구현되어 있다. 현재 4가지 대표 서브 프로젝트가 존재하고 각 프로그램은 독립적으로 사용할 수도 있지만, 함께 사용하면 더욱 강력한 도구가 되기도 한다. 
 
 ## What?
 
-- Argo Workflows
-
+- `Argo Workflows`
   - 컨테이너 기반의 워크플로우 엔진
-
+  
     - Job 단위가 프로세스가 아닌 컨테이너 단위로 실행된다
-
+  
     - 다양한 실행 방식을 지원한다
-
+  
       - ex. sequence, parallel, with dependency w/ DAG, etc
-
-- Argo Events
-
+  
+- `Argo Events`
   - 쿠버네티스를 위한 이벤트 기반 워크로플로우 자동화 프레임워크 도구
-
+  
     - 아래와 같은 다양한 Event와 Trigger를 제공하고 Event 발생시 Trigger하는 역할을 수행한다
-
+  
     - Events Source (20+): 
-
+  
       - Github, NATS, File, NATS, MQTT, Slack, Webhooks, HDFS, K8s Resources, Kafka, Redis, etc
-
+  
     - Triggers (10+)
-
+  
       - Argo Workflow, Argo Rollouts, k8s Object, AWS Lambda, AWS Lamda, NATS message, Kafka message, Log, Slack Notification, etc
-
-- Argo CD
-
+  
+- `Argo CD`
   - 선언적인 GitOps 기반의 CD (Continuous Deployment) 도구
-
-- Argo Rollouts
-
+  
+- `Argo Rollouts`
   - Progress Delivery 를 지원하는 도구
 
   - 여러 배포 방식을 지원한다
 
   - ex. canary, blue/green, rolling updates, etc
+
 
 ### 참고
 
@@ -78,8 +75,7 @@ Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하�
 
 - 180개 이상의 여러 회사에서 프로덕션에 적극적으로 사용하고 있음
 
-- ex. Adobe, Alibaba Cloud, Data Dog, Datastax, Google, GitHub, IBM, MLB, NVIDIA, Red Hat, SAP, Tesla, Ticketmaster
-  당근마켓, LINE
+- ex. Adobe, Alibaba Cloud, Data Dog, Datastax, Google, GitHub, IBM, MLB, NVIDIA, Red Hat, SAP, Tesla, Ticketmaster, 당근마켓, LINE
 
 ## Reference
 
