@@ -1,6 +1,6 @@
 ---
 title: 'Argo Projects'
-layout : post
+layout: post
 category: 'cloud'
 author: [Frank Oh]
 image: ../img/cover-argo.png
