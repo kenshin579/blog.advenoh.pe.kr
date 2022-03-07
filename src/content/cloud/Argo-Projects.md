@@ -3,7 +3,7 @@ title: 'Argo Projects'
 layout: post
 category: 'cloud'
 author: [Frank Oh]
-image: ../img/cover-argo.png
+image: ../img/cover-argo.jpg
 date: '2022-03-04T22:30:23.000Z'
 draft: false
 tags: ["argo", "argocd", "events", "workflow", "cloud", "kubernetes", "docker", "devops", "gitops"]
