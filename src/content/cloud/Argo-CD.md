@@ -25,25 +25,15 @@ Argo CD는 GitOps 기반의 CD 도구이고 다음과 같은 여러 기능을 �
 ## Feature
 
 - 타겟 환경(Git 저장소에 지정된 대로)에 application 자동 배포 지원
-
 - 쿠버네티스 manifest 파일을 생성해주는 여러 템플릿 포맷을 지원
-
 	- `Kustomize, Helm charts, plain-YAML, Ksonnet, Jsonnet`
-
 - Pull deployment 방식를 지원
-
 	- Argo CD는 k8s manifest의 변경을 pull하는 방식
-
 - 여러 클러스터를 관리하고 배포하는 기능
-
 - SSO 통합 인증 지원 (OIDC, OAuth2, LDAP, SAML 2.0, GitHub, GitLab, Microsoft, LinkedIn)
-
 - Application 자원의 Health 상태 지원
-
 - Web UI, CLI 지원
-
 - 웹훅 통합 지원 (GitHub, BitBucket, GitLab)
-
 - 복잡한 응용 프로그램 Rollout을 지원하기 위한 Presync, Sync, Postsync hook도 지원
 
 ## Architecture
@@ -55,7 +45,6 @@ Argo CD는 **3가지 컨포넌트**로 이루어져 있다. Argo CD가 하는 �
 - 실행 중인 애플리케이션을 **지속적으로 모니터링**
 - **현재 라이브 상태를 원하는 대상 상태(Git 저장소에 지정된 대로)와 비교**를 주기적으로 한다
   - 라이브 상태가 대상 상태와 다른 배포된 애플리케이션은 **OutOfSync**로 간주한다
-
 - Argo CD는 이런 차이점을 보고 **UI 시각화**
 - 라이브 상태를 원하는 대상 상태로 자동 또는 수동으로 다시 동기화 하는 기능을 제공
 
@@ -84,15 +73,13 @@ Argo CD는 **3가지 컨포넌트**로 이루어져 있다. Argo CD가 하는 �
 기존 Jenkins와 Argo CD를 비교해보면서 쿠버네티스 환경에서는 어떤 도구가 더 적합한지 각자 판단해보세요. 
 
 - Jenkins
-
-- - `kubectl`를 jenkins 서버에 직접 설치해야 한다
+  - `kubectl`를 jenkins 서버에 직접 설치해야 한다
   - k8s cluster 접근하려면 credentials도 설정 필요하다
   - 한번 배포되면 배포된 상태 값에 대해서 알 수 없다 (모니터링 기능 없음)
   - Push deployment
 
 - Argo CD
-
-- - 대상 상태(Git 저장소)와 현재 라이브 상태를 주기적으로 모니터링하고 있어 배포가 필요한 application을 쉽게 알 수 있다
+  - 대상 상태(Git 저장소)와 현재 라이브 상태를 주기적으로 모니터링하고 있어 배포가 필요한 application을 쉽게 알 수 있다
   - 배포이후에 잘 배포가 되었는 지도 확인이 가능하다
   - Pull deployment
 
