@@ -1,8 +1,7 @@
 ---
 template: 'index-template'
-title: 'Gatsby Starter Glass'
+title: 'Frank Blog'
 ---
 
-#Hello World
-
-A minimal & beautiful gatsby personal blog starter with nice glassmorphism UI.
+#안녕하세요. 
+방문해주셔서 감사합니다. 

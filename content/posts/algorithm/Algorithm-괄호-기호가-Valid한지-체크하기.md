@@ -1,7 +1,7 @@
 ---
 title: Algorithm 괄호 기호가 Valid한지 체크하기
 tags: [알고리즘, 인터뷰, 면접, 코드면접, 괄호]
-social_image: '/media/cover/cover-algorithm.jpg
+social_image: '/media/cover/cover-algorithm.jpg'
 date: 2018-07-29
 ---
 
