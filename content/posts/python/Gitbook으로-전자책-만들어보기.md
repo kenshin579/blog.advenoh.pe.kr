@@ -1,6 +1,6 @@
 ---
 title: 'Gitbook으로 전자책 만들어보기'
-tags: [gitbook, ebook, pdf, epub, kindle, git, github", 전자책]
+tags: [gitbook, pdf, epub, kindle, git, github, 전자책]
 date: 2018-07-29
 ---
 
@@ -71,9 +71,9 @@ $ cd app-korean-catholic-bible/example/gitbook_markup_sample
 $ gitbook serve
 ```
 
-![](images/Gitbook으로-전자책-만들어보기/image_3.png)
+![](/media/python/Gitbook으로-전자책-만들어보기/image_3.png)
 
-![](images/Gitbook으로-전자책-만들어보기/image_4.png)
+![](/media/python/Gitbook으로-전자책-만들어보기/image_4.png)
 
 ## 3.2 eBooks과 PDF 생성하기
 
@@ -85,9 +85,9 @@ $ gitbook epub ./ ./mybook.epub
 $ gitbook mobi ./ ./mybook.mobi
 ```
 
-![](images/Gitbook으로-전자책-만들어보기/image_5.png)
+![](/media/python/Gitbook으로-전자책-만들어보기/image_5.png)
 
-![](images/Gitbook으로-전자책-만들어보기/image_1.png)
+![](/media/python/Gitbook으로-전자책-만들어보기/image_1.png)
 
 # 4. 플러그인
 
@@ -132,11 +132,11 @@ $ gitbook install
   - [https://www.npmjs.com/package/gitbook-plugin-splitter](https://www.npmjs.com/package/gitbook-plugin-splitter)
 - expandable-chapters-small : > icon이 추가되어 클릭하면 확장되고 다시 클릭하면 축소되는 기능
   - [https://plugins.gitbook.com/plugin/expandable-chapters-small](https://plugins.gitbook.com/plugin/expandable-chapters-small)
-  - ![](images/Gitbook으로-전자책-만들어보기/image_6.png)
+  - ![](/media/python/Gitbook으로-전자책-만들어보기/image_6.png)
 
 - toggle-chapters : 한 chapter를 클릭하면 해당 chapter는 확장되고 나머지는 축소되는 기능
   - [https://plugins.gitbook.com/plugin/toggle-chapters](https://plugins.gitbook.com/plugin/toggle-chapters)
-  - ![](images/Gitbook으로-전자책-만들어보기/toggle_chapters.gif)
+  - ![](/media/python/Gitbook으로-전자책-만들어보기/toggle_chapters.gif)
 
 # 5. FAQ
 

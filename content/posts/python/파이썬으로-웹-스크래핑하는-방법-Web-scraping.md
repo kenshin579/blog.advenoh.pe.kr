@@ -1,6 +1,6 @@
 ---
 title: '파이썬으로 웹 스크래핑하는 방법 - Web scraping'
-tags: [web, scrapping, python, cheerio, beautifulsoup, beautifulsoup4, urllib, requests, 웹, 스크래핑, 파이썬]
+tags: [web, scrap, python, cheerio, bs4, soup4, 웹, 스크래핑, 파이썬]
 social_image: /media/cover/cover-python.jpg
 date: 2018-08-05
 ---
@@ -55,11 +55,11 @@ $ pip3 install requests
 
 * [https://ko.wikipedia.org/wiki/포털:요즘_화제](https://ko.wikipedia.org/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C)
 
-![](images/파이썬으로-웹-스크래핑하는-방법-Web-scraping/wiki.png)
+![](/media/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping/wiki.png)
 
 **1. 크롬의 개발자 도구를 열어 원하는 부분의 태그를 확인합니다.**
 
-![](images/파이썬으로-웹-스크래핑하는-방법-Web-scraping/6B835F07-A3A4-4479-88DF-6F3B0F8D66D7.png)
+![](/media/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping/6B835F07-A3A4-4479-88DF-6F3B0F8D66D7.png)
 
 **2. 웹사이트에 접근하여** **BeautifulSoup** **로 HTML를 파씽하고 원하는 데이터를 추출합니다.**
 
@@ -121,7 +121,7 @@ tr [1] - 뉴스 내용
 얻어온 태그 내용의 텍스트 부분을 추출하려면 get_text() 함수를 이용하고 불필요한 whitespace는 strip()나 replace()함수로 제거합니다.
 실행 결과는 다음과 같습니다.
 
-![](images/파이썬으로-웹-스크래핑하는-방법-Web-scraping/01_execution.png)
+![](/media/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping/01_execution.png)
 
 # 3. 추가 예제
 인터넷상에서 많은 데이터가 존재하기 때문에 웹 스크래핑 기술로 다양한 데이터를 만들어 낼 수 있습니다.
@@ -144,7 +144,7 @@ tr [1] - 뉴스 내용
 조금 더 아래 책을 추천드립니다.
 
 * 책 : [Web Scraping with Python](http://www.hanbit.co.kr/store/books/look.php?p_code=B7159663510)
-    * ![](images/파이썬으로-웹-스크래핑하는-방법-Web-scraping/image_1.jpeg)
+    * ![](/media/python/파이썬으로-웹-스크래핑하는-방법-Web-scraping/image_1.jpeg)
 * 스콜링 vs. 스크래핑
 	* [http://stophyun.tistory.com/142](http://stophyun.tistory.com/142)
 	* [https://ko.wikipedia.org/wiki/웹_크롤러](https://ko.wikipedia.org/wiki/%EC%9B%B9_%ED%81%AC%EB%A1%A4%EB%9F%AC)
