@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import Tags from '../components/tags';
+import AdSense from 'react-adsense';
 
 const PostTemplate = ({ data }) => {
   const { frontmatter, excerpt, html } = data.markdownRemark;
@@ -23,6 +24,13 @@ const PostTemplate = ({ data }) => {
           <PostDate>{frontmatter.date}</PostDate>
 
           <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+          <AdSense.Google
+              client="ca-pub-8868959494983515"
+              slot="5560009326"
+              style={{ display: 'block' }}
+              layout="in-article"
+              format="fluid"
+          />
         </article>
 
         <PostPagination>
