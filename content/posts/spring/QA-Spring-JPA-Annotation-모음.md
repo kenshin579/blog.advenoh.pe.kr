@@ -1,5 +1,5 @@
 ---
-title: 'Q&A : Spring JPA Annotation 모음'
+title: 'Q&A Spring JPA Annotation 모음'
 tags: [Q&A, faq, spring, jpa, db, database]
 social_image: /media/cover/cover-faq.png
 date: 2019-07-03
@@ -25,11 +25,11 @@ date: 2019-07-03
 
 이 어노테이션은 JPA 컬럼 2개 이상 unique하게 설정하려고 할때 사용합니다.
 
-![](images/QA-Spring-JPA-Annotation-모음/image_3.png)
+![](/media/spring/QA-Spring-JPA-Annotation-모음/image_3.png)
 
 참고로 하나의 컬럼에 unique 한 설정을 하려면 아래와 같습니다.
 
-![](images/QA-Spring-JPA-Annotation-모음/image_2.png)
+![](/media/spring/QA-Spring-JPA-Annotation-모음/image_2.png)
 
 참고
 * [https://gs.saro.me/dev?page=4&tn=499](https://gs.saro.me/dev?page=4&amp;tn=499)
@@ -46,7 +46,7 @@ date: 2019-07-03
 
 이 어노테이션은 JPA의 N+1을 해결할 수 있는 방법중에 하나로 연관된 엔티티를 조회할 때 지정된 size 만큼 SQL의 IN 절을 사용해서 사이즈만큰 한번에 가져와서 조회합니다.
 
-![](images/QA-Spring-JPA-Annotation-모음/image_4.png)
+![](/media/spring/QA-Spring-JPA-Annotation-모음/image_4.png)
 
 참고
 
@@ -58,7 +58,7 @@ date: 2019-07-03
 
 #### - @NaturalId
 하이버네티으에서 Named query 대신에 사용할 수 있는 네임 쿼리란 한번 정의하면 변경할 수 없는 정적 쿼리이다.
-![](images/QA-Spring-JPA-Annotation-모음/image_1.png)
+![](/media/spring/QA-Spring-JPA-Annotation-모음/image_1.png)
 
 참고
 * [https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/](https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/)

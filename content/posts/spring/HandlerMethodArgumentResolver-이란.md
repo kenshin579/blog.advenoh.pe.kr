@@ -1,5 +1,5 @@
 ---
-title: 'Custom HandlerMethodArgumentResolver 만들어보기'
+title: 'Custom Handler Method ArgumentResolver 만들어보기'
 tags: [java, spring, springboot, ArgumentResolver, 자바, 스프링, 스프링부트, 리졸버]
 date: 2020-07-20
 ---
@@ -203,7 +203,7 @@ private HandlerMethodArgumentResolver getArgumentResolver(MethodParameter parame
 - `DispatcherServlet.doDispatch()` -> ...생략... -> `invokeHandlerMethod()` -> ...생략... -> `InvocableHandlerMethod.getMethodArgumentValues()` -> `getArgumentResolver()` 순으로 실행되는 것을 확인할 수 있다. 
 
 
-![image-20200912154932896](images/HandlerMethodArgumentResolver-이란/image-20200912154932896.png)
+![image-20200912154932896](/media/spring/HandlerMethodArgumentResolver-이란/image-20200912154932896.png)
 
 # 4. 마무리
 

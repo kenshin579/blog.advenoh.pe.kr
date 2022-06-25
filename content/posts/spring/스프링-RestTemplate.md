@@ -1,6 +1,6 @@
 ---
 title: '스프링 RestTemplate'
-tags: [spring, springboot, resttemplate, REST, API, get, post, exchange, java, 스프링, 스프링부트]
+tags: [spring, rest, template, REST, java, 스프링, 스프링부트]
 social_image: /media/cover/cover-spring.png
 date: 2019-05-06
 ---
@@ -55,13 +55,13 @@ RestTemplate은 스프링에서 제공하는 다른 여러 **Template 클래스 
 </dependency>
 ```
 
-![](images/스프링-RestTemplate/image_12.png)
+![](/media/spring/스프링-RestTemplate/image_12.png)
 
 # 3. RestTemplate의 동작원리
 
 RestTemplate의 동작원리에 대한 내용은 [빨간색코딩](https://sjh836.tistory.com/141) 블로그에 잘 정리가 되어 있어 별도로 정리는 하지 않았습니다. 해당 링크에 들어가서 더 자세한 설명을 참조해주세요.
 
-![](images/스프링-RestTemplate/image_2.png)
+![](/media/spring/스프링-RestTemplate/image_2.png)
 
 # 4. RestTemplate 메서드 예제
 
@@ -110,7 +110,7 @@ public Employee getEmployee(@PathVariable Long id) {
 ```
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_19.png)
+![](/media/spring/스프링-RestTemplate/image_19.png)
 
 ### 4.1.2 getForEntity()
 
@@ -131,7 +131,7 @@ public void test_getForEntity() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_1.png)
+![](/media/spring/스프링-RestTemplate/image_1.png)
 
 ### 4.1.3 getForEntity()에 여러 값을 담은 params을 같이 넘겨주기
 
@@ -154,7 +154,7 @@ public void test_getForEntity_여러_path_variables을_넘겨주는_경우() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_20.png)
+![](/media/spring/스프링-RestTemplate/image_20.png)
 
 ## 4.2 POST
 
@@ -198,7 +198,7 @@ public ResponseEntity<Employee> saveEmployee(
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_17.png)
+![](/media/spring/스프링-RestTemplate/image_17.png)
 
 ### 4.2.2 postForObject() 해더 포함해서 보내기
 
@@ -228,7 +228,7 @@ public void testPostForObject_해데_포함해서_보내기() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_10.png)
+![](/media/spring/스프링-RestTemplate/image_10.png)
 
 ### 4.2.3 postForEntity()
 
@@ -254,7 +254,7 @@ public void testPostForEntity_스트링값으로_받기() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_9.png)
+![](/media/spring/스프링-RestTemplate/image_9.png)
 
 ### 4.2.4 postFoLocation()
 
@@ -299,7 +299,7 @@ public ResponseEntity<Void> locationURI(
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_14.png)
+![](/media/spring/스프링-RestTemplate/image_14.png)
 
 ## 4.3 DELETE
 
@@ -327,7 +327,7 @@ public void deleteEmployeeByName(@PathVariable(value = "name") String name) {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_7.png)
+![](/media/spring/스프링-RestTemplate/image_7.png)
 
 ## 4.4 PUT
 
@@ -359,7 +359,7 @@ public void updateEmployee(@PathVariable(value = "name") String name, @RequestBo
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_8.png)
+![](/media/spring/스프링-RestTemplate/image_8.png)
 
 ## 4.5 Exchange()
 ### 4.5.1 Exchange()로 HTTP GET 메서드 실행하기
@@ -407,7 +407,7 @@ public ResponseEntity<Employee> getEmployeeByExchangeMethod(
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_13.png)
+![](/media/spring/스프링-RestTemplate/image_13.png)
 
 ### 4.5.2 exchange()로 객체 컬렉션을 받아보기
 
@@ -455,7 +455,7 @@ public void test_get_lists_of_objects() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_18.png)
+![](/media/spring/스프링-RestTemplate/image_18.png)
 
 ## 4.6 optionsForAllow()
 
@@ -477,7 +477,7 @@ public void test_optionsForAllow() {
 
 [http://localhost:8080/employee](http://localhost:8080/employee) 에서 지원하는 HTTP 메서드는 POST와 OPTIONS을 지원합니다.
 
-![](images/스프링-RestTemplate/image_6.png)
+![](/media/spring/스프링-RestTemplate/image_6.png)
 
 ## 4.7 Timeout 설정하기
 
@@ -519,7 +519,7 @@ ClientHttpRequestFactory getRequestFactory() {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_15.png)
+![](/media/spring/스프링-RestTemplate/image_15.png)
 
 ## 4.8 patchForObject()
 
@@ -540,7 +540,7 @@ patchForObject()는 주어진 URL 주소로 HTTP Patch 메서드를 실행합니
 
 JDK HttpURLConnection에서는 PATCH 메서드를 지원하지 않기 때문에 아래 오류가 발생합니다. 기본 HttpURLConnection 대신 Patch 메서드를 지원하는 아파치의 HttpComponents를 사용합니다.
 
-![](images/스프링-RestTemplate/image_21.png)
+![](/media/spring/스프링-RestTemplate/image_21.png)
 
 **Client Code - Unit Test**
 
@@ -607,7 +607,7 @@ RequestCallback requestCallback(final Address address) {
 
 **실행 화면**
 
-![](images/스프링-RestTemplate/image_11.png)
+![](/media/spring/스프링-RestTemplate/image_11.png)
 
 # 5. 참고
 

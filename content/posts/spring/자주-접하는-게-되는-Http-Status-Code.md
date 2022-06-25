@@ -10,7 +10,7 @@ HTTP 상태 값에 따라 고양이 이미지를 보여주는 사이트도 존�
 
 - [HTTP Cats API](https://http.cat/)
 
-<img src="images/Http-Status-Code/image-20201115171009139.png" alt="image-20201115171009139" style="zoom: 50%;" />
+<img src="/media/spring/Http-Status-Code/image-20201115171009139.png" alt="image-20201115171009139" style="zoom: 50%;" />
 
 
 # Http Status Code
