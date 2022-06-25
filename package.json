@@ -27,6 +27,7 @@
     "netlify-cms-app": "^2.14.26",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
+    "react-adsense": "^0.1.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.15.4",
