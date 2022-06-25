@@ -1,6 +1,6 @@
 ---
 title: '맥환경에서 countdown shell script으로 집중력 강화하기'
-tags: [countdown, shell, script, mac, timer, pomodoro, 맥, 스트립트, 뽀모도로]
+tags: [count, down, shell, script, mac, timer, 맥, 스트립트, 뽀모도로]
 social_image: /media/cover/cover-mac.jpg
 date: 2019-02-26
 ---
@@ -21,7 +21,7 @@ date: 2019-02-26
 
 1분 동안 키운다운후 Pop-up이 실행되는 화면입니다.
 
-![](images/맥환경에서-countdown-shell-script으로-집중력-강화하기/countdown_clip.gif)
+![](/media/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기/countdown_clip.gif)
 
 # 3. 스크립트 작성 및 시스템 알람 설정
 
@@ -59,7 +59,7 @@ $ cp Clock-chimes.mp3 ~\_Library_Sounds
 
 시스템환경 > 알림 > 스트립트 편집기 선택후 아래와 같이 알람 스타일을 변경합니다.
 
-![](images/맥환경에서-countdown-shell-script으로-집중력-강화하기/C20D14F1-A6B9-41CA-B38B-C2ACA00774E3.png)
+![](/media/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기/C20D14F1-A6B9-41CA-B38B-C2ACA00774E3.png)
 
 ## 3.4 실행하기
 
@@ -69,7 +69,7 @@ $ cp Clock-chimes.mp3 ~\_Library_Sounds
 $ countdown 1
 ```
 
-![](images/맥환경에서-countdown-shell-script으로-집중력-강화하기/image_3.png)
+![](/media/mac/맥환경에서-countdown-shell-script으로-집중력-강화하기/image_3.png)
 
 # 4. 참고
 
