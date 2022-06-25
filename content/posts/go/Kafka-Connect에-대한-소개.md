@@ -1,6 +1,6 @@
 ---
 title: 'Kafka Connect에 대한 소개'
-tags: [kafka, broker, message, connect, kafkaconnect, producer, consumer, apache, 카프카, 브로커, 메시지, 아파치, 카프카커넥트, 커넥트]
+tags: [kafka, connect, producer, consumer, 카프카, 브로커, 커넥트]
 social_image: /media/cover/cover-kafka-helm.jpg
 date: 2022-05-10
 ---
