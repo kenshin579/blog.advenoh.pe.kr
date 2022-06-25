@@ -2,7 +2,7 @@
 title: '타입 변환 (Type Conversion)'
 layout : post
 category: go
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-01-16
 tags: [go, golang, type, conversion, explicit, cast, casting, 형변환, 타입변환, 타입, 변환, 명시적, 고, 고랭, 캐스팅]
 ---

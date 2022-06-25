@@ -1,7 +1,7 @@
 ---
 title: 'Git Rebase로 병합하기'
 tags: [git, rebase, merge, 깃, 병합]
-image: ../img/cover-git.jpg
+social_image: /media/cover/cover-git.jpg
 date: 2019-08-11
 ---
 

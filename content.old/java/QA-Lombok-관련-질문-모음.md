@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Lombok 관련 질문 모음'
 tags: [Q&A, QA, faq, lombok, annotation, java, 자바, 어노테이션]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-03-23
 ---
 

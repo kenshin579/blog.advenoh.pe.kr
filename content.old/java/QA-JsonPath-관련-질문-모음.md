@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : JsonPath 관련 질문 모음'
 tags : ["Q&A, faq, json, jsonpath, java]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---
 

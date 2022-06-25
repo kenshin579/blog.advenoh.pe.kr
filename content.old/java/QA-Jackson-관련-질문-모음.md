@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Jackson 관련 질문 모음'
 tags : ["Q&A, QA, faq, jackson, java, 자바]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2018-03-25
 ---
 

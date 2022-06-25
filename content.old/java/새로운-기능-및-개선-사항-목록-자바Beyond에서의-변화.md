@@ -1,7 +1,7 @@
 ---
 title: '새로운 기능 및 개선 사항 목록 - 자바Beyond에서의 변화'
 tags: [java",  "upgrade, JEP, 자바", 개선사항]
-image: ../img/cover-java.jpg
+social_image: /media/cover/cover-java.jpg
 date: 2018-09-10
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: '스프링 RestTemplate'
 tags: [spring, springboot, resttemplate, REST, API, get, post, exchange, java, 스프링, 스프링부트]
-image: ../img/cover-spring.png
+social_image: /media/cover/cover-spring.png
 date: 2019-05-06
 ---
 

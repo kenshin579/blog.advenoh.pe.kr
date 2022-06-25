@@ -1,7 +1,7 @@
 ---
 title: 'Go에서의 로그깅 (Logging in Go)'
 layout : post
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-01-02
 tags: [go, golang, log, logging, logger", logrus", 고, 고랭, 로그, 로깅]
 ---

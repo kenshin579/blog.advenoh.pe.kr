@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Git 관련 질문 모음'
 tags: [Q&A, faq, git, github, gitraken, wip, push, commit, push]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-07-03
 ---
 

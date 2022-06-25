@@ -2,7 +2,7 @@
 title: 'Go에서의 게터, 세터 메서드 (Getter, Setter in Go)'
 layout : post
 category: go
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-01-14
 tags: [go, golang, setter, getter, encapsulation, 고, 고랭, 캡슐화, 게터, 세터]
 ---

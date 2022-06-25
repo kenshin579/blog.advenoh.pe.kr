@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Java 관련 질문 모음'
 tags: [Q&A, QA, faq, java]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-03-21
 ---
 

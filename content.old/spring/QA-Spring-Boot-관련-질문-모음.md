@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Spring Boot 관련 질문 모음'
 tags: [Q&A, faq, spring, springboot, batch, 스프링, 배치, 질문]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-12-04
 ---
 

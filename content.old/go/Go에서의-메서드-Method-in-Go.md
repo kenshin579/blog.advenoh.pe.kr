@@ -2,7 +2,7 @@
 title: 'Go에서의 메서드 (Method in Go)'
 layout : post
 category: go
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-02-19
 tags: [go, golang, method, receiver, parameter, pointer, 고, 고랭, 메서드, 리시버, 인자, 포인터]
 ---

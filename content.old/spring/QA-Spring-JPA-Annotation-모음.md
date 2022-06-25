@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : Spring JPA Annotation 모음'
 tags: [Q&A, faq, spring, jpa, db, database]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-07-03
 ---
 

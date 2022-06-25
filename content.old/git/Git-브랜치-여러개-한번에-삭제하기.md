@@ -1,7 +1,7 @@
 ---
 title: 'Git 브랜치 여러 개 한번에 삭제하기'
 tags: [git, github, branch, multiple, delete, 깃, 깃허브, 다중, 삭제, 브랜치]
-image: ../img/cover-git.jpg
+social_image: /media/cover/cover-git.jpg
 date: 2020-07-11
 ---
 

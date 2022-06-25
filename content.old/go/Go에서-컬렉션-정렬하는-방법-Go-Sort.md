@@ -1,7 +1,7 @@
 ---
 title: 'Go에서 컬렉션 정렬하는 방법 (Go Sort)'
 layout : post
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-05-09
 tags: [go, golang, comparator, sort, 고랭, 정렬]
 ---

@@ -2,7 +2,7 @@
 title: '모니터 없이 Raspberry Pi 4 OS 설치'
 layout : post
 category: linux
-image: ../img/cover-raspberry4.jpg
+social_image: /media/cover/cover-raspberry4.jpg
 date: 2021-06-19
 tags: [raspberry, linux, pi, os, install, monitor, raspbian, 라즈베리파이, 라즈비안, 운용체제, 리눅스, 설치, 모니터]
 

@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : JavaScript 관련 질문 모음'
 tags : ["Q&A, faq, javascript, defaultProps, es6]
-image: ../img/cover-javascript.jpg
+social_image: /media/cover/cover-javascript.jpg
 date: 2018-03-23
 ---
 

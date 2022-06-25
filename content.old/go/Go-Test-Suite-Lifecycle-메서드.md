@@ -1,7 +1,7 @@
 ---
 title: 'Go Test Suite (Lifecycle 메서드)'
 layout : post
-image: ../img/cover-go.png
+social_image: /media/cover/cover-go.png
 date: 2021-07-17
 tags: [go, golang, test, suite, testify, stretcher, before, after, 고랭, 테스트, 유닛테스트]
 ---
