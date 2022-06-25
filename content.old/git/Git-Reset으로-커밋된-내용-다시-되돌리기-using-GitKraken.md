@@ -1,12 +1,8 @@
 ---
 title: 'Git Reset으로 커밋된 내용 다시 되돌리기 (using GitKraken)'
-layout: post
-category: 'git'
-author: [Frank Oh]
-tags: ["git", "reset", "revert", "gitkraken", 깃", "깃허브", "리셋"]
+tags: [git, reset, revert, gitkraken", 깃, 깃허브, 리셋]
 image: ../img/cover-git.jpg
-date: '2021-01-04T22:43:23.000Z'
-draft: false
+date: 2021-01-04
 ---
 
 # 1.Git Reset

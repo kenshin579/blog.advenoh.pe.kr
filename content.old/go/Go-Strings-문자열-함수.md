@@ -1,12 +1,9 @@
 ---
 title: 'Go Strings (문자열 함수)'
 layout : post
-category: 'go'
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-05-28T18:18:23.000Z'
-draft: false
-tags: ["go", "golang", "string", "strings", "search", "replace", "split", "join", "repeat", "스트링", "문자열", "고랭", "치환"]
+date: 2021-05-28
+tags: [go, golang, string, strings, search, replace, split, join, repeat, 스트링, 문자열, 고랭, 치환]
 ---
 
 # 문자열 함수

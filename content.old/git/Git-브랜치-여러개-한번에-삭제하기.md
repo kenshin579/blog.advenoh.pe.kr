@@ -1,12 +1,8 @@
 ---
 title: 'Git 브랜치 여러 개 한번에 삭제하기'
-layout: post
-category: 'git'
-author: [Frank Oh]
-tags: ["git", "github", "branch", "multiple", "delete", "깃", "깃허브", "다중", "삭제", "브랜치"]
+tags: [git, github, branch, multiple, delete, 깃, 깃허브, 다중, 삭제, 브랜치]
 image: ../img/cover-git.jpg
-date: '2020-07-11T23:05:23.000Z'
-draft: false
+date: 2020-07-11
 ---
 
 Git local, remote 브랜치를 한번에 삭제하는 방법에 대해서 알아보자. 

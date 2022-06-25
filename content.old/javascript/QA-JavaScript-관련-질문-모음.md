@@ -1,12 +1,8 @@
 ---
 title: 'Q&A : JavaScript 관련 질문 모음'
-layout: post
-category: 'javascript'
-author: [Frank Oh]
-tags : ["Q&A", "faq", "javascript", "defaultProps", "es6"]
+tags : ["Q&A, faq, javascript, defaultProps, es6]
 image: ../img/cover-javascript.jpg
-date: '2018-03-23T08:49:23.000Z'
-draft: false
+date: 2018-03-23
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.

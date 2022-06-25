@@ -1,12 +1,8 @@
 ---
 title: 'Q&A : Maven 관련 질문 모음'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags : ["Q&A", "faq", "maven", "java"]
+tags : ["Q&A, faq, maven, java]
 image: ../img/cover-faq.png
-date: '2018-07-29T14:54:31.000Z'
-draft: false
+date: 2018-07-29
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.

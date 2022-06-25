@@ -1,11 +1,7 @@
 ---
 title: '자바 Garbage Collection이란'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["gc", "garbage", "java", "garbage collection"]
-date: '2018-10-17T21:39:28.000Z'
-draft: false
+tags: [gc, garbage, java, garbage collection]
+date: 2018-10-17
 ---
 
 # 1. 가비지 컬랙션이란?

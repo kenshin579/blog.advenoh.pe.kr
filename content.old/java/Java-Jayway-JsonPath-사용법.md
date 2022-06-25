@@ -1,11 +1,7 @@
 ---
 title: 'Java Jayway JsonPath 사용법'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["jayway", "java", "jsonpath", "xpath", "json-path"]
-date: '2019-01-19T13:50:26.000Z'
-draft: false
+tags: [jayway, java, jsonpath, xpath, json-path]
+date: 2019-01-19
 ---
 
 # 1. 들어가며

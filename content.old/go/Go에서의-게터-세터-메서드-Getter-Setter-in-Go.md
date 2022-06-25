@@ -2,11 +2,9 @@
 title: 'Go에서의 게터, 세터 메서드 (Getter, Setter in Go)'
 layout : post
 category: go
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-01-14T16:05:23.000Z'
-draft: false
-tags: ["go", "golang", "setter", "getter", "encapsulation", "고", "고랭", "캡슐화", "게터", "세터"]
+date: 2021-01-14
+tags: [go, golang, setter, getter, encapsulation, 고, 고랭, 캡슐화, 게터, 세터]
 ---
 
 캡슐화는 내부 속성값을 외부에서 직접적으로 접근하게 못 하게 하고 공개된 메서드 (ex. getter, setter)로만 접근하여 내부 값을 보호하는 역할을 한다. 즉, 내부 구현을 감추고 데이터 체크를 통해서 유효한 값만 저장하게 한다. 

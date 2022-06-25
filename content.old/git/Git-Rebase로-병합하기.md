@@ -1,12 +1,8 @@
 ---
 title: 'Git Rebase로 병합하기'
-layout: post
-category: 'git'
-author: [Frank Oh]
-tags: ["git", "rebase", "merge", "깃", "병합"]
+tags: [git, rebase, merge, 깃, 병합]
 image: ../img/cover-git.jpg
-date: '2019-08-11T23:05:23.000Z'
-draft: false
+date: 2019-08-11
 ---
 
 # 1. 들어가며

@@ -1,11 +1,7 @@
 ---
 title: '자바8 HashMap 보다 간결하고 효과적으로 작성하기'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["java", "java8", "Map", "HashMap", "putIfAbsent", "computeIfAbsent", "compute", "computeIfPresent", "getOrDefault", "자바", "자바8", "맵"]
-date: '2020-02-30T19:56:00.000Z'
-draft: false
+tags: [java, java8, Map, HashMap, putIfAbsent, computeIfAbsent, compute, computeIfPresent, getOrDefault, 자바, 자바8, 맵]
+date: 2020-02-30
 ---
 
 자바8부터 `HashMap`에 여러 메서드들이 추가되었고 이런 메서드를 사용해서 `HashMap`을 조금 더 간결하면서 효율적으로 사용하는 방법에 대해서 알아보겠습니다.

@@ -1,11 +1,7 @@
 ---
 title: '[JPA-3] JPA N+1 문제 및 해결방법'
-layout: post
-category: 'database'
-author: [Frank Oh]
-tags: ["database", "db", "spring", "springboot", "jpa", "N1", "fetch", "batchsize", "페치조인", "배치사이즈", 데이터베이스", "스프링", "스프링부트"]
-date: '2019-12-10T10:26:33.000Z'
-draft: false
+tags: [database, db, spring, springboot, jpa, N1, fetch, batchsize, 페치조인, 배치사이즈", 데이터베이스, 스프링, 스프링부트]
+date: 2019-12-10
 ---
 
 # 1. 들어가며

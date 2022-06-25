@@ -1,11 +1,7 @@
 ---
 title: '자바 keystore에 SSL 인증서 import 하기'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags : ["ssl", "keystore", "import", "certificate", "인증서", "자바"]
-date: '2019-01-09T22:52:35.000Z'
-draft: false
+tags : ["ssl, keystore, import, certificate, 인증서, 자바]
+date: 2019-01-09
 ---
 
 # 1. 들어가며

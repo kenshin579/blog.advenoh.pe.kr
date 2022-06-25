@@ -1,11 +1,7 @@
 ---
 title: '[자바8-1] 자바8 Optional이란'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["java", "java10", "jdk", "openjdk"]
-date: '2018-07-29T14:54:31.000Z'
-draft: false
+tags: [java, java10, jdk, openjdk]
+date: 2018-07-29
 ---
 
 # 1. Optional이란

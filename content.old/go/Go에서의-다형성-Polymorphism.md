@@ -1,12 +1,9 @@
 ---
 title: 'Go에서의 다형성 (Polymorphism)'
 layout : post
-category: 'go'
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-06-06T18:18:23.000Z'
-draft: false
-tags: ["go", "golang", "duck", "typing", "duck type", "polymorphism", "다형성", "고랭", "덕타입", "고언어"]
+date: 2021-06-06
+tags: [go, golang, duck, typing, duck type, polymorphism, 다형성, 고랭, 덕타입, 고언어]
 ---
 
 ## 다형성 (Polymorphism)

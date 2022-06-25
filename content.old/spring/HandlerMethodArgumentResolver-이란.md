@@ -1,11 +1,7 @@
 ---
 title: 'Custom HandlerMethodArgumentResolver 만들어보기'
-layout: post
-category: 'spring'
-author: [Frank Oh]
-tags: ["java", "spring", "springboot", "ArgumentResolver", "자바", "스프링", "스프링부트", "리졸버"]
-date: '2020-07-20T09:23:33.000Z'
-draft: false
+tags: [java, spring, springboot, ArgumentResolver, 자바, 스프링, 스프링부트, 리졸버]
+date: 2020-07-20
 ---
 
 # 1.HandlerMethodArgumentResolver란?

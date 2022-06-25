@@ -1,11 +1,7 @@
 ---
 title: 'Jackson에서 Infinite Recursion 이슈 해결방법'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["TAGCircular", "INFINITE", "Jackson", "JsonBackReference", "JsonIdentityInfo", "JsonIdentityReference", "jsonignore", "JsonManagedReference", "JsonMappingException", "stackoverflowerror"]
-date: '2019-10-12T22:51:31.000Z'
-draft: false
+tags: [TAGCircular, INFINITE, Jackson, JsonBackReference, JsonIdentityInfo, JsonIdentityReference, jsonignore, JsonManagedReference, JsonMappingException, stackoverflowerror]
+date: 2019-10-12
 ---
 
 # 1. 들어가며

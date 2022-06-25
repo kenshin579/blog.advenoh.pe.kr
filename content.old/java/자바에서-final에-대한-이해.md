@@ -1,11 +1,7 @@
 ---
 title: '자바에서 final에 대한 이해'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["final", "java", "자바"]
-date: '2018-09-11T20:15:27.000Z'
-draft: false
+tags: [final, java, 자바]
+date: 2018-09-11
 ---
 
 # 1. 개요

@@ -1,12 +1,8 @@
 ---
 title: 'Q&A : JPA 관련 질문 모음'
-layout: post
-category: 'database'
-author: [Frank Oh]
-tags : ["Q&A", "faq", "jpa", "mysql", "database", "db"]
+tags : ["Q&A, faq, jpa, mysql, database, db]
 image: ../img/cover-faq.png
-date: '2019-10-21T22:18:36.000Z'
-draft: false
+date: 2019-10-21
 ---
 
 개인적으로 모르는 부분 적어두고 알게 되는 부분에 대해서 간단하게 정리해둔 자료입니다.

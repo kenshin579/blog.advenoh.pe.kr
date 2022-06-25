@@ -2,11 +2,9 @@
 title: '타입 단언 (Type Assertion)'
 layout : post
 category: go
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-01-16T18:05:23.000Z'
-draft: false
-tags: ["go", "golang", "type", "assertion", "타입", "형단언", "타입단언", "단언", "고", "고랭"]
+date: 2021-01-16
+tags: [go, golang, type, assertion, 타입, 형단언, 타입단언, 단언, 고, 고랭]
 ---
 
 Go는 타입 단언(Type assertion)을 통해서 인터페이스 `i` 변수가 타입 `T`인지를 확인하고 인터페이스의 실제 구현된 타입의 값을 가져올 수 있다. 

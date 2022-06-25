@@ -1,12 +1,8 @@
 ---
 title: '관계형 데이터베이스에서 조인(join)이란?'
-layout: post
-category: 'database'
-author: [Frank Oh]
-tags: ["join", "inner", "cross", "cartesin", "equi", "non-equi", "natural", "outer", "left", "right", "self", "anti", "semi", "database", "db", "mysql", "sql", "조인", "내부조인", "교차조인", "비등가조인", "외부조인"]
+tags: [join, inner, cross, cartesin, equi, non-equi, natural, outer, left, right, self, anti, semi", "database", "db", "mysql", "sql", "조인", "내부조인", "교차조인", "비등가조인", "외부조인]
 image: ../img/cover-mysql.jpg
-date: '2019-02-06T21:31:21.000Z'
-draft: false
+date: 2019-02-06
 ---
 
 # 1.JOIN에 대한 기본 개념정리

@@ -1,12 +1,8 @@
 ---
 title: 'Travis CI에서 Slack 연동해서 빌드 notification 받기'
-layout: post
-category: 'devops'
-author: [Frank Oh]
-tags: ["travis", "ci", "slack", "integration", "notification", "build", "빌드", "슬랙"]
+tags: [travis, ci, slack, integration, notification, build, 빌드, 슬랙]
 image: ../img/cover-travis.png
-date: '2020-10-22T10:23:33.000Z'
-draft: false
+date: 2020-10-22
 ---
 
 # 들어가며

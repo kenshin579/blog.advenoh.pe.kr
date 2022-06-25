@@ -2,11 +2,9 @@
 title: '타입 스위치 (Type switch)'
 layout : post
 category: go
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-01-16T19:03:23.000Z'
-draft: false
-tags: ["go", "golang", "type", "switch", "형스위치", "타입스위치", "고", "고랭"]
+date: 2021-01-16
+tags: [go, golang, type, switch, 형스위치, 타입스위치, 고, 고랭]
 ---
 
 티입 스위치는 형 단언을 실행하여 해당 변수의 타입이 스위치 문의 조건에 일치하는 블럭을 실행한다. 타입 스위치 선언문은 형 단언 `variable.(T)`와 같은 구문을 가진다. 그러나 T는 `type` 키워드로 대체된다.

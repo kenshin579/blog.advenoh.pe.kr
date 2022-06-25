@@ -1,11 +1,7 @@
 ---
 title: '[JPA-4] JPA 일대일(1:1) @One-To-One 연관관계'
-layout: post
-category: 'database'
-author: [Frank Oh]
-tags: ["database", "jpa", "db", "spring", "springboot", "persistence", "OneToOne", "mapping", "데이터베이스", "스프링", "스프링부트", "연관관계", "단방향", "양방향", "일대일"]
-date: '2019-12-27T15:47:32.000Z'
-draft: false
+tags: [database, jpa, db, spring, springboot, persistence, OneToOne, mapping, 데이터베이스, 스프링, 스프링부트, 연관관계, 단방향, 양방향, 일대일]
+date: 2019-12-27
 ---
 
 # 1. 들어가며

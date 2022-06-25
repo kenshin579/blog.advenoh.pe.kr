@@ -1,11 +1,7 @@
 ---
 title: '[Quartz-3] Multi WAS 환경을 위한 Cluster 환경의 Quartz Job Scheduler 구현'
-layout: post
-category: 'spring'
-author: [Frank Oh]
-tags: ["spring", "springboot", "quartz", "java", "scheduler", "multi", "job", "cluster", "자바", "스프링", "퀄츠", "스케줄러", "이중화", "클러스터", "스케줄러"]
-date: '2019-10-13T10:23:33.000Z'
-draft: false
+tags: [spring, springboot, quartz, java, scheduler, multi, job, cluster, 자바, 스프링, 퀄츠, 스케줄러, 이중화, 클러스터, 스케줄러]
+date: 2019-10-13
 ---
 
 # 1. 들어가며

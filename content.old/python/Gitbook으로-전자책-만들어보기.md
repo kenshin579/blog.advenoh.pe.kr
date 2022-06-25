@@ -1,11 +1,7 @@
 ---
 title: 'Gitbook으로 전자책 만들어보기'
-layout: post
-category: 'python'
-author: [Frank Oh]
-tags: ["gitbook", "ebook", "pdf", "epub", "kindle", "git", "github", 전자책"]
-date: '2018-07-29T14:54:31.000Z'
-draft: false
+tags: [gitbook, ebook, pdf, epub, kindle, git, github", 전자책]
+date: 2018-07-29
 ---
 
 # 1. 개요

@@ -1,12 +1,8 @@
 ---
 title: '새로운 기능 및 개선 사항 목록 - 자바Beyond에서의 변화'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["java",  "upgrade", "JEP", "자바", 개선사항"]
+tags: [java",  "upgrade, JEP, 자바", 개선사항]
 image: ../img/cover-java.jpg
-date: '2018-09-10T23:30:23.000Z'
-draft: false
+date: 2018-09-10
 ---
 
 # 자바Beyond

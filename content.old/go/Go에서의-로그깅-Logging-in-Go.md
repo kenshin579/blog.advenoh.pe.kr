@@ -1,12 +1,9 @@
 ---
 title: 'Go에서의 로그깅 (Logging in Go)'
 layout : post
-category: 'go'
-author: [Frank Oh]
 image: ../img/cover-go.png
-date: '2021-01-02T15:18:23.000Z'
-draft: false
-tags: ["go", "golang", "log", "logging", "logger", logrus", 고", "고랭", "로그", "로깅"]
+date: 2021-01-02
+tags: [go, golang, log, logging, logger", logrus", 고, 고랭, 로그, 로깅]
 ---
 
 #1. 들어가며

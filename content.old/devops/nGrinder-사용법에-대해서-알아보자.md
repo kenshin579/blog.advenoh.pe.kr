@@ -1,11 +1,7 @@
 ---
 title: 'nGrinder 사용법에 대해서 알아보자'
-layout: post
-category: 'devops'
-author: [Frank Oh]
-tags: ["ngrinder", "test", "performance", "api", "테스트", "성능테스트"]
-date: '2020-03-22T10:23:33.000Z'
-draft: false
+tags: [ngrinder, test, performance, api, 테스트, 성능테스트]
+date: 2020-03-22
 ---
 #1. 들어가며
 

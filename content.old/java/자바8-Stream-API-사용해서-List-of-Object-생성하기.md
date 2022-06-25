@@ -1,11 +1,7 @@
 ---
 title: '자바8 Stream API 사용해서 List of Object 생성하기'
-layout: post
-category: 'java'
-author: [Frank Oh]
-tags: ["java", "java8", "stream", "object", "람다", "자바", "스트림", "객체"]
-date: '2020-06-29T10:23:33.000Z'
-draft: false
+tags: [java, java8, stream, object, 람다, 자바, 스트림, 객체]
+date: 2020-06-29
 ---
 
 자바8에 도입된 스트림 API에 조금 더 익숙해지기 위해 loop으로 자주 사용하던 코딩을 스트림 API로 변환해보자. 
