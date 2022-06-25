@@ -1,5 +1,5 @@
 ---
-title: (Docker-1) Docker 도커 명령어 모음
+title: '(Docker-1) Docker 도커 명령어 모음'
 tags: [도커, 컨테이너, 가상화, 명령어]
 image: '/media/cover/cover-docker.png'
 date: 2019-12-08

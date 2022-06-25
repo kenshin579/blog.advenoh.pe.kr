@@ -116,6 +116,7 @@ $RECYCLE.BIN/
 .vscode
 /.idea
 /venv
+/scripts/.idea
 
 # Local Netlify folder
 .netlify

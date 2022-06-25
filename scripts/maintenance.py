@@ -26,12 +26,12 @@ import requests
 #
 ################################################################################################
 BLOG_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'content'])
+BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'content', 'posts'])
 README_FILE = os.path.join(BLOG_DIR, 'README.md')
 README_HEADER_FILE = '/'.join([BLOG_DIR, 'scripts', 'data', 'HEADER.md'])
 BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
 
-REGEX_SUB_PATTERN = '.*\/blog.advenoh.pe.kr\/content'
+REGEX_SUB_PATTERN = '.*\/blog.advenoh.pe.kr\/content\/posts'
 ################################################################################################
 # Functions
 #

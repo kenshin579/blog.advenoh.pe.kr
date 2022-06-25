@@ -1,5 +1,5 @@
 ---
-title: Argo CD
+title: 'Argo CD'
 date: 2022-03-04
 social_image: '/media/cover/cover-argo.jpg'
 tags: [argo, argocd, events, workflow, devops]
