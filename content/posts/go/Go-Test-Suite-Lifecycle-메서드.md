@@ -1,9 +1,8 @@
 ---
 title: 'Go Test Suite (Lifecycle 메서드)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2021-07-17
-tags: [go, golang, test, suite, testify, stretcher, before, after, 고랭, 테스트, 유닛테스트]
+tags: [golang, test, suite, testify, before, after]
 ---
 
 Golang에서는 [testify](https://github.com/stretchr/testify) library에서 제공하는 여러 기능 (ex. assertion, mocking, suite)를 통해서 쉽게 unit test를 작성할 수 있다. 특정 config 설정에 따라 전체 테스트를 skip 해야 하는 경우가 있다. 이런 경우 Test Suite를 이용하면 해당 케이스를 쉽게 해결할 수 있다. 
@@ -44,7 +43,7 @@ func Run(t *testing.T, suite TestingSuite) {
   
     ...생략...
 }
-  
+  º
 ```
 
 - 전처리

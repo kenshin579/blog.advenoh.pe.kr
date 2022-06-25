@@ -1,10 +1,8 @@
 ---
 title: '타입 변환 (Type Conversion)'
-layout : post
-category: go
 social_image: /media/cover/cover-go.png
 date: 2021-01-16
-tags: [go, golang, type, conversion, explicit, cast, casting, 형변환, 타입변환, 타입, 변환, 명시적, 고, 고랭, 캐스팅]
+tags: [golang, type, conversion, cast, casting, 형변환, 타입변환, 타입, 변환, 명시적, 캐스팅]
 ---
 
 타입 변환은 데이터 타입을 변경하는 것이다. Java에서는 명시적 타입 변환(explicit type conversion)과 암시적 타입 변환(implicit type conversion) 둘 다 지원하지만, Go에서는 명시적인 타입 변환만을 지원한다. 

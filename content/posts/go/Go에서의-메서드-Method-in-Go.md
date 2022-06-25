@@ -1,10 +1,8 @@
 ---
 title: 'Go에서의 메서드 (Method in Go)'
-layout : post
-category: go
 social_image: /media/cover/cover-go.png
 date: 2021-02-19
-tags: [go, golang, method, receiver, parameter, pointer, 고, 고랭, 메서드, 리시버, 인자, 포인터]
+tags: [golang, method, receiver, parameter, pointer, 메서드, 리시버, 인자, 포인터]
 ---
 
 Go에서는 함수외에도 메서드를 제공한다. 메서드는 리시버 인자(Receiver Parameter)를 가진 함수를 말한다. 기능적으로 보면 일반 함수와 별 차이가 없고 아래 문법과 같이 func 키워드와 메서드이름 사이에 리시버 인자를 추가할 수 있다.

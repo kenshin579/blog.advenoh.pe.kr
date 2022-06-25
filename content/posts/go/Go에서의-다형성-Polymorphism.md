@@ -1,6 +1,5 @@
 ---
 title: 'Go에서의 다형성 (Polymorphism)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2021-06-06
 tags: [go, golang, duck, typing, duck type, polymorphism, 다형성, 고랭, 덕타입, 고언어]

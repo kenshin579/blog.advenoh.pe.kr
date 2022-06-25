@@ -1,6 +1,5 @@
 ---
 title: 'Go Ternary Operator (삼항연산자)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2021-05-18
 tags: [go, golang, ternary, operator, 고랭, 연산자, 삼항, 삼항연산자, 3항연산자]

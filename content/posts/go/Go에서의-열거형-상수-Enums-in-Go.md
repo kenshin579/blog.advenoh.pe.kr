@@ -1,6 +1,5 @@
 ---
 title: 'Go에서의 열거형 상수 (Enums in Go)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2020-12-20
 tags: [go, golang, enums, iota, 열거형, 상수, 고, 고랭]

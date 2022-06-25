@@ -1,9 +1,8 @@
 ---
 title: 'Go Strings (문자열 함수)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2021-05-28
-tags: [go, golang, string, strings, search, replace, split, join, repeat, 스트링, 문자열, 고랭, 치환]
+tags: [golang, string, replace, split, join, repeat, 스트링, 문자열, 고랭]
 ---
 
 # 문자열 함수

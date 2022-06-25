@@ -1,7 +1,6 @@
 ---
 title: '헬름으로 Kafka 설치하기'
 layout: post
-category: 'cloud'
 author: [Frank Oh]
 tags: [kafka, kubernetes, docker, helm, bitnami, 카프카, 쿠버네티스, 헬름, 차트]
 image: '/media/cover/cover-kafka-helm.jpg'

@@ -1,6 +1,5 @@
 ---
 title: '모니터 없이 Raspberry Pi 4 OS 설치'
-layout : post
 category: linux
 social_image: /media/cover/cover-raspberry4.jpg
 date: 2021-06-19

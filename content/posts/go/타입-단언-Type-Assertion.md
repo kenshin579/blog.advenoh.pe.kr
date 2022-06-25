@@ -1,7 +1,5 @@
 ---
 title: '타입 단언 (Type Assertion)'
-layout : post
-category: go
 social_image: /media/cover/cover-go.png
 date: 2021-01-16
 tags: [go, golang, type, assertion, 타입, 형단언, 타입단언, 단언, 고, 고랭]

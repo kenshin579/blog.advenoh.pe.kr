@@ -1,6 +1,5 @@
 ---
 title: 'Go에서 삼 도트 (dot) 사용방법 (Three Dots Usage)'
-layout : post
 social_image: /media/cover/cover-go.png
 date: 2021-05-08
 tags: [go, golang, dot, three, 점, 고랭, 도트, 표기법]

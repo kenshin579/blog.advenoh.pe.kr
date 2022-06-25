@@ -1,7 +1,5 @@
 ---
 title: '타입 스위치 (Type switch)'
-layout : post
-category: go
 social_image: /media/cover/cover-go.png
 date: 2021-01-16
 tags: [go, golang, type, switch, 형스위치, 타입스위치, 고, 고랭]
