@@ -60,7 +60,7 @@ public class Pet {
 
 한 클래스에서 메서드 체이닝을 적용하기는 쉽습니다. 하지만, 상속 관계가 있는 클래스에서는 this의 반환 값이 부모 클래스이거나 자식 클래스이기 때문에 메서드 체이닝을 할 때 캐스팅(cast)을 해줘야 하는 번거로움이 생깁니다.
 
-![](images/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/38B73F17-81AE-4A8D-B5D7-B8A3F656D592.png)
+![](/media/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/38B73F17-81AE-4A8D-B5D7-B8A3F656D592.png)
 
 ```java
 @Test
@@ -132,7 +132,7 @@ public class Cat extends Pet<Cat> {
 
 추상 클래스의 깊이(depth)가 2이상인 경우에도 1 depth인 클래스에 정의된 제네릭 부분과 크게 다르지 않습니다. Pet과 BombayCat 클래스는 1 depth인 경우와 유사하고 Cat 클래스의 경우에는 Cat 타입에 허용될 수 있는 제네릭을 정의하면 됩니다. 
 
-![](images/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/8B6EF924-B152-4371-9F5A-8C584AF6300E.png)
+![](/media/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/8B6EF924-B152-4371-9F5A-8C584AF6300E.png)
 
 ```java
 public abstract class Cat<T extends Cat<T>> extends Pet<T> {
@@ -151,7 +151,7 @@ public abstract class Cat<T extends Cat<T>> extends Pet<T> {
 
 새로운 Cat 클래스를 추가할때마다 getThis()의 구현체를 매번 추가해야 하는 번거로움이 생깁니다. getThis() 구현은 this를 반환하는 것밖에 없으니까, 인터페이스 함수로 빼서 default로 정의하고 구현체를 담아보면 코드가 더 깔끔해집니다. 
 
-![](images/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/E7359FA9-CE2B-40E5-A5B9-6EC20504CF19.png)
+![](/media/java/자바에서-클래스의-상속-구조에서-메서드-체이닝-해보기-Method-Chaining-with-Inheritance/E7359FA9-CE2B-40E5-A5B9-6EC20504CF19.png)
 
 ```java
 package complex.twoDepthAbstract.solution;

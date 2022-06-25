@@ -55,7 +55,7 @@ JSON 샘플 파일은 [Json Generator](https://next.json-generator.com/41_9W7rWU
 
 JsonPath 표현식에 아직 익숙하지 않다면, [JsonPath Online Evaluator](http://jsonpath.herokuapp.com/) 에 접속해서 표현식을 테스트해보세요.
 
-![](images/Java-Jayway-JsonPath-사용법/image_1.png)
+![](/media/java/Java-Jayway-JsonPath-사용법/image_1.png)
 
 # 3. Jayway JsonPath 사용법
 

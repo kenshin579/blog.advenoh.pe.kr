@@ -1,6 +1,6 @@
 ---
 title: 'Jackson에서 Infinite Recursion 이슈 해결방법'
-tags: [TAGCircular, INFINITE, Jackson, JsonBackReference, JsonIdentityInfo, JsonIdentityReference, jsonignore, JsonManagedReference, JsonMappingException, stackoverflowerror]
+tags: [TAGCircular, INFINITE, Jackson, jsonignore]
 date: 2019-10-12
 ---
 
@@ -54,7 +54,7 @@ public void infinite_recursion_이슈_발생() throws JsonProcessingException {
 
 JsonMappingException 예외 오류 메시지입니다.
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_1.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_1.png)
 
 # 2. 개발 환경
 
@@ -122,7 +122,7 @@ public void infinite_recursion_해결책_JsonManagedReference_JsonBackReference(
 
 @JsonBackReference 어노테이션 선언으로 Order 객체에서 Customer 객체에 대한 정보는 빠져 있어요.
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_2.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_2.png)
 
 ## 3.2 @JsonIdentityInfo - 추천방식
 
@@ -169,7 +169,7 @@ public void infinite_recursion_해결책_JsonIdentityReference() throws JsonProc
 
 **실행 화면**
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_4.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_4.png)
 
 ### 3.2.1 @JsonIdentityReference 란?
 
@@ -205,7 +205,7 @@ public void JsonIdentityReferenceAnnotation이_없는_경우() throws JsonProces
 
 **실행 화면**
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_6.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_6.png)
 
 하지만, @JsonIdentityReference 어노테이션을 사용하는 경우에는 직렬화시 객체 ID로만 직렬화 합니다.
 
@@ -223,7 +223,7 @@ public void JsonIdentityReferenceAnnotation이_없는_경우() throws JsonProces
 
 **실행 화면**
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_5.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_5.png)
 
 ## 3.3 @JsonIgnore 어노테이션 사용
 
@@ -267,7 +267,7 @@ public class CustomerTest {
 
 Unit Test을 실행해보면 customer 정보는 Order 객체에서 제외된 것을 확인할 수 있습니다.
 
-![](images/Jackson에서-Infinite-Recursion-이슈-해결방법/image_7.png)
+![](/media/java/Jackson에서-Infinite-Recursion-이슈-해결방법/image_7.png)
 
 # 4. 정리
 

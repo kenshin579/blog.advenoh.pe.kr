@@ -1,5 +1,5 @@
 ---
-title: 'Q&A : Jackson 관련 질문 모음'
+title: 'Q&A Jackson 관련 질문 모음'
 tags : ["Q&A, QA, faq, jackson, java, 자바]
 social_image: /media/cover/cover-faq.png
 date: 2018-03-25
@@ -14,7 +14,7 @@ date: 2018-03-25
 
 ### <span style="color:brown">1. @JsonInclude(Include.NON_NULL)?</span>
 
-![](images/QA-Jackson-관련-질문-모음/image_4.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_4.png)
 
 이 어노테이션은 클래스 필드에서 null이 되는 필드는 JSON으로 serialize할 때 제외하도록 하는 어노테이션입니다. 위 코드에서는 stringValue 변수는 JSON으로 저장되지 않습니다.
 
@@ -26,7 +26,7 @@ date: 2018-03-25
 
 ### <span style="color:brown">2. @JsonIgnore?</span>
 
-![](images/QA-Jackson-관련-질문-모음/image_2.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_2.png)
 
 직렬화시 해당 필드를 포함시키지 않고 싶을 때 변수위에 선언하는 어노테이션입니다. 이 예제에서는 JPA를 통해 domain 객체를 얻어올 때 암호가 있으면 안되기 때문에 @JsonIgnore 어노테이션을 적용하였습니다.
 
@@ -36,7 +36,7 @@ date: 2018-03-25
 
 ### <span style="color:brown">3. @JsonIgnoreProperties(ignoreUnknown = true)?</span>
 
-![](images/QA-Jackson-관련-질문-모음/image_7.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_7.png)
 
 객체에는 속성이 없지만, JSON에 포함되면 Exception이 발생하는데 무시하도록 하는 어노테이션이빈다.
 
@@ -47,7 +47,7 @@ date: 2018-03-25
 
 @JsonIgnoreProperties로 무시하려는 프로퍼티를 지정할 때 allowGetters를 true로 해주면, JSON serialization (Object -> JSON)으로는 지정한 필드는 적용이 되지만, deserialization (JSON -> Object)에서는 제외된다는 의미입니다.
 
-![](images/QA-Jackson-관련-질문-모음/image_3.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_3.png)
 
 참고
 * [https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype#allowGetters](https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype#allowGetters)
@@ -82,11 +82,11 @@ date: 2018-03-25
 * DateTimeFormat : DateTimeFormat
 * JsonFormat : jackson
 
-![](images/QA-Jackson-관련-질문-모음/image_1.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_1.png)
 
 #### - @JsonTypInfo, @JsonSubTypes?
 
-![](images/QA-Jackson-관련-질문-모음/image_6.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_6.png)
 
 참고
 * [https://www.slipp.net/questions/442](https://www.slipp.net/questions/442)
@@ -104,5 +104,5 @@ date: 2018-03-25
     * Jackson 2.0+
 	    * @JsonIdentityInfo를 사용함
 
-![](images/QA-Jackson-관련-질문-모음/image_5.png)
+![](/media/java/QA-Jackson-관련-질문-모음/image_5.png)
 

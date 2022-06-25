@@ -1,6 +1,6 @@
 ---
-title: 'Q&A : 개발관련 질문 모음'
-tags: [Q&A, QA", faq, 질문", 개발]
+title: 'Q&A 개발관련 질문 모음'
+tags: [Q&A, QA, faq, 질문, 개발]
 social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---
@@ -9,7 +9,7 @@ date: 2018-07-29
 
 책도 보면서 많이 알게 내용도 있습니다. 다시 구체적으로 정리하면 더 좋겠지만, 초반에 전혀 모르는 건 그냥 적어두고 검색하면서 조금씩 알게 된 내용으로 정리를 했습니다. 더 자세한 설명은 별도의 포스팅으로 작성해서 참고 링크로 달아두었습니다.
 
-![](images/QA-개발관련-질문-모음/q&a3.jpeg)
+![](/media/java/QA-개발관련-질문-모음/q&a3.jpeg)
 
 * Cache
 	* [Q&A : Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/java/QA-Cache-SSM-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)

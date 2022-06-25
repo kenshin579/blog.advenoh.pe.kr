@@ -1,6 +1,6 @@
 ---
-title: 'Q&A : Maven 관련 질문 모음'
-tags : ["Q&A, faq, maven, java]
+title: 'Q&A Maven 관련 질문 모음'
+tags : [Q&A, faq, maven, java]
 social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---
@@ -21,7 +21,7 @@ $ mvn -h #See 메이븐 옵션
 $ mvn clean test -Dtest=com.tmoncorp.media.common.util.FileUtilTest#getFileNameBaseCurrentTimestamp -Dmaven.test.skip=true
 ```
 
-![](images/QA-Maven-관련-질문-모음/image1.png)
+![](/media/java/QA-Maven-관련-질문-모음/image1.png)
 
 ### <span style="color:brown">2. Maven 실행시 webxml attribute is required... ?</span>
 
@@ -30,7 +30,7 @@ $ mvn clean package
 ```
 maven 컴파일시 webxml attribute is required...이라는 오류가 발생하는 경우에 대한 해결책은 다음과 같습니다. 
 
-![](images/QA-Maven-관련-질문-모음/image2.png)
+![](/media/java/QA-Maven-관련-질문-모음/image2.png)
 
 1. 서블릿 컨테이너 3이하인 경우, WEB-INF/web.xml을 생성해줘야 한다
 2. 서블릿 컨테이너 3이상인 경우, web.xml은 없는 경우에는 failOnMissingWebXml=false로 지정하여 무시하도록 설정한다

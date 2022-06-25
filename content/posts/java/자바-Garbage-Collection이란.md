@@ -35,13 +35,13 @@ Heap 영역은 크게 2가지 영역으로 나뉩니다. Permanent Generation �
   - 이 영역에는 JVM에 의해서 사용하는 클래스와 메서드 객체 정보를 담고 있다
   - JDK8부터는 PermGen은 Metaspace로 교체된다
 
-![](images/자바-Garbage-Collection이란/image_11.png)
+![](/media/java/자바-Garbage-Collection이란/image_11.png)
 
 [https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java)
 
 일반적으로 객체를 생성하면, Young 영역에 먼저 위치하게 되고 오랫동안 사용되는 객체는 GC 과정을 통해서 Old 영역으로 이동하게 됩니다.
 
-![](images/자바-Garbage-Collection이란/image_1.png)
+![](/media/java/자바-Garbage-Collection이란/image_1.png)
 
 [https://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf](https://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
 
@@ -52,7 +52,7 @@ Heap 영역을 왜 두 가지 영역으로 나뉘서 관리하게 되었을까�
 
 아래 그래프에서 보이는 것처럼 객체의 라이프는 짧게 사용되다가 오랫동안 남은 것들은 계속 쌓이게 되는 것을 볼 수 있습니다. 이런 특징으로 두 영역으로 나뉘어서 관리하고 GC 알고리즘도 이 기반으로 설계되었습니다.
 
-![](images/자바-Garbage-Collection이란/image_10.png)
+![](/media/java/자바-Garbage-Collection이란/image_10.png)
 
 # 2. Garbage Collection 타입
 
@@ -102,7 +102,7 @@ Serial collector는 single 쓰레드로 동작하며 Young와 Old를 serial 하�
 
 | GC 전 | GC 이후 |
 | ----- | ------- |
-|![](images/자바-Garbage-Collection이란/image_17.png) | ![](images/자바-Garbage-Collection이란/image_8.png)|
+|![](/media/java/자바-Garbage-Collection이란/image_17.png) | ![](/media/java/자바-Garbage-Collection이란/image_8.png)|
 
 
 
@@ -115,7 +115,7 @@ Parallel collector는 serial collector의 동작과 유사합니다. 다른 점�
 - Old 영역 (single thread) 
   - mark-sweep-compact
 
-![](images/자바-Garbage-Collection이란/image_13.png)
+![](/media/java/자바-Garbage-Collection이란/image_13.png)
 
 ## 3.3 Parallel Compacting Collector (- XX:+UseParallelOldGC)
 
@@ -144,13 +144,13 @@ CMS collector는 heap 메모리 영역의 크기가 크고 2개 이상의 프로
   - remark (stop-the-world) : concurrent mark 단계에서 변경된 객체를 다시 체크한다 
   - concurrent sweep : 표시한 객체들 삭제한다
 
-![](images/자바-Garbage-Collection이란/image_16.png)
+![](/media/java/자바-Garbage-Collection이란/image_16.png)
 
 ## 3.5 G1 (-XX:+UseG1GC : JDK9부터 기본으로 설정됨)
 
 G1 (Garbage First) collector는 메모리가 큰 multi core 머신을 타켓으로 설계되었습니다. G1 GC는 JDK7u4부터 도입 되었고 안정화 기간 거쳐 현재 JDK9에서는 기본 GC로 채택 되었습니다. G1에서는 아래 그림과 같이 heap 메모리 영역을 작은 단위의 region으로 나눠서 관리합니다. 기본 region 개수 수치는 2K(2048)개 공간으로 나눕니다. 예를 들면 Heap Size가 8GB로 지정하면, 각 region의 크기는 4MB (ex. 8192MB/2048 = 4096)가 됩니다.
 
-![](images/자바-Garbage-Collection이란/image_15.png)
+![](/media/java/자바-Garbage-Collection이란/image_15.png)
 
 - Young 영역 (multi thread)
   - -XX:ParallelGCThreads로 thread 갯수를 조정할 수 있다
@@ -178,9 +178,9 @@ G1 (Garbage First) collector는 메모리가 큰 multi core 머신을 타켓으�
     - copy/cleanup (stop-the-world)
       - 가장 빨리 청소가 가능한 live object 비율이 낮은 region들을 선택한다
       - Young과 Old 영역이 모두 cleanup되고 선택된 region들은 모두 새로운 region으로 compaction되어 위치한다
-    ![](images/자바-Garbage-Collection이란/image_2.png)
+    ![](/media/java/자바-Garbage-Collection이란/image_2.png)
 
-     - after copy/cleanup![](images/자바-Garbage-Collection이란/image_4.png)
+     - after copy/cleanup![](/media/java/자바-Garbage-Collection이란/image_4.png)
   
   - Full GC 
     - Old GC를 통해서도 필요한 Young 영역을 확보하지 못하면, 어쩔수 없이 Full GC를 실행한다

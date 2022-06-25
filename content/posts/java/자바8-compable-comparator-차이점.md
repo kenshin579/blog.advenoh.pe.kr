@@ -1,6 +1,6 @@
 ---
 title: '자바 Comparable과 Comparator의 차이점'
-tags: [java, java8, comparator, comparing, comparable, sort, 자바, 자바8, 정렬]
+tags: [java, java8, comparator, comparing, sort, 자바, 자바8, 정렬]
 date: 2020-04-15
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Q&A : Java 관련 질문 모음'
+title: 'Q&A Java 관련 질문 모음'
 tags: [Q&A, QA, faq, java]
 social_image: /media/cover/cover-faq.png
 date: 2019-03-21
@@ -15,7 +15,7 @@ date: 2019-03-21
 ### - java8 에서 mapToInt(ToIntFunction mapper)는 뭔가?
 - Intermediate operation으로 스트림의 각 요소에 mapper를 실행하고 IntStream을 반환한다
 
-![](images/QA-Java-관련-질문-모음/image_8.png)
+![](/media/java/QA-Java-관련-질문-모음/image_8.png)
 
 참고
 
@@ -23,21 +23,21 @@ date: 2019-03-21
 
 ### - bridge 메서드는 무엇인가?
 
-![](images/QA-Java-관련-질문-모음/image_2.png)
+![](/media/java/QA-Java-관련-질문-모음/image_2.png)
 
 ### - 이거의 의미는 뭔가?
 - JobKey가 상속받을 수 있는 걸 제한하는 건가?
 
-![](images/QA-Java-관련-질문-모음/image_1.png)
+![](/media/java/QA-Java-관련-질문-모음/image_1.png)
 
-![](images/QA-Java-관련-질문-모음/image_3.png)
+![](/media/java/QA-Java-관련-질문-모음/image_3.png)
 
 ### - facade 패턴이란?
 ### - strateggy 패턴이란?
 
 ### - @Constraint(validateBy…?) 
 
-![](images/QA-Java-관련-질문-모음/image_6.png)
+![](/media/java/QA-Java-관련-질문-모음/image_6.png)
 
 참고
 
@@ -49,7 +49,7 @@ date: 2019-03-21
 
 ### <span style="color:brown">1. 왜 Constants 값을 인터페이스에 정의하나? final class에 하지 않나?</span>
 
-![](images/QA-Java-관련-질문-모음/image_7.png)
+![](/media/java/QA-Java-관련-질문-모음/image_7.png)
 
 인터페이스에도 Constants 값을 지정할 수 있습니다. 이런 방식은 비추천하는 방식으로 언급되는데요. 찾아보면 오픈소스에서도 인터페이스에 정의하는 프로젝트도 종종 찾을 수 있습니다.
 
@@ -63,7 +63,7 @@ date: 2019-03-21
 
 인자로 들어오는 게 Enum 타입이여야 하고 인터페이스 CodeEnum을 구현하는 타입이여야 한다는 의미입니다. 결국 둘 다 만족하는 타입이어야 한다는 의미입니다.
 
-![](images/QA-Java-관련-질문-모음/image_5.png)
+![](/media/java/QA-Java-관련-질문-모음/image_5.png)
 
 참고
 
@@ -90,7 +90,7 @@ live.removeAll(Collections.singleton(4);
 - List : Collections.singleList(T o)
 - Map : Collections.singleMap(K, V)
 
-![](images/QA-Java-관련-질문-모음/image_4.png)
+![](/media/java/QA-Java-관련-질문-모음/image_4.png)
 
 참고
 

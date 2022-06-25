@@ -32,7 +32,7 @@ JUnit Rules은 테스트 케이스를 실행하기 전후에 추가 코드를 �
 
 포스팅을 위해 여러 예제를 작성하였지만, 다양한 사용법을 더 보고 싶으면, JUnit4소스코드에 포함된 테스트 케이스들을 보면 더 다양하게 사용되는 예제를 확인할 수 있습니다.
 
-![](images/JUnit-Rules이란/image_7.png)
+![](/media/java/JUnit-Rules이란/image_7.png)
 
 메이븐 의존성으로 pom.xml 파일에 JUnit을 추가합니다.
 
@@ -133,7 +133,7 @@ public class TimeoutRuleTest {
 
 Timeout 설정을 2초로 해서 2초이상 실행되면 TimeOutException을 발생시킵니다.
 
-![](images/JUnit-Rules이란/image_2.png)
+![](/media/java/JUnit-Rules이란/image_2.png)
 
 ### 3.1.4 ErrorCollector
 
@@ -172,7 +172,7 @@ public class ErrorCollectorRuleTest {
 
 기대 값과 실제 값이 다르면 addError()로 추가된 메시지를 출력만 하고 일단 테스트를 계속 실행합니다. 테스트 실행이후에 각 실패에 대한 결과를 출력합니다.
 
-![](images/JUnit-Rules이란/image_6.png)
+![](/media/java/JUnit-Rules이란/image_6.png)
 
 ### 3.1.5 Verifier
 
@@ -218,7 +218,7 @@ public class VerifierRuleTest {
 
 모든 테스트 실행 시 추가로 사람의 나이가 25 이상 인지를 검증합니다. 두 번째 테스트 personTest2에서 나이가 30이라서 실패로 떨어졌습니다.
 
-![](images/JUnit-Rules이란/image_1.png)
+![](/media/java/JUnit-Rules이란/image_1.png)
 
 ### 3.1.6 TestName
 
@@ -263,7 +263,7 @@ public class RuleChainTest {
 
 **테스트 결과**
 
-![](images/JUnit-Rules이란/image_9.png)
+![](/media/java/JUnit-Rules이란/image_9.png)
 
 ### 3.1.8 ExternalResource
 
@@ -307,7 +307,7 @@ public class Server {
 
 테스트 실행 전후로 서버에 연결하고 종료 후에는 연결을 끊고 있습니다.
 
-![](images/JUnit-Rules이란/image_5.png)
+![](/media/java/JUnit-Rules이란/image_5.png)
 
 ### 3.1.9 ClassRule
 
@@ -345,7 +345,7 @@ public class TestFirstServer {
 
 여러 테스트 클래스가 시작하기 전에 서버 연결을 먼저하고 모든 테스트가 끝나고 나서 서버 연결을 끊는 것을 확인할 수 있습니다.
 
-![](images/JUnit-Rules이란/image_8.png)
+![](/media/java/JUnit-Rules이란/image_8.png)
 
 ### 3.1.10 TestWatcher
 
@@ -411,7 +411,7 @@ public class TestWatcherRuleTest {
 
 메서드 이름의 순서대로 테스트가 실행되며 하나씩 실행할 때마다 로그가 쌓이고 있습니다.
 
-![](images/JUnit-Rules이란/image_3.png)
+![](/media/java/JUnit-Rules이란/image_3.png)
 
 ## 3.2 Custom Rules
 
@@ -531,7 +531,7 @@ public class CustomRuleTest {
 
 **테스트 결과**
 
-![](images/JUnit-Rules이란/image_4.png)
+![](/media/java/JUnit-Rules이란/image_4.png)
 
 # 4. 결론
 

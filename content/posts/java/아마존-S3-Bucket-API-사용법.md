@@ -52,7 +52,7 @@ AWS SDK를 사용하려면, 아래 3가지는 완료해야 코드상에서 S3에
 - AWS 보안 자격 증명 (코딩시 이게 필요하다)
   - S3에 접속하려면, 액세스 키 ID와 보안 액세스 키가 필요하다
   - 코드에서 사용할 [보안 자격 증명](https://console.aws.amazon.com/iam/home?#/security_credential) 사이트에 접속하여 아래와 같이 얻어온다
-![](images/아마존-S3-Bucket-API-사용법/3E72205C-4CFE-4901-861A-8DE447229FC3.png)
+![](/media/java/아마존-S3-Bucket-API-사용법/3E72205C-4CFE-4901-861A-8DE447229FC3.png)
 
 - AWS 지역 선택하기 
   - 지역마다 S3 가격이 다르기 때문에 가장 가까운 지역을 선택하는것이 좋다
