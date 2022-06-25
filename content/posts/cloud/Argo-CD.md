@@ -1,12 +1,8 @@
 ---
-title: 'Argo CD'
-layout: post
-category: 'cloud'
-author: [Frank Oh]
-image: ../img/cover-argo.jpg
-date: '2022-03-04T22:30:23.000Z'
-draft: false
-tags: ["argo", "argocd", "events", "workflow", "cloud", "kubernetes", "docker", "devops", "gitops"]
+title: Argo CD
+date: 2022-03-04
+social_image: '/media/cover/cover-argo.jpg'
+tags: [argo, argocd, events, workflow, devops]
 ---
 
 > 본 내용은 사내 CNCF 스터디 발표자료입니다. 발표형식은 아래 참고 형식에 따라서 5하원칙으로 정리하였습니다. 
@@ -20,7 +16,7 @@ Argo Projects 그전 발표내용은 [여기](https://blog.advenoh.pe.kr/cloud/A
 
 Argo CD는 GitOps 기반의 CD 도구이고 다음과 같은 여러 기능을 제공하고 있다
 
-![argo-cd-ui](images/Argo-CD/argo-cd-ui.png)
+![argo-cd-ui](/media/cloud/Argo-CD/argo-cd-ui.png)
 
 ## Feature
 
@@ -38,7 +34,7 @@ Argo CD는 GitOps 기반의 CD 도구이고 다음과 같은 여러 기능을 �
 
 ## Architecture
 
-![image-20220305010552026](images/Argo-CD/image-20220305010552026.png)
+![image-20220305010552026](/media/cloud/Argo-CD/image-20220305010552026.png)
 
 Argo CD는 **3가지 컨포넌트**로 이루어져 있다. Argo CD가 하는 역할은 다음과 같다. 
 
@@ -118,7 +114,7 @@ $ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/
 $ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-![image-20220306144129359](images/Argo-CD/image-20220306144129359.png)
+![image-20220306144129359](/media/cloud/Argo-CD/image-20220306144129359.png)
 
 admin 계정의 초기 암호는 자동으로 생성되어 `argocd-initial-admin-secret` 시크린에서 base64 값으로 저장되어 있다. `kubectl` 명령어 사용하여 간단하게 암호를 확인한다.
 
@@ -223,7 +219,7 @@ FATA[0000] Operation has completed with phase: Failed
 
 Application 배포시 원하는 namespace를 자동으로 생성해주는 옵션도 존재를 한다. App Details 에서 Auto-Create Namespace 옵션을 클릭해서 저장후 Sync하면 argotest namespace에 k8s object 들이 생성된 것을 확인할 수 있다. 
 
-![image-20220306153543079](images/Argo-CD/image-20220306153543079.png)
+![image-20220306153543079](/media/cloud/Argo-CD/image-20220306153543079.png)
 
 ### 2.2 Web UI에서 생성하기
 
@@ -296,7 +292,7 @@ spec:
 
 Argo CD는 Git 저장소를 실시간으로 모니터링하지 않고 주기적으로 확인하기 때문에 UI 상에서는 바로  OutOfSync를 표시해주지 않는다. 바로 확인해고 싶은 경우 Refresh 버튼을 클릭하면 된다. Sync 버튼을 클릭하면 동기화 시킬 수 있다. 
 
-![image-20220306155528310](images/Argo-CD/image-20220306155528310.png)
+![image-20220306155528310](/media/cloud/Argo-CD/image-20220306155528310.png)
 
 # FAQ
 
@@ -349,7 +345,7 @@ App과 config는 용도와 생명 주기가 다르기 때문에 Git 저장소를
   - Git을 통해 개발자에게 익숙한 방식으로 인프라 또는 어플리케이션의 선언적인 설정파일을 관리하고 배포하는 일련의 프로세스이다
 
 
-![gitops_flow](/Users/user/IdeaProjects/blog.advenoh.pe.kr/src/content/cloud/images/Argo-CD/gitops_flow.png)
+![gitops_flow](/media/cloud/Argo-CD/gitops_flow.png)
 
 ### 참고
 

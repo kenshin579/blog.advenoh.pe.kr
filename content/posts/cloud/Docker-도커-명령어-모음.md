@@ -1,12 +1,8 @@
 ---
-title: '[Docker-1] Docker 도커 명령어 모음'
-layout: post
-category: 'cloud'
-author: [Frank Oh]
-tags: ["docker", "virtualization", "cloud", "command", "container", "도커", "컨테이너", "가상화", "명령어"]
-image: ../img/cover-docker.png
-date: '2019-12-08T21:11:20.000Z'
-draft: false
+title: (Docker-1) Docker 도커 명령어 모음
+tags: [도커, 컨테이너, 가상화, 명령어]
+image: '/media/cover/cover-docker.png'
+date: 2019-12-08
 ---
 
 #1. 들어가며
@@ -286,7 +282,7 @@ latest: digest: sha256:7906b00f23cc5eb44dcedcc2d0fe39e2a7253c3f2373b88f661cb7aa2
 
 ```
 
-![image-20191206084635232](images/Docker-도커-명령어-모음/image1.png)
+![image-20191206084635232](/media/cloud/Docker-도커-명령어-모음/image1.png)
 
 ## 2.3 도커 컨테이너 다루기
 
@@ -545,4 +541,4 @@ CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   
 - 축약 명령어
   - https://www.slipp.net/wiki/pages/viewpage.action?pageId=41583363
 - 책 : 도커, 쿠버네티스를 활용한 컨테이너 개발 실전 입문
-  - ![도커책](images/Docker-도커-명령어-모음/image2.jpg)
+  - ![도커책](../../../static/media/cloud/Docker-도커-명령어-모음/image2.jpg)

@@ -1,12 +1,8 @@
 ---
-title: 'Argo Projects'
-layout: post
-category: 'cloud'
-author: [Frank Oh]
-image: ../img/cover-argo.jpg
-date: '2022-03-04T22:30:23.000Z'
-draft: false
-tags: ["argo", "argocd", "events", "workflow", "cloud", "kubernetes", "docker", "devops", "gitops"]
+title: Argo Projects
+social_image: '/media/cover/cover-argo.jpg'
+date: 2022-03-04
+tags: [argo, argocd, events, workflow, cloud]
 ---
 
 > 본 내용은 사내 CNCF 스터디 발표자료입니다. 발표형식은 아래 참고 형식에 따라서 5하원칙으로 정리하였습니다. 

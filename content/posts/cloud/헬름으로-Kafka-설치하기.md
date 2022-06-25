@@ -3,8 +3,8 @@ title: '헬름으로 Kafka 설치하기'
 layout: post
 category: 'cloud'
 author: [Frank Oh]
-tags: ["kafka", "kubernetes", "docker", "helm", "bitnami", "카프카", "쿠버네티스", "헬름", "차트"]
-image: ../img/cover-kafka-helm.jpg
+tags: [kafka, kubernetes, docker, helm, bitnami, 카프카, 쿠버네티스, 헬름, 차트]
+image: '/media/cover/cover-kafka-helm.jpg'
 date: '2021-07-18T11:11:20.000Z'
 draft: false
 ---
@@ -117,7 +117,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 
 테스트해보았던 화면으로 마무리하겠습니다. 오늘도 수고하셨습니다 :)
 
-![image-20210718110524](images/헬름으로-Kafka-설치하기/image-20210718110524.png)
+![image-20210718110524](/media/cloud/헬름으로-Kafka-설치하기/image-20210718110524.png)
 
 # 5. 참고
 

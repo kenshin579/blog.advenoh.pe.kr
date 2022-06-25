@@ -1,12 +1,8 @@
 ---
 title: 'kafkacat 사용방법 (메시지 보내고 받기 테스트)'
-layout: post
-category: 'cloud'
-author: [Frank Oh]
-tags: ["kafka", "kafkacat", "broker", "message", "producer", "consumer", "apache", "카프카", "브로커", "메시지", "아파치"]
-image: ../img/cover-kafka-helm.jpg
-date: '2021-07-20T11:11:20.000Z'
-draft: false
+tags: [kafka, kafkacat, 카프카, 브로커, 메시지, 아파치]
+image: '/media/cover/cover-kafka-helm.jpg'
+date: 2021-07-20
 ---
 
 `kafkacat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kafkacat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방밥에 대해서 알아보자. 카프카 설치는 [헬름으로 Kafka 설치](https://blog.advenoh.pe.kr/cloud/%ED%97%AC%EB%A6%84%EC%9C%BC%EB%A1%9C-Kafka-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)를 참고해주세요. 
