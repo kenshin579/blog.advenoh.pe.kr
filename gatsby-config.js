@@ -7,7 +7,7 @@ module.exports = {
     },
     openGraphImage: `assets/avatars/frank.jpg`,
     description: `Frank's Blog`,
-    siteUrl: `https://gatsbyglass.netlify.app`,
+    siteUrl: `https://blog.advenoh.pe.kr/`,
     social: {
       twitter: `yinkakun`,
     },
@@ -17,11 +17,11 @@ module.exports = {
         url: 'https://github.com/kenshin579',
       },
       {
-        name: 'twitter',
-        url: 'https://twitter.com',
+        name: '@frank.coffeetime',
+        url: 'https://www.instagram.com/frank.coffeetime',
       },
       {
-        name: 'instagram',
+        name: '@frank.photosnap',
         url: 'https://www.instagram.com/frank.photosnap',
       },
     ],

@@ -3,7 +3,7 @@
   "private": true,
   "description": "A minimal & beautiful gatsby personal blog starter with a nice glassmorphism UI.",
   "version": "1.0.0",
-  "author": "Yinka Adedire <yinkakun@gmail.com>",
+  "author": "Frank Oh <kenshin579@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/yinkakun/gatsby-starter-glass#readme",
+  "homepage": "https://blog.advenoh.pe.kr/",
   "keywords": [
     "gatsby",
     "netlify cms"
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yinkakun/gatsby-starter-glass.git"
+    "url": "git+https://github.com/kenshin579/blog.advenoh.pe.kr"
   },
   "scripts": {
     "build": "gatsby build",
