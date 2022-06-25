@@ -1,5 +1,5 @@
 ---
-title: Argo Projects
+title: 'Argo Projects'
 social_image: '/media/cover/cover-argo.jpg'
 date: 2022-03-04
 tags: [argo, argocd, events, workflow, cloud]

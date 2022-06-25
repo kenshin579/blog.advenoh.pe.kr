@@ -1,5 +1,5 @@
 ---
-title: Algorithm 정수값에서 1이 설정된 bit를 카운트하기
+title: 'Algorithm 정수값에서 1이 설정된 bit를 카운트하기'
 tags: [알고리즘, 인터뷰, 면접, 코드면접, 비트, 카운트]
 social_image: '/media/cover/cover-algorithm.jpg'
 date: 2018-10-28
