@@ -1,5 +1,5 @@
 ---
-title: 'Q&A : JPA 관련 질문 모음'
+title: 'Q&A JPA 관련 질문 모음'
 tags : [Q&A, faq, jpa, mysql, database, db]
 social_image: /media/cover/cover-faq.png
 date: 2019-10-21

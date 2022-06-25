@@ -1,6 +1,6 @@
 ---
-title: 'Q&A : Mybatis 관련 질문 모음'
-tags: [Q&A, faq, mybatis, db, database, mysql, sql]
+title: 'Q&A Mybatis 관련 질문 모음'
+tags: [Q&A, faq, mybatis, db, mysql, sql]
 social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---

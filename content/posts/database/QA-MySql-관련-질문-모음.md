@@ -1,6 +1,6 @@
 ---
-title: 'Q&A : MySql 관련 질문 모음'
-tags : ["Q&A, faq, mysql, database, db, slow query]
+title: 'Q&A MySql 관련 질문 모음'
+tags : ["Q&A, faq, mysql, db, slow query]
 social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---

@@ -1,6 +1,6 @@
 ---
-title: 'Q&A : JavaScript 관련 질문 모음'
-tags : ["Q&A, faq, javascript, defaultProps, es6]
+title: 'Q&A JavaScript 관련 질문 모음'
+tags : [Q&A, faq, javascript, defaultProps, es6]
 social_image: /media/cover/cover-javascript.jpg
 date: 2018-03-23
 ---
@@ -17,7 +17,7 @@ date: 2018-03-23
 ES6체 추가된 새로운 문자열 표기법으로 템플릿 리터럴(Template Literal)이라고 합니다.
 템플릿 리터럴은 \ 문자 사용없이 문자열에서 줄바꿈도 허용하고 간단하게 \${…} 문자열 인터폴레이션 표현식을 통해서 변수의 값 바로 치환되어 쉽게 사용할 수 있습니다.
 
-![](images/QA-JavaScript-관련-질문-모음/image_3.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_3.png)
 
 참고
 
@@ -29,12 +29,12 @@ ES6체 추가된 새로운 문자열 표기법으로 템플릿 리터럴(Templat
 const와 let의 키워드는 ES6에 도입된 키워드입니다.
 
 - var \* scope가 함수 단위로 동작한다
-![](images/QA-JavaScript-관련-질문-모음/image_5.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_5.png)
 
 - const
   - scope가 블록 단위이다
   - 값이 바뀌지 않는 때 사용한다
-![](images/QA-JavaScript-관련-질문-모음/image_4.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_4.png)
 
 - let
   - scope가 블록 단위이다
@@ -48,7 +48,7 @@ const와 let의 키워드는 ES6에 도입된 키워드입니다.
 
 ES6에서 람다식 문법이 추가되었습니다. () => ({}) 표현식은 function() { return { } }와 동일합니다.
 
-![](images/QA-JavaScript-관련-질문-모음/image_7.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_7.png)
 
 참고
 
@@ -56,20 +56,20 @@ ES6에서 람다식 문법이 추가되었습니다. () => ({}) 표현식은 fun
 
 ### <span style="color:brown">4. …은 뭔가?
 
-![](images/QA-JavaScript-관련-질문-모음/7387AE5C-6B59-4AD8-8546-AA42E65E9734.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/7387AE5C-6B59-4AD8-8546-AA42E65E9734.png)
 
 ES6에 추가된 문법으로 Spread나 Rest Parameter로 사용할 수 있습니다.
 
 - Spread operator
   - iterable가능한 배열, 객체, 스트링에 대해서 단일 요소들로 확장해준다
   - ex.
-![](images/QA-JavaScript-관련-질문-모음/image_6.png)
-![](images/QA-JavaScript-관련-질문-모음/image_1.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_6.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_1.png)
 
 - Rest Parameter
   - 모든 요소를 배열로 만들어준다
   - Rest Parameter는 맨 마지막 인자여야 한다
-![](images/QA-JavaScript-관련-질문-모음/image_2.png)
+![](/media/javascript/QA-JavaScript-관련-질문-모음/image_2.png)
 
 참고
 
