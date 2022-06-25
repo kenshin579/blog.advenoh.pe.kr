@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : JPA 관련 질문 모음'
 tags : ["Q&A, faq, jpa, mysql, database, db]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2019-10-21
 ---
 
@@ -14,7 +14,7 @@ date: 2019-10-21
 
 ### <span style="color:brown">1. @EntityListeners 이란?</span>
 
-![](images/QA-JPA-관련-질문-모음/image_12.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_12.png)
 
 엔티티를 DB에 적용하기 전후로 Custom 콜백을 요청할 수 있는 어노테이션입니다.
 
@@ -36,7 +36,7 @@ persistence.xml 파일에서 hibernate 설정에 hiberate.hbm2ddl.auto 속성을
 	* create : 매번 실행할 때마다 table을 삭제하고 다시 생성한다
 	* update : 테이블 없는 경우에는 테이블을 생성한다
 
-![](images/QA-JPA-관련-질문-모음/13622F05-65DF-4173-81A0-4E974021B413.png)
+![](/media/database/QA-JPA-관련-질문-모음/13622F05-65DF-4173-81A0-4E974021B413.png)
 
 ### <span style="color:brown">4. JPA에서 객체를 수정하면 기본으로 모든 필드 값을 포함해서 UPDATE SQL 문구가 생성되는데, 수정한 속성만 업데이트하려면 어떻게 설정을 해야 하나?</span>
 
@@ -46,7 +46,7 @@ persistence.xml 파일에서 hibernate 설정에 hiberate.hbm2ddl.auto 속성을
 
 ### <span style="color:brown">5. @Transactional</span>
 
-![](images/QA-JPA-관련-질문-모음/image_6.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_6.png)
 
 클래스나 메서드에 어노테이션을 선언하면 외부에서 클래스의 메서드를 호출 할때 트랜잭션을 시작하고 메서드 실행이 끝나면 트랜잭션을 커밋해주는 어노테이션입니다.
 
@@ -64,12 +64,12 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 
 아래 예를 보면 MediaInfoLive 엔티티의 movieRatioTp 필드에 @Convert 어노테이션을 적용해서 DB에 저장되기 직전에 LiveMovieRatioConvertor 클래스가 동작하도록 선언하였습니다. 필드뿐만이 아니라 클래스나 글로벌하게도 적용 가능합니다.
 
-![](images/QA-JPA-관련-질문-모음/image_4.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_4.png)
 
 * convertToDatabaseColumn() : 조금 더 작성이 필요함
 * convertToEntityAttributes() : 조금 더 작성이 필요함
 
-![](images/QA-JPA-관련-질문-모음/image_8.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_8.png)
 
 ### <span style="color:brown">7. findOne이 호출이 안될 때가 있는 것 같은데 왜 그런가?</span>
 
@@ -87,25 +87,25 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 #### -  @Modifying란
   - DML (삭제, 수정)인 경우에는 @Modifying 어노테이션을 추가해야 함. 하지않으면 Not Supported for DML operation 오류가 발생함
 
-![](images/QA-JPA-관련-질문-모음/image_10.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_10.png)
 
 * [https://winmargo.tistory.com/208](https://winmargo.tistory.com/208)
 * [https://www.baeldung.com/spring-data-jpa-modifying-annotation](https://www.baeldung.com/spring-data-jpa-modifying-annotation)
 
 #### -  @Param란?
 
-![](images/QA-JPA-관련-질문-모음/image_1.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_1.png)
 
   - 이름기반 파라미터를 바인디할 때 사용하는 어노테이션임?
 
-![](images/QA-JPA-관련-질문-모음/image_3.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_3.png)
 
 #### -  객체의 연관관계를 매핑하려면 객체에서 양쪽 방향을 모두 관리해야 함… 왜 그런가?
   - 객체의 양방향 연관관계는 양쪽 모든 관계를 맺어줘야 하는데 왜 그런가?
   - 연관관계 편의 메서드…
 
 #### -  @NotFound(action = NotFoundAction.IGNORE)은 언제 사용하나?
-![](images/QA-JPA-관련-질문-모음/image_9.png)
+![](/media/database/QA-JPA-관련-질문-모음/image_9.png)
 
 참고
 
@@ -118,7 +118,7 @@ JPA에서 convertor를 사용해서 엔티티의 데이터를 변환해서 DB에
 
 비식별자 연관관계 일때 사용한다. 아래 예제어서는 media_info_live 테이블에서 live_seqno(PK) 대신 media_seqno로 join하기 위해서 추가했다. 
 
-![image-20191217123403273](images/QA-JPA-관련-질문-모음/image_13.png)
+![image-20191217123403273](/media/database/QA-JPA-관련-질문-모음/image_13.png)
 
 참고
 

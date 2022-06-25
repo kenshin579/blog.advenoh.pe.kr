@@ -1,6 +1,6 @@
 ---
 title: '[JPA-3] JPA N+1 문제 및 해결방법'
-tags: [database, db, spring, springboot, jpa, N1, fetch, batchsize, 페치조인, 배치사이즈", 데이터베이스, 스프링, 스프링부트]
+tags: [jpa, N1, fetch, batchsize, 페치조인, 배치사이즈, 데이터베이스, 스프링, 스프링부트]
 date: 2019-12-10
 ---
 
@@ -24,7 +24,7 @@ JPA에서 N+1 발생 시 성능에 큰 영향을 줄 수 있기 때문에 JPA로
 
 `Post`와 `Comment` 엔티티는 다음과 같습니다. 
 
-![image-20191215150143801](images/JPA-N1-문제-해결방법/image_1.png)
+![image-20191215150143801](/media/database/JPA-N1-문제-해결방법/image_1.png)
 
 ## 3.1 N+1 문제 발생 케이스
 
@@ -316,4 +316,4 @@ Batch 사이즈 지정으로 해결하는 방법은 글로벌 패치 전략을 �
   - https://lng1982.tistory.com/298
   - https://tech.wheejuni.com/2018/06/16/jpa-cartesian/
 - 책 : 자바 ORM 표준 JPA 프로그래맹
-  - <a href="http://www.yes24.com/Product/Goods/19040233?scode=032&OzSrank=2">![](images/JPA-N1-문제-해결방법/jpa_book1.jpg)</a>
+  - <a href="http://www.yes24.com/Product/Goods/19040233?scode=032&OzSrank=2">![](/media/database/JPA-N1-문제-해결방법/jpa_book1.jpg)</a>

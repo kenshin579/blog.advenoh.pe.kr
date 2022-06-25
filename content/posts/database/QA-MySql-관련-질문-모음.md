@@ -1,7 +1,7 @@
 ---
 title: 'Q&A : MySql 관련 질문 모음'
 tags : ["Q&A, faq, mysql, database, db, slow query]
-image: ../img/cover-faq.png
+social_image: /media/cover/cover-faq.png
 date: 2018-07-29
 ---
 
@@ -14,11 +14,11 @@ date: 2018-07-29
 
 ### <span style="color:brown">1. 테이블 생성시 InnoDB를 왜 설정해야 하나?</span>
 
-![](images/QA-MySql-관련-질문-모음/image_11.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_11.png)
 
 MySQL의 Storage Engine에는 여러 가지가 존재합니다. 제일 많이 사용되는 버전은 MyISAM와 InnoDB입니다. 테이블 생성시 어떤 엔진을 사용할 지 설정할 수 있습니다.
 
-![](images/QA-MySql-관련-질문-모음/image_4.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_4.png)
 
 참고
 * MyISAM vs. InnoDB
@@ -32,7 +32,7 @@ MySQL의 Storage Engine에는 여러 가지가 존재합니다. 제일 많이 �
 mysql> show variables like 'auto_inc%’;
 ```
 
-![](images/QA-MySql-관련-질문-모음/image_6.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_6.png)
 
 참고
 * [https://dba.stackexchange.com/questions/60295/why-does-auto-increment-jumps-by-more-than-the-number-of-rows-inserted](https://dba.stackexchange.com/questions/60295/why-does-auto-increment-jumps-by-more-than-the-number-of-rows-inserted)
@@ -40,7 +40,7 @@ mysql> show variables like 'auto_inc%’;
 
 ### <span style="color:brown">3. Sql 문구에서 가끔씩 '@변수 := …’ 를 발견했다. 무슨 의미일까? </span>
 
-![](images/QA-MySql-관련-질문-모음/image_7.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_7.png)
 
 사용자 정의 변수를 저장할 때 사용합니다. 이 경우에는 SELECT로 구한 media_no 값을 mediaNo 변수에 저장합니다.
 
@@ -66,7 +66,7 @@ mysql> show variables like 'auto_inc%’;
 
 IFNULL(expression, alt_value) 형식으로 expressoin이 NULL이면 alt_value를 반환합니다.
 
-![](images/QA-MySql-관련-질문-모음/image_2.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_2.png)
 
 참고
 * [https://www.w3schools.com/sql/func_mysql_ifnull.asp](https://www.w3schools.com/sql/func_mysql_ifnull.asp)
@@ -94,7 +94,7 @@ WHERE trans_seqno IN (SELECT trans_seqno FROM media_external_trans as t where t.
 
 해결
 
-![](images/QA-MySql-관련-질문-모음/image_9.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_9.png)
 
 참고
 
@@ -144,7 +144,7 @@ Slow Query란 말 그래도 query 수행시 오래 걸리는 쿼리를 의미합
 
 여러 사항에 따라서 해결 방법이 다를 것으로 판단됩니다. 저희 경우에는 pom.xml에서 mysql-connector-java의 버전(ex. 8.0.13 —> 5.1.47)을 변경해서 해결했습니다.
 
-![](images/QA-MySql-관련-질문-모음/image_10.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_10.png)
 
 참고
 * [https://offbyone.tistory.com/318](https://offbyone.tistory.com/318)
@@ -160,7 +160,7 @@ Slow Query란 말 그래도 query 수행시 오래 걸리는 쿼리를 의미합
 
 ### <span style="color:brown">13. 변수에 지정한 값 출력을 어떻게 하나?</span>
 
-![](images/QA-MySql-관련-질문-모음/image_3.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_3.png)
 
 SELECT @lastMediaNo로 실행하면 됩니다.
 
@@ -195,11 +195,11 @@ INSERT INTO tmon_media.media_info_live SELECT * FROM tmon_media.bak_media_info_l
 
 #### - group_concat이란?
 
-![](images/QA-MySql-관련-질문-모음/image_5.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_5.png)
 
-![](images/QA-MySql-관련-질문-모음/image_1.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_1.png)
 
-![](images/QA-MySql-관련-질문-모음/image_8.png)
+![](/media/database/QA-MySql-관련-질문-모음/image_8.png)
 
 참고
 

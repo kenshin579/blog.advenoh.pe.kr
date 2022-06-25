@@ -1,6 +1,6 @@
 ---
 title: '[JPA-4] JPA 일대일(1:1) @One-To-One 연관관계'
-tags: [database, jpa, db, spring, springboot, persistence, OneToOne, mapping, 데이터베이스, 스프링, 스프링부트, 연관관계, 단방향, 양방향, 일대일]
+tags: [database, jpa, OneToOne, 데이터베이스, 스프링, 스프링부트, 연관관계, 단방향, 양방향, 일대일]
 date: 2019-12-27
 ---
 
@@ -36,13 +36,13 @@ date: 2019-12-27
   - 외래 키(phone_id)가 있는 경우
 - 대상 테이블 : `CelluarPhone`
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_1.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_1.png" style="zoom:50%;" />
 
 ### 3.1.1 일대일 단방향
 
 일대일 단방향으로 설정해보겠습니다. 주 객체인 `User` 엔티티에 @OneToOne 선언 이후 대상 테이블인 `CellularPhone` 객체를 선언합니다. `User` 객체를 통해서 사용자의 핸드폰 정보를 조회할 수 있는 구조입니다. 
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_2.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_2.png" style="zoom:50%;" />
 
 ```java
 @Table(name = "user")
@@ -113,7 +113,7 @@ public void save_user_phone() {
 
 이제 양반향으로 설정해볼까요? `CellularPhone` 객체에도 `User` 객체를 가지도록 합니다.
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_4.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_4.png" style="zoom:50%;" />
 
 `CellularPhone` 엔티티에 추가로 @OneToOne 어노테이션을 선언합니다. 그리고 양방향이므로 `mappedBy` 속성으로 연관 관계의 주인을 지정해줍니다. `user` 테이블에 외래 키를 가지고 있음으로 `User`의 `cellularPhone`을 연관관계 주인으로 설정합니다. 
 
@@ -198,17 +198,17 @@ public void save_user_phone() {
 - 대상 테이블 : `CellularPhone`
   - 외래 키(user_id)가 있는 경우
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_5.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_5.png" style="zoom:50%;" />
 
 ### 3.2.1 일대일 단방향
 
 외래 키는 `cellular_phone` 테이블에 있고 아래와 같은 일대일 연관관계는 JPA에서 지원하지 않아 매핑할 수 없습니다. 
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_2.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_2.png" style="zoom:50%;" />
 
 ### 3.2.2 일대일 양반향
 
-<img src="images/JPA-일대일-One-To-One-연관관계/image_4.png" style="zoom:50%;" />
+<img src="/media/database/JPA-일대일-One-To-One-연관관계/image_4.png" style="zoom:50%;" />
 
 
 
@@ -255,4 +255,4 @@ public class User extends DateAudit {
 	* [https://riptutorial.com/ko/jpa/example/22229/%EC%A7%81%EC%9B%90%EA%B3%BC-%EC%B1%85%EC%83%81-%EA%B0%84%EC%9D%98-%EC%9D%BC%EB%8C%80%EC%9D%BC-%EA%B4%80%EA%B3%84](https://riptutorial.com/ko/jpa/example/22229/직원과-책상-간의-일대일-관계)
 	* [https://www.popit.kr/spring-boot-jpa-step-08-onetoone-%EA%B4%80%EA%B3%84-%EC%84%A4%EC%A0%95-%ED%8C%81/](https://www.popit.kr/spring-boot-jpa-step-08-onetoone-관계-설정-팁/)
 * 책 : 자바 ORM 표준 JPA 프로그래밍
-	* <a href="http://www.yes24.com/Product/Goods/19040233?	scode=032&OzSrank=2">![](images/JPA-일대일-One-To-One-연관관계/jpa_book1.jpg)</a>
+	* <a href="http://www.yes24.com/Product/Goods/19040233?	scode=032&OzSrank=2">![](/media/database/JPA-일대일-One-To-One-연관관계/jpa_book1.jpg)</a>

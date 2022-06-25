@@ -1,6 +1,6 @@
 ---
 title: '[JPA-2] JPA 다대일(N:1)+일대다(1:N) @ManyToOne, @OneToMany 연관관계'
-tags: [database, jpa, db", spring, springboot, persistence, ManyToOne, OneToMany", mapping, unidirectional, bidirectional", "데이터베이스", "스프링", "스프링부트", 연관관계", "단방향", "양방향", "다대일", "일대다]
+tags: [jpa, ManyToOne, OneToMany, 단방향, 양방향, 다대일, 일대다]
 date: 2019-12-06
 ---
 
@@ -14,7 +14,7 @@ JPA 연관관계 매핑에 대한 내용은 [JPA 연관관계 매핑 정리](htt
 >   - 양방향 관계에서는 다쪽이 연관관계의 주인이 된다
 >
 
-<img src="images/JPA-다대일-Many-To-One-연관관계/image1.png" style="zoom:50%;" />
+<img src="/media/database/JPA-다대일-Many-To-One-연관관계/image1.png" style="zoom:50%;" />
 
 # 2. 개발 환경
 
@@ -36,7 +36,7 @@ JPA 연관관계 매핑에 대한 내용은 [JPA 연관관계 매핑 정리](htt
 
 Post와 Comment 코드를 보면서 알아보겠습니다. 
 
-![](images/JPA-다대일-Many-To-One-연관관계/image2.png)
+![](/media/database/JPA-다대일-Many-To-One-연관관계/image2.png)
 
 Post 엔티티에는 연관관계 관련 어노테이션은 없습니다. 
 
@@ -194,7 +194,7 @@ public class CommentRepositoryTest {
 
 다대일 양방향은 Post와 Comment 엔터티에 서로를 참조하는 필드가 존재합니다. 
 
-![image-20191208130659722](images/JPA-다대일-Many-To-One-연관관계/image3.png)
+![image-20191208130659722](/media/database/JPA-다대일-Many-To-One-연관관계/image3.png)
 
 Post와 Comment 코드를 보면서 양방향인 경우에는 코드가 어떻게 달라지는 지 알아보겠습니다. 
 
@@ -506,6 +506,6 @@ JPA 연관관계에서 가장 기본이 되는 다대일 관계에 대해서 알
 - H2 옵션
   - [https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html](https://www.h2database.com/javadoc/org/h2/engine/DbSettings.html)
 - 책 : 자바 ORM 표준 JPA 프로그래맹
-  - <a href="http://www.yes24.com/Product/Goods/19040233?scode=032&OzSrank=2">![](images/JPA-다대일-Many-To-One-연관관계/jpa_book1.jpg)</a>
+  - <a href="http://www.yes24.com/Product/Goods/19040233?scode=032&OzSrank=2">![](/media/database/JPA-다대일-Many-To-One-연관관계/jpa_book1.jpg)</a>
 - 책 : JPA 프로그래밍 입문
-  - <a href="http://www.yes24.com/Product/Goods/41787023?scode=029">![](images/JPA-다대일-Many-To-One-연관관계/jpa_book2.jpg)</a>
+  - <a href="http://www.yes24.com/Product/Goods/41787023?scode=029">![](/media/database/JPA-다대일-Many-To-One-연관관계/jpa_book2.jpg)</a>

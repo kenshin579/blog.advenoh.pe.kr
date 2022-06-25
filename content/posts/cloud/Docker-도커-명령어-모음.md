@@ -541,4 +541,4 @@ CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   
 - 축약 명령어
   - https://www.slipp.net/wiki/pages/viewpage.action?pageId=41583363
 - 책 : 도커, 쿠버네티스를 활용한 컨테이너 개발 실전 입문
-  - ![도커책](../../../static/media/cloud/Docker-도커-명령어-모음/image2.jpg)
+  - ![도커책](/media/cloud/Docker-도커-명령어-모음/image2.jpg)
