@@ -53,7 +53,7 @@ Maven + Java 프로젝트의 코드 커버리지를 확인할 수 있는 방법�
 
 Coveralls dependency 추가 시 Repo Token을 Coveralls 사이트에 확인하여 repoToken 태그에 넣어줘야 한다. 이 토큰 값으로 해당 프로젝트로 커버리지 결과가 업로드된다.
 
-<img src="/media/devlops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212162832132.png" alt="image-20201212162832132" style="zoom:50%;" />
+<img src="/media/devops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212162832132.png" alt="image-20201212162832132" style="zoom:50%;" />
 
 ```xml
 <plugin>
@@ -75,7 +75,7 @@ Coveralls dependency 추가 시 Repo Token을 Coveralls 사이트에 확인하�
 
 JDK 높은 버전(ex. 14)으로 실행하는 경우 javax/xml/bind/Datatype*Converter* 클래스를 찾지 못하는 오류가 발생할 수 있다. 클래스를 못 찾는 오류이어서 jaxb-api dependency를 추가하면 된다.
 
-![image-20201212112943558](/media/devlops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212112943558.png)
+![image-20201212112943558](/media/devops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212112943558.png)
 
 # 3. 실행
 
@@ -94,7 +94,7 @@ $ mvn clean test jacoco:report -DskipTests=false -Dmaven.test.failure.ignore=tru
 
 패키지별로 커버리지를 확인할 수 있다.
 
-![image-20201212163844309](/media/devlops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212163844309.png)
+![image-20201212163844309](/media/devops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212163844309.png)
 
 ## 3.2 Coveralls 에 커버리지 결과 업로드
 
@@ -106,11 +106,11 @@ $ mvn clean test jacoco:report coveralls:report -DskipTests=false -Dmaven.test.f
 
 성공적으로 업로드하면 완료된 job 링크로 확인할 수 있다.
 
-![image-20201212164531772](/media/devlops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212164531772.png)
+![image-20201212164531772](/media/devops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212164531772.png)
 
 app-quotes는 67%의 커버리지 가지고 있다. 프로젝트 개발할 때 생각보다 Unit Test에 많은 신경을 쓰지 못했던 것 같은데, 나쁘지 않은 듯하다. 
 
-![image-20201212164630635](/media/devlops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212164630635.png)
+![image-20201212164630635](/media/devops/Maven-JaCoCo-Coveralls-Travis-CI-자바-프로젝트-Coverage-생성하는-방법/image-20201212164630635.png)
 
 ## 3.3 Travis 빌드로 코드 커버리지 Coveralls로 업로드하기
 

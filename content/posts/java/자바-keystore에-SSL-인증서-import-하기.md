@@ -1,6 +1,6 @@
 ---
 title: '자바 keystore에 SSL 인증서 import 하기'
-tags : ["ssl, keystore, import, certificate, 인증서, 자바]
+tags : [ssl, keystore, import, certificate, 인증서, 자바]
 date: 2019-01-09
 ---
 
