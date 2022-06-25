@@ -1,205 +1,186 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands, @typescript-eslint/no-var-requires */
-const path = require('path');
-const _ = require('lodash');
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
+const toKebabCase = (str) => {
+  return str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map((x) => x.toLowerCase())
+    .join('-');
+};
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          nodes {
+            fields {
+              contentType
+              slug
+            }
+            frontmatter {
+              template
+            }
+          }
+        }
+        tagsGroup: allMarkdownRemark(
+          limit: 2000
+          filter: { fields: { contentType: { eq: "posts" } } }
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
+      }
+    `
+  );
+
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      result.errors
+    );
+    return;
+  }
+
+  const tags = result.data.tagsGroup.group;
+  const allMarkdownNodes = result.data.allMarkdownRemark.nodes;
+
+  const blogMarkdownNodes = allMarkdownNodes.filter(
+    (node) => node.fields.contentType === `posts`
+  );
+
+  const pageMarkdownNodes = allMarkdownNodes.filter(
+    (node) => node.fields.contentType === `pages`
+  );
+
+  if (blogMarkdownNodes.length > 0) {
+    blogMarkdownNodes.forEach((node, index) => {
+      let prevSlug = null;
+      let nextSlug = null;
+
+      if (index > 0) {
+        prevSlug = blogMarkdownNodes[index - 1].fields.slug;
+      }
+
+      if (index < blogMarkdownNodes.length - 1) {
+        nextSlug = blogMarkdownNodes[index + 1].fields.slug;
+      }
+
+      createPage({
+        path: `${node.fields.slug}`,
+        component: path.resolve(`./src/templates/post-template.js`),
+        context: {
+          slug: `${node.fields.slug}`,
+          prevSlug: prevSlug,
+          nextSlug: nextSlug,
+        },
+      });
+    });
+  }
+
+  if (pageMarkdownNodes.length > 0) {
+    pageMarkdownNodes.forEach((node) => {
+      if (node.frontmatter.template) {
+        const templateFile = `${String(node.frontmatter.template)}.js`;
+
+        createPage({
+          path: `${node.fields.slug}`,
+          component: path.resolve(`src/templates/${templateFile}`),
+          context: {
+            slug: `${node.fields.slug}`,
+          },
+        });
+      }
+    });
+  }
+
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${tag.fieldValue}/`,
+      component: path.resolve(`./src/templates/tags-template.js`),
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  // Sometimes, optional fields tend to get not picked up by the GraphQL
-  // interpreter if not a single content uses it. Therefore, we're putting them
-  // through `createNodeField` so that the fields still exist and GraphQL won't
-  // trip up. An empty string is still required in replacement to `null`.
-  // eslint-disable-next-line default-case
-  switch (node.internal.type) {
-    case 'MarkdownRemark': {
-      const { permalink, layout, primaryTag } = node.frontmatter;
-      const { relativePath } = getNode(node.parent);
+  if (node.internal.type === `MarkdownRemark`) {
+    const relativeFilePath = createFilePath({
+      node,
+      getNode,
+    });
 
-      let slug = permalink;
+    const fileNode = getNode(node.parent);
 
-      if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`;
-      }
+    createNodeField({
+      node,
+      name: `contentType`,
+      value: fileNode.sourceInstanceName,
+    });
 
-      // Used to generate URL to view this content.
+    if (fileNode.sourceInstanceName === 'posts') {
       createNodeField({
+        name: `slug`,
         node,
-        name: 'slug',
-        value: slug || '',
+        value: relativeFilePath,
       });
+    }
 
-      // Used to determine a page layout.
+    if (fileNode.sourceInstanceName === 'pages') {
       createNodeField({
+        name: `slug`,
         node,
-        name: 'layout',
-        value: layout || '',
-      });
-
-      createNodeField({
-        node,
-        name: 'primaryTag',
-        value: primaryTag || '',
+        value: relativeFilePath,
       });
     }
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
 
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        limit: 2000
-        sort: { fields: [frontmatter___date], order: ASC }
-        filter: { frontmatter: { draft: { ne: true } } }
-      ) {
-        edges {
-          node {
-            excerpt
-            timeToRead
-            frontmatter {
-              title
-              tags
-              date
-              draft
-              excerpt
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 3720) {
-                    aspectRatio
-                    base64
-                    sizes
-                    src
-                    srcSet
-                  }
-                }
-              }
-              author {
-                id
-                bio
-                avatar {
-                  children {
-                    ... on ImageSharp {
-                      fluid(quality: 100) {
-                        aspectRatio
-                        base64
-                        sizes
-                        src
-                        srcSet
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            fields {
-              layout
-              slug
-            }
-          }
-        }
-      }
-      allAuthorYaml {
-        edges {
-          node {
-            id
-          }
-        }
-      }
+  createTypes(`
+    type SiteSiteMetadata {
+      author: Author
+      siteUrl: String
+      social: Social
+    }
+
+    type Author {
+      name: String
+      summary: String
+    }
+
+    type Social {
+      twitter: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+    }
+
+    type Frontmatter {
+      title: String
+      description: String
+      date: Date @dateformat
+      template: String
+      tags: [String]
+    }
+
+    type Fields {
+      slug: String
+      contentType: String
     }
   `);
-
-  if (result.errors) {
-    console.error(result.errors);
-    throw new Error(result.errors);
-  }
-
-  // Create post pages
-  const posts = result.data.allMarkdownRemark.edges;
-
-  // Create paginated index
-  // TODO: new pagination
-  const postsPerPage = 1000;
-  const numPages = Math.ceil(posts.length / postsPerPage);
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? '/' : `/${i + 1}`,
-      component: path.resolve('./src/templates/index.tsx'),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    });
-  });
-
-  posts.forEach(({ node }, index) => {
-    const { slug, layout } = node.fields;
-    const prev = index === 0 ? null : posts[index - 1].node;
-    const next = index === posts.length - 1 ? null : posts[index + 1].node;
-
-    createPage({
-      path: slug,
-      // This will automatically resolve the template to a corresponding
-      // `layout` frontmatter in the Markdown.
-      //
-      // Feel free to set any `layout` as you'd like in the frontmatter, as
-      // long as the corresponding template file exists in src/templates.
-      // If no template is set, it will fall back to the default `post`
-      // template.
-      //
-      // Note that the template has to exist first, or else the build will fail.
-      component: path.resolve(`./src/templates/${layout || 'post'}.tsx`),
-      context: {
-        // Data passed to context is available in page queries as GraphQL variables.
-        slug,
-        prev,
-        next,
-        primaryTag: node.frontmatter.tags ? node.frontmatter.tags[0] : '',
-      },
-    });
-  });
-
-  // Create tag pages
-  const tagTemplate = path.resolve('./src/templates/tags.tsx');
-  const tags = _.uniq(
-    _.flatten(
-      result.data.allMarkdownRemark.edges.map(edge => {
-        return _.castArray(_.get(edge, 'node.frontmatter.tags', []));
-      }),
-    ),
-  );
-  tags.forEach(tag => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagTemplate,
-      context: {
-        tag,
-      },
-    });
-  });
-
-  // Create author pages
-  const authorTemplate = path.resolve('./src/templates/author.tsx');
-  result.data.allAuthorYaml.edges.forEach(edge => {
-    createPage({
-      path: `/author/${_.kebabCase(edge.node.id)}/`,
-      component: authorTemplate,
-      context: {
-        author: edge.node.id,
-      },
-    });
-  });
-};
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  // adds sourcemaps for tsx in dev mode
-  if (stage === 'develop' || stage === 'develop-html') {
-    actions.setWebpackConfig({
-      devtool: 'eval-source-map',
-    });
-  }
 };

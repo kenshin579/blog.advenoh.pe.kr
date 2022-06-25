@@ -1,74 +1,166 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const config = require('./SiteConfig');
-
 module.exports = {
   siteMetadata: {
-    title: config.siteTitle,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
-  },
-  mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
+    title: `Frank's Blog`,
+    author: {
+      name: `Frank Oh`,
+      summary: `Software Engineer`,
+    },
+    openGraphImage: `assets/avatars/frank.jpg`,
+    description: `Frank's Blog`,
+    siteUrl: `https://blog.advenoh.pe.kr/`,
+    social: {
+      twitter: `yinkakun`,
+    },
+    socialLinks: [
+      {
+        name: 'github',
+        url: 'https://github.com/kenshin579',
+      },
+      {
+        name: '@frank.coffeetime',
+        url: 'https://www.instagram.com/frank.coffeetime',
+      },
+      {
+        name: '@frank.photosnap',
+        url: 'https://www.instagram.com/frank.photosnap',
+      },
+    ],
   },
   plugins: [
-    'gatsby-plugin-sitemap',
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-sharp',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        defaultQuality: 100,
-        stripMetadata: true,
+        name: `media`,
+        path: `${__dirname}/static/media`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'content',
-        path: path.join(__dirname, 'src', 'content'),
+        name: 'pages',
+        path: `${__dirname}/content/pages`,
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-responsive-iframe',
+            resolve: `gatsby-remark-relative-images`,
             options: {
-              wrapperStyle: 'margin-bottom: 1rem',
+              staticFolderName: 'static',
             },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          'gatsby-remark-abbr',
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 2000,
-              quality: 100,
+              maxWidth: 630,
             },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/netlify-cms/index.js`,
+        enableIdentityWidget: true,
+        publicPath: 'admin',
+        htmlTitle: 'Content Manager',
+        includeRobots: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
           },
         ],
       },
     },
-    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-plugin-canonical-urls',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        siteUrl: config.siteUrl,
+        fonts: [`Source Sans Pro`, `Poppins\:400,400i,700`],
+        display: 'swap',
       },
     },
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-emotion',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-yaml',
-    'gatsby-plugin-feed',
     {
-      resolve: 'gatsby-plugin-postcss',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
+        name: `Gatsby Frosted Blog`,
+        short_name: `Gatsby Frosted`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 };
