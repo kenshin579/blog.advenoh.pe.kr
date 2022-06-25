@@ -23,7 +23,7 @@ $ brew instal nodejs
 $ npm -h
 ```
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_4.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_4.png)
 
 ## 2.2 package.json
 
@@ -35,7 +35,7 @@ npm의 init 명령어로 -y 옵션을 주어서 non-interactive 하게 기본 �
 $ npm init -y
 ```
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_2.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_2.png)
 
 아래는 [app-timer-pomodoro](https://github.com/kenshin579/app-timer-pomodoro) 의 package.json 파일입니다. 기본 값으로 설정한 것보다 더 많은 내용이 있지만, 쉽게 이해할 수 있는 수준입니다.
 
@@ -102,7 +102,7 @@ NPMJS 사이트에 계정이 없는 경우에는 [사이트](https://www.npmjs.c
 $ npm login
 ```
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_5.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_5.png)
 
 명령어로도 바로 계정을 생성할 수 있습니다.
 
@@ -120,13 +120,13 @@ npm-publish-test는 이미 존재하는 프로젝트이여서 package.json에서
 $ npm publish
 ```
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_1.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_1.png)
 
 이상 없이 배포되면 NPM 사이트에서도 바로 확인할 수 있습니다.
 
 [https://www.npmjs.com/package/ykoh-npm-publish-test](https://www.npmjs.com/package/ykoh-npm-publish-test)
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_3.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_3.png)
 
 ## 2.5 재배포
 
@@ -167,7 +167,7 @@ $ npm version patch
 $ npm unpublish
 ```
 
-![](images/Node-모듈-NPM-저장소에-배포하기/image_6.png)
+![](/media/node/Node-모듈-NPM-저장소에-배포하기/image_6.png)
 
 ## 2.7 기타 사항
 
