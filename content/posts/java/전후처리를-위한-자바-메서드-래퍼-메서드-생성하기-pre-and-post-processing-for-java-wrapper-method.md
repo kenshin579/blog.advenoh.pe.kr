@@ -1,6 +1,6 @@
 ---
 title: '전후처리를 위한 자바 메서드 래퍼 메서드 생성하기 - pre and post processing for java wrapper method'
-tags: [java, wrapper, prepost, 자바, 래퍼 메서드", 전후처리]
+tags: [java, wrapper, prepost, 자바, 래퍼 메서드, 전후처리]
 date: 2018-08-26
 ---
 
