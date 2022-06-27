@@ -1,6 +1,6 @@
 ---
 title: '자바 Garbage Collection이란'
-tags: [gc, garbage, java, garbage collection]
+tags: [gc, garbage, java, garbage, collection]
 date: 2018-10-17
 ---
 
