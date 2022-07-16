@@ -5,8 +5,10 @@ date: 2022-03-04
 tags: [argo, argocd, events, workflow, cloud]
 ---
 
-> 본 내용은 사내 CNCF 스터디 발표자료입니다. 발표형식은 아래 참고 형식에 따라서 5하원칙으로 정리하였습니다. 
-> 참고 : https://medium.com/@goinhacker/nats-a63fba865d6f
+> 본 내용은 저희 Platform Engineering 팀내 CNCF 스터디를 위해 준비한 자료입니다. 저희가 하는 로봇 플랫폼 개발에 관심이 있는 분들은 아래 링크를 참고해주시고 도전적이고 열정적으로 같이 일하실 분은 많이 지원해주세요.
+>
+> - 네이버는 왜 제2사옥 1784를 지었을 까요?  https://www.youtube.com/watch?v=WG7JHLfClEo
+> - 네이버 랩스 - https://www.naverlabs.com/
 
 # Argo Projects?
 
