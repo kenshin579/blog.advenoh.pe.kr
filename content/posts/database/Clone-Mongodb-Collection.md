@@ -50,7 +50,7 @@ db.inventory.aggregate([{ $match: {} }, { $out: "inventory3" }])
 # 참고
 
 - https://www.mongodbmanager.com/clone-mongodb-collection
-
 - https://www.mongodb.com/docs/manual/reference/operator/aggregation/out/
+- https://github.com/kenshin579/tutorials-go/blob/master/go-mongo/script/clone_collection.js
 
   
