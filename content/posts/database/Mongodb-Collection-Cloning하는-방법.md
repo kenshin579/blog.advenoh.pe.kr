@@ -17,11 +17,9 @@ db.inventory.insertMany([
 ])
 ```
 
-
-
 # 1.db.collection.find().forEach()
 
-find().forEach() 는 collection의 데이터를 하나씩 forEach로 돌면서 다른 inventory2로 삽입하는 방식이다. 하나씩 처리하기 때문에 느리다는 단점이 있다. 
+`find().forEach()` 는 collection의 데이터를 하나씩 `forEach`로 돌면서 다른 inventory2로 삽입하는 방식이다. 하나씩 처리하기 때문에 느리다는 단점이 있다. 
 
 ```javascript
 db.inventory.find().forEach(
@@ -32,7 +30,7 @@ db.inventory.find().forEach(
 
 # 2.db.collection.aggregate() 
 
-aggregate의 $out operator를 사용하면 조금 더 빠르게 clone이 가능하다. 
+`aggregate`의 `$out operator`를 사용하면 조금 더 빠르게 clone이 가능하다. 
 
 ### Syntax
 
