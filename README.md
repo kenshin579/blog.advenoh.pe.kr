@@ -23,7 +23,7 @@ Updated 2022-07-16
 * [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/cloud/헬름으로-Kafka-설치하기)
 
 ## Database
-* [Clone Mongodb Collection](https://blog.advenoh.pe.kr/database/Clone-Mongodb-Collection)
+* [Mongodb Collection Cloning하는 방법](https://blog.advenoh.pe.kr/database/Mongodb-Collection-Cloning하는-방법)
 * [Q&A JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-JPA-관련-질문-모음)
 * [Q&A MySql 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-MySql-관련-질문-모음)
 * [Q&A Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/database/QA-Mybatis-관련-질문-모음)
