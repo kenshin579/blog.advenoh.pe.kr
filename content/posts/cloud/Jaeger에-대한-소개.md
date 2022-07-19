@@ -2,7 +2,7 @@
 title: 'Jaeger에 대한 소개'
 date: 2022-07-16
 social_image: '/media/cover/cover-jaeger.png'
-tags: [jaeger, opentelemetry, otlp, trace, monitoring, msa, 분산추척]
+tags: [jaeger, telemetry, trace, monitor, msa, 분산추적]
 ---
 
 > 본 내용은 저희 Platform Engineering 팀내 CNCF 스터디를 위해 준비한 자료입니다. 저희가 하는 로봇 플랫폼 개발에 관심이 있는 분들은 아래 링크를 참고해주시고 도전적이고 열정적으로 같이 일하실 분은 많이 지원해주세요. 
@@ -23,8 +23,7 @@ tags: [jaeger, opentelemetry, otlp, trace, monitoring, msa, 분산추척]
 
 
 
-![img](/media/cloud/Jaeger에-대한-소개/distributed_tracing.png)
-
+![img](/media/cloud/Jaeger/distributed-tracing.png)
 
 
 ### Distributed Tracing의 기본 아이디어
@@ -80,7 +79,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
 
 
 
-![image-20220718232202127](/media/cloud/Jaeger에-대한-소개/image-20220718232202127.png)
+![image-20220718232202127](/media/cloud/Jaeger/image-20220718232202127.png)
 
 
 
@@ -135,7 +134,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
   - Instrumentation library를 통해서 Span으로 생성함
 
 
-![OpenTracing](/media/cloud/Jaeger에-대한-소개/OpenTracing1.png)
+![OpenTracing](/media/cloud/Jaeger/OpenTracing1.png)
 
 # 2. Jaeger Tracing Architecture
 
@@ -161,7 +160,7 @@ Jaeger는 추적 데이터를 수집, 저장, 표시해주기 위해 여러 구�
 
 ## 2.1 Jaeger Architecture
 
-![Architecture](/media/cloud/Jaeger에-대한-소개/architecture-v1.png)
+![Architecture](/media/cloud/Jaeger/architecture-v1.png)
 
 
 
@@ -172,7 +171,7 @@ Jaeger는 추적 데이터를 수집, 저장, 표시해주기 위해 여러 구�
   - Ingester는 Kafka에서 데이터를 읽고 다른 스토리지에 쓰는 역할을 한다
 
 
-![Architecture](/media/cloud/Jaeger에-대한-소개/architecture-v2.png)
+![Architecture](/media/cloud/Jaeger/architecture-v2.png)
 
 
 
@@ -214,7 +213,7 @@ $ docker run -d -p6831:6831/udp -p16686:16686 jaegertracing/all-in-one:latest
 
 컨테이너가 실행된 후 Jaeger UI에 접속하려면 이 주소로 http://localhost:16686 접속한다. 
 
-![image-20220717103342529](/media/cloud/Jaeger에-대한-소개/image-20220717103342529.png)
+![image-20220717103342529](/media/cloud/Jaeger/image-20220717103342529.png)
 
 ### Hot R.O.D 샘플 프로그램 실행하기
 
@@ -230,7 +229,7 @@ $ go run ./main.go all
 
 all 옵션을 주면  HotROD의 모든 서비스를 한번에 실행할 수 있고 구동 후에는 http://127.0.0.1:8080로 접속한다. 
 
-![image-20220717103943745](/media/cloud/Jaeger에-대한-소개/image-20220717103943745.png)
+![image-20220717103943745](/media/cloud/Jaeger/image-20220717103943745.png)
 
 ## 3.2 Play around with Jaeger
 
@@ -240,11 +239,11 @@ HotROD에서 버튼을 클릭하여 라이드 요청하면, Jaeger에서 API에 
 
 - 이 화면에서는 컨포넌트를 전체 구성 요소를 한눈에 확인할 수 있다
 
-![image-20220717104614304](/media/cloud/Jaeger에-대한-소개/image-20220717104614304.png)
+![image-20220717104614304](/media/cloud/Jaeger/image-20220717104614304.png)
 
 에러가 발생한 경우 어느 서비스 구간에서 발생했는지 로그로 찾기는 쉽지 않다. 
 
-![image-20220717104917246](/media/cloud/Jaeger에-대한-소개/image-20220717104917246.png)
+![image-20220717104917246](/media/cloud/Jaeger/image-20220717104917246.png)
 
 
 
@@ -253,9 +252,9 @@ HotROD에서 버튼을 클릭하여 라이드 요청하면, Jaeger에서 API에 
 - 어느 구간에서 실패가 발생했는지 쉽게 찾을 수 있다
 - 여러 컨포넌트에서 어느 구간에서 bottleneck이 있는지도 쉽게 확인할 수 있다
 
-![image-20220717115919867](/media/cloud/Jaeger에-대한-소개/image-20220717115919867.png)
+![image-20220717115919867](/media/cloud/Jaeger/image-20220717115919867.png)
 
-![image-20220717115937277](/media/cloud/Jaeger에-대한-소개/image-20220717115937277.png)
+![image-20220717115937277](/media/cloud/Jaeger/image-20220717115937277.png)
 
 ## 3.2 OpenTelemetry를 사용한 샘플 코드 - MongoDB, Gin instrumentation 사용
 
