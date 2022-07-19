@@ -52,7 +52,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
   - OpenTracing + OpenCensus 프로젝트가 하나로 merge됨
   - 2019년에 CNCF Incubation 프로젝트로 채택됨
   - 프로젝트 성숙도는 아직 Incubating level에 있음
-  - 트레이스, 메트릭, 로그와 같은 원격 측정 데이터를 기기, 생성, 수집 및 내보내기 위한 공급 업체-중립 오픈 소스 관찰 프레임 워크이다
+  - Trace, metric, log 와 같은 원격 측정 데이터를 기기, 생성, 수집 및 내보내기 위한 공급 업체-중립 오픈 소스 관찰 프레임 워크이다
 
 
 ### Reference
