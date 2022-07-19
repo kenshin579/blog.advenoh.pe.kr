@@ -23,7 +23,7 @@ tags: [jaeger, opentelemetry, otlp, trace, monitoring, msa, 분산추척]
 
 
 
-![Distributed tracing](/media/cloud/Jaeger에-대한-소개/distributed-tracing-8154899.svg)
+![img](/media/cloud/Jaeger에-대한-소개/distributed_tracing.png)
 
 
 
