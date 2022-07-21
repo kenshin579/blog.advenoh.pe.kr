@@ -116,11 +116,9 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
   - Start/Finish Timestamp
   - Span Tags, Logs (key:value)
   - Span Context : 서비스에서 다른 서비스로 전달이 될 때 Trace에서 각 Span를 구별할 수 있는 추척 정보 (ex. Span id, Trace id)
-
 2.Trace
 - Trace는 시스템 전반에서 데이터/실행 경로를 나타낸다
 - 1개 이상의 Span으로 이루어져 있고 여러 개의 Span이 모여서 하나의 Trace를 완성하게 된다
-
 3.Instrumentation
 - Application(ex. DB)에 따라 여러 library를 오픈소스로 제공
 - Instrumentation library를 통해서 Span으로 생성함
