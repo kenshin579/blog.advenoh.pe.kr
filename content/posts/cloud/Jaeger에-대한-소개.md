@@ -1,6 +1,6 @@
 ---
 title: 'Jaeger에 대한 소개'
-date: 2022-07-16
+date: 2022-07-22
 social_image: '/media/cover/cover-jaeger.png'
 tags: [jaeger, telemetry, trace, monitor, msa, 분산추적]
 ---
@@ -23,7 +23,7 @@ tags: [jaeger, telemetry, trace, monitor, msa, 분산추적]
 
 
 
-![img](/media/cloud/Jaeger/distributed-tracing.png)
+![Distributed Tracing](/media/cloud/Jaeger/distributed-tracing.png)
 
 
 ### Distributed Tracing의 기본 아이디어
@@ -79,7 +79,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
 
 
 
-![image-20220718232202127](/media/cloud/Jaeger/image-20220718232202127.png)
+![Trace History](/media/cloud/Jaeger/image-20220718232202127.png)
 
 
 
@@ -93,7 +93,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
   - v1.35 이후, Jaeger 백엔드는 OpenTelemetry SDK로부터 trace data를 수신할 수 있음
 - Modern Web UI (React 개발)
 - Cloud Native Deployment
-  - Jaeger 백엔드 도커 이미지로 배포 가능하도로 지원
+  - Jaeger 백엔드 도커 이미지로 배포 가능하도록 지원
 - Zipkin과의 역호환성도 지원
 - Topology Graphs
   - Jaeger UI에서 2가지 타입의 서비스 그래프가 있음
@@ -109,27 +109,17 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
 ### 1.2.4 Tracing 용어와 친해지기
 
 - Span
-
   - 분산 추척에서는 가장 기본이 되는 블록 단위로 분산 시스템에서 실행되는 작업 단위를 나타낸다
     - ex. HTTP request, call to DB
   - Span은 다음과 같은 정보가 있다
     - Span Name (operation Name)
     - Start/Finish Timestamp
     - Span Tags, Logs (key:value)
-    - Span Context
-
+    - Span Context : 서비스에서 다른 서비스로 전달이 될 때 Trace에서 각 Span를 구별할 수 있는 추척 정보 (ex. Span id, Trace id)
 - Trace
-
   - Trace는 시스템 전반에서 데이터/실행 경로를 나타낸다
-
-  - 여러 개의 Span이 모여서 하나의 Trace를 완성하게 된다
-
-- Span Context
-
-  - 서비스에서 다른 서비스로 전달이 될 때 Trace에서 각 Span를 구별할 수 있는 추척 정보 (ex. Span id, Trace id)
-
+  - 1개 이상의 Span으로 이루어져 있고 여러 개의 Span이 모여서 하나의 Trace를 완성하게 된다
 - Instrumentation
-
   - Application(ex. DB)에 따라 여러 library를 오픈소스로 제공
   - Instrumentation library를 통해서 Span으로 생성함
 
@@ -144,24 +134,18 @@ Jaeger는 추적 데이터를 수집, 저장, 표시해주기 위해 여러 구�
   - Jaeger Client는 분산 추적을 위한 OpenTracing API의 언어별 구현체
   - 지금은 OpenTelemetry SDK를 사용
 - Jaeger Agent
-
   - 사용자 데이터그램 프로토콜 (UDP)을 통해 전송된 스팬을 수신하는 네트워크 데몬으로, 계측된 애플리케이션과 동일한 호스트에 배치됨
 - Jaeger Collector
-
   - 프로세싱을 위해 Span을 수신하여 대기열에 배치
-
 - Storage Backends
   - Trace를 저장할 수 있는 데이터 저장소
-
 - Jaeger Query
-
   - Query 서비스는 저장소에서 데이터를 가져와 UI에 필요한 API를 제공한다
 - Jaeger UI
 
 ## 2.1 Jaeger Architecture
 
 ![Architecture](/media/cloud/Jaeger/architecture-v1.png)
-
 
 
 ### 2.1.1 Jaeger Architecture w/ Kafka - Intermediate Buffer
@@ -213,7 +197,7 @@ $ docker run -d -p6831:6831/udp -p16686:16686 jaegertracing/all-in-one:latest
 
 컨테이너가 실행된 후 Jaeger UI에 접속하려면 이 주소로 http://localhost:16686 접속한다. 
 
-![image-20220717103342529](/media/cloud/Jaeger/image-20220717103342529.png)
+![Jaeger](/media/cloud/Jaeger/image-20220717103342529.png)
 
 ### Hot R.O.D 샘플 프로그램 실행하기
 
@@ -229,7 +213,7 @@ $ go run ./main.go all
 
 all 옵션을 주면  HotROD의 모든 서비스를 한번에 실행할 수 있고 구동 후에는 http://127.0.0.1:8080로 접속한다. 
 
-![image-20220717103943745](/media/cloud/Jaeger/image-20220717103943745.png)
+![Jaeger](/media/cloud/Jaeger/image-20220717103943745.png)
 
 ## 3.2 Play around with Jaeger
 
@@ -239,11 +223,11 @@ HotROD에서 버튼을 클릭하여 라이드 요청하면, Jaeger에서 API에 
 
 - 이 화면에서는 컨포넌트를 전체 구성 요소를 한눈에 확인할 수 있다
 
-![image-20220717104614304](/media/cloud/Jaeger/image-20220717104614304.png)
+![System Architecture](/media/cloud/Jaeger/image-20220717104614304.png)
 
 에러가 발생한 경우 어느 서비스 구간에서 발생했는지 로그로 찾기는 쉽지 않다. 
 
-![image-20220717104917246](/media/cloud/Jaeger/image-20220717104917246.png)
+![Console Log](/media/cloud/Jaeger/image-20220717104917246.png)
 
 
 
@@ -252,9 +236,9 @@ HotROD에서 버튼을 클릭하여 라이드 요청하면, Jaeger에서 API에 
 - 어느 구간에서 실패가 발생했는지 쉽게 찾을 수 있다
 - 여러 컨포넌트에서 어느 구간에서 bottleneck이 있는지도 쉽게 확인할 수 있다
 
-![image-20220717115919867](/media/cloud/Jaeger/image-20220717115919867.png)
+![Jaeger](/media/cloud/Jaeger/image-20220717115919867.png)
 
-![image-20220717115937277](/media/cloud/Jaeger/image-20220717115937277.png)
+![Jaeger](/media/cloud/Jaeger/image-20220717115937277.png)
 
 ## 3.2 OpenTelemetry를 사용한 샘플 코드 - MongoDB, Gin instrumentation 사용
 
