@@ -51,7 +51,7 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
   - OpenTracing + OpenCensus 프로젝트가 하나로 merge됨
   - 2019년에 CNCF Incubation 프로젝트로 채택됨
   - 프로젝트 성숙도는 아직 Incubating level에 있음
-  - Trace, metric, log 와 같은 원격 측정 데이터를 기기, 생성, 수집 및 내보내기 위한 공급 업체-중립 오픈 소스 관찰 프레임 워크이다
+  - Trace, metric, log 와 같은 원격 측정 데이터를 기기, 생성, 수집 및 내보내기 위한 공급 업체-중립 오픈 소스 관찰 프레임워크이다
 
 
 ### Reference
@@ -108,20 +108,22 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
 
 ### 1.2.4 Tracing 용어와 친해지기
 
-- Span
-  - 분산 추척에서는 가장 기본이 되는 블록 단위로 분산 시스템에서 실행되는 작업 단위를 나타낸다
-    - ex. HTTP request, call to DB
-  - Span은 다음과 같은 정보가 있다
-    - Span Name (operation Name)
-    - Start/Finish Timestamp
-    - Span Tags, Logs (key:value)
-    - Span Context : 서비스에서 다른 서비스로 전달이 될 때 Trace에서 각 Span를 구별할 수 있는 추척 정보 (ex. Span id, Trace id)
-- Trace
-  - Trace는 시스템 전반에서 데이터/실행 경로를 나타낸다
-  - 1개 이상의 Span으로 이루어져 있고 여러 개의 Span이 모여서 하나의 Trace를 완성하게 된다
-- Instrumentation
-  - Application(ex. DB)에 따라 여러 library를 오픈소스로 제공
-  - Instrumentation library를 통해서 Span으로 생성함
+1.Span
+- 분산 추척에서는 가장 기본이 되는 블록 단위로 분산 시스템에서 실행되는 작업 단위를 나타낸다
+  - ex. HTTP request, call to DB
+- Span은 다음과 같은 정보가 있다
+  - Span Name (operation Name)
+  - Start/Finish Timestamp
+  - Span Tags, Logs (key:value)
+  - Span Context : 서비스에서 다른 서비스로 전달이 될 때 Trace에서 각 Span를 구별할 수 있는 추척 정보 (ex. Span id, Trace id)
+
+2.Trace
+- Trace는 시스템 전반에서 데이터/실행 경로를 나타낸다
+- 1개 이상의 Span으로 이루어져 있고 여러 개의 Span이 모여서 하나의 Trace를 완성하게 된다
+
+3.Instrumentation
+- Application(ex. DB)에 따라 여러 library를 오픈소스로 제공
+- Instrumentation library를 통해서 Span으로 생성함
 
 
 ![OpenTracing](/media/cloud/Jaeger/OpenTracing1.png)
@@ -177,11 +179,11 @@ Span을 생성하는 방법은 2가지가 있다
   - jaeger-client 맨 앞단에서 sampling rule이 결정되는 방식
 - Tail-based sampling
   - collector 단에서 sampling을 하는 거라 tail-based라고 칭함
-  - Adaptive sampling (v1.27이후) 도 지원해서 시스템으로 들어오는 트랙핑과 trace의 양을 가지고 sampling이 자동으로 조절이 가능함
+  - Adaptive sampling (v1.27이후) 도 지원해서 시스템으로 들어오는 트랙픽과 trace의 수을 가지고 sampling이 자동으로 조절이 가능함
 
 # 3.Running Jaeger Docker on Local Machine
 
-## 3.1 Hot R.O.D - Rodes on Demand Sample 실행하기
+## 3.1 Hot R.O.D - Rides on Demand Sample 실행하기
 
 HotROD는 Jaeger github에서 제공하는 "ride on demand" 데모 어플리케이션이고 OpenTracing API를 사용한 버전이다. Standalone으로 실행되고 여러 마이크로 서비스가 별도 port로 실행하여 간단한 MSA 형식으로 동작하게 되어 있다. 이 예제에서는 별도 Instrumentation을 사용하지 않고 직접 Span을 생성하는 방식으로 되어 있다. 
 
@@ -278,7 +280,7 @@ r.Use(otelgin.Middleware("todo-service")) //이렇게 하면 끝
 
 # 4.Conclusion
 
-> *Frank의 내면의 소리: 문제 있을 때 이제 Kibana 로그는 그만 보고 싶다. 한번에 빠르게 파악하기 위해서는 팀내에 APM/distributed trace system 도입이 시급하지 않을 까 싶다*
+> *Frank의 내면의 소리: 문제 있을 때 이제 Kibana 로그는 그만 보고 싶다. 한번에 빠르게 파악하기 위해서는 팀내에 APM/distributed trace system 도입이 시급하지 않을 까*
 
 Jaeger를 도입하는 건 결국 운영 관리 비용이 들기 때문에 되도록이면 사내 APM/Distributed trace system을 사용하는게 베스트일 것이다. 우리 사내에서는 이미 Pinpoint를 제공하고 있어서 이걸로 사용하는게 좋을 듯하다. 
 
