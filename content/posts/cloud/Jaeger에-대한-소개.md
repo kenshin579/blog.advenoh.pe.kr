@@ -67,15 +67,15 @@ Jaeger는 2015년 Uber가 만든 오픈 소스 Distributed Tracing System이다.
 - Dapper (Google) : Foundation of all tracers
   - Tracing 관련 주제는 1990년도 부터 나오기 시작
   - Google의 논문 [Dapper, a Large-Scale Distributed Systems Tracing Infrastructure](https://research.google/pubs/pub36356/), 2010 발표이후 주류로 자리 매김하게 됨
-- Zipkin and OpenZipkin (Twitter)
+- [Zipkin](https://zipkin.io/) and OpenZipkin (Twitter)
   - 최초의 Open Source Tracing system
   - 2012년 Twitter에서 공개
-- Jaeger (Uber)
+- [Jaeger](https://www.jaegertracing.io/) (Uber)
   - 2015년 Uber에 의해서 만들어졌고 2017년에 오픈소스로 공개함
   - 2017년 9월에 CNCF Incubation 프로젝트로 채택됨
   - 2019년에 Jaeger는 Graduated 프로젝트로 승인됨
-- StackDriver Trace -> Cloud Trace (Google)
-- X-Ray (AWS)
+- StackDriver Trace -> [Cloud Trace](https://cloud.google.com/trace?hl=ko) (Google)
+- [X-Ray](https://aws.amazon.com/ko/xray/) (AWS)
 
 
 
