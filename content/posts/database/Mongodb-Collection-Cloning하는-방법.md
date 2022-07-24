@@ -1,6 +1,6 @@
 ---
 title: 'Mongodb Collection Cloning하는 방법'
-tags : [mongo, mongodb, clone, collection, script]
+tags : [mongo, mongodb, clone, collection, script, 몽고]
 social_image: /media/cover/cover-mongo.jpeg
 date: 2022-07-16
 ---
