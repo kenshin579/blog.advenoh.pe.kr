@@ -1,6 +1,6 @@
 ---
 title: 'Mongodb 원격 서버에 있는 Collection을 로컬환경 서버로 복사하기'
-tags : [mongo, mongodb, backup, dump, import, copy, cloning]
+tags : [mongo, clone, backup, dump, import]
 social_image: /media/cover/cover-mongo.jpeg
 date: 2022-07-24
 ---
