@@ -21,6 +21,7 @@ Updated 2022-08-07
 * [SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/SSL-인증서-Ngnix-서버에-설치하기)
 * [kafkacat 사용방법 (메시지 보내고 받기 테스트)](https://blog.advenoh.pe.kr/cloud/kafkacat-사용방법-메시지-보내고-받기-테스트)
 * [라즈베리파이에 도커 설치하기](https://blog.advenoh.pe.kr/cloud/라즈베리파이에-도커-설치하기)
+* [로컬환경에서 Kafka 실행하기 (with AKHQ)](https://blog.advenoh.pe.kr/cloud/로컬환경에서-Kafka-실행하기-with-AKHQ)
 * [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/cloud/헬름으로-Kafka-설치하기)
 
 ## Database
