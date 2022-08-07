@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2022-07-24
+Updated 2022-08-07
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -49,6 +49,7 @@ Updated 2022-07-24
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/QA-Git-관련-질문-모음)
 
 ## Go
+* [Go Recover 함수에서 반환값을 반환하는 예제](https://blog.advenoh.pe.kr/go/Go-Recover-함수에서-반환값을-반환하는-예제)
 * [Go Strings (문자열 함수)](https://blog.advenoh.pe.kr/go/Go-Strings-문자열-함수)
 * [Go Ternary Operator (삼항연산자)](https://blog.advenoh.pe.kr/go/Go-Ternary-Operator-삼항연산자)
 * [Go Test Suite (Lifecycle 메서드)](https://blog.advenoh.pe.kr/go/Go-Test-Suite-Lifecycle-메서드)
