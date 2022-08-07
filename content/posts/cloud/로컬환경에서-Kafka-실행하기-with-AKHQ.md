@@ -28,7 +28,7 @@ $ cd kafka-docker
 $ docker-compose up
 ```
 
-`telnet` 명령어로 `9092` 포트가 접속이 되는지 확인한다. `Connected to localhost`가 출력되는 것을 볼 수 있어서 Kafka 서버가 잘 구동되었음을 확인할 수 있었다. 
+`telnet` 명령어로 `9092` 포트가 접속이 되는지 확인한다. `Connected to localhost`가 출력되는 것을 볼 수 있어서 Kafka 서버가 잘 구동되었음을 확인할 수 있다. 
 
 ```bash
 $ telnet localhost 9092
