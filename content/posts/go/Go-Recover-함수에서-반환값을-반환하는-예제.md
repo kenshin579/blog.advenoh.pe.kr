@@ -1,7 +1,7 @@
 ---
 title: 'Go Recover 함수에서 반환값을 반환하는 예제'
 social_image: /media/cover/cover-go.png
-date: 2021-05-28
+date: 2022-08-07
 tags: [golang, go, recover, return, panic]
 ---
 
