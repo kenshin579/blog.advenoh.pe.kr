@@ -5,7 +5,7 @@ date: 2022-08-07
 tags: [golang, go, recover, return, panic]
 ---
 
-Validation API 함수를 개발하는 과정에서 복잡한 expression을 evaluation 하는 과정에서 잘못된 표현식의 경우에는 panic이 발생하는 경우가 있었다. panic이 발생하여 recover() 함수로 서버가 죽지 않게 되어 있지만, Validation API의 경우에는 client에 잘못된 표현 식이라는 응답 값을 내려줘야 한다. 
+Validation API 함수를 개발하는 과정에서 복잡한 expression을 evaluation 하는 과정에서 잘못된 표현식의 경우에는 panic이 발생하는 경우가 있었다. panic이 발생하여 `recover()` 함수로 서버가 죽지 않게 되어 있지만, Validation API의 경우에는 client에 잘못된 표현 식이라는 응답 값을 내려줘야 한다. 
 
 # 1.panic(), recover() 함수
 
