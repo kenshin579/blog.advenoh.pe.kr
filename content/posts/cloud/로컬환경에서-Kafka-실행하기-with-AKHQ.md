@@ -5,7 +5,7 @@ social_image: '/media/cover/cover-kafka-helm.jpg'
 tags: [kafka, docker, local, akhq, 로컬환경, 카프카]
 ---
 
-로컬환경에서 Kafka를 실행하는 방법에 대해서 알아보자. 개인 맥북인 M1이라서 M1 기준으로 실행방법에 대해서 기술합니다. 
+로컬환경에서 Kafka를 실행하는 방법에 대해서 알아보자. 개인 맥북이 M1이라서 M1 기준으로 실행방법에 대해서 기술합니다. 
 
 # 1.실행 조건
 
