@@ -76,9 +76,11 @@ services:
   kafka:
     platform: linux/x86_64
     image: confluentinc/cp-kafka
+    KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+    KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
 ...생략...
     ports:
-      - 9092:9092
+      - 29092:29092
     links:
       - zookeeper
 
@@ -115,7 +117,7 @@ $ docker-compose up
 Kafka 서버도 로컬환경에서 접속 가능한지 `telnet` 명령어로 확인하다. 
 
 ```bash
-$ telnet localhost 9092
+$ telnet localhost 29092
 Trying ::1...
 Connected to localhost.
 Escape character is '^]'.
