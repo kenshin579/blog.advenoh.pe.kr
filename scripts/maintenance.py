@@ -14,9 +14,6 @@ import requests
 # todo :
 # 1. master 브랜치에 cherry pick을 해야 함 - 자동으로 할 수 없는 방법은 없나?
 # - circleci로 가능한지 확인해보기
-# 2. 웹 사이트에서 이미지가 깨지는 거 찾아내기
-# - web crawing을 해서 image path가 static으로 시작하지 않는 건 다 패스 알려주기
-# - 메일로 보내주면 좋을 듯하다
 
 ################################################################################################
 
@@ -89,18 +86,6 @@ def get_all_files_with_extension(path, extensions):
     return filenames_with_extension
 
 
-# todo : 작업이 더 필요함
-def get_invalidate_images():
-    session = requests.Session()
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit 537.36 (KHTML, like Gecko) Chrome",
-        "Accept": "text_html,application_xhtml+xml,application_xml;q=0.9,image_webp,**/**;q=0.8",
-        "Connection": "close"
-    }
-    bsObj = BeautifulSoup(session.get(BLOG_HOME_URL, headers=headers).content, "html.parser")
-    print("bsObj", bsObj)
-
-
 ################################################################################################
 # Main function
 #
@@ -113,9 +98,6 @@ def main():
     parser.add_argument("-g", "--generate", action='store_true',
                         help="Generate blog list for my blog in the readme file")
 
-    parser.add_argument("-i", "--image", action='store_true',
-                        help="Find images that are not rendered in Gatsby (ex. image-23432.jpg")
-
     if len(sys.argv[1:]) == 0:
         parser.print_help()
         parser.exit()
@@ -126,9 +108,6 @@ def main():
 
     if args.generate:
         generate_blog_list()
-    if args.image:
-        get_invalidate_images()
-
 
 if __name__ == "__main__":
     sys.exit(main())
