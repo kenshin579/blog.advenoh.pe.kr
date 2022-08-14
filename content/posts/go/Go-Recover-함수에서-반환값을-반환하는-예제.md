@@ -116,7 +116,7 @@ func TestMyFunc(t *testing.T) {
 
 # 3.recover()에서 stack trace 출력하기
 
-Panic 발생 후 recover를 하고 stack trace를 출력하여 조금 더 디버깅을 쉽게 하려면 Debug 패키지에 포함된 PrintStack() 함수를 사용한다. 
+Panic 발생 후 recover를 하고 stack trace를 출력하여 조금 더 디버깅을 쉽게 하려면 Debug 패키지에 포함된 `PrintStack()` 함수를 사용한다. 
 
 ```go
 
@@ -135,7 +135,7 @@ func MyFunc() (resp Response, err error) {
 }
 ```
 
-debug.PrintStack() 함수에 의해서 stack trace가 아래와 같이 출력된다. 
+`debug.PrintStack()` 함수에 의해서 stack trace가 아래와 같이 출력된다. 
 
 ```bash
 goroutine 1 [running]:
