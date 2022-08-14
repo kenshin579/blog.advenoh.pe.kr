@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import argparse
+import logging
 import os
 import re
 import shutil
@@ -14,9 +15,6 @@ import requests
 # todo :
 # 1. master 브랜치에 cherry pick을 해야 함 - 자동으로 할 수 없는 방법은 없나?
 # - circleci로 가능한지 확인해보기
-# 2. 웹 사이트에서 이미지가 깨지는 거 찾아내기
-# - web crawing을 해서 image path가 static으로 시작하지 않는 건 다 패스 알려주기
-# - 메일로 보내주면 좋을 듯하다
 
 ################################################################################################
 
@@ -37,68 +35,51 @@ REGEX_SUB_PATTERN = '.*\/blog.advenoh.pe.kr\/content\/posts'
 #
 ################################################################################################
 
-def generate_blog_list():
-    result = {}
-    for file in get_all_files_with_extension(BLOG_CONTENT_DIR, ['md']):
-        category = os.path.basename(os.path.dirname(file)).capitalize()
-        if result.get(category):
-            result[category].append({'title': get_blog_title(file), 'filename': file})
-        else:
-            result[category] = [{'title': get_blog_title(file), 'filename': file}]
+class Generator:
+    def __init__(self):
+        self.generated_posting = {}
 
-    write_blog_list_to_file(result, README_FILE)
+    def update_readme(self):
+        for file in self.__get_all_files_with_extension(BLOG_CONTENT_DIR, ['md']):
+            category = os.path.basename(os.path.dirname(file)).capitalize()
+            title = self.__get_blog_title(file)
 
+            if self.generated_posting.get(category):
+                self.generated_posting[category].append({'title': title, 'filename': file})
+            else:
+                self.generated_posting[category] = [{'title': title, 'filename': file}]
 
-def get_blog_title(filename):
-    with open(filename, 'r') as f:
-        for line in islice(f, 1, 2):
-            print('line', line)
-            return re.findall('title:\\s*\'(.*)\'', line)[0]
+        self.__write_blog_list_to_file()
 
-
-def write_blog_list_to_file(result, filename):
-    shutil.copyfile(README_HEADER_FILE, README_FILE)
-
-    # write header to the file
-    with open(filename, 'a') as out_file:
-        out_file.write('\nUpdated ' + datetime.now().strftime('%Y-%m-%d') + '\n\n')
-        out_file.write('현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.\n\n')
-        for category in sorted(result):
-            print('category', category)
-            # print('data', result[category])
-            out_file.write('## {}\n'.format(category))
-            for title_file in sorted(result[category], key=lambda k: k['title']):
-                print('title_file', title_file)
-                filename = title_file.get('filename')
-                # print('filename', filename)
-
-                out_file.write('* [{}]({})\n'.format(
-                    title_file.get('title'),
-                    re.sub(REGEX_SUB_PATTERN, BLOG_HOME_URL, os.path.splitext(title_file.get('filename'))[0])))
-            out_file.write('\n')
+    def __get_blog_title(self, filename):
+        with open(filename, 'r') as f:
+            for line in islice(f, 1, 2):
+                return re.findall('title:\\s*\'(.*)\'', line)[0]
 
 
-def get_all_files_with_extension(path, extensions):
-    filenames_with_extension = []
-    for (dirpath, dirnames, filenames) in os.walk(path):
-        for filename in filenames:
-            ext = os.path.splitext(filename)[-1]
-            for extension in extensions:
-                if ext == '.' + extension:
-                    filenames_with_extension.append(os.path.join(dirpath, filename))
-    return filenames_with_extension
+    def __write_blog_list_to_file(self):
+        shutil.copyfile(README_HEADER_FILE, README_FILE)
 
-
-# todo : 작업이 더 필요함
-def get_invalidate_images():
-    session = requests.Session()
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit 537.36 (KHTML, like Gecko) Chrome",
-        "Accept": "text_html,application_xhtml+xml,application_xml;q=0.9,image_webp,**/**;q=0.8",
-        "Connection": "close"
-    }
-    bsObj = BeautifulSoup(session.get(BLOG_HOME_URL, headers=headers).content, "html.parser")
-    print("bsObj", bsObj)
+        # write header to the file
+        with open(README_FILE, 'a') as out_file:
+            out_file.write('\nUpdated ' + datetime.now().strftime('%Y-%m-%d') + '\n\n')
+            out_file.write('현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.\n\n')
+            for category in sorted(self.generated_posting):
+                out_file.write('## {}\n'.format(category))
+                for title_file in sorted(self.generated_posting[category], key=lambda k: k['title']):
+                    out_file.write('* [{}]({})\n'.format(
+                        title_file.get('title'),
+                        re.sub(REGEX_SUB_PATTERN, BLOG_HOME_URL, os.path.splitext(title_file.get('filename'))[0])))
+                out_file.write('\n')
+    def __get_all_files_with_extension(self, path, extensions):
+        filenames_with_extension = []
+        for (dirpath, dirnames, filenames) in os.walk(path):
+            for filename in filenames:
+                ext = os.path.splitext(filename)[-1]
+                for extension in extensions:
+                    if ext == '.' + extension:
+                        filenames_with_extension.append(os.path.join(dirpath, filename))
+        return filenames_with_extension
 
 
 ################################################################################################
@@ -113,22 +94,19 @@ def main():
     parser.add_argument("-g", "--generate", action='store_true',
                         help="Generate blog list for my blog in the readme file")
 
-    parser.add_argument("-i", "--image", action='store_true',
-                        help="Find images that are not rendered in Gatsby (ex. image-23432.jpg")
-
     if len(sys.argv[1:]) == 0:
         parser.print_help()
         parser.exit()
 
     args = parser.parse_args()
-
-    print('args', args)
+    logging.debug("args: %s", args)
 
     if args.generate:
-        generate_blog_list()
-    if args.image:
-        get_invalidate_images()
-
+        generator = Generator()
+        generator.update_readme()
 
 if __name__ == "__main__":
+    fmt = '[%(asctime)s,%(msecs)d] [%(levelname)-4s] %(filename)s:%(funcName)s:%(lineno)d %(message)s'
+    logging.basicConfig(format=fmt, level=logging.INFO,
+                        datefmt='%Y-%m-%d:%H:%M:%S')
     sys.exit(main())
