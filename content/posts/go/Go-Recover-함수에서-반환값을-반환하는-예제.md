@@ -114,10 +114,55 @@ func TestMyFunc(t *testing.T) {
 }
 ```
 
-# 3.참고
+# 3.recover()에서 stack trace 출력하기
+
+Panic 발생 후 recover를 하고 stack trace를 출력하여 조금 더 디버깅을 쉽게 하려면 Debug 패키지에 포함된 PrintStack() 함수를 사용한다. 
+
+```go
+
+func MyFunc() (resp Response, err error) {
+	defer func() {
+		if r := recover(); r != nil {
+			debug.PrintStack()
+			err = errors.New(fmt.Sprint(r))
+			resp = Response{
+				Message: "Failure",
+			}
+		}
+	}()
+	panic("test")
+	return Response{Message: "Success"}, nil
+}
+```
+
+debug.PrintStack() 함수에 의해서 stack trace가 아래와 같이 출력된다. 
+
+```bash
+goroutine 1 [running]:
+runtime/debug.Stack()
+        /opt/homebrew/opt/go/libexec/src/runtime/debug/stack.go:24 +0x68
+runtime/debug.PrintStack()
+        /opt/homebrew/opt/go/libexec/src/runtime/debug/stack.go:16 +0x20
+main.MyFunc.func1()
+        /Users/user/GolandProjects/tutorials-go/go-recover/return-value/main.go:22 +0x48
+panic({0x104a5b6e0, 0x104a6bc68})
+        /opt/homebrew/opt/go/libexec/src/runtime/panic.go:838 +0x204
+main.MyFunc()
+        /Users/user/GolandProjects/tutorials-go/go-recover/return-value/main.go:29 +0x74
+main.main()
+        /Users/user/GolandProjects/tutorials-go/go-recover/return-value/main.go:10 +0x20
+myFunc: {Failure}
+err: test
+
+```
+
+
+
+# 4.참고
 
 - http://golang.site/go/article/20-Go-defer%EC%99%80-panic
 - https://github.com/kenshin579/tutorials-go/pull/287
 - https://stackoverflow.com/questions/68554968/why-does-go-panic-recover-to-return-value-with-local-variable-not-work
 - https://stackoverflow.com/questions/19934641/go-returning-from-defer
 - https://stackoverflow.com/questions/33167282/how-to-return-a-value-in-a-go-function-that-panics
+- https://golangbot.com/panic-and-recover/
