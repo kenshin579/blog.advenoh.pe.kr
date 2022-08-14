@@ -1,31 +1,31 @@
 ---
-title: 'kafkacat 사용방법 (메시지 보내고 받기 테스트)'
-tags: [kafka, kafkacat, 카프카, 브로커, 메시지, 아파치]
+title: 'kcat 사용방법'
+tags: [kcat, kafka, kafkacat, 카프카, 브로커, 메시지, 아파치]
 image: '/media/cover/cover-kafka-helm.jpg'
 date: 2021-07-20
 ---
 
-`kafkacat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kafkacat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방밥에 대해서 알아보자. 카프카 설치는 [헬름으로 Kafka 설치](https://blog.advenoh.pe.kr/cloud/%ED%97%AC%EB%A6%84%EC%9C%BC%EB%A1%9C-Kafka-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)를 참고해주세요. 
+`kcat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kcat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방법에 대해서 알아보자. 카프카 설치는 [로컬환경에서 Kafka 실행하기](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-AKHQ/)를 참고해주세요. 
 
-## kafkacat 설치
+## kcat 설치
 
-여러 방법으로 설치 가능하지만, 본 포스팅에서는 맥기준으로 설명합니다. `brew`로 `kafkacat`을 설치한다. 
+여러 방법으로 설치 가능하지만, 본 포스팅에서는 맥기준으로 설명합니다. `brew`로 `kcat`을 설치한다. 
 
 
 ```bash
-$ brew install kafkacat
+$ brew install kcat
 ```
 
 
 
-## kafkacat 기본 사용방법
+## kcat 기본 사용방법
 
 ### 기본 Synatx
 
-`kafkacat` 의 기본 명령어 포맷은 아래와 같다.  
+`kcat` 의 기본 명령어 포맷은 아래와 같다.  
 
 ```bash
-$ kafkacat <mode> -b <brokers> -t new_topic
+$ kcat <mode> -b <brokers> -t new_topic
 ```
 
 - `-C | -P | -L | -Q  Mode` 
@@ -37,12 +37,12 @@ $ kafkacat <mode> -b <brokers> -t new_topic
 
 ## 메시지 보내기 (-P)
 
-메시지는 Produce (`-P`) 모드를 지정해서 메시지를 보낼 수 있다. 필수로 카프카 브로커 (`-b`)와 토픽 옵션 (`-t`)을 지정해줘야 한다. `kafkacat`을 사용하여 특정 토픽에 쉽게 메시지를 보낼 수 있다. `-P` 명령으로 실행하고 원하는 데이터를 입력한 다음 `Ctrl-D`를 눌러 완료한다. 
+메시지는 Produce (`-P`) 모드를 지정해서 메시지를 보낼 수 있다. 필수로 카프카 브로커 (`-b`)와 토픽 옵션 (`-t`)을 지정해줘야 한다. `kcat`을 사용하여 특정 토픽에 쉽게 메시지를 보낼 수 있다. `-P` 명령으로 실행하고 원하는 데이터를 입력한 다음 `Ctrl-D`를 눌러 완료한다. 
 
 ### 메시지 값 생성하기
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
+$ kcat -b localhost:29092 -t test -P
 11
 22
 ```
@@ -50,7 +50,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
 잘 보내줬는지 확인하려면 `-C` consume 모드로 확인한다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
+$ kcat -b localhost:29092 -t test -C
 11
 22
 ```
@@ -60,7 +60,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 메시지를 키와 함께 생성하고 싶은 경우에는 키 구분자 (key delimiter) `-K` 옵션으로 원하는 구분자를 같이 지정해서 사용한다.
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -K :
+$ kcat -b localhost:29092 -t test -P -K :
 key1:msg1
 key2:msg2
 ```
@@ -75,7 +75,7 @@ key1:msg1
 key2:msg2
 key3:msg3
 
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -K: msg.txt
+$ kcat -b localhost:29092 -t test -P -K: msg.txt
 ```
 
 파티션 (Partition)은 각 토픽 당 데이터를 분산 처리하는 단위로 카프카에서는 토픽을 여러 파티션에 나눠서 저장하고 카프카 옵션에서 지정한 replica의 수만큼 파티션이 각 브로커에 복제가 된다. 
@@ -83,10 +83,10 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -K: msg.txt
 토픽을 여러 파티션으로 설정해두었다면 아래와 같이 파티션 1에 메시지를 보내고 받을 수 있다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P -p 1 
+$ kcat -b localhost:29092 -t test -P -p 1 
 hello world
 
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -p 1
+$ kcat -b localhost:29092 -t test -C -p 1
 hello world
 ```
 
@@ -107,7 +107,8 @@ $ kafka-topics.sh --describe --zookeeper my-kafka-zookeeper:2181 --topic test
 
 ```bash
 # test 토픽의 파티션 수를 3으로 늘려준다
-$ kafka-topics.sh --zookeeper my-kafka-zookeeper:2181 --alter --topic test --partitions 3WARNING: If partitions are increased for a topic that has a key, the partition logic or ordering of the messages will be affected
+$ kafka-topics.sh --zookeeper my-kafka-zookeeper:2181 --alter --topic test --partitions 3
+WARNING: If partitions are increased for a topic that has a key, the partition logic or ordering of the messages will be affected
 Adding partitions succeeded!
 
 # 수정된 파티션의 수를 확인한다
@@ -124,16 +125,16 @@ Topic: test	TopicId: sLitGkHfRSyg261FxMoGCA	PartitionCount: 3	ReplicationFactor:
 
 ### 토픽에서 모든 메시지 받기
 
- `kafkacat`은 기본적으로 추가 옵선 지정없이 토픽에서 처음부터 모든 메시지를 가져온다. 
+ `kcat`은 기본적으로 추가 옵선 지정없이 토픽에서 처음부터 모든 메시지를 가져온다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -P
+$ kcat -b localhost:29092 -t test -P
 11
 22
 33
 44
 
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
+$ kcat -b localhost:29092 -t test -C
 11
 22
 33
@@ -145,7 +146,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C
 모든 메시지를 가져오는 대신 몇개만 메시지를 가져오려면 `-c` 옵션으로 개수를 지정하면 된다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -c 2
+$ kcat -b localhost:29092 -t test -C -c 2
 11
 22
 ```
@@ -155,7 +156,7 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -c 2
 `-o` 옵션으로 특정 오프셋이후부터 데이터를 가져온다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o 1
+$ kcat -b localhost:29092 -t test -C -o 1
 22
 33
 44
@@ -163,19 +164,19 @@ $ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o 1
 
 > 오프셋을 절대 값으로 지정할 수도 있지만, 처음과 끝은 `begining`이나 `end`  로 지정할 수 있다. 
 >
-> `$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o begining`
+> `$ kcat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o begining`
 
 오프셋 값을 음수로 지정하면 끝에서부터 메시지를 가져온다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C -o -2
+$ kcat -b localhost:29092 -t test -C -o -2
 33
 44
 ```
 
 ### 출력 포멧 변경하기
 
-기본적으로 `kafkacat`은 메시지 값(카프카 레코드의 값)만 출력한다. 출력의 포멧을 변경하려면 `-f` 옵션으로 아래와 같이 여러 값을 사용해서 정의할 수 있다. 
+기본적으로 `kcat`은 메시지 값(카프카 레코드의 값)만 출력한다. 출력의 포멧을 변경하려면 `-f` 옵션으로 아래와 같이 여러 값을 사용해서 정의할 수 있다. 
 
 ```bash
 Format string tokens:
@@ -193,7 +194,7 @@ Format string tokens:
 Key와 Value, 그리고 Partition, Offset의 값을 읽게 편하게 출력할 수 있다. 
 
 ```bash
-$ kafkacat -b my-kafka.default.svc.cluster.local:9092 -t test -C  -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\tPartition: %p\tOffset: %o\n--\n'
+$ kcat -b localhost:29092 -t test -C  -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\tPartition: %p\tOffset: %o\n--\n'
 
 Key (-1 bytes):
 Value (2 bytes): 11
@@ -224,7 +225,7 @@ Value (2 bytes): 44
 브로커나 현재 토픽에 대한 정보를 확인하려면 `-L` 옵션으로 확인할 수 있다. 브로커는 총 3대로 구성되어 있고 토픽당 몇개의 파티션으로 구성되어 있는지도 확인할 수 있다. 
 
 ```bash
-$ kafkacat -L -b my-kafka.default.svc.cluster.local
+$ kcat -L -b localhost:29092
 Metadata for all topics (from broker -1: my-kafka.default.svc.cluster.local:9092/bootstrap):
  3 brokers:
   broker 0 at my-kafka-0.my-kafka-headless.default.svc.cluster.local:9092
