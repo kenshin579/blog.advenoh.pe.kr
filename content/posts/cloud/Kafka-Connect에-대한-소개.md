@@ -1,7 +1,7 @@
 ---
 title: 'Kafka Connect에 대한 소개'
-tags: [kafka, connect, producer, connector, consumer, 카프카, 브로커, 커넥트, 커넥터]
-date: 2022-05-10
+tags: [kafka, connect, producer, converter, transform, task, worker, connector, consumer, source, sink, 카프카, 브로커, 커넥트, 커넥터]
+date: 2022-08-27
 ---
 
 # 1. Kafka Connect 소개
@@ -35,7 +35,7 @@ Kafka Connect는 Kafka를 사용하여 다른 시스템과 데이터를 주고 �
 
 
 
-![Debezium architecture](Kafka-Connect에-대한-소개/1656195160.png)
+![Debezium architecture](/media/cloud/Kafka-Connect/image-20220827144500.png)
 
 
 
@@ -43,9 +43,9 @@ Kafka Connect는 Kafka를 사용하여 다른 시스템과 데이터를 주고 �
 
 다른 시스템에서 Kafka로 Kafka에서 다른 시스템으로 데이터를 스트리밍할 방법은 여러 가지가 있겠지만, 직접 개발하기보다는 Kafka Connect로 쉽게 해결될 수 있는지 첫 번째로 고려해보면 좋을 것이다. 몇 가지 사례를 통해서 어떻게 다양하게 사용될 수 있는지 알아보자. 
 
-### 1.2.1 멀티 타겟 시스템에 스트리밍하기
+### 1.2.1 멀티 타겟 시스템에 스트리밍하기개
 
-![streaming-data-pipelines-kafka-connect](images/Kafka-Connect에-대한-소개/streaming-data-pipelines-kafka-connect.png)
+![streaming-data-pipelines-kafka-connect](/media/cloud/Kafka-Connect/streaming-data-pipelines-kafka-connect.png)
 
 Kafka Connect를 사용하면 이미 여러 타겟 시스템 대상으로 connector가 제공되어 있어서 Kafka에 저장된 데이터를 쉽게 스트리밍이 가능하다. 비즈니스 요구에 맞게 새로운 타겟 시스템이 필요할 수 있고 Kafka Connect로 인해서 빠르게 개발 단계로 이어질 수가 있다. 
 
@@ -53,7 +53,7 @@ Kafka Connect를 사용하면 이미 여러 타겟 시스템 대상으로 connec
 
 ### 1.2.2 다양한 외부 시스템에서 다른 곳으로 데이터 전달이 필요한 경우
 
-한 component에서 다른 component로 전달할 수 있는 방법은 여러 가지가 있다. 
+한 컨포넌트에서 다른 컨포넌트로 전달할 수 있는 방법은 여러 가지가 있다. 
 
 - A component -> db (ex. mysql) -> (mysql sink connect) -> kafka -> B component (consume)
 
@@ -70,154 +70,143 @@ Kafka Connect를 사용하면 이미 여러 타겟 시스템 대상으로 connec
 
 ### 1.2.3 새로운 어플리케이션으로 마이그레이션 작업
 
-![Evolve Processing From Old systems to new](Kafka-Connect에-대한-소개/evolve-processing-from-old-systems-to-new-kafka-connect.png)
+![Evolve Processing From Old systems to new](/media/cloud/Kafka-Connect/evolve-processing-from-old-systems-to-new-kafka-connect.png)
 
 - db(ex. mysql) -> (mysql sink connect) -> kafka -> new application (consume)
 
-새로운 어플리케이션 개발할 때 기존의 어플리케이션에는 영향을 주지 않기 위해 Kafka Connect를 사용하면 더 쉽게 마이그레이션이 가능할 수 있다. Mysql이나 MongoDB는 Change Data Cpature (CDC) 기능을 지원하고 있어서 해당 Sink connector를 사용하면 스키마 변경, INSERT, UPDATE, DELETE 모두에 대한 변경은 포착을 해서 Kafka로 데이터를 스트리밍할 수 있다. 이렇게 되면 기존 어플리케이션에는 전혀 수정하지 않고 새로운 어플리케이션을 개발할 수 있다. 
+새로운 애플리케이션 개발할 때 기존의 애플리케이션에는 영향을 주지 않기 위해 Kafka Connect를 사용하면 더 쉽게 마이그레이션이 가능할 수 있다. Mysql이나 MongoDB는 Change Data Capture (CDC) 기능을 지원하고 있어서 해당 sink connector를 사용하면 스키마 변경, INSERT, UPDATE, DELETE 모두에 대한 변경은 포착해서 Kafka로 데이터를 스트리밍할 수 있다. 이렇게 되면 기존 애플리케이션에는 전혀 수정하지 않고 새로운 애플리케이션을 개발할 수 있다. 
 
-# 2.내부 구성요서 및 동작 원리
+# 2.내부 구성요소 및 동작 원리
 
-Kafka Connect가 동작하기 위해 내부적으로 구성된 여러 요소들에 대해서 알아봅니다. 
+Kafka Connect는 크게 5가지 요소로 되어 있다. 
 
-Sink Connector가 
+- Worker
+  - Connector와 task를 실행하는 프로세스이다
+  - Worker는 REST API 요청에 대한 처리를 담당한다
+    - Connector 등록, 설정, 시작, 종료등의 처리를 해준다
+  - 2가지 모드를 지원한다
+    - standalone : 하나의 process가 connector와 task 실행을 시킨다 
+    - distributed
+      - 분사 모드는 kafka connect의 확장성과 자동 결함 허용 기능을 제공한다
+      - 여러 worker 프로세스로 실행시킬 수 있다
+- Connector
+  - Connector는 파이프라인에 대한 추상 객체이고 Task들을 관리하는 역할을 한다
+    - 실행할 작업 수를 결정하고 Task 간의 작업을 나누는 작업
+    - Worker로부터 Task를 위한 설정 값을 가져오고 Task에게 전달하는 작업
+  - 실제 Worker가 Task를 구동시킨다
+- Task
+  - Kafka로부터 데이터를 가져오고나 넣는 작업을 하고 실제 파이프라인 동작 요소이다
+  - Source Task는 source system으로 부터 데이터를 poll하고 worker는 가져온 데이터를 Kafka topic으로 보낸다
+  - Sink Task는 Kafka로부터 Worker를 통해 record를 가져오고 sink system에 record를 쓴다
+  - Task Rebalancing 기능도 제공한다
+- Converter
+  - Worker가 데이터를 수신하면 converter를 사용하여 데이터를 적절한 형식으로 변환한다
+- Transform
+  - Connector를 통해 흘러가는 각 메시지에 대해 변환하는 역할을 한다
 
-기준으로 Kafka로부터 데이터를 가져와서 외부 시스템에 저장하는 
+## 2.1 Kafka가 데이터를 스트리밍하는 과정
 
-다이어그림이다. 
+다음 Sink Conector는 Kafka에서 외부 시스템으로 데이터를 스트리밍할 때의 흐름을 보여준다. Source Connector는 반대로 외부 시스템에서 Kafka로 스트리밍하는 차이가 있지만, 기본 데이터를 스트리밍하는 과정이 비슷하다. 
 
-![image-20220510155538827](Kafka-Connect에-대한-소개/image-20220510155538827.png)
-
-> Plugin은 connectors 와 task의 컬렉션이고 
->
+![image-20220510155538827](/media/cloud/Kafka-Connect/image-20220510155538827.png)
 
 
-1. Plugin은 Sink Connector에 대한 구현 아티팩트를 제공한다
-2. Single worker sink connector 인스턴스를 시작시킨다
-3. Sink connector 데이터 처리를 위해 task를 생성한다
+1. Plugin은 각 worker에 배포되는 connector와 task의 구현 아티팩트를 제공한다
+2. Worker는 connector 인스턴스를 시작시킨다
+3. Connector는 데이터 처리를 위해 task를 생성한다
 4. Task는 Kafka를 polling 하기 위해 병렬로 실행되고 record를 반환한다
-5. Converter는 외부 데이트 시스템에 적합한 형식으로 레코드를 저장한다
-6. Transform은 record를 여러 방식(ex. renaming, filtering)으로 변환한다
+5. Converter는 외부 시스템에 적합한 형식으로 레코드를 변환한다
+6. Transform은 record를 정의된 변환 설정에 따라서 filtering, renaming 등의 변환 작업을 한다
 
+이미 위에서 언급된 내용도 있지만, 각 구성 요소와 요소 간의 관계, 역할을 쉽게 이해하는 데 도움이 되는 다이어그램이다. 
 
+- 하나 이상의 Worker는 서버에서 실행된다
+- Worker는 하나 이상의 Connector Plugin을 가지고 있다
+  - 각 plugin은 connector와 task를 가지고 있다
+- Worker는 topic과 task 간의 데이터를 이동시킨다
+- Worker는 connector와 task를 시작시킨다
 
-- 커넥터 (Connector) : 파이프라인에 대한 추상 객체이고 Task들을 관리한다
-  - task 간의 작업을 나누는 일
-  - worker로부터 task를 위한 설정 값을 가져오고 task에게 전달해줌
-    - sink 작업을 위해 몇개의 task를 실행할지
-- 테스크 (Task) : Kafka의 메시지 복제에 대한 구현체이고 실제 파이프라인 동작 요소이다
-  - Kafka로부터 데이터를 가져오고나 넣는 작업을 한다
-  - Source Task는 source system으로 부터 데이터를 poll하고 worker를 그 데이터를 Kafka Topic로 보낸다
-  - Sink Task는 Kafka로부터 Worker를 통해서 record를 가져오고 SInk system에 record를 쓴다
-  - Task Rebalancing 기능을 제공한다
-  - 
-- 워커 (Worker) : Connector와 Task를 실행하는 프로세스이다
-  - Worker가 Task를 시작시킨다
-- 컨버터 (Converter) : Connector와 외부 시스템 간의 메시지를 변환하는 객체이다
-- 트랜스폼 (Transform) : Connector를 통해 흘러가는 각 메시지에 대해 간단한 변환처리를 한다
-- 데드 레터 큐 (Dead Letter Queue) : Connect가 Connector의 에러를 처리하는 방식중에 하나이다
-
-![Kafka Connect Cluster](images/Kafka-Connect에-대한-소개/Kafka-Connect-Architecture-diagram-2.png)
+![Kafka Connect Cluster](/media/cloud/Kafka-Connect/Kafka-Connect-Architecture-diagram-2.png)
 
 
 
 ## 2.1 Task Rebalancing
 
-Task Rebalancing이 일어나는 경우는 다음과 같다
+Task rebalancing은 새로운 worker가 추가되거나 worker가 강제 종료된 경우에 worker 간의 작업을 다시 나누기 위해 task 재조정이 발생한다. Task rebalancing이 일어나는 경우는 다음과 같다.
 
-1. 클러스터에 새로운 Connector가 등록이 되는 경우
-   - 전체 connector와 task를 각 worker 에서 같은 양의 작업을 가지도록 재조정을 한다
-2. Tasks의 rebalancing은 tasks의 수 설정을 변경하거나 connector 설정 값?을 변경하는 경우
-3. 하나의 Worker 가 Failure 되는 경우
-   - Fail Task는 Active한 Worker에 다시 할당되지만, 실패된 task는 자동으로 재시작되지 않고 수동으로 API로 restart 시켜야 함
+1. 클러스터에 새로운 connector가 등록하는 경우
+   - 전체 connector와 task를 각 worker에서 같은 양의 task을 가지도록 재조정을 한다
+2. Tasks의 rebalancing은 task의 수 설정을 변경하거나 connector 설정 값을 변경하는 경우
+3. 하나의 worker 가 failure 되는 경우
+   - Fail task는 활성화된 worker에 다시 할당되지만, 실패된 task는 자동으로 재시작되지 않고 수동으로 API로 restart 시켜줘야 한다
 
-![img](Kafka-Connect에-대한-소개/image-20220510160001.png)
+
+
+![img](/media/cloud/Kafka-Connect/image-20220510160001.png)
+
+Worker 2가 프로세스가 죽게 되어 실행하던 T2, T3 작업을 남아 있는 worker로 재조정이 되었다. 
+
+
 
 ## 2.2 Workers
 
-Worker는 Connector와 Task를 실행하는 프로세스이고 Worker를 실행하는 모드를 2가지를 제공한다.
+Worker는 connector와 task를 실행하는 프로세스이고 2가지 모드로 실행시킬 수 있다.
 
 - Standalone Mode
-  - 모든 connector와 task에 대한 실행을 하나의 process가 담당을 함
-  - 로컬머신에서 개발이나 테스트시 사용됨
-  - fault tolerance은 지원하지 않음
+  - 하나의 프로세스가 connector와 task를 실행시킨다
+  - 주로 로컬머신에서 개발이나 테스트시 사용된다
+  - Fault tolerance은 지원하지 않음
 - Distributed Mode
-  - Worker는 여러 머신(node)에서 실행됨
-  - 분산 모드에서는 scalability and 자동 fault tolerance를 지원함
-  - production에서 사용
+  - 여러 프로세스로 실행 시킬 수 있어 분산 모드에서는 기본적으로 scalability와 fault tolerance를 지원한다
+  - 주로 운영 시스템에서 사용한다
+  - 동일한 `group.id`로 시작되어 사용 가능한 모든 worker 간에 connector와 task을 잘 조정하여 자동으로 실행 시킨다
 
-![image-20220510160002391](Kafka-Connect에-대한-소개/image-20220510160002391.png)
+![image-20220510160002391](/media/cloud/Kafka-Connect/image-20220510160002391.png)
 
 
 
 ## 2.3 Converters
 
-Kafka에서 write, read할 때 특정 데이터 형식을 지원하기 위해서 여러 Converter를 제공한다. Task는 Converter를 사용해서 bytes 데이터 형식을 Connect 내부 데이터 형식으로 변경해서 사용한다
+Kafka에서 write, read 할 때 특정 데이터 형식을 지원하기 위해서 여러 converter를 제공한다. Task는 converter를 사용해서 bytes 데이터 형식을 connect 내부 데이터 형식으로 변경해서 사용한다.
 
 - AvroConverter
-  - `io.confluent.connect.avro.AvroConverter`: use with Schema Registry
+  - `io.confluent.connect.avro.AvroConverter`:  Schema Registry 사용 O
 - ProtobufConverter
-  - `io.confluent.connect.protobuf.ProtobufConverter`: use with Schema Registry
+  - `io.confluent.connect.protobuf.ProtobufConverter`: Schema Registry 사용 O
 - JsonSchemaConverter
-  - `io.confluent.connect.json.JsonSchemaConverter`: use with Schema Registry
+  - `io.confluent.connect.json.JsonSchemaConverter`: Schema Registry 사용 O
 - JsonConverter
-  - `org.apache.kafka.connect.json.JsonConverter` (without Schema Registry): use with structured data
+  - `org.apache.kafka.connect.json.JsonConverter` (Schema Registry 사용 X): Json 데이터
 - StringConverter
-  - `org.apache.kafka.connect.storage.StringConverter`: simple string format
+  - `org.apache.kafka.connect.storage.StringConverter`: string 데이터
 - ByteArrayConverter
-  - `org.apache.kafka.connect.converters.ByteArrayConverter`: provides a “pass-through” option that does no conversion
-  - 
+  - `org.apache.kafka.connect.converters.ByteArrayConverter`: 변환 없은 옵션을 제공
 
 ## 2.4 Transforms
 
-Kafka Connect는 데이터를 변환해주시는 기능을 제공한다.
+Transform은 Kafka <-> 외부 시스템에서 데이터를 가져오고 넣는 과정에서 기존 데이터를 변환해주는 기능이다. Connector 등록 시 어떻게 변환할지 같이 설정하여 사용한다. Transform은 단순 변환 작업으로 하나의 record를 입력받아 수정된 record를 결과값으로 반환한다. 여러 transform이 있으면 파이프라인으로 실행한다.
 
-- 필드를 추가하거나 filtering, renaming 기능도 기본적으로 제공함
+기본적으로 많이 사용되는 transform은 이미 Kafka Connect에 포함되어 있지만, 사용자가 직접 transform 구현체를 만들어 사용할 수도 있다. 
 
-- Custom transform도 개발이 가능함
+- 필드 이름을 변경, 
+- 필드를 삭제, 새로운 필드를 추가
+- 다른 값으로 변경 (ex. id -> _id)
 
-- chain 방식으로 여러 transform을 적용할 수 있음
-
-  
-
-## 2.5 Error Handling
-
-
-
-- 오류 발생시 멈춤 (기본 설정)
-- 모든 오류 허용 (invalid message 그냥 무시)
-- Dead Letter Queue에 저장
-
-![Create a second sink](Kafka-Connect에-대한-소개/Create_Second_Sink-e1552340041115.png)
-
-
+기본적으로 Transform은 단일 메시지를 처리하고 단순 변환에 사용된다. 조금 더 복잡한 변환이나 다중 메시지처리는 [ksqlDB](https://docs.confluent.io/platform/current/ksqldb/index.html#ksql-home)나 [Kafka Streams](https://docs.confluent.io/platform/current/streams/index.html#kafka-streams)을 사용하는 걸 추천한다. 
 
 # 3. 정리
 
-Kafka Connect를 사용하면 어플리케이션에서 반복적으로 개발해야 하는 부분들을 많이 제거할 수 있고 이로 인해서 자연스럽게 비지니스 로직에 집중할 수 있는 장점이 생긴다. 
+Kafka Connect를 사용하면 애플리케이션에서 반복적으로 개발해야 하는 부분들을 많이 제거할 수 있고 이로 인해서 자연스럽게 비지니스 로직에 집중할 수 있는 장점이 생긴다. Event Driven Architecture를 기반으로 개발하고 있다면, Kafka Connect를 도입하는 걸 추천한다. 
 
-application 단에서 
-
-Kafka Connect 소개 자료로 커넥트에 있는 여러 기능에 대해서 간단하게 언급만 했다. 각 기능에 대해서는 세부적으로 다루도록 한다. 
+본 포스팅에서는 간단하게 구성요소가 어떻게 되고 데이터 스트리밍 처리에 대해서 알아보았다. 다음 포스팅에서는 로컬환경에서 Kafka Conector를 등록하고 Kafka <-> 외부 시스템으로 데이터를 가져오고 넣는 예제를 다루도록 한다. 
 
 # 4. 참고
 
 - https://en.wikipedia.org/wiki/Apache_Kafka
-
 - https://www.confluent.io/ko-kr/blog/kafka-connect-deep-dive-error-handling-dead-letter-queues/
-
 - https://www.kai-waehner.de/blog/2020/10/20/apache-kafka-event-streaming-use-cases-architectures-examples-real-world-across-industries/
-
 - https://www.baeldung.com/kafka-connectors-guide
-
 - https://docs.confluent.io/platform/current/connect/index.html
-
 - https://strimzi.io/docs/operators/latest/overview.html
-
 - https://www.confluent.io/blog/kafka-connect-tutorial/
-
 - https://www.instaclustr.com/blog/apache-kafka-connect-architecture-overview/
-
-- 
-
-  
