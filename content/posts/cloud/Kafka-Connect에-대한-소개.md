@@ -1,6 +1,6 @@
 ---
 title: 'Kafka Connect에 대한 소개'
-tags: [kafka, connect, producer, converter, transform, task, worker, connector, consumer, source, sink, 카프카, 브로커, 커넥트, 커넥터]
+tags: [kafka, connect, task, worker, source, sink, 카프카, 브로커, 커넥트, 커넥터, converter, transform, consumer, producer]
 date: 2022-08-27
 ---
 
