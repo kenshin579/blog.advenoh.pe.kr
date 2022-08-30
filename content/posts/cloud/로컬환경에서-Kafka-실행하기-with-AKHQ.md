@@ -80,7 +80,7 @@ services:
     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
 ...생략...
     ports:
-      - 29092:29092
+      - "29092:29092"
     links:
       - zookeeper
 
