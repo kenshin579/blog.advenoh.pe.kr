@@ -5,11 +5,6 @@ social_image: '/media/cover/cover-argo.jpg'
 tags: [argo, argocd, events, workflow, devops]
 ---
 
-> 본 내용은 저희 Platform Engineering 팀내 CNCF 스터디를 위해 준비한 자료입니다. 저희가 하는 로봇 플랫폼 개발에 관심이 있는 분들은 아래 링크를 참고해주시고 도전적이고 열정적으로 같이 일하실 분은 많이 지원해주세요.
->
-> - 네이버는 왜 제2사옥 1784를 지었을 까요?  https://www.youtube.com/watch?v=WG7JHLfClEo
-> - 네이버 랩스 - https://www.naverlabs.com/
-
 Argo Projects 그전 발표내용은 [여기](https://blog.advenoh.pe.kr/cloud/Argo-Projects/)를 참고해주세요. 
 
 # Argo CD?
@@ -362,3 +357,8 @@ App과 config는 용도와 생명 주기가 다르기 때문에 Git 저장소를
   - https://www.youtube.com/watch?v=MeU5_k9ssrs&t=2s
   - https://gruuuuu.github.io/cloud/argocd-gitops/
   - https://kangwoo.kr/tag/argocd/
+
+> 본 내용은 저희 Platform Engineering 팀내 CNCF 스터디를 위해 준비한 자료입니다. 저희가 하는 로봇 플랫폼 개발에 관심이 있는 분들은 아래 링크를 참고해주시고 도전적이고 열정적으로 같이 일하실 분은 많이 지원해주세요.
+>
+> - 네이버는 왜 제2사옥 1784를 지었을 까요?  https://www.youtube.com/watch?v=WG7JHLfClEo
+> - 네이버 랩스 - https://www.naverlabs.com/
