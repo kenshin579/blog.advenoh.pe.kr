@@ -1,17 +1,21 @@
 ---
 title: 'ksqlDB 소개'
-tags: [kafka, ksql, ksqldb, event, connect, confluent, stream]
+tags: [kafka, ksql, ksqldb, sql, event, connect, confluent, stream, kstream]
 image: '/media/cover/cover-kafka-helm.jpg'
 date: 2022-10-16
 ---
 
 # 1.What
 
-ksqlDB (예전 이름: Kafka SQL, KSQL)는 
+ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이다. 
+
+Java 또는 Python과 같은 프로그래밍 언어로 코드를 작성할 필요없이 사용하기 쉽지만 사용하기 쉽지만 강력한 대화식 SQL 인터페이스를 Kafka에서 스트림 처리 할 수 있습니다. 
+
+KSQL은 확장 가능, 탄성, 결함 내성 및 실시간입니다. 
+
+데이터 필터링, 변환, 집계, 조인, 윈도우 및 세션화를 포함하여 광범위한 스트리밍 작업을 지원합니다.
 
  is an event streaming database for Apache Kafka
-
-
 
 - KSQL is the streaming SQL engine for Apache Kafka. It provides an easy and completely interactive SQL interface for stream processing on Kafka—no need to write any code in a programming language such as Java or Python. KSQL supports a wide range of powerful stream processing operations including filtering, transformations, aggregations, joins, windowing, sessionization, and much more
 - KSQL is open source (Apache 2.0 licensed), distributed, scalable, fault-tolerant, and real-time.
@@ -22,22 +26,23 @@ ksqlDB (예전 이름: Kafka SQL, KSQL)는
 
 - ksqlDB combines the power of real-time stream processing with the approachable feel of a relational database through a familiar, lightweight SQL syntax. ksqlDB offers these core primitives:
 
-- - Streams and tables 
-    - Create relations with schemas over your Apache Kafka topic data
-  
+- Streams and tables 
+
+  - Create relations with schemas over your Apache Kafka topic data
+
   - Materialized views ??
     - Define real-time, incrementally updated materialized views over streams using SQL
     - java library나 rest api로 query를 날릴 수 있음
-  
+
   - Push queries
     - Continuous queries that push incremental results to clients in real time
-  
+
   - Pull queries
     - Query materialized views on demand, much like with a traditional database
 
   - Connect 
     - Integrate with any Kafka Connect data source or sink, entirely from within ksqlDB
-  
+
 - 여러 함수들을 제공해준다
   - STRINGTOTIMESTAMP(Created_At, 'EEE MMM dd HH:mm:ss ZZZZZ yyyy') AS Created_At
   - EXTRACTJSONFIELD(User, '$.name') as User_name
@@ -45,15 +50,17 @@ ksqlDB (예전 이름: Kafka SQL, KSQL)는
   - 별도 topics 간의 joining도 가능하다
   - windows 함수도 지원함
 
-- 아주복잡한 건 streams api를 사용해서 직접 구현하거나 아니면 ksql으로 충분하다면 괜찮을 듯함
+- 아주 복잡한 건 streams api를 사용해서 직접 구현하거나 아니면 ksql으로 충분하다면 괜찮을 듯함
   - kafka stream api를 사용해서 개발을 했음
 
 
 
 
-## 1.2 Architecture
+## 1.2 ksqlDB Architecture
 
-![../../_images/ksql-architecture-and-components.png](images/ksqlDB-소개/ksql-architecture-and-components.png)
+![Diagram showing architecture of ksqlDB](images/ksqlDB-소개/ksqldb-architecture-and-components.png)
+
+
 
 - KSQL Server
 - KSQL CLI
@@ -63,11 +70,19 @@ ksqlDB (예전 이름: Kafka SQL, KSQL)는
 참고
 
 - https://docs.confluent.io/5.4.3/ksql/docs/index.html
+- https://docs.ksqldb.io/en/latest/operate-and-deploy/how-it-works/
 - https://www.confluent.io/blog/ksql-streaming-sql-for-apache-kafka/
 - https://docs.ksqldb.io/en/latest/tutorials/event-driven-microservice/
 - https://github.com/confluentinc/ksql
 - https://docs.ksqldb.io/en/latest/operate-and-deploy/how-it-works/
-- 
+
+
+
+## 1.3 ksqlDB vs Kafka Streams
+
+
+
+![The Confluent Platform stack, with ksqlDB built on Kafka Streams](images/ksqlDB-소개/ksqldb-kafka-streams-core-kafka-stack.png)
 
 # 2.Who
 
@@ -87,7 +102,7 @@ ksqlDB (예전 이름: Kafka SQL, KSQL)는
 - Kafka Stream
   - 2016년 Kafka 0.10.0.0 release 버전에 포함
 - ksqlDB
-  - 2017년부터 개발 시작
+  - 2017년 KSQL Developer Preview
   - 2019년 KSQL (Kafka SQL) -> kdqlDB 재브랜딩을 위해 새로운 이름올 변경
 
 
