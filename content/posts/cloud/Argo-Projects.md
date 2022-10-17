@@ -73,6 +73,8 @@ Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하�
 
 - https://argoproj.github.io/
 
+## Note
+
 > 본 내용은 저희 Platform Engineering 팀내 CNCF 스터디를 위해 준비한 자료입니다. 저희가 하는 로봇 플랫폼 개발에 관심이 있는 분들은 아래 링크를 참고해주시고 도전적이고 열정적으로 같이 일하실 분은 많이 지원해주세요.
 >
 > - 네이버는 왜 제2사옥 1784를 지었을 까요?  https://www.youtube.com/watch?v=WG7JHLfClEo
