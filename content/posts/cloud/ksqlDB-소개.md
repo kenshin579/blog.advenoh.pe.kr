@@ -1,6 +1,6 @@
 ---
 title: 'ksqlDB 소개'
-tags: [kafka, ksql, ksqldb, sql, event, connect, confluent, stream, kstream, ksetl, etl]
+tags: [kafka, ksql, ksqldb, sql, kstream, stream]
 image: '/media/cover/cover-kafka-helm.jpg'
 date: 2022-10-28
 ---
@@ -33,7 +33,7 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 
 ## 1.2 ksqlDB Architecture
 
-![Diagram showing architecture of ksqlDB](/media/cloud/ksqlDB-소개/ksqldb-architecture-and-components.png)
+![Diagram showing architecture of ksqlDB](/media/cloud/ksqlDB/image-20221026125901.png)
 
 
 
@@ -82,11 +82,11 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 
 ## 1.Kafka 스트림 처리에 대한 3가지 방법
 
-![image-20221024172234886](/media/cloud/images/ksqlDB-소개/image-20221024172234886.png)
+![image-20221024172234886](/media/cloud/ksqlDB/image-20221024172234886.png)
 
 ## 2. ksqlDB vs Kafka Streams
 
-![The Confluent Platform stack, with ksqlDB built on Kafka Streams](/media/cloud/ksqlDB-소개/ksqldb-kafka-streams-core-kafka-stack.png)
+![The Confluent Platform stack, with ksqlDB built on Kafka Streams](/media/cloud/ksqlDB/ksqldb-kafka-streams-core-kafka-stack.png)
 
 - ksqlDB
   - Kafka Streams library 기반으로 개발되었다
@@ -150,11 +150,11 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 - [Bosch](https://www.bosch.com/): 자동차 및 산업 기술, 소비재 및 빌딩 기술 분야의 선도적 기업
 - [Voicebridge](https://voicebridge.io/): voice-based systems for rural populations in developing countries that lack internet access
 
-![image-20221016163306547](/media/cloud/ksqlDB-소개/image-20221016163306547.png)
+![image-20221016163306547](/media/cloud/ksqlDB/image-20221016163306547.png)
 
-![image-20221017235058316](/media/cloud/ksqlDB-소개/image-20221017235058316.png)
+![image-20221017235058316](/media/cloud/ksqlDB/image-20221017235058316.png)
 
-![image-20221017221925139](/media/cloud/ksqlDB-소개/image-20221017221925139.png)
+![image-20221017221925139](/media/cloud/ksqlDB/image-20221017221925139.png)
 
 참고
 
@@ -252,7 +252,7 @@ WHERE profileId = 'c2309eec'
 - Table은 지속적이고 재사용 가능하다
 - Stream, Table 또는 Kafka Topcic 에서 새 Table 생성 가능하다
 
-![img](/media/cloud/ksqlDB-소개/image-20221026124701.png)
+![img](/media/cloud/ksqlDB/image-20221026124701.png)
 
 
 
@@ -394,7 +394,7 @@ Connect > Add Connector 버튼 클릭 > DatagenConnector 선택이후 아래 정
 
 Topics > pageviews 클릭 > Messages 탭 클릭해보자. pageviews topic에 실시간으로 데이터가 publish되고 있는 것을 확인할 수 있다.
 
-![image-20221023220301923](/media/cloud/ksqlDB-소개/image-20221023220301923.png)
+![image-20221023220301923](/media/cloud/ksqlDB/image-20221023220301923.png)
 
 참고
 
@@ -443,7 +443,7 @@ CREATE STREAM pageviews_region_like_89
 
 ### 2.4.1 Time
 
-![Diagram showing records in a ksqlDB stream](/media/cloud/ksqlDB-소개/ksql-stream-records.png)
+![Diagram showing records in a ksqlDB stream](/media/cloud/ksqlDB/ksql-stream-records.png)
 
 - 각 Record에는 timestamp가 들어가 있다
 - Timestamp는 producer 어플리케이션이나 Kafka broker에 의해서 설정된다
@@ -451,7 +451,7 @@ CREATE STREAM pageviews_region_like_89
 
 ### 2.4.2 Window
 
-![Diagram showing the relationship between records and time in a ksqlDB stream](/media/cloud/ksqlDB-소개/ksql-window.png)
+![Diagram showing the relationship between records and time in a ksqlDB stream](/media/cloud/ksqlDB/ksql-window.png)
 
 
 
@@ -481,7 +481,7 @@ KSQL에서 Time Windows을 정의하는 3가지 방법이 있다.
 
 
 
-![Diagram showing three types of time windows in ksqlDB streams: tumbling, hopping, and session](/media/cloud/ksqlDB-소개/ksql-window-aggregation.png)
+![Diagram showing three types of time windows in ksqlDB streams: tumbling, hopping, and session](/media/cloud/ksqlDB/ksql-window-aggregation.png)
 
 
 
@@ -628,7 +628,7 @@ ksqlDB 다양한 FAQ는 아래를 참고해주세요.
 
 ## 2. Confluent Community License는 어떤 제약이 있나?
 
-![Apache 2.0 License | Confluent Community License | Confluent Enterprise License](/media/cloud/ksqlDB-소개/relicensing-blog_faq-1920x1080px-2-1024x576.png)
+![Apache 2.0 License | Confluent Community License | Confluent Enterprise License](/media/cloud/ksqlDB/relicensing-blog_faq-1920x1080px-2-1024x576.png)
 
 - ksqlDB을 사용해서 Confluent에서 제공하는 형태의 서비스만 제공하지 않으면 사용할 수 있는 것 같다
   - KSQL 자체가 제공되는 제품인 SaaS 제품으로 제공되면 안된다
