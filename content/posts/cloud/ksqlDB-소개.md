@@ -2,7 +2,7 @@
 title: 'ksqlDB 소개'
 tags: [kafka, ksql, ksqldb, sql, event, connect, confluent, stream, kstream, ksetl, etl]
 image: '/media/cover/cover-kafka-helm.jpg'
-date: 2022-10-16
+date: 2022-10-28
 ---
 
 # What
