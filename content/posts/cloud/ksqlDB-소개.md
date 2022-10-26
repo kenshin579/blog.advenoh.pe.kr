@@ -14,9 +14,8 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 - 친숙하고 가벼운 SQL 구문을 통해 관계형 데이터베이스에 유사하게 접근하는 방식과 비슷하게 실시간 스트리밍 처리를 가능
 - ksqlDB는 fault-tolerant, scale이 가능하도록 설계
 - ksqlDB 내에서 Kafka Connect를 관리기능 제공
-  - (발표 : Connector 생성, 조회가 가능)
 - 데이터 필터링, 변환, 집계, 조인, 윈도우 및 세션화를 포함하여 광범위한 스트리밍 작업을 위해 여러 함수 지원
-  - ex. SUM, COUNT, UCASE, REPLACE, TRIM
+  - ex. `SUM`, `COUNT`, `UCASE`, `REPLACE`, `TRIM`
 - KSQL 사용자 정의 함수도 구현 가능하도록 지원
   - 람다 함수도 지원
 
@@ -26,7 +25,6 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 - https://docs.ksqldb.io/en/latest/developer-guide/ksqldb-reference/functions/
 - https://docs.confluent.io/5.4.0/ksql/docs/developer-guide/udf.html
 - https://docs.ksqldb.io/en/latest/how-to-guides/use-lambda-functions/
-º
 
 
 ## 1.2 ksqlDB Architecture
@@ -34,31 +32,23 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 ![Diagram showing architecture of ksqlDB](/media/cloud/ksqlDB/image-20221026125901.png)
 
 
-
 - ksqlDB client
   - ksqlDB CLI
     - MySQL이나 PostgreSQL과 같은 console을 command interface (CLI)를 제공한다
-
   - ksqlDB UI
-    - Confluent Control Center (유료 버전)는 Kafka 클러스터, 브로커, 토픽, Connector, ksqlDB 쿼리등을 포함한 주요 구성 요소를 한 곳에서 관리하고 모니터링할 수 있는 GUI 이다
-  
+    - Control Center (유료 버전)는 Kafka 클러스터, 브로커, 토픽, Connector, ksqlDB 등을 포함한 주요 구성 요소를 한 곳에서 관리하고 모니터링할 수 있는 GUI 이다
 - REST interfacre
   - ksqlDB client가 ksqlDB Engine 에 접근하게 도와준다
-  
 - ksqlDB Engine
   - KSQL 구문과 쿼리를 실행한다
-  
   - 사용자는 KSQL 구문으로 어플리케이션 로직을 정의하고 엔진은 KSQL 구문을 파싱, 빌드해서 KSQL 서버에서 실행시킨다
-  
   - 각 KSQL서버들은 KSQL 엔진을 인스턴스로 실행시킨다
-  
   - 엔진에서는 RocksDB를 내부 상태 저장소로 사용된다
-  
     - ksqlDB는 Materialized View를 로컬로 디스크에 저장하는데 RocksDB를 사용한다
     - RocksDB는 빠른 embedded key-value 저장소이고 library로 제공된다
-    
   
 > "RocksDB는 Facebook에서 시작된 오픈소스 데이터베이스 개발 프로젝트로, 서버 워크로드와 같은 대용량 데이터 처리에 적합하고 빠른 저장장치, 특히 플래시 저장장치에서 높은 성능을 내도록 최적화되어 있다"
+
 
 참고
 
@@ -113,8 +103,8 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 - Kafka
   - 2010년 LinkedIn에서 내부 회사에서 발생하고 있는 이슈들을 해결하기 위해 만들어짐
   - 2011년 Apache Kafka 오픈소스로 세상에 처음 공개
-  - 2014년 **Confluent 회사 설립**
-    - Kafka 공동 창시자가 LinkedIn을 나와서 새로운 회사를 설립
+  - 2014년 Confluent 회사 설립
+     - Kafka 공동 창시자가 LinkedIn을 나와서 새로운 회사를 설립
 - Kafka Connect
   - 2015년 Kafka 0.9.0.0 relealse 버전에 포함
 - Kafka Stream
@@ -164,7 +154,7 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 
 ## 1. Installation on local-machine
 
-로컬환경에서 쉽게 여러 Kafka 구성요소를 구동하기 위해 docker-compose로 실행한다. 먼저 `docker-compose.yml` 파일을 다운로드한다. 
+로컬환경에서 쉽게 여러 Kafka 구성요소를 구동하기 위해 `docker-compose`로 실행한다. 먼저 `docker-compose.yml` 파일을 다운로드한다. 
 
 ```bash
 $ curl --output docker-compose.yml \
@@ -235,9 +225,9 @@ WHERE profileId = 'c2309eec'
     EMIT CHANGES;
 ```
 
-- kafka_topic - 기존 Kafka topic에서 Stream을 생성하거나 Topic이 없는 경우에는 자동 생성된다
-- value_format - Kafka topci에 저장된 메시지의 인코딩 방식을 지정한다
-- partitions - Kafka topic의 partition 수를 지정한다
+- `kafka_topic` - 기존 Kafka topic에서 Stream을 생성하거나 Topic이 없는 경우에는 자동 생성된다
+- `value_format` - Kafka topci에 저장된 메시지의 인코딩 방식을 지정한다
+- `partitions` - Kafka topic의 partition 수를 지정한다
 
 
 
@@ -245,10 +235,9 @@ WHERE profileId = 'c2309eec'
 
 - Mutable한 event collection이다
   - Table의 데이터는 현재 최신 버전을 나타낸다
-- Row은 변경 가능하면 Primary Key가 있어야 한다
+- Row은 변경 가능하며 Primary Key가 있어야 한다
 - INSERT, UPDATE, DELETE이 가능하다
-- Table은 지속적이고 재사용 가능하다
-- Stream, Table 또는 Kafka Topcic 에서 새 Table 생성 가능하다
+- Stream, Table 또는 Kafka Topic 에서 새 Table 생성 가능하다
 
 ![img](/media/cloud/ksqlDB/image-20221026124701.png)
 
@@ -273,11 +262,11 @@ SELECT ROUND(GEO_DISTANCE(la, lo, 37.4133, -122.1162), -1) AS distanceInMiles,
   GROUP BY ROUND(GEO_DISTANCE(la, lo, 37.4133, -122.1162), -1);
 ```
 
-- LATEST_BY_OFFSET
+- `LATEST_BY_OFFSET`
   - 특정 column의 최신 값을 반환하는 aggregate 함수이다
-- EMIT CHANGES
+- `EMIT CHANGES`
   - EMIT CHANGES 절을 추가하면 모든 변경 사항을 지속적으로 받을 수 있다
-- COLLECT_LIST(col1)
+- `COLLECT_LIST(col1)`
   - col1의 모든 값을 포함한 arraㅛ를 반환한다
 
 참고
@@ -348,7 +337,7 @@ ksql> SELECT * from ridersNearMountainView WHERE distanceInMiles <= 10;
 
 ## 2. Control Center
 
-지금까지 CLI에서만 ksqlDB를 사용해 보았는데요. Control Center에서도 ksqlDB를 사용해보겠습니다. http://localhost:9021에 접속한다. 
+지금까지 CLI에서만 ksqlDB를 사용해 보았는데요. Control Center에서도 ksqlDB를 사용해보겠습니다. [http://localhost:9021](http://localhost:9021) 에 접속한다. 
 
 ## 2.1 Datagen Source Connector
 
@@ -358,7 +347,7 @@ Datagen Source Connector는 개발 및 테스트를 위해 Mock 데이터를 생
 
 pageviews와 users를 mock으로 생성한다. 
 
-Connect > Add Connector 버튼 클릭 > DatagenConnector 선택이후 아래 정보를 입력한다.
+**Connect > Add Connector 버튼 클릭 > DatagenConnector 선택**이후 아래 정보를 입력한다.
 
 ```json
 # pageviews mock 데이터 생성
@@ -390,7 +379,7 @@ Connect > Add Connector 버튼 클릭 > DatagenConnector 선택이후 아래 정
 
 
 
-Topics > pageviews 클릭 > Messages 탭 클릭해보자. pageviews topic에 실시간으로 데이터가 publish되고 있는 것을 확인할 수 있다.
+**Topics > pageviews 클릭 > Messages** 탭 클릭해보자. pageviews topic에 실시간으로 데이터가 publish되고 있는 것을 확인할 수 있다.
 
 ![image-20221023220301923](/media/cloud/ksqlDB/image-20221023220301923.png)
 
@@ -454,8 +443,8 @@ CREATE STREAM pageviews_region_like_89
 
 
 - ksqlDB는 스트림을 이용해서 특정 기간(Window)의 이벤트를 집계해서 보내주는 형태의 Window 쿼리를 제공한다
-- 특정 기간을 Duration으로 나타내고, Duration은 WINDOWSTART / WINDOWEND로 표현할 수 있다
-- WINDOWSTART / WINDOWEND는 Window 쿼리를 생성하면 SELECT 절에 선언해서 사용할 수 있다
+- 특정 기간을 Duration으로 나타내고, Duration은 `WINDOWSTART` / `WINDOWEND`로 표현할 수 있다
+- `WINDOWSTART` / `WINDOWEND`는 Window 쿼리를 생성하면 SELECT 절에 선언해서 사용할 수 있다
 
 ### 2.4.1 Window Types
 
