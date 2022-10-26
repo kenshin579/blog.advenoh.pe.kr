@@ -267,7 +267,7 @@ SELECT ROUND(GEO_DISTANCE(la, lo, 37.4133, -122.1162), -1) AS distanceInMiles,
 - `EMIT CHANGES`
   - EMIT CHANGES 절을 추가하면 모든 변경 사항을 지속적으로 받을 수 있다
 - `COLLECT_LIST(col1)`
-  - col1의 모든 값을 포함한 arraㅛ를 반환한다
+  - col1의 모든 값을 포함한 array를 반환한다
 
 참고
 
@@ -345,7 +345,7 @@ Datagen Source Connector는 개발 및 테스트를 위해 Mock 데이터를 생
 
 ### 2.1.1 Generate Mock Data
 
-pageviews와 users를 mock으로 생성한다. 
+`pageviews`와 `users`를 mock으로 생성한다. 
 
 **Connect > Add Connector 버튼 클릭 > DatagenConnector 선택**이후 아래 정보를 입력한다.
 
@@ -406,7 +406,7 @@ ksql> CREATE TABLE users_table (id VARCHAR PRIMARY KEY)
     WITH (KAFKA_TOPIC='users', VALUE_FORMAT='AVRO');
 ```
 
-pageviews stream과 users table을 join해서 user_pageviews를 생성한다. 
+`pageviews` stream과 `users table`을 join해서 `user_pageviews`를 생성한다. 
 
 ```sql
 # user_pageviews는 USER_PAGEVIEWS topic이 생성이 된다
@@ -545,13 +545,11 @@ ksqlDB는 2가지 모드로 connector를 실행할 수 있다. 모드에 따라�
 
 - Embedded
   - Embedded 모드에서는 ksqlDB는 서버에서 직접 connector를 실행한다
-
 - External
   - 이 모드는 외부 Kafka Connect 클러스터와 통신하는 방식이다
 
 
 ```sql
-# mongo sink를 
 CREATE SINK CONNECTOR `mongodb-test-sink-connector` WITH (
    "connector.class"='com.mongodb.kafka.connect.MongoSinkConnector',
    "key.converter"='org.apache.kafka.connect.json.JsonConverter',
