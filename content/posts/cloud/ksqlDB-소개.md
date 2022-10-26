@@ -337,7 +337,7 @@ ksql> SELECT * from ridersNearMountainView WHERE distanceInMiles <= 10;
 
 ## 2. Control Center
 
-지금까지 CLI에서만 ksqlDB를 사용해 보았는데요. Control Center에서도 ksqlDB를 사용해보겠습니다. http://localhost:9021에 접속한다. 
+지금까지 CLI에서만 ksqlDB를 사용해 보았는데요. Control Center에서도 ksqlDB를 사용해보겠습니다. [http://localhost:9021](http://localhost:9021) 에 접속한다. 
 
 ## 2.1 Datagen Source Connector
 
