@@ -31,18 +31,18 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 
 ![Diagram showing architecture of ksqlDB](/media/cloud/ksqlDB/image-20221026125901.png)
 
-1.ksqlDB client
+**ksqlDB client**
 
 - ksqlDB CLI
   - MySQL이나 PostgreSQL과 같은 console을 command interface (CLI)를 제공한다
 - ksqlDB UI
   - Control Center (유료 버전)는 Kafka 클러스터, 브로커, 토픽, Connector, ksqlDB 등을 포함한 주요 구성 요소를 한 곳에서 관리하고 모니터링할 수 있는 GUI 이다
 
-2.REST Interface
+**REST Interface**
 
 - ksqlDB client가 ksqlDB Engine 에 접근하게 도와준다
 
-3.ksqlDB Engine
+**ksqlDB Engine**
 
 - KSQL 구문과 쿼리를 실행한다
 - 사용자는 KSQL 구문으로 어플리케이션 로직을 정의하고 엔진은 KSQL 구문을 파싱, 빌드해서 KSQL 서버에서 실행시킨다
@@ -52,6 +52,7 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
   - RocksDB는 빠른 embedded key-value 저장소이고 library로 제공된다
 
 > "RocksDB는 Facebook에서 시작된 오픈소스 데이터베이스 개발 프로젝트로, 서버 워크로드와 같은 대용량 데이터 처리에 적합하고 빠른 저장장치, 특히 플래시 저장장치에서 높은 성능을 내도록 최적화되어 있다"
+
 
 
 참고
@@ -71,6 +72,8 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 - https://stackoverflow.com/questions/58621917/ksql-query-and-tables-storage
 
 # Why
+
+ksqlDB를 왜 사용하면 좋은지 알아보아요. 
 
 ## 1.Kafka 스트림 처리에 대한 3가지 방법
 
@@ -104,19 +107,22 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 
 ## History
 
-Kafka
+**Kafka**
+
 - 2010년 LinkedIn에서 내부 회사에서 발생하고 있는 이슈들을 해결하기 위해 만들어짐
 - 2011년 Apache Kafka 오픈소스로 세상에 처음 공개
 - 2014년 Confluent 회사 설립
   - Kafka 공동 창시자가 LinkedIn을 나와서 새로운 회사를 설립
 
-Kafka Connect
+**Kafka Connect**
+
 - 2015년 Kafka 0.9.0.0 relealse 버전에 포함
 
-Kafka Stream
+**Kafka Stream**
+
 - 2016년 Kafka 0.10.0.0 release 버전에 포함
 
-ksqlDB
+**ksqlDB**
 - 2017년 KSQL Developer Preview로 공개
 - 2019년 KSQL (Kafka SQL) -> ksqlDB 재브랜딩을 위해 새로운 이름올 변경
 
@@ -205,13 +211,15 @@ ksql>
 
 ## 2. KSQL Usage
 
-
+예제를 통해서 조금 더 ksqlDB에 대해서 알아보자. 
 
 ## 2.1 Collections : Stream vs Table
 
 ### 2.1.1 Stream
 
-- Stream은 partition으로 데이터가 관리되며 일반적으로 무제한의 Event/Row 시퀸스이다
+- 영속적으로 무제한의 스트리밍 되는 이벤트 컬렉션이다
+  - Partition으로 데이터가 관리
+
 - Row은 일단 생성된 후에는 변경이 불가능하다 (immutable, append-only)
   - 각 Row는 특정 partition에 저장된다
   - INSERT만 가능하다
@@ -240,8 +248,7 @@ WHERE profileId = 'c2309eec'
 
 ### 2.1.2 Table (Materialized view)
 
-- Mutable한 event collection이다
-  - Table의 데이터는 현재 최신 버전을 나타낸다
+- Table 데이터는 현재 최신 상태를 가지고 mutable한 이벤트 컬렉션이다
 - Row은 변경 가능하며 Primary Key가 있어야 한다
 - INSERT, UPDATE, DELETE이 가능하다
 - Stream, Table 또는 Kafka Topic 에서 새 Table 생성 가능하다
@@ -413,18 +420,18 @@ ksql> CREATE TABLE users_table (id VARCHAR PRIMARY KEY)
     WITH (KAFKA_TOPIC='users', VALUE_FORMAT='AVRO');
 ```
 
-`pageviews` stream과 `users table`을 join해서 `user_pageviews`를 생성한다. 
+`pageviews` stream과 `users` table을 join해서 `user_pageviews`를 생성한다. 
 
 ```sql
 # user_pageviews는 USER_PAGEVIEWS topic이 생성이 된다
-CREATE STREAM user_pageviews
+ksql> CREATE STREAM user_pageviews
   AS SELECT users_table.id AS userid, pageid, regionid, gender
      FROM pageviews_stream
               LEFT JOIN users_table ON pageviews_stream.userid = users_table.id
          EMIT CHANGES;
 
 # user_pageviews stream에서 regionId가 8, 9로 끝나는 별도 pageviews를 생성
-CREATE STREAM pageviews_region_like_89
+ksql> CREATE STREAM pageviews_region_like_89
   WITH (KAFKA_TOPIC='pageviews_filtered_r8_r9', VALUE_FORMAT='AVRO')
     AS SELECT * FROM user_pageviews
        WHERE regionid LIKE '%_8' OR regionid LIKE '%_9'
@@ -467,8 +474,8 @@ KSQL에서 Time Windows을 정의하는 3가지 방법이 있다.
   - ex. `WINDOW HOPPING (SIZE 30 SECONDS, ADVANCE BY 10 SECOND)`
 - Session
   - Session-based
-    - Inactivity gap 값으로 활동이 있던 구간을 구별하여 Session Window를 생성한다
   - Dynamically-sized, non-overlapping, data-driven windows
+  - Inactivity gap 값으로 활동이 있는 구간을 구분하여 Session Window를 생성한다
   - Session Window는 사용자 행동 분석(ex. 사용자 방문자 수)에 특히 유용하게 사용할 수 있다
   - ex. `WINDOW SESSION (60 SECONDS)`
 
@@ -557,7 +564,7 @@ ksqlDB는 2가지 모드로 connector를 실행할 수 있다. 모드에 따라�
 
 
 ```sql
-CREATE SINK CONNECTOR `mongodb-test-sink-connector` WITH (
+ksql> CREATE SINK CONNECTOR `mongodb-test-sink-connector` WITH (
    "connector.class"='com.mongodb.kafka.connect.MongoSinkConnector',
    "key.converter"='org.apache.kafka.connect.json.JsonConverter',
    "value.converter"='org.apache.kafka.connect.json.JsonConverter',
