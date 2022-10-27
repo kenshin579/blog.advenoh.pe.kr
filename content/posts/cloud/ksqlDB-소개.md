@@ -31,22 +31,26 @@ ksqlDB (formerly Kafka SQL, KSQL)는 Kafka를 위한 스트리밍 SQL 엔진이�
 
 ![Diagram showing architecture of ksqlDB](/media/cloud/ksqlDB/image-20221026125901.png)
 
+1.ksqlDB client
 
-- ksqlDB client
-  - ksqlDB CLI
-    - MySQL이나 PostgreSQL과 같은 console을 command interface (CLI)를 제공한다
-  - ksqlDB UI
-    - Control Center (유료 버전)는 Kafka 클러스터, 브로커, 토픽, Connector, ksqlDB 등을 포함한 주요 구성 요소를 한 곳에서 관리하고 모니터링할 수 있는 GUI 이다
-- REST interfacre
-  - ksqlDB client가 ksqlDB Engine 에 접근하게 도와준다
-- ksqlDB Engine
-  - KSQL 구문과 쿼리를 실행한다
-  - 사용자는 KSQL 구문으로 어플리케이션 로직을 정의하고 엔진은 KSQL 구문을 파싱, 빌드해서 KSQL 서버에서 실행시킨다
-  - 각 KSQL서버들은 KSQL 엔진을 인스턴스로 실행시킨다
-  - 엔진에서는 RocksDB를 내부 상태 저장소로 사용된다
-    - ksqlDB는 Materialized View를 로컬로 디스크에 저장하는데 RocksDB를 사용한다
-    - RocksDB는 빠른 embedded key-value 저장소이고 library로 제공된다
-  
+- ksqlDB CLI
+  - MySQL이나 PostgreSQL과 같은 console을 command interface (CLI)를 제공한다
+- ksqlDB UI
+  - Control Center (유료 버전)는 Kafka 클러스터, 브로커, 토픽, Connector, ksqlDB 등을 포함한 주요 구성 요소를 한 곳에서 관리하고 모니터링할 수 있는 GUI 이다
+
+2.REST Interface
+
+- ksqlDB client가 ksqlDB Engine 에 접근하게 도와준다
+
+3.ksqlDB Engine
+
+- KSQL 구문과 쿼리를 실행한다
+- 사용자는 KSQL 구문으로 어플리케이션 로직을 정의하고 엔진은 KSQL 구문을 파싱, 빌드해서 KSQL 서버에서 실행시킨다
+- 각 KSQL서버들은 KSQL 엔진을 인스턴스로 실행시킨다
+- 엔진에서는 RocksDB를 내부 상태 저장소로 사용된다
+  - ksqlDB는 Materialized View를 로컬로 디스크에 저장하는데 RocksDB를 사용한다
+  - RocksDB는 빠른 embedded key-value 저장소이고 library로 제공된다
+
 > "RocksDB는 Facebook에서 시작된 오픈소스 데이터베이스 개발 프로젝트로, 서버 워크로드와 같은 대용량 데이터 처리에 적합하고 빠른 저장장치, 특히 플래시 저장장치에서 높은 성능을 내도록 최적화되어 있다"
 
 
@@ -100,18 +104,21 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 
 ## History
 
-- Kafka
-  - 2010년 LinkedIn에서 내부 회사에서 발생하고 있는 이슈들을 해결하기 위해 만들어짐
-  - 2011년 Apache Kafka 오픈소스로 세상에 처음 공개
-  - 2014년 Confluent 회사 설립
-     - Kafka 공동 창시자가 LinkedIn을 나와서 새로운 회사를 설립
-- Kafka Connect
-  - 2015년 Kafka 0.9.0.0 relealse 버전에 포함
-- Kafka Stream
-  - 2016년 Kafka 0.10.0.0 release 버전에 포함
-- ksqlDB
-  - 2017년 KSQL Developer Preview로 공개
-  - 2019년 KSQL (Kafka SQL) -> kdqlDB 재브랜딩을 위해 새로운 이름올 변경
+Kafka
+- 2010년 LinkedIn에서 내부 회사에서 발생하고 있는 이슈들을 해결하기 위해 만들어짐
+- 2011년 Apache Kafka 오픈소스로 세상에 처음 공개
+- 2014년 Confluent 회사 설립
+  - Kafka 공동 창시자가 LinkedIn을 나와서 새로운 회사를 설립
+
+Kafka Connect
+- 2015년 Kafka 0.9.0.0 relealse 버전에 포함
+
+Kafka Stream
+- 2016년 Kafka 0.10.0.0 release 버전에 포함
+
+ksqlDB
+- 2017년 KSQL Developer Preview로 공개
+- 2019년 KSQL (Kafka SQL) -> ksqlDB 재브랜딩을 위해 새로운 이름올 변경
 
 
 참고
@@ -129,7 +136,7 @@ ksqlDB는 Confluent 회사에 의해서 2017년부터 개발되었다.
 
 - Naver LINE
   - [AB Test Report](https://velog.io/@anjinwoong/Line-Developer-Day-2021-KSETL%EB%A1%9C-Kafka-%EC%8A%A4%ED%8A%B8%EB%A6%BC-ETL-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0) 
-  - 기준 시스템 구조에서는 Redis에 저장된 event log를 가져와 join window를 구현함
+  - 기존 시스템 구조에서는 Redis에 저장된 event log를 가져와 join window를 구현함
   - ksqlDB를 사용해서 아키텍쳐가 단순화됨 (join two streams without redis)
 - [ticketmaster](https://www.ticketmaster.com/) - 티켓 판매 회사
 - [Nuuly](https://www.nuuly.com/) - 옷 렌탈 및 재판재 서비스
