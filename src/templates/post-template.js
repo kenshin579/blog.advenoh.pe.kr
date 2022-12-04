@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 import Tags from '../components/tags';
 import AdSense from 'react-adsense';
+import Utterances from '../components/utterances'
 
 const PostTemplate = ({ data }) => {
   const { frontmatter, excerpt, html } = data.markdownRemark;
@@ -24,6 +25,7 @@ const PostTemplate = ({ data }) => {
           <PostDate>{frontmatter.date}</PostDate>
 
           <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+          <Utterances />
           <AdSense.Google
               client="ca-pub-8868959494983515"
               slot="5560009326"
