@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2022-10-25
+Updated 2023-01-27
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -64,6 +64,7 @@ Updated 2022-10-25
 * [Go에서의 로그깅 (Logging in Go)](https://blog.advenoh.pe.kr/go/Go에서의-로그깅-Logging-in-Go)
 * [Go에서의 메서드 (Method in Go)](https://blog.advenoh.pe.kr/go/Go에서의-메서드-Method-in-Go)
 * [Go에서의 열거형 상수 (Enums in Go)](https://blog.advenoh.pe.kr/go/Go에서의-열거형-상수-Enums-in-Go)
+* [jq로 array에서 특정 필드로 매칭되는 필드 값을 추출하는 방법](https://blog.advenoh.pe.kr/go/jq로-array에서-특정-필드로-매칭되는-필드-값을-추출하는-방법)
 * [타입 단언 (Type Assertion)](https://blog.advenoh.pe.kr/go/타입-단언-Type-Assertion)
 * [타입 변환 (Type Conversion)](https://blog.advenoh.pe.kr/go/타입-변환-Type-Conversion)
 * [타입 스위치 (Type switch)](https://blog.advenoh.pe.kr/go/타입-스위치-Type-switch)
