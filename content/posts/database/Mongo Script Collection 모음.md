@@ -1,11 +1,13 @@
 ---
 title: 'Mongo Script Collection 모음'
-tags : [mongo, script, mongodb]
+tags : [mongo, script, mongodb, 몽고, 스크립트]
 social_image: /media/cover/cover-mongo.jpeg
-date: 2022-07-24
+date: 2023-02-25
 ---
 
+개발 시 mongoDB를 주 데이터베이스로 사용하면 데이터 마이그레이션을 자주 하게 되는데, MYSQL보다는 덜 익숙한 면도 있어서 종종 하게 되는 migration을 매번 구글링하게 되어 정리 차원에서 블로그에 적어둔다. 
 
+실습 전에 간단하게 inventory collection에 데이터를 입력한다. 
 
 ```javascript
 db.inventory.insertMany([
@@ -17,7 +19,9 @@ db.inventory.insertMany([
 
 
 
-# 1.Key Name
+## 1.item의 key 이름을 변경
+
+inventory list의 item의 key 이름은 `$rename` operator를 사용한다. 아래 예제에서는 `item` -> `item_id`로 이름을 변경한다. 
 
 ```javascript
 db.inventory.updateMany({}, {$rename: {"item": "item_id"}}, false, true)
@@ -25,22 +29,24 @@ db.inventory.updateMany({}, {$rename: {"item": "item_id"}}, false, true)
 
 
 
-# 2. 업데이트 value based on key 
+## 2. 매칭이 item의 특정 값을 업데이트
+
+SQL에서 where와 같이 `$eq` operator로 특정 값이 매칭되는 item을 선택해서 값을 `$se`t operator로 변경한다. 
 
 ```javascript
 db.inventory.updateMany(
     {"item_id": {$eq: "journal"}},
     {
-        $set: {"item_id": "uuid 입력이 필요함"}
+        $set: {"item_id": "11111"}
     }
 )
 ```
 
-
-
 # 참고
 
 - https://blog.kevinchisholm.com/javascript/mongodb/getting-started-with-mongo-shell-scripting-basic-crud-operations/
+
+- https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/#mongodb-method-db.collection.updateOne
 
   
 
