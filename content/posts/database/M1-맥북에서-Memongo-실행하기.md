@@ -1,6 +1,6 @@
 ---
-title: 'M1 맥북에서 memongo 실행하려면'
-tags : [memongo, inmemorydb, m1, mac, mongo, mongodb, go, golang, 몽고, 맥북]
+title: 'M1 맥북에서 Memongo 실행하기'
+tags : [m1, mac, mongo, mongodb, go, golang, 몽고, 맥북, memongo]
 social_image: /media/cover/cover-mongo.jpeg
 date: 2023-02-25
 ---
