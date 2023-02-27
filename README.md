@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2023-02-25
+Updated 2023-02-27
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -28,7 +28,7 @@ Updated 2023-02-25
 * [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/cloud/헬름으로-Kafka-설치하기)
 
 ## Database
-* [M1 맥북에서 memongo 실행하려면](https://blog.advenoh.pe.kr/database/M1-맥북에서-memongo-실행하려면)
+* [M1 맥북에서 Memongo 실행하기](https://blog.advenoh.pe.kr/database/M1-맥북에서-Memongo-실행하기)
 * [Mongo Script Collection 모음](https://blog.advenoh.pe.kr/database/Mongo-Script-Collection-모음)
 * [Mongodb Collection Cloning하는 방법](https://blog.advenoh.pe.kr/database/Mongodb-Collection-Cloning하는-방법)
 * [Mongodb 원격 서버에 있는 Collection을 로컬환경 서버로 복사하기](https://blog.advenoh.pe.kr/database/Mongodb-원격-서버에-있는-Collection을-로컬환경-서버로-복사하기)
