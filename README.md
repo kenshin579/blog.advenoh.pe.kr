@@ -18,7 +18,7 @@ Updated 2023-03-06
 * [Argo Projects](https://blog.advenoh.pe.kr/cloud/Argo-Projects)
 * [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/cloud/Heroku에-Node-js-MongoDB-App-배포하기)
 * [Jaeger에 대한 소개](https://blog.advenoh.pe.kr/cloud/Jaeger에-대한-소개)
-* [Kafka CLI Command Collection](https://blog.advenoh.pe.kr/cloud/Kafka-Cli-Command-Collection)
+* [Kafka CLI Collection](https://blog.advenoh.pe.kr/cloud/Kafka-CLI-Collection)
 * [Kafka CLI 명령어 모음](https://blog.advenoh.pe.kr/cloud/Kafka-CLI-명령어-모음)
 * [Kafka Connect에 대한 소개](https://blog.advenoh.pe.kr/cloud/Kafka-Connect에-대한-소개)
 * [SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/SSL-인증서-Ngnix-서버에-설치하기)
@@ -146,5 +146,5 @@ Updated 2023-03-06
 
 ## Web
 * [구글 시트에서 사용자 정의 함수 구현하기](https://blog.advenoh.pe.kr/web/구글-시트에서-사용자-정의-함수-구현하기)
-* [구글 하나의 계정으로 여러 이메일 주소 사용하기](https://blog.advenoh.pe.kr/web/구글-하나의-계정으로-여러-이메일-주소-사용하기)
+* [하나의 구글 계정으로 여러 이메일 주소 사용하기](https://blog.advenoh.pe.kr/web/하나의-구글-계정으로-여러-이메일-주소-사용하기)
 
