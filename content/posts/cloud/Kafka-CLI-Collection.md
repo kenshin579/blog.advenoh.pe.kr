@@ -1,6 +1,6 @@
 ---
-title: 'Kafka CLI Command Collection'
-tags: [kafka, script, cli, ahkq, command, broker, message, apache, mq, queue]
+title: 'Kafka CLI Collection'
+tags: [kafka, mq, script, cli, ahkq, broker, mq]
 image: '/media/cover/cover-kafka-helm.jpg'
 date: 2023-03-06
 ---
