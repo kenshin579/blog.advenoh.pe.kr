@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2023-03-05
+Updated 2023-03-06
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -18,6 +18,7 @@ Updated 2023-03-05
 * [Argo Projects](https://blog.advenoh.pe.kr/cloud/Argo-Projects)
 * [Heroku에 Node.js+MongoDB App 배포하기](https://blog.advenoh.pe.kr/cloud/Heroku에-Node-js-MongoDB-App-배포하기)
 * [Jaeger에 대한 소개](https://blog.advenoh.pe.kr/cloud/Jaeger에-대한-소개)
+* [Kafka CLI Command Collection](https://blog.advenoh.pe.kr/cloud/Kafka-Cli-Command-Collection)
 * [Kafka CLI 명령어 모음](https://blog.advenoh.pe.kr/cloud/Kafka-CLI-명령어-모음)
 * [Kafka Connect에 대한 소개](https://blog.advenoh.pe.kr/cloud/Kafka-Connect에-대한-소개)
 * [SSL 인증서 Ngnix 서버에 설치하기 (무료 Lets Encrypt 인증서 발급)](https://blog.advenoh.pe.kr/cloud/SSL-인증서-Ngnix-서버에-설치하기)
