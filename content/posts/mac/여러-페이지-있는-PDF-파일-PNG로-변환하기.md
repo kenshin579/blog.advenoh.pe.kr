@@ -1,6 +1,6 @@
 ---
 title: '여러 페이지 있는 PDF 파일 PNG로 변환하기'
-tags: [mac, convert, multiple, pages, pdf, jpg, png, command, cmd, 맥, 명령어, 이미지]
+tags: [맥, 명령어, 이미지, mac, pages, pdf, jpg, png, cmd, 변환, 이미지, multiple, convert]
 social_image: /media/cover/cover-mac.jpg
 date: 20123-02-13
 ---
