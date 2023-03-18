@@ -1,7 +1,7 @@
 ---
 title: 'Introducing Jaeger'
 social_image: '/media/cover/cover-jaeger.png'
-tags: [jaeger, trace, tracing, telemetry, pinpoint]
+tags: [jaeger, trace, tracing, en, pinpoint, telemetry]
 date: 2023-03-07
 ---
 
