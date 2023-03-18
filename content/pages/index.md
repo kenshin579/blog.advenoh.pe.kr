@@ -1,6 +1,6 @@
 ---
 template: 'index-template'
-title: 'Frank Blog'
+title: 'IT Blog'
 ---
 
 #안녕하세요. 
