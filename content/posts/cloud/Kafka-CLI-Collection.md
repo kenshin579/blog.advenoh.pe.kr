@@ -280,7 +280,7 @@ Topic: my_topic	TopicId: ufrRaY-tTyqcHjFAY-q0ew	PartitionCount: 3	ReplicationFac
 
 
 
-## 3.2 How to delete a conumer group?
+## 3.2 How to delete a consumer group?
 
 You can read the entire message from the beginning if you delete the consumer group. 
 
