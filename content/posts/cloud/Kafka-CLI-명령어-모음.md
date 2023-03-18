@@ -309,7 +309,7 @@ my-first-application my_topic        1          8               8               
 my-first-application my_topic        2          9               9               0               sarama-473590a9-11eb-40c2-afa7-70c5ec448edf /172.18.0.1     saram
 ```
 
-## 3.4 특정 offset과 partition에서 메시지를 죄회하는 방법
+## 3.4 특정 offset과 partition에서 메시지를 조회하는 방법
 
 https://developer.confluent.io/tutorials/kafka-console-consumer-read-specific-offsets-partitions/confluent.html
 
@@ -319,11 +319,13 @@ $ kafka-console-consumer.sh --bootstrap-server localhost:29092 --topic report --
 
 ## 3.5 메시지의 Timestamp도 출력하는 방법
 
-https://github.com/confluentinc/schema-registry/issues/947
-
 ```bash
 $ kafka-console-consumer.sh --bootstrap-server localhost:29092 --topic report --property print.timestamp=true
 ```
+
+참고
+
+- https://github.com/confluentinc/schema-registry/issues/947
 
 # 4. 참고
 
