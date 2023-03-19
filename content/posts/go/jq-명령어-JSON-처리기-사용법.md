@@ -1,11 +1,16 @@
 ---
-title: 'jq로 array에서 특정 필드로 매칭되는 필드 값을 추출하는 방법'
+title: 'jq - 명령어 JSON 처리기 사용법'
 social_image: /media/cover/cover-go.png
-date: 2023-01-27
 tags: [jq, gojq, json]
+date: 2023-01-27
 ---
 
 `jq`는 자주 사용하지는 않지만, 필요할 때는 용이하게 사용하는 경우가 종종 있어서 기록상 블로그에 남겨둡니다. 
+
+# jq 사용법 모음
+
+## 1. jq로 array에서 특정 필드로 매칭되는 필드 값을 추출하려면?
+
 
 아래와 같은 json array에서 특정 필드, `id`가 매칭되는 item에서 원하는 필드를 추출하면 `jq` 쿼리는 어떻게 작성하면 될까요?
 
@@ -44,10 +49,23 @@ $ cat json/ex2.json | jq '.[] | select(.id == "423be8de-9c04-4f0e-8ff0-545a8cb17
 
 
 
-오늘은 해피 금요일이네요. 다들 좋은 주말 되세요~~
+## 2. JSON 문자열에서 배열의 수를 출력하려면?
+
+배열의 수는 `length` 함수로 얻을 수 있다. 
+
+```bash
+$ echo '[{"username":"user1"},{"username":"user2"}]' | jq '. | length'
+```
+
+참고
+
+- https://phpfog.com/count-json-array-elements-with-jq/
+
+  
 
 # 참고
 
 - https://stackoverflow.com/questions/51184524/get-parent-element-id-while-parsing-json-data-with-jq
 - https://stackoverflow.com/questions/18592173/select-objects-based-on-value-of-variable-in-object-using-jq
 - https://stedolan.github.io/jq/manual/#select(boolean_expression)
+- https://www.44bits.io/ko/post/cli_json_processor_jq_basic_syntax
