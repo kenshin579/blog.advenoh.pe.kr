@@ -612,7 +612,7 @@ Refer to the link below for various ksqlDB FAQs.
 - No, it is not.
 - ksqlDB is licensed under the Confluent Community License and is managed as a Confluent company product.
 
-## 2. Is there anyh constraints for Confluent Community License?
+## 2. Is there any constraints for Confluent Community License?
 
 ![Apache 2.0 License | Confluent Community License | Confluent Enterprise License](/media/cloud/ksqlDB/relicensing-blog_faq-1920x1080px-2-1024x576.png)
 
