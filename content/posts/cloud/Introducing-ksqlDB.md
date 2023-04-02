@@ -345,8 +345,6 @@ ksql> SELECT * from ridersNearMountainView WHERE distanceInMiles <= 10;
 
 ## 2. Control Center
 
-지금까지 CLI에서만 ksqlDB를 사용해 보았는데요. Control Center에서도 ksqlDB를 사용해보겠습니다. [http://localhost:9021](http://localhost:9021) 에 접속한다. 
-
 So far, we have only used ksqlDB in the CLI, but let's use the Control Center web UI. Go to [http://localhost:9021](http://localhost:9021/).
 
 ## 2.1 Datagen Source Connector
@@ -618,21 +616,13 @@ Refer to the link below for various ksqlDB FAQs.
 
 ![Apache 2.0 License | Confluent Community License | Confluent Enterprise License](/media/cloud/ksqlDB/relicensing-blog_faq-1920x1080px-2-1024x576.png)
 
-- ksqlDB을 사용해서 Confluent에서 제공하는 형태의 서비스만 제공하지 않으면 사용할 수 있는 것 같다
-  - KSQL 자체가 제공되는 제품인 SaaS 제품으로 제공되면 안된다
-  - 회사 내부 프로젝트에 사용하려면, 사용전에 라이센스 검토가 필요할 것으로 판단된다
-- It seems that ksqlDB can be used as long as the simliar kind of ksqlDB service provided.
+- It seems that ksqlDB can be used as long as the similar kind of ksqlDB service provided.
   - KSQL cannot be offered as a SaaS product itself.
   - If you want to use it for an internal company project, it is recommended to review the license before using it.
 - https://www.confluent.io/confluent-community-license-faq/
 - https://www.confluent.io/ko-kr/blog/license-changes-confluent-platform/
 
 # Wrap up
-
-- Visual Builder for Streaming Data Pipeline
-- Confluent Cloud에서 제공
-
-- https://www.confluent.io/blog/building-streaming-data-pipelines-visually
 
 ksqlDB helps us easily process streaming data on Kafka with SQL syntax that we are already familiar with.
 
