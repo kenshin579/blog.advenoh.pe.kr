@@ -1,6 +1,6 @@
 ---
 title: 'Kafka CLI Collection'
-tags: [kafka, mq, script, cli, ahkq, broker, mq]
+tags: [kafka, mq, script, cli, ahkq, broker, mq, en]
 image: '/media/cover/cover-kafka-helm.jpg'
 date: 2023-03-06
 ---
