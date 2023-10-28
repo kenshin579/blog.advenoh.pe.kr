@@ -8,7 +8,7 @@ date: 2023-10-27
 
 Postman Flows는 여러 타입의 빌딩 블록을 서로 연결하여 작업 흐름을 정의하고 자동화하는 데 사용되는 도구이다. Flows는 코드 한 줄도 작성하지 않고 작업 흐름을 정의할 수 있는 UI를 제공해 주고 있어서 개발자 외에도 누구나? 쉽게 Flows를 사용할 수 있다. 다음은 Postman Flows 의 주요 특징 및 기능에 대해서 알아보자.
 
-![Postman Flows](/Users/user/WebstormProjects/blog.advenoh.pe.kr/content/posts/web/images/Postman-Flows/postman-flows-overview.gif)
+![Postman Flows](/media/web/Postman-Flows/postman-flows-overview.gif)
 
 ### 참고
 
@@ -88,7 +88,7 @@ Flow에서는 아래와 같은 여러 block 타입을 제공한다.
   - Alpha 버전이라서 그런지 실제로 사용해보면 복잡한 건 제대로 작성을 하지 못한다
 - 여러 FQL 함수를 실행하려면 아래와 같이 작성해서 `( ... )` 실행하면 순차적으로 실행할 수 있다
 
-![img](/Users/user/WebstormProjects/blog.advenoh.pe.kr/content/posts/web/images/Postman-Flows/image2-1-1000x468.png)
+![img](/media/web/Postman-Flows/image2-1-1000x468.png)
 
 #### 참고
 
@@ -112,7 +112,7 @@ Flow에서 block이 많아지면 복잡해져서 아래와 같은 기능을 통�
 
 Flow를 클라우드에 배포해서 Webhook으로 트리거하여 Flow를 실행시킬 수 있다. 아래와 같이 Flow를 Webhook으로 생성하면 API 주소가 나오고 API를 호출하면 Flow가 트리거할 수 있다.
 
-![Publish to the cloud](/Users/user/WebstormProjects/blog.advenoh.pe.kr/content/posts/web/images/Postman-Flows/flows-create-webhook-v10-1.gif)
+![Publish to the cloud](/media/web/Postman-Flows/flows-create-webhook-v10-1.gif)
 
 참고
 
@@ -148,7 +148,7 @@ Postman에서 변수는 여러 곳, Global, Collection, Environment 등에서 �
 - Local
   - Local 변수는 Test Script에서 생성하는 임시 변수이다
 
-![Variable scope](/Users/user/WebstormProjects/blog.advenoh.pe.kr/content/posts/web/images/Postman-Flows/var-scope-v10.jpg)
+![Variable scope](/media/web/Postman-Flows/var-scope-v10.jpg)
 
 
 
@@ -163,7 +163,7 @@ Postman에서 변수는 여러 곳, Global, Collection, Environment 등에서 �
   - Request 을 보낼 때 현재 값이 사용된다. 이 값은 로컬 값이며 Postman 서버에 동기화되지 않는다
   - 현재 값을 변경하면 원래 공유 컬렉션, 환경 또는 전역에 유지되지 않는다
 
-![image-20231015171834284](/Users/user/WebstormProjects/blog.advenoh.pe.kr/content/posts/web/images/Postman-Flows/image-20231015171834284.png)
+![image-20231015171834284](/media/web/Postman-Flows/image-20231015171834284.png)
 
 
 
