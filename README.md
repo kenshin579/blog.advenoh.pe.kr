@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2023-04-02
+Updated 2023-10-28
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -148,6 +148,7 @@ Updated 2023-04-02
 * [자주 접하는 게 되는 Http Status Code](https://blog.advenoh.pe.kr/spring/자주-접하는-게-되는-Http-Status-Code)
 
 ## Web
+* [Postman Flows이란?](https://blog.advenoh.pe.kr/web/Postman-Flows)
 * [구글 시트에서 사용자 정의 함수 구현하기](https://blog.advenoh.pe.kr/web/구글-시트에서-사용자-정의-함수-구현하기)
 * [하나의 구글 계정으로 여러 이메일 주소 사용하기](https://blog.advenoh.pe.kr/web/하나의-구글-계정으로-여러-이메일-주소-사용하기)
 
