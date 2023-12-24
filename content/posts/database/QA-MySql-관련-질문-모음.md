@@ -178,24 +178,12 @@ SELECT @lastMediaNo로 실행하면 됩니다.
 
 
 #### -  데이터 migration은 어떻게 하나? 예. 한 테이블에 있는 데이터를 분리하는 작업은 어떻게 진행하면 되나?
-```sql
-INSERT INTO ` tmon_media ` . ` media_live_job ` ( ` live_seqno ` , ` job_id ` , ` strm_stts ` , ` rtmp_url ` , ` rtmp_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
-` video_rt ` , ` start_dt ` , ` finished_dt ` , ` use_yn ` , ` creator ` , ` create_dt ` , ` updater ` , ` update_dt ` )
-SELECT ` live_seqno ` , ` live_job_id ` AS ` job_id ` , ` strm_stts ` , ` rtmp_stream_url ` , ` rtmp_stream_key ` , ` playback_url ` , ` original_repo ` , ` original_file_nm ` ,
-` video_rt ` , NOW() AS ` start_dt ` , NOW()+INTERVAL 1 MINUTE AS ` finished_dt ` , 'Y' AS ` use_yn ` , 'tvon' AS ` creator ` ,
-` create_tm ` AS ` create_dt ` , 'brightcov' AS ` updater ` , ` update_tm ` AS ` update_dt `
-FROM ` tmon_media ` . ` media_info_live ` WHERE ` live_job_id ` IS NOT NULL;
-```
+
 
 #### - 테이블 복사는 어떻게 하나?
 
-```sql
-INSERT INTO tmon_media.media_info_live SELECT * FROM tmon_media.bak_media_info_live;
-```
 
 #### - group_concat이란?
-
-![](/media/database/QA-MySql-관련-질문-모음/image_5.png)
 
 ![](/media/database/QA-MySql-관련-질문-모음/image_1.png)
 
