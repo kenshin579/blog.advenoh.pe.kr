@@ -160,9 +160,12 @@ Slow Query란 말 그래도 query 수행시 오래 걸리는 쿼리를 의미합
 
 ### <span style="color:brown">13. 변수에 지정한 값 출력을 어떻게 하나?</span>
 
-![](/media/database/QA-MySql-관련-질문-모음/image_3.png)
+`SELECT @variable`을 사용하면 됩니다. 
 
-SELECT @lastMediaNo로 실행하면 됩니다.
+```sql
+SET @col = "c1";
+SELECT @col;
+```
 
 참고
 * [https://stackoverflow.com/questions/40905427/how-to-print-the-string-variable-in-mysql](https://stackoverflow.com/questions/40905427/how-to-print-the-string-variable-in-mysql)
