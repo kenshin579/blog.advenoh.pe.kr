@@ -3,7 +3,7 @@
 
 # Frank's Blog Code - Table of Contents
 
-Updated 2023-10-28
+Updated 2023-12-24
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
