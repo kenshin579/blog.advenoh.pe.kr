@@ -1,6 +1,6 @@
 ---
 title: 'URDF를 이용한 로봇 모델링'
-tags: [urdf, ros, ros2, robot, rviz, sdf, srdf, moveit, gazebo, 로봇, 모델링]
+tags: [urdf, rviz, sdf, srdf, moveit, gazebo, 로봇, 모델링, ros, ros2, robot]
 date: 2024-02-24
 ---
 
