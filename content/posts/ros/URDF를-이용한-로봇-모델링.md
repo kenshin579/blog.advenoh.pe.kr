@@ -4,8 +4,6 @@ tags: [urdf, rviz, sdf, srdf, moveit, gazebo, 로봇, 모델링, ros, ros2, robo
 date: 2024-02-24
 ---
 
-# URDF를 이용한 로봇 모델링
-
 # 1. URDF이란?
 
 `URDF`(Unified Robot Description Format)는 로봇의 원, 타원, 직사각형 따위의 기하학적 모델, 관절, 센서 등의 정보를 정의하는 XML 형식의 파일이다. 이 XML 파일에서 로봇의 부분을 나타내는 링크(link)와 동적인 움직임을 갖는 조인트(joint) 등 정보를 정의해서 로봇을 모델링 한다. 모델링한 정보는 RViz(ROS Visualization), Gazebo와 같은 시각화 프로그램을 사용해서 로봇 모델을 확인하고 시뮬레이션 해볼 수 있다.
