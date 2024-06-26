@@ -311,11 +311,15 @@ my-first-application my_topic        2          9               9               
 
 ## 3.4 특정 offset과 partition에서 메시지를 조회하는 방법
 
-https://developer.confluent.io/tutorials/kafka-console-consumer-read-specific-offsets-partitions/confluent.html
+
 
 ```bash
 $ kafka-console-consumer.sh --bootstrap-server localhost:29092 --topic report --partition 5 --offset 373601
 ```
+
+참고
+
+- [How to read from a specific offset and partition with the Kafka Console Consumer](https://developer.confluent.io/tutorials/kafka-console-consumer-read-specific-offsets-partitions/confluent.html)
 
 ## 3.5 메시지의 Timestamp도 출력하는 방법
 
@@ -326,6 +330,30 @@ $ kafka-console-consumer.sh --bootstrap-server localhost:29092 --topic report --
 참고
 
 - https://github.com/confluentinc/schema-registry/issues/947
+
+## 3.6 Consumer Group에서 특정 Topic을 삭제하는 방법
+
+Application에서 더 이상 특정 topic을 구독하지 않는 경우에 lag가 많이 쌓이게 되어 특정 topic을 삭제할 필요가 생긴다. 이런 경우에는 아래 명령어로 삭제하면 된다. 
+
+```bash
+$ kafka-consumer-groups.sh --bootstrap-server localhost:29092 --delete-offsets --group my-first-application --topic first-topic
+Request succeed for deleting offsets with topic first-topic group my-first-application
+
+TOPIC                          PARTITION       STATUS         
+first-topic                    0               Successful
+```
+
+삭제가 잘되었는지는 아래 명령어로 확인할 수 있다. 
+
+```bash
+$ kafka-consumer-groups.sh --bootstrap-server localhost:29092 --describe --group my-first-application
+```
+
+
+
+참고
+
+- [Using the —delete-offsets Option of kafka-consumer-groups.sh](https://www.baeldung.com/ops/kafka-consumer-group-remove-topic#using-the---delete-offsets-option-of-kafka-consumer-groupssh)
 
 # 4. 참고
 
