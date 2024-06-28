@@ -1,1 +1,1 @@
-require('./src/components/prism-coldark-dark.css');
+require("katex/dist/katex.min.css")

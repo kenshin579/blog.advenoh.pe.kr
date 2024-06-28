@@ -1,186 +1,115 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
-
-const toKebabCase = (str) => {
-  return str
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map((x) => x.toLowerCase())
-    .join('-');
-};
+const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          nodes {
-            fields {
-              contentType
-              slug
-            }
-            frontmatter {
-              template
-            }
+  const postTemplate = require.resolve(`./src/templates/Post.jsx`)
+  const seriesTemplate = require.resolve(`./src/templates/Series.jsx`)
+
+  const result = await graphql(`
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: ASC }
+        limit: 1000
+      ) {
+        nodes {
+          id
+          fields {
+            slug
           }
-        }
-        tagsGroup: allMarkdownRemark(
-          limit: 2000
-          filter: { fields: { contentType: { eq: "posts" } } }
-        ) {
-          group(field: frontmatter___tags) {
-            fieldValue
+          frontmatter {
+            series
           }
         }
       }
-    `
-  );
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+  `)
 
   if (result.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
       result.errors
-    );
-    return;
+    )
+    return
   }
 
-  const tags = result.data.tagsGroup.group;
-  const allMarkdownNodes = result.data.allMarkdownRemark.nodes;
+  const posts = result.data.postsRemark.nodes
+  const series = _.reduce(
+    posts,
+    (acc, cur) => {
+      const seriesName = cur.frontmatter.series
+      if (seriesName && !_.includes(acc, seriesName))
+        return [...acc, seriesName]
+      return acc
+    },
+    []
+  )
 
-  const blogMarkdownNodes = allMarkdownNodes.filter(
-    (node) => node.fields.contentType === `posts`
-  );
-
-  const pageMarkdownNodes = allMarkdownNodes.filter(
-    (node) => node.fields.contentType === `pages`
-  );
-
-  if (blogMarkdownNodes.length > 0) {
-    blogMarkdownNodes.forEach((node, index) => {
-      let prevSlug = null;
-      let nextSlug = null;
-
-      if (index > 0) {
-        prevSlug = blogMarkdownNodes[index - 1].fields.slug;
-      }
-
-      if (index < blogMarkdownNodes.length - 1) {
-        nextSlug = blogMarkdownNodes[index + 1].fields.slug;
-      }
+  if (posts.length > 0) {
+    posts.forEach((post, index) => {
+      const previousPostId = index === 0 ? null : posts[index - 1].id
+      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
       createPage({
-        path: `${node.fields.slug}`,
-        component: path.resolve(`./src/templates/post-template.js`),
+        path: post.fields.slug,
+        component: postTemplate,
         context: {
-          slug: `${node.fields.slug}`,
-          prevSlug: prevSlug,
-          nextSlug: nextSlug,
+          id: post.id,
+          series: post.frontmatter.series,
+          previousPostId,
+          nextPostId,
         },
-      });
-    });
+      })
+    })
   }
 
-  if (pageMarkdownNodes.length > 0) {
-    pageMarkdownNodes.forEach((node) => {
-      if (node.frontmatter.template) {
-        const templateFile = `${String(node.frontmatter.template)}.js`;
-
-        createPage({
-          path: `${node.fields.slug}`,
-          component: path.resolve(`src/templates/${templateFile}`),
-          context: {
-            slug: `${node.fields.slug}`,
-          },
-        });
-      }
-    });
+  if (series.length > 0) {
+    series.forEach(singleSeries => {
+      const path = `/series/${_.replace(singleSeries, /\s/g, "-")}`
+      createPage({
+        path,
+        component: seriesTemplate,
+        context: {
+          series: singleSeries,
+        },
+      })
+    })
   }
-
-  tags.forEach((tag) => {
-    createPage({
-      path: `/tags/${tag.fieldValue}/`,
-      component: path.resolve(`./src/templates/tags-template.js`),
-      context: {
-        tag: tag.fieldValue,
-      },
-    });
-  });
-};
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const relativeFilePath = createFilePath({
-      node,
-      getNode,
-    });
-
-    const fileNode = getNode(node.parent);
+    const slug = createFilePath({ node, getNode })
+    const newSlug = `/${slug.split("/").reverse()[1]}/`
 
     createNodeField({
       node,
-      name: `contentType`,
-      value: fileNode.sourceInstanceName,
-    });
-
-    if (fileNode.sourceInstanceName === 'posts') {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: relativeFilePath,
-      });
-    }
-
-    if (fileNode.sourceInstanceName === 'pages') {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: relativeFilePath,
-      });
-    }
+      name: `slug`,
+      value: newSlug,
+    })
   }
-};
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-
-  createTypes(`
-    type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: Social
-    }
-
-    type Author {
-      name: String
-      summary: String
-    }
-
-    type Social {
-      twitter: String
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
-      template: String
-      tags: [String]
-    }
-
-    type Fields {
-      slug: String
-      contentType: String
-    }
-  `);
-};
+  const { createTypes } = actions
+  const typeDefs = `
+  type MarkdownRemark implements Node {
+    frontmatter: Frontmatter!
+  }
+  type Frontmatter {
+    title: String!
+    description: String
+    tags: [String!]!
+    series: String
+  }
+  `
+  createTypes(typeDefs)
+}
