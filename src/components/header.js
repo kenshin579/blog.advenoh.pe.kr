@@ -1,127 +1,42 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Container from './container';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
 
-const Header = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  );
-
-  return (
-    <StyledHeader>
-      <HeaderWrapper>
-        <HeaderTitle>
-          <Link to="/">{site.siteMetadata.title}</Link>
-        </HeaderTitle>
-
-        <HeaderNavList>
-          <HeaderNavListItem>
-            <Link to="/">Blog</Link>
-          </HeaderNavListItem>
-
-          <HeaderNavListItem>
-            <Link to="/about">About</Link>
-          </HeaderNavListItem>
-
-          <HeaderNavListItem>
-            <Link to="/contact">Contact</Link>
-          </HeaderNavListItem>
-        </HeaderNavList>
-      </HeaderWrapper>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0KLVK60W1"></script>
-      <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-B0KLVK60W1');
-          `,
+const Header = ({ siteTitle }) => (
+  <header
+    style={{
+      background: `rebeccapurple`,
+      marginBottom: `23.2px`,
+    }}
+  >
+    <div
+      style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `23.2px 17.4px`,
+      }}
+    >
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
           }}
-      />
-      <script data-ad-client="ca-pub-8868959494983515" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    </StyledHeader>
-  );
-};
+        >
+          {siteTitle}
+        </Link>
+      </h1>
+    </div>
+  </header>
+)
 
-export default Header;
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
 
-const HeaderNavList = ({ children }) => {
-  return (
-    <StyledNav>
-      <StyledNavList>{children}</StyledNavList>
-    </StyledNav>
-  );
-};
+Header.defaultProps = {
+  siteTitle: ``,
+}
 
-const HeaderNavListItem = ({ children }) => {
-  return <StyledNavListItem>{children}</StyledNavListItem>;
-};
-
-const StyledHeader = styled.header`
-  padding-top: var(--size-300);
-`;
-
-const HeaderWrapper = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const HeaderTitle = styled.div`
-  & a {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: var(--size-400);
-    color: inherit;
-  }
-`;
-
-const StyledNav = styled.nav`
-  position: static;
-  padding: 0;
-  background: transparent;
-  backdrop-filter: unset;
-`;
-
-const StyledNavList = styled.ul`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
-  list-style-type: none;
-`;
-
-const StyledNavListItem = styled.li`
-  &:not(:last-of-type) {
-    margin-right: 2rem;
-  }
-  @media screen and (max-width: 700px) {
-    &:not(:last-of-type) {
-      margin-right: 1rem;
-    }
-  }
-  & a {
-    color: inherit;
-    text-transform: uppercase;
-    font-size: var(--size-300);
-    text-decoration: none;
-    letter-spacing: 0.1rem;
-  }
-  @media screen and (max-width: 700px) {
-    & a {
-      font-size: 0.7rem;
-    }
-  }
-`;
+export default Header
