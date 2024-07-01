@@ -6,6 +6,7 @@ import Layout from "components/Layout"
 import Article from "components/Article"
 
 import { siteUrl } from "../../blog-config"
+import AdSense from 'react-adsense';
 import Analytics from "../components/GoogleAnalytics";
 
 const Post = ({ data }) => {
