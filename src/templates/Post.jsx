@@ -6,6 +6,7 @@ import Layout from "components/Layout"
 import Article from "components/Article"
 
 import { siteUrl } from "../../blog-config"
+import Analytics from "../components/GoogleAnalytics";
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
@@ -34,6 +35,7 @@ const Post = ({ data }) => {
 
   return (
     <Layout>
+      <Analytics />
       <SEO title={title} description={excerpt} url={`${siteUrl}${slug}`} />
       <Article>
         <Article.Header

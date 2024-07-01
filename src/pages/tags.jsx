@@ -15,6 +15,7 @@ import PostList from "components/PostList"
 import VerticleSpace from "components/VerticalSpace"
 
 import { title, description, siteUrl } from "../../blog-config"
+import Analytics from "../components/GoogleAnalytics";
 
 const TagListWrapper = styled.div`
   margin-top: 20px;
@@ -54,6 +55,7 @@ const TagsPage = ({ data }) => {
 
   return (
     <Layout>
+      <Analytics />
       <SEO title={title} description={description} url={siteUrl} />
 
       <TagListWrapper>

@@ -12,6 +12,7 @@ import VerticleSpace from "components/VerticalSpace"
 import NoContent from "components/NoContent"
 
 import { title, description, siteUrl } from "../../blog-config"
+import Analytics from "../components/GoogleAnalytics";
 
 const TagListWrapper = styled.div`
   margin-top: 20px;
@@ -38,6 +39,7 @@ const SeriesPage = ({ data }) => {
 
   return (
     <Layout>
+      <Analytics />
       <SEO title={title} description={description} url={siteUrl} />
 
       <TagListWrapper>
