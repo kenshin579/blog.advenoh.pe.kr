@@ -22,13 +22,13 @@ tags:
   - 스프링
 ---
 
-# 1. 개요
+## 1. 개요
 
 서버 개발을 하다 보면 다양한 작업을 백그라운드에서 처리해야 하는 상황이 자주 발생한다. 이러한 작업은 주기적으로 실행되거나, 특정 이벤트에 반응하여 실행된다. 이 때문에 서버 개발에서 스케줄러가 필수적인 기능이기도 하다. 또한 서버 이중화를 위해 분산 환경에서 다중 서버에서도 스케줄링이 원활하게 동작할 수 있어야 한다.
 
 스프링으로 개발하고 있다면 스프링에서 제공하는 Quartz를 이용하면 된다. Quartz 꽤 오래된 프로젝트라서 스프링에서는 de facto로 사용되고 있다. Golang으로 개발한 서버에서도 분산 스케줄러를 개발해야 해서 어떤 걸 사용하면 좋은지 검토를 해보았다.
 
-## 1.1 golang 스케줄러
+### 1.1 golang 스케줄러
 
 - `Asynq`
   - Job 정보를 redis 서버에 저장하고 여러 인스턴스를 띄워도 트리거하는 주기가 짧아지는 이슈는 없다
@@ -48,7 +48,7 @@ tags:
 
 - https://awesome-go.com/job-scheduler/
 
-# 2. `Asynq` 기능에 대한 정리
+## 2. `Asynq` 기능에 대한 정리
 
 `Asynq`는 task 를 queue에 넣고 비동기적으로 worker가 task를 처리하는 library 이다. 내부에서 사용하는 정보 (ex. task, scheduler)는 redis에 저장하고 있다
 
@@ -62,7 +62,7 @@ tags:
 
 ![Async](image-20240701232131672.png)
 
-## 2.2 주 기능
+### 2.2 주 기능
 
 제공하는 기능이 많지만, 주로 지금 개발하는 어플리케이션에서 필요하다고 생각되는 것 위주로 정리했다.
 
@@ -78,7 +78,7 @@ tags:
 - Web UI, [asynmon](https://github.com/hibiken/asynqmon) 도 지원한다
 - CLI 를 지원해서 queue 정보를 확인할 수 있다
 
-## 2.3 샘플 코드
+### 2.3 샘플 코드
 
 `Async`에서는 DB로 Redis를 사용하고 있어서 redis 서버를 아래 명령어로 실행시킨다.
 
@@ -89,7 +89,7 @@ tags:
 
 > 코드가 unit test로 작성이 되어 있어서 testcontainers로 redis 실행할 수 있는데, 귀찮아서 refactoring은 하지 않았습니다 ^^
 
-### 2.3.1 asynmon UI를 실행하기
+#### 2.3.1 asynmon UI를 실행하기
 
 `asynmon` UI에서 redis에 저장되는 정보를 쉽게 확인할 수 있어서 `asynmon`을 먼저 실행한다.
 
@@ -103,7 +103,7 @@ http://localhost:8080로 접속하면 아래와 같이 확인이 뜬다.
 
 ![Asynmon Web](image-20240701232207951.png)
 
-### 2.3.1 한번만 실행하는 경우
+#### 2.3.1 한번만 실행하는 경우
 
 아래 코드는 실제로는 task를 실행시키지는 않고 단순히 task를 redis에 저장하는 역할을 한다. `Enqueue()`로 task를 등록할 때, 여러 옵션을 줄 수 있는데, 자주 사용하는 옵션만 언급하고 넘어간다.
 
@@ -184,7 +184,7 @@ func Test_Workers2a(t *testing.T) {
 
 ![Asynmon Web - Schedulers](image-20240701232319135.png)
 
-### 2.3.2 주기적인 작업 실행
+#### 2.3.2 주기적인 작업 실행
 
 주기적으로 실행하려면, `asynq.NewScheduler`로`asynq.Scheduler`객체를 생성하고 `Register()` 메서드로 task를 등록하면 된다. 주기적인 작업 Task 등록 시점은 서버를 시작하는 시점에 등록하면 된다. 하지만, 분산 환경에서 여러 서버에서 스케줄러를 실행하는 경우에는 중복으로 등록되어 의도와 달리 여러 번 실행하게 되는 이슈가 있다.
 
@@ -252,7 +252,7 @@ func Test_Periodic_Tasks(t *testing.T) {
 
 같은 Task가 여러 번 등록이 되더라도 한 번만 실행하는 해결책은 `asynq` Github Issue에 제시된 해결책이 있어서 적용해 보았다.
 
-### 중복 실행을 방지하는 위한 해결책
+#### 중복 실행을 방지하는 위한 해결책
 
 1.`asynq.TaskID`, `asynq.Retention` 이 두 옵션을 사용한다
    - 실험 결과 주기가 일정하지 않다. 2초로 실행하라고 했는데, 3,4초에 실행되는 이슈가 있었다
@@ -274,13 +274,13 @@ func Test_Periodic_Tasks(t *testing.T) {
 > - Periodic task에 등록은 cron library (메모리에 쓰여지게 된다)로 실행이 된다
 > - Scheduler start를 하면 그때 `runHeartBeater()`가 주기적으로 5초마다 redis에 쓰게 되어 있음
 
-# 3. 정리
+## 3. 정리
 
 분산 환경을 고려하지 않는다면 Golang library에서도 쓸만한 스케줄러가 있지만, Production 환경에서는 분산 스케줄러를 고려를 해야 해서 그런 경우에는 asynq 사용을 추천해 본다.
 
 > 포스팅에서 작성한 코드는 [여기서](https://github.com/kenshin579/tutorials-go/tree/master/asynq) 확인할 수 있습니다.
 
-# 4. 참고
+## 4. 참고
 
 - https://github.com/hibiken/asynq/wiki
 - https://github.com/hibiken/asynq
