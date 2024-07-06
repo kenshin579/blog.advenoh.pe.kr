@@ -13,6 +13,8 @@ const Analytics = ({}) => {
         gtag('config', 'G-B0KLVK60W1');
         `}
             </Script>
+            <Script data-ad-client="ca-pub-8868959494983515" async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></Script>
         </div>
     )
 }
