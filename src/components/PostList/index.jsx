@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import Title from "components/Title"
 import Divider from "components/Divider"
 import TagList from "components/TagList"
+import Adsense from "../GoogleAdsense";
 
 const PostListWrapper = styled.div`
   @media (max-width: 768px) {
@@ -88,6 +89,7 @@ const PostList = ({ postList }) => {
             {postCount - 1 !== i && postList.length - 1 !== i && (
               <Divider mt="48px" mb="32px" />
             )}
+            <Adsense />
           </>
         )
       })}

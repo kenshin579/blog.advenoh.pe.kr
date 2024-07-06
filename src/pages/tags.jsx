@@ -16,7 +16,6 @@ import VerticleSpace from "components/VerticalSpace"
 
 import { title, description, siteUrl } from "../../blog-config"
 import Analytics from "../components/GoogleAnalytics";
-import Adsense from "../components/GoogleAdsense";
 
 const TagListWrapper = styled.div`
   margin-top: 20px;
@@ -57,7 +56,6 @@ const TagsPage = ({ data }) => {
   return (
     <Layout>
       <Analytics />
-      <Adsense />
       <SEO title={title} description={description} url={siteUrl} />
 
       <TagListWrapper>
