@@ -50,6 +50,7 @@ const Post = ({ data }) => {
           <Article.Series header={series} series={filteredSeries} />
         )}
         <Article.Body html={post.html} />
+        <Article.Footer previous={previous} next={next} />
         <AdSense.Google
             client="ca-pub-8868959494983515"
             slot="5560009326"
@@ -57,7 +58,6 @@ const Post = ({ data }) => {
             layout="in-article"
             format="fluid"
         />
-        <Article.Footer previous={previous} next={next} />
       </Article>
     </Layout>
   )
