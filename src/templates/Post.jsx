@@ -6,8 +6,8 @@ import Layout from "components/Layout"
 import Article from "components/Article"
 
 import { siteUrl } from "../../blog-config"
-import AdSense from 'react-adsense';
 import Analytics from "../components/GoogleAnalytics";
+import Adsense from "../components/GoogleAdsense";
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
@@ -37,6 +37,7 @@ const Post = ({ data }) => {
   return (
     <Layout>
       <Analytics />
+      <Adsense />
       <SEO title={title} description={excerpt} url={`${siteUrl}${slug}`} />
       <Article>
         <Article.Header
@@ -51,13 +52,6 @@ const Post = ({ data }) => {
         )}
         <Article.Body html={post.html} />
         <Article.Footer previous={previous} next={next} />
-        <AdSense.Google
-            client="ca-pub-8868959494983515"
-            slot="5560009326"
-            style={{ display: 'block' }}
-            layout="in-article"
-            format="fluid"
-        />
       </Article>
     </Layout>
   )
