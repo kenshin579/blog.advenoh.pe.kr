@@ -89,7 +89,6 @@ const PostList = ({ postList }) => {
             {postCount - 1 !== i && postList.length - 1 !== i && (
               <Divider mt="48px" mb="32px" />
             )}
-            <Adsense />
           </>
         )
       })}
