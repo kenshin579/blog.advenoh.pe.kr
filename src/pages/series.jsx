@@ -13,6 +13,7 @@ import NoContent from "components/NoContent"
 
 import { title, description, siteUrl } from "../../blog-config"
 import Analytics from "../components/GoogleAnalytics";
+import Adsense from "../components/GoogleAdsense";
 
 const TagListWrapper = styled.div`
   margin-top: 20px;
@@ -40,6 +41,7 @@ const SeriesPage = ({ data }) => {
   return (
     <Layout>
       <Analytics />
+      <Adsense />
       <SEO title={title} description={description} url={siteUrl} />
 
       <TagListWrapper>
