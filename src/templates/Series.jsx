@@ -10,6 +10,7 @@ import Divider from "components/Divider"
 
 import { description, siteUrl } from "../../blog-config"
 import Analytics from "../components/GoogleAnalytics";
+import Adsense from "../components/GoogleAdsense";
 
 const Header = styled.div`
   @media (max-width: 768px) {
@@ -66,7 +67,7 @@ const Series = ({ pageContext, data }) => {
         description={description}
         url={siteUrl}
       />
-
+      <Adsense />
       <Header>
         <Subtitle> SERIES </Subtitle>
         <Title> {seriesName} </Title>
