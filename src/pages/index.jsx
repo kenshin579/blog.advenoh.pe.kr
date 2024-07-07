@@ -32,12 +32,12 @@ const BlogIndex = ({ data }) => {
     <Layout>
       <Analytics />
       <SEO title={title} description={description} url={siteUrl} />
+      <Adsense />
       <VerticalSpace size={48} />
       <Bio />
       <Divider />
       <SideTagList tags={tags} postCount={posts.length} />
       <PostList postList={posts} />
-      <Adsense />
     </Layout>
   )
 }

@@ -39,6 +39,7 @@ const Post = ({ data }) => {
       <Analytics />
       <SEO title={title} description={excerpt} url={`${siteUrl}${slug}`} />
       <Article>
+        <Adsense />
         <Article.Header
           title={title}
           date={date}
@@ -51,7 +52,6 @@ const Post = ({ data }) => {
         )}
         <Article.Body html={post.html} />
         <Article.Footer previous={previous} next={next} />
-        <Adsense />
       </Article>
     </Layout>
   )

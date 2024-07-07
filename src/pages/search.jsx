@@ -11,6 +11,7 @@ import VerticalSpace from "components/VerticalSpace"
 
 import { title, description, siteUrl } from "../../blog-config"
 import Analytics from "../components/GoogleAnalytics";
+import Adsense from "../components/GoogleAdsense";
 
 const SearchWrapper = styled.div`
   margin-top: 20px;
@@ -41,6 +42,7 @@ const Search = ({ data }) => {
     <Layout>
       <Analytics />
       <SEO title={title} description={description} url={siteUrl} />
+      <Adsense />
       <SearchWrapper>
         <Title size="sm">
           There are {filteredPosts.length} post{filteredPosts.length > 1 && "s"}
