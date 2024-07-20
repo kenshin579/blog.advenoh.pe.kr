@@ -142,6 +142,15 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://blog.advenoh.pe.kr/',
+        sitemap: 'https://blog.advenoh.pe.kr/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sitemap`,
     {
