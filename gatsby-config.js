@@ -148,7 +148,13 @@ module.exports = {
       options: {
         host: 'https://blog.advenoh.pe.kr/',
         sitemap: 'https://blog.advenoh.pe.kr/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: ['/tags/', '/search/']
+          }
+        ],
       },
     },
     `gatsby-plugin-resolve-src`,
