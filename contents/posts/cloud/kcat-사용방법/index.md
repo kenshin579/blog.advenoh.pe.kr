@@ -14,7 +14,7 @@ tags:
 ---
 
 
-`kcat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kcat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방법에 대해서 알아보자. 카프카 설치는 [로컬환경에서 Kafka 실행하기](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-AKHQ/)를 참고해주세요.
+`kcat`은 아파치 카프카를 쉽게 테스트하고 디버깅하는데 유용하게 사용할 수 있는 도구이다. `kcat` 명령어를 통해서 메시지를 보내고 받거나 메타데이터 목록을 확인할 수 있다. 기본적인 사용방법에 대해서 알아보자. 카프카 설치는 [로컬환경에서 Kafka 실행하기](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-akhq/)를 참고해주세요.
 
 ## kcat 설치
 
