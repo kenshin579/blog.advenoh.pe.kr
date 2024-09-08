@@ -17,7 +17,7 @@ tags:
 ### 사전 조건
 
 - 라즈베리파이에 Raspbian OS 설치
-    - 참고 : [모니터없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/Raspberry-Pi4-OS-%EC%84%A4%EC%B9%98/)
+    - 참고 : [모니터없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/linux/raspberry-pi4-os-%EC%84%A4%EC%B9%98/)
 - SSH 연결 활성화
 
 ## 라즈베리파이에 도커 설치하기
