@@ -21,15 +21,15 @@ tags:
   - label
 ---
 
-# 1. 개요
+## 1. 개요
 
-> 같이 일하는 동료분께서 현재 개발중인 프로젝트에 적용해주셔서 스터디 차원에서 정리한다
+> 같이 일하는 동료분께서 현재 개발중인 프로젝트에 적용해주셔서 스터디 차원에서 정리해본다
 
 `Liquibase`는 데이터베이스 변경을 추적하고 관리할 수 있도록 도와주는 오픈 소스 도구이다. 이 도구는 데이터베이스 스키마 변경을 기록하고, 이를 애플리케이션 배포와 연계하여 일관성을 유지하는 데 사용된다. `Liquibase`는 여러 팀이 협력해 일관된 방식으로 데이터베이스를 관리하는 데 유리하며, 코드 버전 관리를 하듯 데이터베이스의 상태를 관리할 수 있는 강력한 기능을 제공한다.
 
 특히 `Liquibase`는 데이터베이스 마이그레이션 툴로서, 다양한 방식으로 데이터베이스 변경 사항을 기록하고 롤백할 수 있게 해준다. `Liquibase`의 기본 동작 원리는 변경 사항을 정의한 파일(`Changelog`)과 이를 실행할 환경(DB) 간의 동기화를 유지하는 것이다.
 
-## 1.1 주요기능
+### 1.1 주요기능
 
 - 자동 마이그레이션
   - `Liquibase`는 변경 사항을 자동으로 적용하며, 데이터베이스 상태를 자동으로 업데이트한다
@@ -43,11 +43,11 @@ tags:
 - 데이터베이스 변경 이력 추적
   - `Liquibase`는 언제, 누가, 어떤 변경을 적용했는 지 추적할 수 있다
 
-## 1.2 기본 개념
+### 1.2 기본 개념
 
 `Liquibase`는 데이터베이스 변경 관리를 위한 핵심 개념으로 다음의 요소들을 사용한다.
 
-### 1.2.1 용어
+#### 1.2.1 용어
 
 1. `Changelog`
    - 여러 개의 `changeset`을 모아 놓은 파일로 데이터베이스의 스키마 변경 내역을 관리하는 `XML`, `YAML`, `JSON` 또는 `SQL` 파일이다
@@ -61,7 +61,7 @@ tags:
    - 데이터베이스의 스키마나 데이터에 적용할 변경 사항의 유형을 정의한다
    - ex. `createTable`, `addColumn`, `dropColumn`, `insert` 등
 
-### 1.2.2 기본 동작 원리
+#### 1.2.2 기본 동작 원리
 
 `Liquibase`를 사용해서 SQL를 관리하는 기본 동작은 다음과 같다.
 
@@ -75,9 +75,9 @@ tags:
 
 ![](image-20240920182800486.png)
 
-# 2. Liquibase CLI 설치
+## 2. Liquibase CLI 설치
 
-## 2.1 CLI 설치
+### 2.1 CLI 설치
 
 > 설치는 맥 기준으로 설명한다
 
@@ -87,7 +87,7 @@ Homebrew를 사용하여 `Liquibase`를 간편하게 설치한다.
 > brew install liquibase
 ```
 
-## 2.2 실습을 위해 MySQL 도커 실행
+### 2.2 실습을 위해 MySQL 도커 실행
 
 실습을 위해 MySQL 도커를 실행하고 데이터베이스를 생성한다.
 
@@ -110,9 +110,9 @@ DB 서버에 로그인을 해서 아래 데이터베이스를 생성한다.
 - `Changelog`  파일을 생성한다
 - Liquibase CLI 명령어로 DB에 `Changelog`를 적용한다
 
-## 3.1 프로젝트 생성하기
+### 3.1 프로젝트 생성하기
 
-### 3.1.1 (옵션) init project 명령어 생성하기
+#### 3.1.1 (옵션) init project 명령어 생성하기
 
 `init project` 명령어는 `Liquibase`의 샘플 파일을 생성해 주는데, 유료 버전에서 사용할 수 있는 파일도 있고 그래서 굳이 이 명령어를 사용할 필요는 없다. 어떤 명령어인지 스터디 차원에서 추가한다.
 
@@ -152,7 +152,7 @@ For more details, visit the Getting Started Guide at <https://docs.liquibase.com
 Liquibase command 'init project' was executed successfully.
 ```
 
-### 3.1.2 수동으로 생성하기
+#### 3.1.2 수동으로 생성하기
 
 `Liquibase` 프로젝트의 디렉토리 구조는 아래와 같이 구성할 수 있다. `Liquibase` 프로젝트 구성에 대한 내용은 [Design Your LIquibase Project](https://docs.liquibase.com/start/design-liquibase-project.html)를 참고해 주세요.
 
@@ -166,7 +166,7 @@ Liquibase command 'init project' was executed successfully.
 ├── liquibase.properties
 ```
 
-## 3.2 Liquibase 설정하기
+### 3.2 Liquibase 설정하기
 
 `Liquibase`를 사용하기 위해서는 데이터베이스와 연결할 수 있도록 설정 파일을 작성해야 한다. `liquibase.properties` 파일을 생성하고 아래와 같이 설정한다.
 
@@ -223,11 +223,11 @@ create table person
 
 - [Example Changelogs: SQL Format](https://docs.liquibase.com/concepts/changelogs/sql-format.html)
 
-## 3.4 Changelog를 DB에 적용하기
+### 3.4 Changelog를 DB에 적용하기
 
 작성한 `Changelog`를 DB에 적용하려면, `Liquibase` 명령어를 실행하면 된다. 이때 도커를 사용하거나, `Liquibase` 명령어를 직접 실행할 수 있다.
 
-### 3.4.1 Liquibase 명령어로 실행하기
+#### 3.4.1 Liquibase 명령어로 실행하기
 
 ```sql
 ❯ liquibase --defaultsFile=liquibase.properties update
@@ -249,7 +249,7 @@ Liquibase command 'update' was executed successfully.
 
 ![](image-20240920182833879.png)
 
-### 3.4.2 Liquibase 명령어 도커로 실행하기
+#### 3.4.2 Liquibase 명령어 도커로 실행하기
 
 도커로 실행하면 별도의 설치 과정 없이 손쉽게 `Liquibase`를 실행할 수 있지만, 몇 가지 주의 사항이 필요하다.
 
@@ -291,11 +291,11 @@ liquibase.command.url=jdbc:mysql://go-mysql:3306/liquibase_quickstart
 - `--defaultsFile`: Liquibase 설정 파일(`liquibase.docker.properties`)을 지정한다
 - `update`: 변경사항을 데이터베이스에 적용하는 Liquibase 명령어이다
 
-# 4. Liquibase 명령어
+## 4. Liquibase 명령어
 
 `Liquibase`는 아래처럼 다양한 명령어를 제공한다. 자주 사용할 것 같은 명령어 위주로 정리한다. 더 자세한 내용은 Liquibase Commands를 참고해 주세요.
 
-## 4.1 Update 명령어
+### 4.1 Update 명령어
 
 `Liquibase`의 `update` 명령어는 변경 사항을 데이터베이스에 적용하는 기본 명령이다. 하지만 다양한 상황에 맞춰 `update` 명령어에는 몇 가지 유용한 변형이 있다.
 
@@ -339,7 +339,7 @@ Liquibase command 'update-sql' was executed successfully.
 > liquibase --defaultsFile=liquibase.properties update-count 2
 ```
 
-## 4.2 Rollback 명령어
+### 4.2 Rollback 명령어
 
 `Liquibase`의 `rollback` 명령어는 데이터베이스의 변경 사항을 이전 상태로 되돌릴 수 있는 기능을 제공한다. 특정 조건에 맞춰 다양한 방식으로 롤백을 수행할 수 있다.
 
@@ -392,7 +392,7 @@ Rolling Back Changeset: db/changelog/3_update.sql::3::your.name
 Liquibase command 'rollbackCount' was executed successfully.
 ```
 
-## 4.3 Database Inspection 명령어
+### 4.3 Database Inspection 명령어
 
 데이터베이스의 현재 상태를 확인하거나 비교할 때 사용하는 명령어이다.
 
@@ -519,7 +519,7 @@ Generated changelog written to changelog.mysql.sql
 Liquibase command 'generate-changelog' was executed successfully.
 ```
 
-## 4.5 Utility 명령어
+### 4.5 Utility 명령어
 
 `Liquibase`는 데이터베이스 상태를 관리하고 변경 사항을 추적할 수 있는 유틸리티 명령어를 제공한다.
 
@@ -571,9 +571,9 @@ UPDATE liquibase_quickstart.DATABASECHANGELOGLOCK SET `LOCKED` = 0, LOCKEDBY = N
 Liquibase command 'changelog-sync-sql' was executed successfully.
 ```
 
-# 5. FAQ
+## 5. FAQ
 
-### 1. context vs label의 차이점은?
+#### 1. `context` vs `label`의 차이점은?
 
 `Context`와 `Label`은 `Liquibase`에서 특정 `Changeset`을 적용할 환경이나 조건을 정의하는 기능이지만, 용도가 약간 다르다.
 
@@ -596,7 +596,7 @@ CREATE TABLE example_feature (id INT PRIMARY KEY);
 
 > 정리하면 `Context`는 주로 배포 환경에 맞춘 `Changeset` 실행을 제어하는 반면, `Label`은 논리적 그룹화나 추적 목적으로 사용된다
 
-# 6. 마무리
+## 6. 마무리
 
 `Liquibase`는 다양한 환경에서 안전하고 효율적으로 데이터베이스 변경을 관리할 수 있는 강력한 도구이다. `Context`와 `Label`을 사용해 환경별 맞춤 실행을 제어하고, `rollback`을 통해 실수나 변경사항을 쉽게 되돌릴 수 있다. 또한, Docker를 통해 쉽게 설정 및 실행할 수 있어 개발자에게 편리한 옵션을 제공한다.
 
@@ -609,7 +609,7 @@ CREATE TABLE example_feature (id INT PRIMARY KEY);
 
 `Liquibase` 를 통해서 SQL schema도 코드와 같이 리뷰도 가능하고 환경 별로 직접 DB에 수동으로 SQL을 실행하는 경우로 인해서 DB 스키마가 조금씩 달라지고 관리가 안 되는 이슈들이 있었는데, `Liquibase` 활용하여 DB 관리가 간편해져서 좋다.
 
-# 7. 참고
+## 7. 참고
 
 - [Liquibase Documentation](https://docs.liquibase.com/home.html)
 - [Liquibase에 대해 자세히 알아보기: DB 스키마 버전 관리의 핵심 도구](https://velog.io/@gun_123/Liquibase에-대해-자세히-알아보기-DB-스키마-버전-관리의-핵심-도구)
