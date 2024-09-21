@@ -471,7 +471,7 @@ ALTER TABLE person
     ADD address3 VARCHAR(30) NULL COMMENT 'test';
 ```
 
-## 4.4 Change Tracking 명령어
+### 4.4 Change Tracking 명령어
 
 `Liquibase`의 Change Tracking 명령어는 데이터베이스에 적용된 변경 사항을 추적하고, 현재 상태를 확인하거나 변경 사항 기록을 생성하는 데 사용된다.
 
