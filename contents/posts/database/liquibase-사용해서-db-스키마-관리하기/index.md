@@ -544,7 +544,7 @@ Liquibase command 'validate' was executed successfully.
 > liquibase --defaultsFile=liquibase.properties changelog-sync
 ```
 
-- `changelog-sync-sql` : `changelog-sync` 명령어와 동일한 기능을 수행하지만, 실제 동기화 작업을 실행하지 않고 그에 해당하는 SQL 문을 출력한다. 이를 통해 SQL을 미리 검토하거나 수동으로 실행할 수 있다.
+- `changelog-sync-sql` : `changelog-sync` 명령어와 동일한 기능을 수행하지만, 실제 동기화 작업을 실행하지 않고 그에 해당하는 SQL 문을 출력한다. 이를 통해 SQL을 미리 검토하거나 수동으로 실행할 수 있다
 
 ```bash
 > liquibase --defaultsFile=liquibase.properties changelog-sync-sql
@@ -577,7 +577,7 @@ Liquibase command 'changelog-sync-sql' was executed successfully.
 
 `Context`와 `Label`은 `Liquibase`에서 특정 `Changeset`을 적용할 환경이나 조건을 정의하는 기능이지만, 용도가 약간 다르다.
 
-- `Context` :  `Changeset`을 특정 환경(개발, 테스트, 프로덕션 등)에 맞춰 적용할 때 사용된다. ex. `--contexts=dev`로 지정하면 해당 `Changeset`이 dev 환경에서만 실행된다.
+- `Context` :  `Changeset`을 특정 환경(개발, 테스트, 프로덕션 등)에 맞춰 적용할 때 사용된다. ex. `--contexts=dev`로 지정하면 해당 `Changeset`이 dev 환경에서만 실행된다
 
 ```sql
 --changeset author:1 context:dev
@@ -587,7 +587,7 @@ CREATE TABLE example_dev (id INT PRIMARY KEY);
 ```
 
 - `Label` : `Changeset`을 태그처럼 구분하여 특정 조건에 맞춰 실행할 때 사용된다. 여러 개의 `Changeset`을 논리적으로 그룹화하여 "이 변경사항은 A 기능에 관련된 것"처럼 추적하거나 선택적으로 실행할 수 있다. `--labels=pre` 로 특정 레이블을 가진 `Changeset`만 실행할 수 있다.
-- SQL 전후처리가 필요한 경우에는 `Label`을 사용할 수 있다.
+- SQL 전후처리가 필요한 경우에는 `Label`을 사용할 수 있다
 
 ```sql
 --changeset author:1 labels:pre
