@@ -2,7 +2,7 @@
 title: "ArgoCD Resource Hooks (PreSync, PostSync, SyncWaves)에 대해서 알아보자"
 description: "ArgoCD Resource Hooks (PreSync, PostSync, SyncWaves)에 대해서 알아보자"
 date: 2024-10-21
-update: 2024-10-21
+update: 2024-10-31
 tags:
   - argocd
   - argo
@@ -268,9 +268,32 @@ spec:
   backoffLimit: 2
 ```
 
+
+
+> `ttlSecondAfterFinished`를 적용했는데 삭제가 되지 않는 경우는?
+>
+> Kubernetes 버전에 따라서 동작하지 않을 수도 있다. 버전이 낮거나 기능 활성화되지 않아 동작하지 않을 수 있다.
+>
+> ![ttlSecondsAfterFinished 스펙](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/cloud/argocd-resource-hooks에-대해서-알아보자/image-20241030180211686.png)
+> 참고: [JobSpec v1 batch (kubernetes v1.18)](https://k8s-dev-ko.netlify.app/docs/reference/generated/kubernetes-api/v1.18/)
+
 #### 3.3 실제 App 버전은 같아서 배포가 필요 없지만, 수동으로 `PreSync`, `PostSync`를 할수는 없나?
 
-`Sync` 버튼을 누르면 무조건 `PreSync` → `Sync` → `PostSync`를 실행하게 되어 있어서 실제로 Hook이 실행이 상항 된다고 보면 된다.
+`Sync` 버튼을 누르면 무조건 `PreSync` → `Sync` → `PostSync`를 실행하게 되어 있어서 실제로 Hook이 실행이 된다
+
+#### 3.4 Presync가 실패가 되었는데, Deployment는 배포를 하는 경우에는 어떻게 하면 되나?
+
+Presync 실행 시 오류가 발생해서 Pod가 배포가 안된 경우에는 ArgoCD에서 deployment 블록을 선택해서 수동으로 시작하면 Pod를 배포할 수 있다. 
+
+#### 3.5 무한 Syncing/Terminating을 계속 하고 있는 경우 강제로 terminate하는 방법은 없나?
+
+![무한 Syncing](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/cloud/argocd-resource-hooks에-대해서-알아보자/image-20241031180353715.png)
+
+![TERMINATE](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/cloud/argocd-resource-hooks에-대해서-알아보자/image-20241031180415768.png)
+
+Application을 선택하고 `TERMINATE` 버튼을 클릭해서 강제로 종료시킬 수 있다. 
+
+
 
 ## 4. 마무리
 
