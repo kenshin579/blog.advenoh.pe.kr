@@ -262,8 +262,8 @@ func Test_Periodic_Tasks(t *testing.T) {
 
 참고
 
-- [**How to prevent duplicate scheduler task registe across multiple Asynq server nodes**](https://github.com/hibiken/asynq/issues/653)
-- [**[FEATURE REQUEST\] Distributed Scheduler**](https://github.com/hibiken/asynq/issues/395)
+- [How to prevent duplicate scheduler task registe across multiple Asynq server nodes](https://github.com/hibiken/asynq/issues/653)
+- [FEATURE REQUEST Distributed Scheduler](https://github.com/hibiken/asynq/issues/395)
 
 2개 인스턴스로 실행하면 주기적인 Task가 2개 등록된 것을 확인할 수 있다.
 
