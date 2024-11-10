@@ -18,7 +18,7 @@ tags:
 
 Kafka 사용시 [Ahkq](https://github.com/tchiotludo/akhq) UI를 대부분 사용하고 있지만, Trouble-shooting이나 스크립트 작성을 하는 경우에는 Kafka CLI를 사용하는 경우도 종종있다. 자주 사용하는 Kafka CLI 명령어를 정리합니다.
 
-로컬환경에서 Kafka를 실행하는 방법은 그전 [포스팅](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-akhq/)을 참고해주세요.
+로컬환경에서 Kafka를 실행하는 방법은 그전 [포스팅](https://blog.advenoh.pe.kr/로컬환경에서-kafka-실행하기-with-akhq/)을 참고해주세요.
 
 ## 1.Download Kafka
 
@@ -34,7 +34,7 @@ $ tar -jxvf kafka_2.13-3.2.1.tgz
 
 ## 2.Kafka CLI
 
-Kafka 기본 포트번호는 9092로 시작하지만, [로컬환경에서 Kafka 실행하기](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-akhq/)에서 설정한 포트번호로 실행한다.
+Kafka 기본 포트번호는 9092로 시작하지만, [로컬환경에서 Kafka 실행하기](https://blog.advenoh.pe.kr/로컬환경에서-kafka-실행하기-with-akhq/)에서 설정한 포트번호로 실행한다.
 
 > Kafka v2.2이하에서는 Zookeeper URL과 port 번호 (ex. `localhost:2181`)를 사용했지만, Kafka v2.2+ 부터는 `--bootstrap-server` 옵션을 사용을 추천하낟. v3부터는 Zoopkeeper 옵션을 제거될 예정이다.
 

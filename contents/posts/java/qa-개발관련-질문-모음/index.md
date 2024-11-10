@@ -18,27 +18,23 @@ tags:
 ![](q&a3.jpeg)
 
 * Cache
-    * [Q&A : Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-cache-ssm-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+    * [Q&A : Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/qa-cache-ssm-관련-질문-모음/)
 * Database
-    * [Q&A : MySql 관련 질문 모음](https://blog.advenoh.pe.kr/database/qa-mysql-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/database/qa-mybatis-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/database/qa-jpa-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+    * [Q&A : MySql 관련 질문 모음](https://blog.advenoh.pe.kr/qa-mysql-관련-질문-모음/)
+    * [Q&A : Mybatis 관련 질문 모음](https://blog.advenoh.pe.kr/qa-mybatis-관련-질문-모음/)
+    * [Q&A : JPA 관련 질문 모음](https://blog.advenoh.pe.kr/qa-jpa-관련-질문-모음/)
 * Git
-    * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/git/qa-git-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+    * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/qa-git-관련-질문-모음/)
 * Java
-    * [Q&A : Java 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-java-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-lombok-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : Spring 관련 질문 모음]()
-    * [Q&A : Spring Boot 관련 질문 모음]()
-    * [Q&A : Spring Boot Annotation 모음](https://blog.advenoh.pe.kr/spring/qa-spring-boot-annotation-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : Spring JPA Annotation 모음](https://blog.advenoh.pe.kr/spring/qa-spring-jpa-annotation-%EB%AA%A8%EC%9D%8C/)
+    * [Q&A : Java 관련 질문 모음](https://blog.advenoh.pe.kr/qa-java-관련-질문-모음/)
+    * [Q&A : Lombok 관련 질문 모음](https://blog.advenoh.pe.kr/qa-lombok-관련-질문-모음/)
+    * [Q&A : Spring Boot 관련 질문 모음](https://blog.advenoh.pe.kr/qa-spring-boot-annotation-모음/)
+    * [Q&A : Spring Boot Annotation 모음](https://blog.advenoh.pe.kr/qa-spring-boot-annotation-모음/)
+    * [Q&A : Spring JPA Annotation 모음](https://blog.advenoh.pe.kr/qa-spring-jpa-annotation-모음/)
 * JavaScript
-    * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/javascript/qa-javascript-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : ReactJS 관련 질문 모음]()
+    * [Q&A : JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/qa-javascript-관련-질문-모음/)
 * Json
-    * [Q&A : Jackson 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-jackson-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-    * [Q&A : JsonPath 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-jsonpath-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+    * [Q&A : Jackson 관련 질문 모음](https://blog.advenoh.pe.kr/qa-jackson-관련-질문-모음/)
+    * [Q&A : JsonPath 관련 질문 모음](https://blog.advenoh.pe.kr/qa-jsonpath-관련-질문-모음/)
 * Software Management Tool
-    * [Q&A : Maven 관련 질문 모음](https://blog.advenoh.pe.kr/java/qa-maven-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
-* Unit Test
-    * [Q&A : Unit Test 관련 질문 모음]()
+    * [Q&A : Maven 관련 질문 모음](https://blog.advenoh.pe.kr/qa-maven-관련-질문-모음/)

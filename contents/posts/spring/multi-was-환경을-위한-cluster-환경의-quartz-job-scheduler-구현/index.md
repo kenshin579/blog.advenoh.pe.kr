@@ -161,7 +161,7 @@ public SchedulerFactoryBean schedulerFactoryBean(ApplicationContext applicationC
 }
 ```
 
-간단하죠? [메모리기반으로 작성된 Quartz 소스](https://blog.advenoh.pe.kr/spring-boot-quartz%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-job-scheduler-%EA%B5%AC%ED%98%84-In-memory/) 와 비교하면 어떻게 다르게 구성 되었는지 한 눈에 쉽게 파악할 수 있습니다. 파일이나 폴더를 비교하는 프로그램 중에 개인적으로 저는 [Meld](http://meldmerge.org/) 라는 오픈소스를 잘 사용합니다.
+간단하죠? [Spring Boot + Quartz을 이용한 Job Scheduler 구현 (In-memory)](https://blog.advenoh.pe.kr/spring-boot-quartz%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-job-scheduler-%EA%B5%AC%ED%98%84-In-memory/) 와 비교하면 어떻게 다르게 구성 되었는지 한 눈에 쉽게 파악할 수 있습니다. 파일이나 폴더를 비교하는 프로그램 중에 개인적으로 저는 [Meld](http://meldmerge.org/) 라는 오픈소스를 잘 사용합니다.
 
 한번 설치해서 비교해보세요. 블로그보다 코드만 보고도 쉽게 파악할 수 있습니다.
 

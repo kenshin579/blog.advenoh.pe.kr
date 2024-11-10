@@ -18,7 +18,7 @@ tags:
 미 답변중에 알고 계신 부분 있으면 코멘트 달아주세요. 감사합니다.
 
 
-## [Q&A 전체 목록](https://blog.advenoh.pe.kr/java/qa-%EA%B0%9C%EB%B0%9C%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C/)
+## Q&A 전체 목록
 
 ### <span style="color:orange">[답변완료]</span>
 

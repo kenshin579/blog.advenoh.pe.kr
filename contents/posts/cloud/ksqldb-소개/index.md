@@ -558,7 +558,7 @@ ksqlDB 서버는 REST API를 제공하고 있고 API 전체 문서는 아래 링
 
 ### 4. Connector Management
 
-> [Kafka Connector](https://blog.advenoh.pe.kr/cloud/kafka-connect%EC%97%90-%EB%8C%80%ED%95%9C-%EC%86%8C%EA%B0%9C/)는 여기를 참고해주세요
+> [Kafka Connector](https://blog.advenoh.pe.kr/kafka-connect에-대한-소개/)는 여기를 참고해주세요
 
 ksqlDB는 2가지 모드로 connector를 실행할 수 있다. 모드에 따라서 connector 어떻게 어디에서 실행할지를 결정한다.
 

@@ -20,7 +20,7 @@ series: "Spring JPA"
 
 ## 1. 들어가며
 
-JPA 연관관계 매핑에 대한 내용은 [JPA 연관관계 매핑 정리](https://blog.advenoh.pe.kr/database/jpa-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EC%A0%95%EB%A6%AC/) 포스팅을 참고해주세요. 이번 포스팅에서는 JPA에서 가장 자주 사용하는 다대일(N:1)과 그 반대 방향인 일대다(1:N) 연관관계에 대해서 알아보겠습니다.
+JPA 연관관계 매핑에 대한 내용은 [JPA 연관관계 매핑 정리](https://blog.advenoh.pe.kr/jpa-연관관계-매핑-정리/) 포스팅을 참고해주세요. 이번 포스팅에서는 JPA에서 가장 자주 사용하는 다대일(N:1)과 그 반대 방향인 일대다(1:N) 연관관계에 대해서 알아보겠습니다.
 
 > - Post (일)
 > - Comment (다)
@@ -121,7 +121,7 @@ JoinColumn과 ManyToOne 옵션 설정에 대한 설명은 다음과 같습니다
 
 | 속성         | 설명                                                         |
 | ------------ | ------------------------------------------------------------ |
-| optional     | true이면 해당 객체에 null이 들어갈 수 있다는 의미이다. <br />참고로 @Column 어노테이션에서도 nullable=true로 세팅해도 null이 들어갈 수 있다<br />기본 값 : true<br />옵션 설정에 따라 select 구문 쿼리 어떻게 생성되는지 [FAQ 4.3](https://blog.advenoh.pe.kr/database/jpa-%EB%8B%A4%EB%8C%80%EC%9D%BC-many-to-one-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84/#43-manytoone-%EC%98%B5%EC%85%98-%EC%A4%91%EC%97%90-optional-%EC%86%8D%EC%84%B1%EC%9D%B4-true-false%EC%9D%B8-%EA%B2%BD%EC%9A%B0%EC%97%90-%EC%BF%BC%EB%A6%AC-%EA%B5%AC%EB%AC%B8%EC%9D%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B4%EA%B2%8C-%EC%83%9D%EC%84%B1%EC%9D%B4-%EB%90%98%EB%82%98)을 참고해주세요<br /> |
+| optional     | true이면 해당 객체에 null이 들어갈 수 있다는 의미이다. <br />참고로 @Column 어노테이션에서도 nullable=true로 세팅해도 null이 들어갈 수 있다<br />기본 값 : true<br />옵션 설정에 따라 select 구문 쿼리 어떻게 생성되는지 [FAQ 4.3](https://blog.advenoh.pe.kr/jpa-다대일-many-to-one-연관관계/#43-ManyToOne-옵션-중에-optional-속성이-true-false인-경우에-쿼리-구문이-어떻게-다르게-생성이-되나)을 참고해주세요<br /> |
 | fetch        | fetchType이 EAGER이면 연관된 엔티티를 바로 로딩한다. <br />fetchType이 LAZY이면 연관된 엔티티를 바로 로딩하지 않고 실제로 해당 객체를 조회할 때 해당 엔티티를 로딩한다<br />기본값 <br />@ManyToOne=FetchType.EAGER<br />@OneToMany=FetchType.LAZY |
 | cascade      | 영속성 전이 설정을 할 수 있다. 설정 값은 아래 cascadeType을 참고해주세요. |
 | targetEntity | 연관된 언테티의 타입 정보를 설정하는데 거의 사용하지 않는다. |
@@ -328,7 +328,7 @@ public class Post extends DateAudit {
 영방향 매핑때에는 무한 루프에 빠질 수 있어서 주의가 필요합니다. 예를 들어 Comment.toString()에서 getPost()를 호출하게 되면 무한 루프에 빠질 수 있습니다.
 
 - 엔티티를 JSON으로 변환하는 경우
-    - [Jackson에서 Infinite Recursion에 해결하는 방법](https://blog.advenoh.pe.kr/java/Jackson%EC%97%90%EC%84%9C-Infinite-Recursion-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95/)을 참고해주세요
+    - [Jackson에서 Infinite Recursion에 해결하는 방법](https://blog.advenoh.pe.kr/jackson에서-infinite-recursion-이슈-해결방법/)을 참고해주세요
 - toString() 사용시
     - Lombok 라이브러리 사용시에도 발생할 수 있어 toString(exclude={##, ##})으로 제외시킨다
 
