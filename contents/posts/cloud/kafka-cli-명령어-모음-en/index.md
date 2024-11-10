@@ -16,7 +16,7 @@ tags:
 
 When using Kafka, it is much nicer to have some kind of UI interface and I believe many people use [Ahkq](https://github.com/tchiotludo/akhq) UI including myself. But sometimes using Kafka CLI is necessary for troubleshooting and it can be used for scripting. This article summarizes frequently used Kafka CLI commands.
 
-To learn how to run Kafka on your local environment, see our previous [article](https://blog.advenoh.pe.kr/cloud/%EB%A1%9C%EC%BB%AC%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-kafka-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-with-akhq/).
+To learn how to run Kafka on your local environment, see our previous [article](https://blog.advenoh.pe.kr/로컬환경에서-kafka-실행하기-with-akhq/).
 
 ## 1.Download Kafka
 

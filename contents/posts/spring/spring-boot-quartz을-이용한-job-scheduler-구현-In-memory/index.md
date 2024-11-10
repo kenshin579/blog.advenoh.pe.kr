@@ -23,7 +23,7 @@ series: "Spring Quartz"
 
 ## 1. 들어가며
 
-이 포스팅은 Quartz 튜터리얼 시리즈에 한 부분으로 첫 번째의 포스팅 [Quartz Job Scheduler란?](https://blog.advenoh.pe.kr/spring/quartz-job-scheduler%EB%9E%80/) 에 이어 2부 내용으로 Spring Boot 기반의 RAMJobStore을 이용한 Quartz 스케줄러 구현을 다룹니다. 기본 개념은 이미 1부에서 다루었기 때문에 여기에서는 작성한 코드 기반으로 어떻게 스프링에서 Quartz를 설정하여 사용할 수 있는지에 대해서 알아보겠습니다.
+이 포스팅은 Quartz 튜터리얼 시리즈에 한 부분으로 첫 번째의 포스팅 [Quartz Job Scheduler란?](https://blog.advenoh.pe.kr/quartz-job-scheduler란/) 에 이어 2부 내용으로 Spring Boot 기반의 RAMJobStore을 이용한 Quartz 스케줄러 구현을 다룹니다. 기본 개념은 이미 1부에서 다루었기 때문에 여기에서는 작성한 코드 기반으로 어떻게 스프링에서 Quartz를 설정하여 사용할 수 있는지에 대해서 알아보겠습니다.
 
 ## 2. 개발 환경
 

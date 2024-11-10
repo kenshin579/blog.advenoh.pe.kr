@@ -11,7 +11,7 @@ tags:
   - import
 ---
 
-개발 시 원격에 있는 데이터를 로컬환경에 그대로 복사해서 테스트할 필요가 종종 생긴다. [그전 포스팅](https://blog.advenoh.pe.kr/database/mongodb-collection-cloning%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/)에서는 같은 서버에서 collection을 cloning 하는 방법에 대해서 알아보았다면, 이번에는 원격에서 로컬환경으로 cloning 하는 방법에 대해서 알아보자.
+개발 시 원격에 있는 데이터를 로컬환경에 그대로 복사해서 테스트할 필요가 종종 생긴다. [그전 포스팅](https://blog.advenoh.pe.kr/mongodb-collection-cloning하는-방법/)에서는 같은 서버에서 collection을 cloning 하는 방법에 대해서 알아보았다면, 이번에는 원격에서 로컬환경으로 cloning 하는 방법에 대해서 알아보자.
 
 ## 1.mongodump
 

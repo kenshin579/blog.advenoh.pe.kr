@@ -60,7 +60,7 @@ def test_simple_sorted(self):
 
 ### 2.1 키 함수로 람다 사용
 
-`key` 함수로 딕셔너리에서 age값을 반환하는 [람다함수](https://blog.advenoh.pe.kr/python/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C-%EB%9E%8C%EB%8B%A4-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/)를 지정하여 나이 순으로 정렬한다.
+`key` 함수로 딕셔너리에서 age값을 반환하는 [람다함수](https://blog.advenoh.pe.kr/파이썬에서-람다-함수-익숙해지기/)를 지정하여 나이 순으로 정렬한다.
 
 ```python
 def sort_list_by_age_using_lambda(student_list):
