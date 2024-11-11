@@ -18,6 +18,7 @@ tags:
   - transform
   - consumer
   - producer
+series: "Apache Kafka"
 ---
 
 ## 1. Kafka Connect 소개

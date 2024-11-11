@@ -11,6 +11,7 @@ tags:
   - 브로커
   - 메시지
   - 아파치
+series: "Apache Kafka"
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - events
   - workflow
   - devops
+series: "ArgoCD"
 ---
 
 
