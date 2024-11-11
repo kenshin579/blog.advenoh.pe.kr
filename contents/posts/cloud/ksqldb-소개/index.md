@@ -10,6 +10,7 @@ tags:
   - sql
   - kstream
   - stream
+series: "Apache Kafka"
 ---
 
 ## What

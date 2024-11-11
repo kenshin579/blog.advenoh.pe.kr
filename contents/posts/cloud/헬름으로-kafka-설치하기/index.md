@@ -13,6 +13,7 @@ tags:
   - 쿠버네티스
   - 헬름
   - 차트
+series: "Apache Kafka"
 ---
 
 
