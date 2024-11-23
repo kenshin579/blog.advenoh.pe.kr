@@ -13,7 +13,7 @@ series: "ArgoCD"
 ---
 
 
-Argo Projects 그전 발표내용은 [여기](https://blog.advenoh.pe.kr/cloud/argo-projects/)를 참고해주세요.
+Argo Projects 그전 발표내용은 [여기](https://blog.advenoh.pe.kr/argo-projects/)를 참고해주세요.
 
 ## Argo CD?
 

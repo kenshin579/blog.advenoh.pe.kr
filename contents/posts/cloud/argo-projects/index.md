@@ -41,7 +41,7 @@ Argo Project란 쿠버네티스 환경에서 application이나 job을 실행하�
 
             - Argo Workflow, Argo Rollouts, k8s Object, AWS Lambda, AWS Lamda, NATS message, Kafka message, Log, Slack Notification, etc
 
-- [`Argo CD`](https://blog.advenoh.pe.kr/cloud/argo-cd/)
+- [`Argo CD`](https://blog.advenoh.pe.kr/argo-cd/)
     - 선언적인 GitOps 기반의 CD (Continuous Deployment) 도구
 
 - `Argo Rollouts`
