@@ -8,8 +8,6 @@ import shutil
 import sys
 from datetime import datetime
 from itertools import islice
-from bs4 import BeautifulSoup
-import requests
 
 ################################################################################################
 # todo :
