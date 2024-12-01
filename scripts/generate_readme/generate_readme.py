@@ -20,7 +20,7 @@ from itertools import islice
 #
 ################################################################################################
 BLOG_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-BLOG_DIR_SCRIPT = '/'.join([BLOG_DIR, 'scripts', 'generate-readme'])
+BLOG_DIR_SCRIPT = '/'.join([BLOG_DIR, 'scripts', 'generate_readme'])
 
 BLOG_CONTENT_DIR = '/'.join([BLOG_DIR, 'contents', 'posts'])
 README_FILE = os.path.join(BLOG_DIR, 'README.md')
