@@ -47,3 +47,4 @@ ENV/
 env.bak/
 venv.bak/
 *.iml
+requirements.txt
