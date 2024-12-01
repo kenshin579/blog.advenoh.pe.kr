@@ -29,10 +29,13 @@ jobs:
         if [ -f scripts/requirements.txt ]; then pip install -r scripts/requirements.txt; fi
     - name: Run generate readme script
       run: |
-        python scripts/generate_readme.py -g
+        python scripts/generate_readme/generate_readme.py -g
     - name: Create commits
       run: |
-          git config user.name 'kenshin579'
+          echo "username: ${{github.actor}}"
+          echo "email: ${{github.email}}"
+        
+          git config user.name {{github.actor}}
           git config user.email 'kenshin579@hotmail.com'
           git add README.md
           git commit -am "update README file"
