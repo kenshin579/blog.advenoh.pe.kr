@@ -46,11 +46,10 @@ Term2에서 한글 깨짐 현상은 주로 두 가지 이유로 발생한다. Un
 
 ## 3. 마무리
 
-![`iTerm2` - 한글 깨짐](image-20241130161828192.png)
+![iTerm2 - 한글 깨짐](image-20241130161828192.png)
 
 위 단계를 통해 `iTerm2`에서 발생하던 한글 깨짐 문제를 손쉽게 해결할 수 있었다.
 
 ## 4. 참고
 
-- [[MAC] iTerm2 한글 분리 해결 / `iTerm2` 한글 깨짐 해결](https://passing-story.tistory.com/entry/MAC-`iTerm2`-%ED%95%9C%EA%B8%80-%EB%B6%84%EB%A6%AC-%ED%95%B4%EA%B2%B0-`iTerm2`-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%95%B4%EA%B2%B0)
-- https://frenchline.tistory.com/18
+- [[MAC] iTerm2 한글 분리 해결 / iTerm2 한글 깨짐 해결](https://passing-story.tistory.com/entry/MAC-iTerm2-%ED%95%9C%EA%B8%80-%EB%B6%84%EB%A6%AC-%ED%95%B4%EA%B2%B0-iTerm2-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%95%B4%EA%B2%B0)
