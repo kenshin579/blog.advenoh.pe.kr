@@ -11,8 +11,6 @@ from itertools import islice
 
 ################################################################################################
 # todo :
-# 1. master 브랜치에 cherry pick을 해야 함 - 자동으로 할 수 없는 방법은 없나?
-# - circleci로 가능한지 확인해보기
 
 ################################################################################################
 
@@ -29,9 +27,6 @@ README_FILE = os.path.join(BLOG_DIR, 'README.md')
 README_HEADER_FILE = '/'.join([BLOG_DIR_SCRIPT, 'data', 'HEADER.md'])
 
 BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
-
-REGEX_SUB_PATTERN = '.*\/blog.advenoh.pe.kr\/contents\/posts'
-
 
 ################################################################################################
 # Functions
