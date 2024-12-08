@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2024-12-01
+Updated 2024-12-08
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -122,7 +122,8 @@ Updated 2024-12-01
 
 ## Mac
 * [M1 맥북 한영 전환 버벅임 없애는 방법 - Karabiner](https://blog.advenoh.pe.kr/m1-맥북-한영-전환-버벅임-없애는-방법-karabiner/)
-* [Mac iTerm2에서 한글 깨지는 현상](https://blog.advenoh.pe.kr/Mac-iTerm2에서-한글-깨지는-이슈/)
+* [Mac iTerm2에서 한글 깨지는 현상](https://blog.advenoh.pe.kr/mac-iterm2에서-한글-깨지는-이슈/)
+* [맥 iTerm2에서 Alt 키 매핑 설정하는 방법](https://blog.advenoh.pe.kr/맥-iterm2에서-alt-키-매핑-설정하는-방법/)
 * [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/맥환경에서-countdown-shell-script으로-집중력-강화하기/)
 * [여러 페이지 있는 PDF 파일 PNG로 변환하기](https://blog.advenoh.pe.kr/여러-페이지-있는-pdf-파일-png로-변환하기/)
 
