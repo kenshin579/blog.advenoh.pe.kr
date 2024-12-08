@@ -33,13 +33,13 @@ tags:
   - Action: `Send Escape Sequence` 선택
   - Esc +: `f` 값 입력
 
-![새로운 key 추가](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/mac/맥-iterm2에서-alt-키-매핑-설정하는-방법/image-20241208152913924.png)
+![새로운 key 추가](image-20241208152913924.png)
 
 
 
 최종적으로 아래와 같이 2가지 키 매핑을 추가하면 된다. 
 
-![Key Mapping](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/mac/맥-iterm2에서-alt-키-매핑-설정하는-방법/image-20241208152923853.png)
+![Key Mapping](image-20241208152923853.png)
 
 ## 3. 참고
 
