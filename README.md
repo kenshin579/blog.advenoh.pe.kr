@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2024-12-08
+Updated 2024-12-26
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
