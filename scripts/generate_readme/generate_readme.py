@@ -47,7 +47,9 @@ class Generator:
             else:
                 self.toc_map[category] = [{'title': title, 'filename': file}]
 
-        self.__write_blog_list_to_file()
+        logging.info("count # of posting. readme:%d, new:%d", count_posting_from_readme, count_new_posting)
+        if count_new_posting > count_posting_from_readme:
+            self.__write_blog_list_to_file()
 
     def __get_blog_title(self, filename):
         with open(filename, 'r') as f:
@@ -81,6 +83,19 @@ class Generator:
                         filenames_with_extension.append(os.path.join(dirpath, filename))
         return filenames_with_extension
 
+    def __count_toc_from_readme(self, filename):
+        count = 0
+        with open(filename, 'r', encoding='utf-8') as file:
+            for line in file:
+                if line.startswith('*'):
+                    count += 1
+        return count
+
+    def __count_new_toc(self):
+        count = 0
+        for category in self.toc_map:
+            count += len(self.toc_map[category])
+        return count
 
 ################################################################################################
 # Main function
