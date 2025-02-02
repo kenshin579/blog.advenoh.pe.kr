@@ -11,7 +11,7 @@ from datetime import datetime
 
 import yaml
 from openai import OpenAI
-from peewee import MySQLDatabase, Model, CharField, CompositeKey
+from peewee import MySQLDatabase, Model, CharField, CompositeKey, DateTimeField
 
 ################################################################################################
 # Constants
@@ -39,7 +39,7 @@ db = MySQLDatabase(os.environ.get("RASBERRYPI_MYSQL_DATABASE"),
 class UpdatedTags(Model):
     category = CharField(max_length=191)
     title = CharField(max_length=191)
-    updated_at = datetime.now()
+    updated_at = DateTimeField(default=datetime.now)
 
     class Meta:
         database = db
@@ -62,9 +62,21 @@ class GeneratorTags:
 
         :return:
         '''
-        logging.debug("update_tags_by_file")
+        index_md_files = self.__find_all_files(file_path)
+        index_md_files = self.remove_already_stored_index_md_files(index_md_files)
 
-        pass
+        current_tags_per_file = self.__build_current_tags_per_file(index_md_files)
+        chatgpt_tags_per_file = self.__build_chatgpt_tags(index_md_files)
+        # chatgpt_tags_per_file = {}
+
+        merged_tags_per_file = self.__merge_tags(current_tags_per_file, chatgpt_tags_per_file)
+        print(merged_tags_per_file)
+
+        # update tags in the index.md files
+        self.__update_tags_in_index_md_files(merged_tags_per_file)
+
+        # insert a new record into updated_tags table
+        self.create_finance_tags(index_md_files)
 
     def update_tags_by_date(self, date):
         '''
@@ -137,7 +149,7 @@ class GeneratorTags:
                 },
                 {
                     "role": "user",
-                    "content": "블로그 링크 내용 기반으로 추천할 태그를 추천해줘. 실제로 블로그 tag 목록에 추가할 거고 최소 20개 정도 추천해줘. 쉽게 파싱할 수 있도록 결과를 json 형태로 작성해줘. ex. '{tags:[\"투자\", \"투자전략\"]}'\n\nlink 주소:" + link + "\n\n"
+                    "content": "블로그 링크 내용 기반으로 추천할 태그를 추천해줘. 실제로 블로그 tag 목록에 추가할 거고 최소 15개 정도 추천해줘. 쉽게 파싱할 수 있도록 결과를 json 형태로 작성해줘. ex. '{tags:[\"투자\", \"투자전략\"]}'\n\nlink 주소:" + link + "\n\n"
                 },
             ],
             model="gpt-4o-mini",
@@ -177,11 +189,15 @@ class GeneratorTags:
             current_tags = current_tags_per_file.get(file_path, [])
             chatgpt_tags = chatgpt_tags_per_file.get(file_path, [])
 
-            # Convert all tags to lowercase for case-insensitive comparison
-            all_tags = [tag.lower() for tag in current_tags + chatgpt_tags]
+            seen_tags = {}
+            merged_tags = []
 
-            # Remove duplicates while preserving order
-            merged_tags = list(collections.OrderedDict.fromkeys(all_tags))
+            for tag in current_tags + chatgpt_tags:
+                lower_tag = tag.lower()
+
+                if lower_tag not in seen_tags:
+                    seen_tags[lower_tag] = tag
+                    merged_tags.append(tag)
 
             # merged_tags = list(set(current_tags + chatgpt_tags))
             merged_tags_per_file[file_path] = merged_tags
@@ -206,6 +222,7 @@ class GeneratorTags:
             lines = front_matter.split('\n')
             new_lines = []
             in_tags_section = False
+
             for line in lines:
                 if line.strip().startswith('tags:'):
                     in_tags_section = True
@@ -228,6 +245,7 @@ class GeneratorTags:
 
     def create_finance_tags(self, index_md_files):
         """Insert a new record into updated_tags table."""
+
         for file_path in index_md_files:
             category, title = self.__get_category_and_title_path(file_path)
 
@@ -255,6 +273,24 @@ class GeneratorTags:
         title_path = os.path.basename(os.path.dirname(file_path))
         return category, title_path
 
+    def __find_all_files(self, file_path):
+        """ find all index.md files in the given folder or file """
+
+        index_md_files = []
+        abs_root_path = os.path.abspath(file_path)
+        print(abs_root_path)
+
+        if os.path.isfile(file_path):
+            if file_path.endswith('index.md'):
+                index_md_files.append(os.path.abspath(file_path))
+        else:
+            for root, dirs, files in os.walk(file_path):
+                for file in files:
+                    if file == 'index.md':
+                        index_md_files.append(os.path.abspath(os.path.join(root, file)))
+
+        return index_md_files
+
 
 ################################################################################################
 # Main function
@@ -267,7 +303,7 @@ def main():
 
     group = parser.add_mutually_exclusive_group(required=False)
     group.add_argument("-f", "--file", action='store', help="file path")
-    group.add_argument("-t", "--today", action='store_true', help="generate tags for all today's blogs ")
+    group.add_argument("-t", "--today", action='store_true', help="generate tags for all today's blogs")
 
     args = parser.parse_args()
     logging.debug("args: %s", args)
