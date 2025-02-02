@@ -1,4 +1,3 @@
-import os
 from unittest import TestCase
 
 from peewee import SqliteDatabase
@@ -26,3 +25,7 @@ class TestGeneratorTags(TestCase):
     def test_update_tags_by_today(self):
         test_date = '2024-10-21'
         self.generator.update_tags_by_date(test_date)
+
+    def test_update_tags_by_file(self):
+        file_path = 'file_path.txt'
+        self.generator.update_tags_by_file(file_path)

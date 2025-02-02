@@ -56,13 +56,14 @@ class GeneratorTags:
         self.db.connect()
         self.db.create_tables([UpdatedTags])  # Ensure the table exists
 
-    def update_tags_by_file(self):
+    def update_tags_by_file(self, file_path):
         '''
         Update tags by input file path (ex. folder or file)
 
         :return:
         '''
         logging.debug("update_tags_by_file")
+
         pass
 
     def update_tags_by_date(self, date):
@@ -88,7 +89,7 @@ class GeneratorTags:
         # update tags in the index.md files
         self.__update_tags_in_index_md_files(merged_tags_per_file)
 
-        # flag the db
+        # insert a new record into updated_tags table
         self.create_finance_tags(index_md_files)
 
     def __build_chatgpt_tags(self, index_md_files):
