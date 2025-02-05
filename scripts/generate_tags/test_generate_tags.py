@@ -27,5 +27,5 @@ class TestGeneratorTags(TestCase):
         self.generator.update_tags_by_date(test_date)
 
     def test_update_tags_by_file(self):
-        file_path = 'file_path.txt'
+        file_path = '../../contents/posts/web'
         self.generator.update_tags_by_file(file_path)
