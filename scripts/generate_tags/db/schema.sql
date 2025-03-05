@@ -1,5 +1,5 @@
 -- key는 복합키: category, title_path, updated_at
-create table updated_tags
+create table blog_tags
 (
     category   varchar(191) not null comment '카테고리(ex. cloud, devops)',
     title      varchar(191) not null comment '제목 경로',
