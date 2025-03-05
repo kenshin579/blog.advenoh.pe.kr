@@ -29,10 +29,10 @@ BLOG_HOME_URL = 'https://blog.advenoh.pe.kr'
 #
 ################################################################################################
 
-db = MySQLDatabase(os.environ.get("RASBERRYPI_MYSQL_DATABASE"),
-                   user=os.environ.get("RASBERRYPI_MYSQL_USER"),
-                   password=os.environ.get("RASBERRYPI_MYSQL_PASSWORD"),
-                   host=os.environ.get("RASBERRYPI_MYSQL_HOST"),
+db = MySQLDatabase(os.environ.get("RASBERRYPI_BLOG_MYSQL_DATABASE"),
+                   user=os.environ.get("RASBERRYPI_BLOG_MYSQL_USER"),
+                   password=os.environ.get("RASBERRYPI_BLOG_MYSQL_PASSWORD"),
+                   host=os.environ.get("RASBERRYPI_BLOG_MYSQL_PORT"),
                    port=int(os.environ.get("RASBERRYPI_MYSQL_PORT")))
 
 
