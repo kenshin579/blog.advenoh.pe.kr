@@ -38,7 +38,7 @@ tags:
 
 ### 2.2 사용 전 준비사항
 
-`2FA Read Code` Workflow를 사용하려면 Node.js와 SQLite3가 필요하다. `를 이용해 간단히 설치할 수 있다.
+`2FA Read Code` Workflow를 사용하려면 Node.js와 SQLite3가 필요하다. `brew`를 이용해 간단히 설치할 수 있다.
 
 #### Homebrew로 Node.js, SQLite3 설치
 
