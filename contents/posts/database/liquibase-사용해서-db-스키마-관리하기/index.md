@@ -596,6 +596,50 @@ CREATE TABLE example_feature (id INT PRIMARY KEY);
 
 > 정리하면 `Context`는 주로 배포 환경에 맞춘 `Changeset` 실행을 제어하는 반면, `Label`은 논리적 그룹화나 추적 목적으로 사용된다
 
+#### 2. rollback 단위는 어떻게 되는 건가?
+
+- changeset 안에 여러 rollback 명령어가 있지만, rollback 실행은 changeset 단위로 실행이 되어서 아래 rollback 명령어 전체가 실행된다고 보면 된다
+
+```sql
+--liquibase formatted sql
+--changeset your.name:4
+create table employee
+(
+    id       int primary key auto_increment not null,
+    name     varchar(50) not null,
+    address1 varchar(50),
+    address2 varchar(50),
+    city     varchar(30)
+);
+
+INSERT INTO liquibase_quickstart.employee (id, name, address1, address2, city)
+VALUES (1, 'John Doe', '123 Main St', 'Apt 1', 'Beverly Hills');
+
+INSERT INTO liquibase_quickstart.employee (id, name, address1, address2, city)
+VALUES (2, 'John Doe2', '123 Main St', 'Apt 1', 'Beverly Hills');
+
+ALTER TABLE liquibase_quickstart.employee ADD COLUMN email VARCHAR(50);
+
+UPDATE liquibase_quickstart.employee SET email = 'user1@naver.com' WHERE id = 1;
+UPDATE liquibase_quickstart.employee SET email = 'user2@naver.com' WHERE id = 2;
+
+
+--comment rollback 실행하면 아래 전체가 한번에 실행이 된다. rollback 하는 단위는 changeset 단위로 되는 듯하다
+--rollback UPDATE liquibase_quickstart.employee SET email = NULL WHERE id = 2;
+--rollback UPDATE liquibase_quickstart.employee SET email = NULL WHERE id = 1;
+--rollback ALTER TABLE liquibase_quickstart.employee DROP COLUMN email;
+--rollback DELETE FROM liquibase_quickstart.employee WHERE id = 2;
+--rollback DELETE FROM liquibase_quickstart.employee WHERE id = 1;
+--rollback DROP TABLE employee;
+
+```
+
+
+
+
+
+
+
 ## 6. 마무리
 
 `Liquibase`는 다양한 환경에서 안전하고 효율적으로 데이터베이스 변경을 관리할 수 있는 강력한 도구이다. `Context`와 `Label`을 사용해 환경별 맞춤 실행을 제어하고, `rollback`을 통해 실수나 변경사항을 쉽게 되돌릴 수 있다. 또한, Docker를 통해 쉽게 설정 및 실행할 수 있어 개발자에게 편리한 옵션을 제공한다.
