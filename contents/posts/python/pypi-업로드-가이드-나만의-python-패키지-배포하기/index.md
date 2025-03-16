@@ -109,9 +109,9 @@ total 80
 
 PyCharm IDE에서 설치하려면 아래 왼쪽에 위치한 `Python Packages` 아이콘을 클릭하고 `Setting` > `Install From Disk…` 을 클릭한 다음 빌드한 모듈 위치에서 `whl` 파일을 선택하면 된다.
 
-![Python Packages](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/python/pypi-업로드-가이드-나만의-python-패키지-배포하기/image-20250316155005311.png)
+![Python Packages](image-20250316155005311.png)
 
-![](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/python/pypi-업로드-가이드-나만의-python-패키지-배포하기/image-20250316154958750.png)
+![](image-20250316154958750.png)
 
 ### 3.2 패키지를 PyPi에 업로드하기
 
@@ -145,7 +145,7 @@ PyCharm IDE에서 설치하려면 아래 왼쪽에 위치한 `Python Packages` �
 
 업로드가 성공하면 [PyPi에서 패키지](https://pypi.org/project/korea-investment-stock/)를 확인할 수 있다.
 
-![PyPi.org](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/python/pypi-업로드-가이드-나만의-python-패키지-배포하기/image-20250316155025346.png)
+![PyPi.org](image-20250316155025346.png)
 
 ### 업로드 후 패키지 테스트
 
@@ -176,7 +176,7 @@ PyCharm IDE에서 설치하려면 아래 왼쪽에 위치한 `Python Packages` �
 
 위 명령어를 실행하면 버전 수정이 필요한 파일들에서 버전을 업데이트하고 `commit`까지 만들어준다.
 
-![Gitkraken - File changes](/Users/user/WebstormProjects/blog.advenoh.pe.kr/contents/posts/python/pypi-업로드-가이드-나만의-python-패키지-배포하기/image-20250316155043303.png)
+![Gitkraken - File changes](image-20250316155043303.png)
 
 ## 5. 마무리
 
