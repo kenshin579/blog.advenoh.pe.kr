@@ -47,6 +47,9 @@ class Generator:
             else:
                 self.toc_map[category] = [{'title': title, 'filename': file}]
 
+        count_posting_from_readme = self.__count_toc_from_readme(README_FILE)
+        count_new_posting = self.__count_new_toc()
+
         logging.info("count # of posting. readme:%d, new:%d", count_posting_from_readme, count_new_posting)
         if count_new_posting > count_posting_from_readme:
             self.__write_blog_list_to_file()
