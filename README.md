@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2024-12-08
+Updated 2025-03-16
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -75,6 +75,7 @@ Updated 2024-12-08
 * [Go에서의 로그깅 (Logging in Go)](https://blog.advenoh.pe.kr/go에서의-로그깅-logging-in-go/)
 * [Go에서의 메서드 (Method in Go)](https://blog.advenoh.pe.kr/go에서의-메서드-method-in-go/)
 * [Go에서의 열거형 상수 (Enums in Go)](https://blog.advenoh.pe.kr/go에서의-열거형-상수-enums-in-go/)
+* [JWKS(JSON Web Key Set)이란?](https://blog.advenoh.pe.kr/jwks-json-web-key-set이란/)
 * [jq - 명령어 JSON 처리기 사용법](https://blog.advenoh.pe.kr/jq-명령어-json-처리기-사용법/)
 * [타입 단언 (Type Assertion)](https://blog.advenoh.pe.kr/타입-단언-type-assertion/)
 * [타입 변환 (Type Conversion)](https://blog.advenoh.pe.kr/타입-변환-type-conversion/)
@@ -123,6 +124,7 @@ Updated 2024-12-08
 ## Mac
 * [M1 맥북 한영 전환 버벅임 없애는 방법 - Karabiner](https://blog.advenoh.pe.kr/m1-맥북-한영-전환-버벅임-없애는-방법-karabiner/)
 * [Mac iTerm2에서 한글 깨지는 현상](https://blog.advenoh.pe.kr/mac-iterm2에서-한글-깨지는-이슈/)
+* [OTP 코드, 이제 수동 입력은 그만! Alfred 2FA Read Code 써보자](https://blog.advenoh.pe.kr/otp-코드-이제-수동-입력은-그만-alfred-2fa-read-code-써보자/)
 * [맥 iTerm2에서 Alt 키 매핑 설정하는 방법](https://blog.advenoh.pe.kr/맥-iterm2에서-alt-키-매핑-설정하는-방법/)
 * [맥환경에서 countdown shell script으로 집중력 강화하기](https://blog.advenoh.pe.kr/맥환경에서-countdown-shell-script으로-집중력-강화하기/)
 * [여러 페이지 있는 PDF 파일 PNG로 변환하기](https://blog.advenoh.pe.kr/여러-페이지-있는-pdf-파일-png로-변환하기/)
@@ -132,6 +134,7 @@ Updated 2024-12-08
 
 ## Python
 * [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/gitbook으로-전자책-만들어보기/)
+* [PyPI 업로드 가이드: 나만의 Python 패키지 배포하기](https://blog.advenoh.pe.kr/pypi-업로드-가이드-나만의-python-패키지-배포하기/)
 * [도커라이즈 파이썬 어플리케이션 (Dockernize Python Application)](https://blog.advenoh.pe.kr/도커라이즈-파이썬-어플리케이션-dockernize-python-application/)
 * [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/웹-스크래핑하면서-차단-방지하는-방법/)
 * [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/)
