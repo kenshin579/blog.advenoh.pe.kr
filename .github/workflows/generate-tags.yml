@@ -30,6 +30,12 @@ jobs:
     - name: Run generate tags script
       run: |
         python scripts/generate_tags/generate_tags.py -t
+      env:
+        RASBERRYPI_BLOG_MYSQL_DATABASE: $${secrets.RASBERRYPI_BLOG_MYSQL_DATABASE}
+        RASBERRYPI_BLOG_MYSQL_HOST: $${secrets.RASBERRYPI_BLOG_MYSQL_HOST}
+        RASBERRYPI_BLOG_MYSQL_PASSWORD: $${secrets.RASBERRYPI_BLOG_MYSQL_PASSWORD}
+        RASBERRYPI_BLOG_MYSQL_PORT: $${secrets.RASBERRYPI_BLOG_MYSQL_PORT}
+        RASBERRYPI_BLOG_MYSQL_USER: $${secrets.RASBERRYPI_BLOG_MYSQL_USER}
     - name: Create commits
       run: |
           echo "username: ${{github.actor}}"
