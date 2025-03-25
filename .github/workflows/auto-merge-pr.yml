@@ -19,6 +19,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const MAX_DAILY_MERGES = 1;
+            const today = new Date();
 
             // `MergeReady` 라벨이 있는 PR 목록 조회
             const { data: prs } = await github.rest.pulls.list({
@@ -52,7 +53,7 @@ jobs:
             });
             
             const last7DaysMerges = mergedPRs.filter(pr => 
-              pr.merged_at && new Date(pr.merged_at) >= new Date(today - 7 * 24 * 60 * 60 * 1000) &&
+              pr.merged_at && new Date(pr.merged_at) >= new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000) &&
               pr.labels.some(label => label.name === "MergeReady")
             ).length;
 
