@@ -59,9 +59,10 @@ jobs:
               state: "closed",
               per_page: 50
             });
-
+            
             const last7DaysMerges = mergedPRs.filter(pr => 
               pr.merged_at && new Date(pr.merged_at) >= new Date(today - 7 * 24 * 60 * 60 * 1000)
+              pr.labels.some(label => label.name === "MergeReady")
             ).length;
 
             if (last7DaysMerges >= MAX_WEEKLY_MERGES) {
