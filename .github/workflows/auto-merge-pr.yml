@@ -19,15 +19,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const MAX_DAILY_MERGES = 1;
-            const PRIORITY_DAY_ORDER = ["SAT", "MON", "WED"];
-
-            // 오늘이 merge 가능한 요일인지 확인
-            const today = new Date();
-            const todayStr = today.toLocaleString("en-US", { weekday: "short", timeZone: "UTC" }).toUpperCase();
-            if (!PRIORITY_DAY_ORDER.includes(todayStr)) {
-              console.log(`Skipping merge: Today (${todayStr}) is not a priority day.`);
-              return;
-            }
 
             // `MergeReady` 라벨이 있는 PR 목록 조회
             const { data: prs } = await github.rest.pulls.list({
