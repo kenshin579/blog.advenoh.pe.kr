@@ -40,9 +40,9 @@ jobs:
 
             // PR 개수에 따라 MAX_WEEKLY_MERGES 설정
             let MAX_WEEKLY_MERGES = 1;
-            if (mergeReadyPRs.length > 10) MAX_WEEKLY_MERGES = 2;
-            if (mergeReadyPRs.length > 20) MAX_WEEKLY_MERGES = 3;
-            if (mergeReadyPRs.length > 30) MAX_WEEKLY_MERGES = 4;
+            if (mergeReadyPRs.length > 5) MAX_WEEKLY_MERGES = 2;
+            if (mergeReadyPRs.length > 10) MAX_WEEKLY_MERGES = 3;
+            if (mergeReadyPRs.length > 15) MAX_WEEKLY_MERGES = 4;
 
             // 지난 7일간 merge 된 PR 개수 확인
             const { data: mergedPRs } = await github.rest.pulls.list({
@@ -67,6 +67,23 @@ jobs:
             console.log(`Selected PR: #${selectedPR.number}`);
 
             core.setOutput("pr_number", selectedPR.number);
+
+      - name: Add comment to PR
+        if: steps.fetch-prs.outputs.pr_number != ''
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = ${{ steps.fetch-prs.outputs.pr_number }};
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: "자동 머지합니다"
+            });
+
+            console.log(`Comment added to PR #${prNumber}`);
 
       - name: Merge selected PR
         if: steps.fetch-prs.outputs.pr_number != ''
