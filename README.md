@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2025-03-16
+Updated 2025-03-29
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -119,6 +119,7 @@ Updated 2025-03-16
 * [Q&A JavaScript 관련 질문 모음](https://blog.advenoh.pe.kr/qa-javascript-관련-질문-모음/)
 
 ## Linux
+* [Raspberry Pi에서 최신 Go 버전 설치하기 – apt 대신 직접 설치!](https://blog.advenoh.pe.kr/raspberry-pi에서-최신-go-버전-설치하기-apt-대신-직접-설치/)
 * [모니터 없이 Raspberry Pi 4 OS 설치](https://blog.advenoh.pe.kr/raspberry-pi4-os-설치/)
 
 ## Mac
