@@ -40,9 +40,9 @@ jobs:
 
             // PR 개수에 따라 MAX_WEEKLY_MERGES 설정
             let MAX_WEEKLY_MERGES = 1;
-            if (mergeReadyPRs.length > 5) MAX_WEEKLY_MERGES = 2;
-            if (mergeReadyPRs.length > 10) MAX_WEEKLY_MERGES = 3;
-            if (mergeReadyPRs.length > 15) MAX_WEEKLY_MERGES = 4;
+            if (mergeReadyPRs.length >= 5) MAX_WEEKLY_MERGES = 2;
+            if (mergeReadyPRs.length >= 10) MAX_WEEKLY_MERGES = 3;
+            if (mergeReadyPRs.length >= 15) MAX_WEEKLY_MERGES = 4;
 
             // 지난 7일간 merge 된 PR 개수 확인
             const { data: mergedPRs } = await github.rest.pulls.list({
