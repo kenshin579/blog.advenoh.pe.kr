@@ -1,8 +1,8 @@
 ---
 title: "포트포워딩 없이 Kubernetes 접근하기 - KubeVPN으로 네트워크 연결"
 description: "포트포워딩 없이 Kubernetes 접근하기 - KubeVPN으로 네트워크 연결"
-date: 2025-0403
-update: 2025-0403
+date: 2025-04-03
+update: 2025-04-03
 tags:
   - kubevpn
   - k8s
