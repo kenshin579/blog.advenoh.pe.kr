@@ -138,7 +138,7 @@ class GeneratorTags:
         '''
 
         client = OpenAI(
-            api_key=os.environ.get("OPENAI_API_KEY_FOR_IT_BLOG_API"),
+            api_key=os.environ.get("OPENAI_API_KEY_FOR_BLOG_API"),
         )
 
         response = client.chat.completions.create(
