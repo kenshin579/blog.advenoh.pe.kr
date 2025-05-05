@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2025-04-05
+Updated 2025-05-04
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -35,6 +35,8 @@ Updated 2025-04-05
 * [도커 이미지 다른 도커 registry로 복사하기 - Skopeo](https://blog.advenoh.pe.kr/도커-이미지-다른-도커-registry로-복사하기-skopeo/)
 * [라즈베리파이에 도커 설치하기](https://blog.advenoh.pe.kr/라즈베리파이에-도커-설치하기/)
 * [로컬환경에서 Kafka 실행하기 (with AKHQ)](https://blog.advenoh.pe.kr/로컬환경에서-kafka-실행하기-with-akhq/)
+* [맥에서 Minikube로 로컬 Kubernetes 클러스터 쉽게 구축하기](https://blog.advenoh.pe.kr/맥에서-minikube로-로컬-kubernetes-클러스터-쉽게-구축하기/)
+* [포트포워딩 없이 Kubernetes 접근하기 - KubeVPN으로 네트워크 연결](https://blog.advenoh.pe.kr/포트포워딩-없이-kubernetes-접근하기-kubevpn으로-네트워크-연결/)
 * [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/헬름으로-kafka-설치하기/)
 
 ## Database
@@ -63,6 +65,8 @@ Updated 2025-04-05
 * [Git Rebase로 병합하기](https://blog.advenoh.pe.kr/git-rebase로-병합하기/)
 * [Git Reset으로 커밋된 내용 다시 되돌리기 (using GitKraken)](https://blog.advenoh.pe.kr/git-reset으로-커밋된-내용-다시-되돌리기-using-gitkraken/)
 * [Git 브랜치 여러 개 한번에 삭제하기](https://blog.advenoh.pe.kr/git-브랜치-여러개-한번에-삭제하기/)
+* [Git 서브모듈이란? 실전 예제로 배우는 서브모듈 활용법](https://blog.advenoh.pe.kr/git 서브모듈이란 실전 예제로 배우는 서브모듈 활용법/)
+* [Git에서 불필요한 로컬 브랜치 깔끔하게 삭제하는 방법](https://blog.advenoh.pe.kr/git에서-불필요한-로컬-브랜치-깔끔하게-삭제하는-방법/)
 * [Q&A : Git 관련 질문 모음](https://blog.advenoh.pe.kr/qa-git-관련-질문-모음/)
 
 ## Go
@@ -140,6 +144,7 @@ Updated 2025-04-05
 ## Python
 * [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/gitbook으로-전자책-만들어보기/)
 * [PyPI 업로드 가이드: 나만의 Python 패키지 배포하기](https://blog.advenoh.pe.kr/pypi-업로드-가이드-나만의-python-패키지-배포하기/)
+* [pipx란? pip과의 차이점부터 설치, 사용법까지 한눈에 정리](https://blog.advenoh.pe.kr/pipx란-pip과의-차이점부터-설치-사용법까지-한눈에-정리/)
 * [도커라이즈 파이썬 어플리케이션 (Dockernize Python Application)](https://blog.advenoh.pe.kr/도커라이즈-파이썬-어플리케이션-dockernize-python-application/)
 * [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/웹-스크래핑하면서-차단-방지하는-방법/)
 * [파이썬 : 커맨트 라인에서 명령어 옵션들 argparse 모듈를 이용해서 쉽게 파싱하기](https://blog.advenoh.pe.kr/파이썬-커맨트-라인에서-명령어-옵션들-argparse-모듈를-이용해서-쉽게-파싱하기/)
