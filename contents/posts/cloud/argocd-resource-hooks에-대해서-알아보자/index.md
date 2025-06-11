@@ -230,7 +230,7 @@ spec:
   backoffLimit: 2
 ```
 
-ArgoCD에서도 PreSync, PostSync 실패로 표시되고 마지막 SyncFail Hook이 실행되었다는 것을 ㅂ
+ArgoCD에서도 PreSync, PostSync가 실패로 표시되고, 마지막으로 SyncFail Hook이 실행된 것을 확인할 수 있다.
 
 ![ArgoCD Hook 실패 화면](image-20241021225332410.png)
 
