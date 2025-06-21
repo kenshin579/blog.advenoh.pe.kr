@@ -81,11 +81,10 @@ CLI 환경에서만 사용하면 불편할 수 있으므로 Open WebUI를 활용
 
 ```bash
 # 도커에서 사용할 volume 폴더를 생성한다
-> mkdir -p ~/data/open-webui
-> docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/Users/user/data/open-webui --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+> docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
-이제 웹 브라우저에서 `http://localhost:3000`에 접속하면 `Ollama`를 웹 UI에서 사용할 수 있다.
+이제 웹 브라우저에서 [http://localhost:3000](http://localhost:3000)에 접속하면 `Ollama`를 웹 UI에서 사용할 수 있다.
 
 ![Open WebUI](image-20250323141942551.png)
 
