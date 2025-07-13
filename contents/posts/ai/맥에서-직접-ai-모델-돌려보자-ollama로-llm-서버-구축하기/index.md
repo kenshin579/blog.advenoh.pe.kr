@@ -97,8 +97,8 @@ ChatGPT 웹 인터페이스와 비슷하고 잘 동작하는 걸 볼 수 있다.
 Ollama는 API를 제공하므로, curl을 사용하여 직접 호출할 수도 있다.
 
 ```bash
-> curl -X POST "<http://localhost:11434/api/generate>" \\
-     -H "Content-Type: application/json" \\
+> curl -X POST "http://localhost:11434/api/generate" \
+     -H "Content-Type: application/json" \
      -d '{"model": "llama3.2", "prompt": "Hello, what is AI?"}'
 ```
 
