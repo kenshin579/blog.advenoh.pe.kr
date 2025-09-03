@@ -478,7 +478,6 @@ URDF를 담은 `robot_description` 파라미터와 `joint_state_publisher`,  `ro
 
 참고
 
-- [Using URDF with robot_state_publisher](https://www.notion.so/URDF-20897988bdc14dcbb165e88f757e163b?pvs=21)
 - http://wiki.ros.org/robot_state_publisher
 - https://github.com/ros/robot_state_publisher
 - https://github.com/ros/joint_state_publisher/tree/noetic-devel/joint_state_publisher
