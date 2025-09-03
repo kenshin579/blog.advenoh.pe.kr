@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2025-05-04
+Updated 2025-09-03
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -35,6 +35,7 @@ Updated 2025-05-04
 * [도커 이미지 다른 도커 registry로 복사하기 - Skopeo](https://blog.advenoh.pe.kr/도커-이미지-다른-도커-registry로-복사하기-skopeo/)
 * [라즈베리파이에 도커 설치하기](https://blog.advenoh.pe.kr/라즈베리파이에-도커-설치하기/)
 * [로컬환경에서 Kafka 실행하기 (with AKHQ)](https://blog.advenoh.pe.kr/로컬환경에서-kafka-실행하기-with-akhq/)
+* [맥북에서 개인용 Docker Registry 구축하고 이미지 관리하기](https://blog.advenoh.pe.kr/맥북에서-개인용-docker-registry-구축하고-이미지-관리하기/)
 * [맥에서 Minikube로 로컬 Kubernetes 클러스터 쉽게 구축하기](https://blog.advenoh.pe.kr/맥에서-minikube로-로컬-kubernetes-클러스터-쉽게-구축하기/)
 * [포트포워딩 없이 Kubernetes 접근하기 - KubeVPN으로 네트워크 연결](https://blog.advenoh.pe.kr/포트포워딩-없이-kubernetes-접근하기-kubevpn으로-네트워크-연결/)
 * [헬름으로 Kafka 설치하기](https://blog.advenoh.pe.kr/헬름으로-kafka-설치하기/)
@@ -55,6 +56,7 @@ Updated 2025-05-04
 * [관계형 데이터베이스 설계 및 구축](https://blog.advenoh.pe.kr/관계형-데이터베이스-설계-및-구축/)
 * [관계형 데이터베이스에서 조인(join)이란?](https://blog.advenoh.pe.kr/관계형-데이터베이스에서-조인-join이란/)
 * [데이터베이스의 키 종류](https://blog.advenoh.pe.kr/데이터베이스의-키-종류/)
+* [맥에서 Kubernetes? Kind로 쉽고 빠르게 클러스터 구성하기](https://blog.advenoh.pe.kr/맥에서 kubernetes kind로 쉽고 빠르게 클러스터 구성하기/)
 
 ## Devops
 * [Maven + JaCoCo + Coveralls + Travis CI : 자바 프로젝트 Coverage 생성하는 방법](https://blog.advenoh.pe.kr/maven-jacoco-coveralls-travis-ci-자바-프로젝트-coverage-생성하는-방법/)
@@ -144,6 +146,7 @@ Updated 2025-05-04
 ## Python
 * [Gitbook으로 전자책 만들어보기](https://blog.advenoh.pe.kr/gitbook으로-전자책-만들어보기/)
 * [PyPI 업로드 가이드: 나만의 Python 패키지 배포하기](https://blog.advenoh.pe.kr/pypi-업로드-가이드-나만의-python-패키지-배포하기/)
+* [Python으로 API 호출에 Rate Limiting 적용하기: aiolimiter와 aiometer 사용법](https://blog.advenoh.pe.kr/python으로-api-호출에-rate-limiting-적용하기-aiolimiter와-aiometer-사용법/)
 * [pipx란? pip과의 차이점부터 설치, 사용법까지 한눈에 정리](https://blog.advenoh.pe.kr/pipx란-pip과의-차이점부터-설치-사용법까지-한눈에-정리/)
 * [도커라이즈 파이썬 어플리케이션 (Dockernize Python Application)](https://blog.advenoh.pe.kr/도커라이즈-파이썬-어플리케이션-dockernize-python-application/)
 * [웹 스크래핑하면서 차단 방지하는 방법](https://blog.advenoh.pe.kr/웹-스크래핑하면서-차단-방지하는-방법/)
