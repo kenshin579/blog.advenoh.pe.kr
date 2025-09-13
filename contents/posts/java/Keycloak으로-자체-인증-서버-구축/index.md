@@ -24,13 +24,13 @@ tags:
   - identity and access management
 ---
 
-# 1. 개요
+## 1. 개요
 
 회사 내부 서비스에서는 NCP(Naver Cloud Platform) 인증 서버를 사용해 왔지만, 다른 해외 사이트에서는 NCP 인증 서버를 사용할 수 없는 환경에 적용을 해야 해서 인증 로직을 구현하거나, 별도의 솔루션을 도입해야 하는 상황이 생겼었다. 이 과정에서 여러 IAM 솔루션중에 오픈소스 기반으로 널리 사용되고 있는 Keycloak 을 도입하게 되었다.
 
 이 과정에서 여러 IAM 솔루션을 검토하다가, 오픈소스 기반으로 널리 사용되고 있는 Keycloak을 접하게 되었고, 실제로 적용해보기 위해 스터디를 진행했다. 이번 글은 그 과정에서 학습한 내용을 정리한 것으로, Keycloak이 무엇인지, 어떤 기능을 제공하며, 어떻게 구성되어 있는지를 살펴보려 한다.
 
-## Keycloak 이란?
+### Keycloak 이란?
 
 Keycloak은 **Red Hat**에서 주도하는 오픈소스 IAM(Identity and Access Management) 솔루션으로, 사용자 인증과 권한 관리를 통합적으로 처리할 수 있는 플랫폼이다. OAuth 2.0, OpenID Connect, SAML 같은 표준 프로토콜을 지원하며, 로그인, 로그아웃, 세션 관리와 같은 복잡한 인증 로직을 애플리케이션에서 직접 구현하지 않고 Keycloak에 위임할 수 있다. 
 
@@ -38,7 +38,7 @@ Keycloak은 **Red Hat**에서 주도하는 오픈소스 IAM(Identity and Access 
 
 최근 애플리케이션 환경은 다수의 마이크로서비스, 웹/모바일 클라이언트, 외부 API 연동 등으로 점점 복잡해지고 있다. 이때 각 서비스마다 별도의 로그인 기능을 구현하면 보안 및 유지보수 비용이 커지게 된다. Keycloak 을 사용하면 중앙집중식 인증 관리, Single Sign-On(SSO), 소셜 로그인 연동이 가능하여 보안 강화와 개발 효율성을 동시에 얻을 수 있다. 
 
-### 주요 기능
+#### 주요 기능
 
 - **Single Sign-On (SSO)**: 한 번 로그인으로 여러 애플리케이션 접근
 - **소셜 로그인**: Google, Facebook, GitHub 등 연동 가능
@@ -51,7 +51,7 @@ Keycloak은 **Red Hat**에서 주도하는 오픈소스 IAM(Identity and Access 
 
 ![Keycloak Architecture](image-20250908164025074.png)
 
-### Keycloak 구성 요소
+#### Keycloak 구성 요소
 
 Keycloak은 인증/인가를 처리하기 위해 여러 핵심 구성 요소를 제공한다. 
 
@@ -61,15 +61,15 @@ Keycloak은 인증/인가를 처리하기 위해 여러 핵심 구성 요소를 
 - **Authentication Flow**: 로그인 과정에서 어떤 단계를 거칠지 정의 (예: 아이디/비밀번호 + OTP)
 - **Protocol Mapper**: 토큰에 사용자 속성/권한 등을 매핑
 
-# 2. 로컬환경에서 Keycloak 인증 서버 구축해보기
+## 2. 로컬환경에서 Keycloak 인증 서버 구축해보기
 
 로컬환경에서 도커를 활용해 몇 분 안에 Keycloak 인증 서버를 띄워서 어드민 콘솔에 접속해봅니다
 
-## 2.1 Keycloak 설치
+### 2.1 Keycloak 설치
 
 Keycloak 서버를 구동하는 방법은 여러 가지가 있다. Keycloak 소스 코드를 다운로드 받아 직접 구동할 수도 있지만, 여기서는 가장 간단한 방법으로 도커로 실행한다. 
 
-### 2.1.1 Keycloak 도커 실행
+#### 2.1.1 Keycloak 도커 실행
 
 ```bash
 > docker run -p 127.0.0.1:8080:8080 \
@@ -91,7 +91,7 @@ Keycloak 서버를 구동하는 방법은 여러 가지가 있다. Keycloak 소�
 
 - https://www.keycloak.org/getting-started/getting-started-docker
 
-### 2.1.2 어드민 컨솔에 로그인
+#### 2.1.2 어드민 컨솔에 로그인
 
 ![Keycloak 로그인](image-20250908171627372.png)
 
@@ -103,11 +103,11 @@ admin으로 로그인하면 Keycloak 을 설정할 수 있는 어드민 페이�
 
 
 
-## 2.2 Keycloak 설정
+### 2.2 Keycloak 설정
 
 Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필요하다. 여기서 말하는 기본 설정은 **내 애플리케이션에서 Keycloak 로그인 화면으로 리디렉션** → **로그인 성공 후 토큰 발급** 까지 가능한 상태를 만드는 것을 목표로 한다.
 
-### 1. Realm 생성
+#### 1. Realm 생성
 
 - **Realm**은 Keycloak의 인증 단위이다
   - 사용자, 클라이언트, 정책이 모두 Realm 단위로 관리되므로 프로젝트별, 환경별로 **Realm**을 분리하는 것이 일반적이다
@@ -115,7 +115,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 ![Create realm](image-20250908174737075.png)
 
-### 2. Client 등록
+#### 2. Client 등록
 
 - **Client**는 `Keycloak`과 연동되는 애플리케이션을 의미한다
   - 웹앱, API 서버 등 `Keycloak`을 통해 인증할 대상이 여기에 해당한다
@@ -153,7 +153,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
   - Public Client (예: SPA, 모바일 앱)에서는 **필수적으로 PKCE 사용**을 권장한다
 
 
-### Authentication flow 옵션 정리
+#### Authentication flow 옵션 정리
 
 | 옵션                                     | OAuth2 대응                                 | 설명                                                         | 사용 사례                       |
 | ---------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------- |
@@ -183,7 +183,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 
 
-### 3. 사용자(User) 생성
+#### 3. 사용자(User) 생성
 
 인증 테스트를 위해 최소 한 명의 사용자가 필요하다. 새로운 사용자를 생성한 이후 암호를 설정하면 된다. 
 
@@ -215,11 +215,11 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 - [Keycloak 예제 코드 (Go)](https://github.com/kenshin579/tutorials-go/tree/master/keycloak)
 
-# 4. FAQ
+## 4. FAQ
 
-### 4.1 OAuth 2.0 vs OpenID Connect
+#### 4.1 OAuth 2.0 vs OpenID Connect
 
-### OAuth 2.0
+#### OAuth 2.0
 
 - **무엇인가?** → **인가(Authorization) 프레임워크**
 
@@ -235,7 +235,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
   - 즉, "이 토큰은 구글 캘린더를 쓸 수 있다"까지는 알 수 있어도, **사용자가 누구인지**는 알 수 없음
 
-### OpenID Connect (OIDC)
+#### OpenID Connect (OIDC)
 
 - **무엇인가?** → OAuth 2.0을 기반으로 만든 **인증(Authentication) 프로토콜**
 
@@ -265,9 +265,9 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 그래서 Keycloak 같은 IdP를 로그인 서버로 쓸 때는 **항상 OAuth 2.0 위에 OIDC를 얹어서** 쓰는 게 일반적이에요.
 
-### 4.2 Identity Brokering vs Identity Provider
+#### 4.2 Identity Brokering vs Identity Provider
 
-### **Identity Provider (IdP)**
+#### **Identity Provider (IdP)**
 
 - **정의**: 사용자의 인증(Authentication)을 실제로 수행하는 외부 서비스
 - **Keycloak 관점에서의 IdP**
@@ -275,7 +275,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
   - 예: Google, GitHub, Facebook, Kakao, 또 다른 Keycloak, SAML 기반 기업 IdP
 - **역할**: “이 사용자가 누구인지”를 확인하고, 성공/실패 결과 및 사용자 프로필 정보를 Keycloak에 전달
 
-### **Identity Brokering**
+#### **Identity Brokering**
 
 - **정의**: Keycloak이 여러 **IdP를 중개(broker)** 하여, 클라이언트 애플리케이션이 외부 IdP와 직접 통신하지 않고 Keycloak을 통해 인증을 수행하도록 하는 기능
 - **흐름**
@@ -288,7 +288,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 ------
 
-## **⚖️ 차이점 요약**
+### **⚖️ 차이점 요약**
 
 | **구분**            | **Identity Provider (IdP)**            | **Identity Brokering**                                   |      |
 | ------------------- | -------------------------------------- | -------------------------------------------------------- | ---- |
@@ -299,7 +299,7 @@ Keycloak을 인증 서버로 활용하려면 최소한의 기본 설정이 필�
 
 쉽게 말해, **IdP는 인증을 해주는 주체**이고, **Identity Brokering은 Keycloak이 여러 IdP를 연결해주는 기능**이다.
 
-### 4.3 Keycloak에 Events는 무슨 기능인가?
+#### 4.3 Keycloak에 Events는 무슨 기능인가?
 
 Keycloak에서 발생하는 중요한 활동을 기록하는 기능이다. 운영/보안 측면에서 매우 유용하다.
 
@@ -307,7 +307,7 @@ Keycloak에서 발생하는 중요한 활동을 기록하는 기능이다. 운�
 - 예를 들어 누군가 로그인에 성공/실패하거나, 관리자가 사용자를 추가/삭제할 때 이벤트가 남음
 - 이벤트는 **실시간 확인**, **DB 저장**, **외부 로깅 시스템 연동**이 가능
 
-# 5. 참고
+## 5. 참고
 
 - [SKT Enterprise](https://www.sktenterprise.com/bizInsight/blogDetail/dev/5710)
 - [Keycloak 이해하기](https://adjh54.tistory.com/645)
