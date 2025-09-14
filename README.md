@@ -3,7 +3,7 @@
 
 # Frank's IT Blog - Table of Contents
 
-Updated 2025-09-03
+Updated 2025-09-14
 
 현재 [블로그](https://blog.advenoh.pe.kr)에 작성된 내용입니다.
 
@@ -94,6 +94,7 @@ Updated 2025-09-03
 * [JUnit Rules이란](https://blog.advenoh.pe.kr/junit-rules이란/)
 * [Jackson에서 Infinite Recursion 이슈 해결방법](https://blog.advenoh.pe.kr/jackson에서-infinite-recursion-이슈-해결방법/)
 * [Java Jayway JsonPath 사용법](https://blog.advenoh.pe.kr/java-jayway-jsonpath-사용법/)
+* [Keycloak으로 자체 인증 서버 구축](https://blog.advenoh.pe.kr/Keycloak으로-자체-인증-서버-구축/)
 * [Lombok 기본 사용법 익히기](https://blog.advenoh.pe.kr/lombok-기본-사용법-익히기/)
 * [Q&A Cache-SSM 관련 질문 모음](https://blog.advenoh.pe.kr/qa-cache-ssm-관련-질문-모음/)
 * [Q&A Jackson 관련 질문 모음](https://blog.advenoh.pe.kr/qa-jackson-관련-질문-모음/)
